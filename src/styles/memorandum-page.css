@@ -1,0 +1,265 @@
+/* Memorandum of Association — About Us inner page */
+
+.moa-page {
+  --moa-pad-x: clamp(1.25rem, 5vw, 7.5rem);
+}
+
+.moa-page__container {
+  width: min(100%, var(--container-max));
+  margin-inline: auto;
+}
+
+.moa-page__intro {
+  padding: clamp(3rem, 6vw, 4.5rem) var(--moa-pad-x) clamp(2rem, 4vw, 3rem);
+  background: #fff;
+}
+
+.moa-page__lead {
+  margin: 1.25rem 0 0;
+  max-width: 52rem;
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  color: var(--color-text-secondary);
+}
+
+.moa-page__sections {
+  padding: 0 var(--moa-pad-x) clamp(3rem, 6vw, 4.5rem);
+  background: linear-gradient(
+    180deg,
+    #fff 0%,
+    rgba(244, 246, 250, 0.95) 100%
+  );
+}
+
+.moa-page__clause-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 1rem;
+}
+
+.moa-page__clause {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1.25rem 1.5rem;
+  align-items: start;
+  padding: clamp(1.25rem, 3vw, 1.75rem);
+  border-radius: var(--radius-lg);
+  background: #fff;
+  border: 1px solid rgba(30, 58, 117, 0.08);
+  box-shadow: var(--shadow-soft);
+  transition:
+    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.35s ease;
+}
+
+.moa-page__clause:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-elevated);
+}
+
+.moa-page__clause-num {
+  font-family: var(--font-hero);
+  font-size: clamp(1.75rem, 3vw, 2.25rem);
+  font-weight: 700;
+  line-height: 1;
+  color: var(--color-secondary);
+  opacity: 0.25;
+}
+
+.moa-page__clause-title {
+  margin: 0 0 0.5rem;
+  font-family: var(--font-hero);
+  font-size: clamp(1.125rem, 2vw, 1.375rem);
+  font-weight: 700;
+  color: var(--color-primary);
+  line-height: 1.2;
+}
+
+.moa-page__clause p {
+  margin: 0;
+  font-size: 0.9375rem;
+  line-height: 1.65;
+  color: var(--color-text-secondary);
+}
+
+.moa-page__governance {
+  padding: clamp(3rem, 6vw, 4.5rem) var(--moa-pad-x);
+  background: #fff;
+}
+
+.moa-page__governance .bihe-data-table-card {
+  margin-top: 2rem;
+}
+
+.moa-page__documents {
+  padding: clamp(3rem, 6vw, 4.5rem) var(--moa-pad-x) clamp(4rem, 8vw, 5.5rem);
+  background: var(--bihe-cream, #f4f6fa);
+}
+
+.moa-page__doc-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 22rem);
+  justify-content: center;
+  gap: 1.25rem;
+  margin: 2.5rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.moa-page__doc-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem 1.25rem;
+  border-radius: var(--radius-lg);
+  background: #fff;
+  border: 1px solid rgba(30, 58, 117, 0.08);
+  box-shadow: var(--shadow-soft);
+  list-style: none;
+  transition:
+    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.35s ease,
+    border-color 0.25s ease;
+}
+
+.moa-page__doc-card--pdf {
+  padding-top: 1.25rem;
+  border-color: rgba(30, 58, 117, 0.12);
+}
+
+.moa-page__doc-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-elevated);
+  border-color: rgba(30, 58, 117, 0.2);
+}
+
+.moa-page__doc-card:has(:focus-visible) {
+  border-color: rgba(30, 58, 117, 0.2);
+  box-shadow:
+    var(--shadow-elevated),
+    0 0 0 3px rgba(30, 58, 117, 0.2);
+}
+
+.moa-page__doc-card-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  margin: 0 0 1rem;
+}
+
+.moa-page__doc-pdf-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  align-self: flex-start;
+  margin-bottom: 0.75rem;
+  padding: 0.35rem 0.55rem;
+  border-radius: var(--radius-sm, 6px);
+  background: rgba(116, 0, 0, 0.08);
+  color: var(--color-secondary, #740000);
+}
+
+.moa-page__doc-pdf-icon {
+  width: 1.125rem;
+  height: 1.125rem;
+}
+
+.moa-page__doc-pdf-label {
+  font-size: 0.6875rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+}
+
+.moa-page__doc-title {
+  margin: 0 0 0.5rem;
+  font-size: 1.0625rem;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.moa-page__doc-desc {
+  margin: 0;
+  flex: 1;
+  font-size: 0.875rem;
+  line-height: 1.55;
+  color: var(--color-text-secondary);
+}
+
+.moa-page__doc-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6rem;
+  margin-top: auto;
+}
+
+.moa-page__doc-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.5rem 0.95rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  line-height: 1;
+  text-decoration: none;
+  border-radius: 999px;
+  outline: none;
+  transition:
+    gap 0.25s ease,
+    color 0.2s ease,
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.moa-page__doc-btn--view {
+  color: #fff;
+  background: var(--color-primary);
+  border: 1px solid var(--color-primary);
+}
+
+.moa-page__doc-btn--view:hover,
+.moa-page__doc-btn--view:focus-visible {
+  background: var(--color-primary-dark);
+  border-color: var(--color-primary-dark);
+}
+
+.moa-page__doc-btn--download {
+  color: var(--color-primary);
+  background: #fff;
+  border: 1px solid rgba(30, 58, 117, 0.18);
+}
+
+.moa-page__doc-card:hover .moa-page__doc-btn--download,
+.moa-page__doc-btn--download:hover,
+.moa-page__doc-btn--download:focus-visible {
+  gap: 0.55rem;
+  color: var(--color-secondary);
+  border-color: rgba(116, 0, 0, 0.25);
+}
+
+.moa-page__doc-btn:focus-visible {
+  box-shadow: 0 0 0 2px rgba(30, 58, 117, 0.25);
+}
+
+.moa-page__doc-link-icon {
+  width: 1rem;
+  height: 1rem;
+}
+
+@media (max-width: 1024px) {
+  .moa-page__doc-grid {
+    grid-template-columns: minmax(0, 1fr);
+    max-width: 22rem;
+    margin-inline: auto;
+  }
+}
+
+@media (max-width: 640px) {
+  .moa-page__clause {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+}

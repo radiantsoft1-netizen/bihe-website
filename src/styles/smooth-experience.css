@@ -1,0 +1,192 @@
+/* Smooth scroll + motion polish (Lenis + GPU-friendly UI) */
+
+:root {
+  --scroll-anchor-offset: var(--site-header-height, 8.25rem);
+  --ease-out-expo: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-out-soft: cubic-bezier(0.33, 1, 0.68, 1);
+  --motion-duration: 0.45s;
+  --motion-duration-slow: 0.65s;
+}
+
+html {
+  scroll-padding-top: var(--scroll-anchor-offset);
+}
+
+html.has-smooth-scroll {
+  scroll-behavior: auto;
+}
+
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+html,
+body {
+  overscroll-behavior-y: none;
+}
+
+body {
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.bihe-wrap {
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Pause decorative motion while scrolling (less jank) */
+html.is-scrolling .bihe-page-bg__blob,
+html.is-scrolling .bihe-page-bg__ring,
+html.is-scrolling .bihe-page-bg__zigzag,
+html.is-scrolling .bihe-page-bg__plus,
+html.is-scrolling .bihe-page-bg__triangle,
+html.is-scrolling .about__shape,
+html.is-scrolling .about__badge,
+html.is-scrolling .about__badge-ring,
+html.is-scrolling .facilities__decor-shape,
+html.is-scrolling .accreditation__decor-blob,
+html.is-scrolling .accreditation__decor-ring,
+html.is-scrolling .recruiters__decor-ring,
+html.is-scrolling .news__decor-ring,
+html.is-scrolling .hero__bg {
+  animation-play-state: paused;
+}
+
+/* Avoid content-visibility during scroll — it causes visible stutter on long pages */
+
+/* GPU layers for scroll-linked decor */
+.bihe-page-bg__blob,
+.bihe-page-bg__ring,
+.bihe-page-bg__zigzag,
+.bihe-page-bg__plus,
+.bihe-page-bg__triangle {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+.hero__media,
+.hero__bg {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+/* Shared motion timing */
+.bihe-wrap a,
+.bihe-wrap button,
+.bihe-wrap .btn,
+.bihe-wrap .facility-card--attract,
+.bihe-wrap .facility-card--overlay,
+.bihe-wrap .facility-card--pro,
+.bihe-wrap .facility-card--tile,
+.bihe-wrap .course-card,
+.bihe-wrap .news-card,
+.bihe-wrap .gallery__item,
+.bihe-wrap .recruiter-card,
+.bihe-wrap .accreditation__logo-item,
+.bihe-wrap .bihe-site-header__nav-link,
+.bihe-wrap .bihe-site-header__submenu-link,
+.bihe-wrap .bihe-site-header__chevron-btn,
+.bihe-wrap .hero__arrow,
+.bihe-wrap .hero__dot {
+  transition-timing-function: var(--ease-out-expo);
+}
+
+.bihe-wrap .btn {
+  transition:
+    transform var(--motion-duration) var(--ease-out-expo),
+    background var(--motion-duration) var(--ease-out-expo),
+    color var(--motion-duration) var(--ease-out-expo),
+    box-shadow var(--motion-duration) var(--ease-out-expo),
+    border-color var(--motion-duration) var(--ease-out-expo),
+    opacity var(--motion-duration) var(--ease-out-expo);
+}
+
+.bihe-wrap .btn:active {
+  transform: scale(0.98);
+  transition-duration: 0.12s;
+}
+
+.bihe-wrap img,
+.bihe-wrap .facility-card__photo,
+.bihe-wrap .course-card__img,
+.bihe-wrap .news-card__img,
+.bihe-wrap .recruiter-card__logo img,
+.bihe-wrap .gallery__item-img {
+  backface-visibility: hidden;
+}
+
+/* Infinite scroll tracks */
+.bihe-wrap .accreditation__logo-grid,
+.bihe-wrap .announcement__track {
+  will-change: transform;
+}
+
+.bihe-wrap .hero__content--animate {
+  animation-duration: 0.95s;
+  animation-timing-function: var(--ease-out-expo);
+}
+
+.bihe-wrap .hero__arrow,
+.bihe-wrap .hero__dot {
+  transition:
+    transform var(--motion-duration) var(--ease-out-expo),
+    background var(--motion-duration) var(--ease-out-expo),
+    border-color var(--motion-duration) var(--ease-out-expo),
+    opacity var(--motion-duration) var(--ease-out-expo);
+}
+
+.bihe-site-header {
+  transition:
+    box-shadow var(--motion-duration) var(--ease-out-expo),
+    background var(--motion-duration) var(--ease-out-expo);
+}
+
+html.is-scrolling .bihe-site-header {
+  transition-duration: 0.01ms;
+}
+
+
+.bihe-wrap .facility-card--attract .facility-card__photo,
+.bihe-wrap .facility-card--overlay .facility-card__photo,
+.bihe-wrap .facility-card--pro .facility-card__photo,
+.bihe-wrap .facility-card--tile .facility-card__photo,
+.bihe-wrap .course-card__media img,
+.bihe-wrap .news-card__media img {
+  transition: transform 0.65s var(--ease-out-expo);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bihe-site-header,
+  .bihe-site-header__topbar,
+  .bihe-site-header__topbar-inner,
+  .bihe-site-header__navbar,
+  .bihe-site-header__navbar-inner,
+  .bihe-site-header__brand,
+  .bihe-site-header__brand-kn,
+  .bihe-site-header__brand-en,
+  .bihe-site-header__logo,
+  .bihe-site-header__nav-link,
+  .bihe-site-header__nav-link-group,
+  .bihe-wrap > main,
+  .bihe-wrap .home-fold {
+    transition-duration: 0.01ms !important;
+  }
+
+  html.has-smooth-scroll {
+    scroll-behavior: smooth;
+  }
+
+  .bihe-wrap .accreditation__logo-grid,
+  .bihe-wrap .announcement__track {
+    will-change: auto;
+  }
+}

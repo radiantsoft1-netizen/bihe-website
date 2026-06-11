@@ -1,0 +1,279 @@
+/* Internal Complaint Committee — Figma node 1:6538 */
+
+.icc-page {
+  --icc-pad-x: clamp(1.25rem, 5vw, 7.5rem);
+}
+
+.bihe-wrap:has(.icc-page) > .bihe-page-bg {
+  display: none;
+}
+
+.icc-page__container {
+  width: min(100%, var(--container-max));
+  margin-inline: auto;
+}
+
+.icc-page__intro {
+  padding: clamp(2.5rem, 5vw, 3.5rem) var(--icc-pad-x) clamp(1.5rem, 3vw, 2rem);
+  background: #fff;
+  text-align: center;
+}
+
+.icc-page__intro-title {
+  margin: 0 0 1.25rem;
+  font-family: var(--font-hero);
+  font-size: clamp(1.125rem, 2.2vw, 1.5rem);
+  font-weight: 700;
+  line-height: 1.35;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-secondary);
+}
+
+.icc-page__intro-text {
+  margin: 0 auto 1rem;
+  max-width: 52rem;
+  font-size: 1rem;
+  line-height: 1.75;
+  color: var(--color-text-secondary);
+  text-align: justify;
+}
+
+.icc-page__intro-text:last-child {
+  margin-bottom: 0;
+}
+
+.icc-page__objectives {
+  padding: 0 var(--icc-pad-x) clamp(2.5rem, 5vw, 3.5rem);
+  background: #fff;
+}
+
+.icc-page__objectives-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  gap: clamp(1.5rem, 4vw, 3rem);
+  align-items: center;
+}
+
+/* ICC objectives hub graphic */
+.icc-objectives-graphic {
+  margin: 0;
+  width: min(100%, 22rem);
+  justify-self: center;
+}
+
+.icc-objectives-graphic__panel {
+  padding: clamp(1.25rem, 3vw, 1.75rem);
+  border: 1px solid rgba(30, 58, 117, 0.12);
+  border-radius: var(--radius-lg);
+  background:
+    radial-gradient(circle at 18% 22%, rgba(116, 0, 0, 0.07), transparent 42%),
+    radial-gradient(circle at 82% 78%, rgba(30, 58, 117, 0.1), transparent 45%),
+    linear-gradient(145deg, #f8faff 0%, #eef3fb 100%);
+  box-shadow: var(--shadow-soft);
+}
+
+.icc-objectives-graphic__hub {
+  position: relative;
+  width: min(100%, 16.5rem);
+  aspect-ratio: 1;
+  margin-inline: auto;
+}
+
+.icc-objectives-graphic__orbit {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  rotate: 0deg;
+  transform-origin: center center;
+  animation: icc-orbit-spin 28s linear infinite;
+}
+
+.icc-objectives-graphic__ring--outer {
+  border-style: dashed;
+  border-color: rgba(30, 58, 117, 0.2);
+}
+
+.icc-objectives-graphic__ring {
+  position: absolute;
+  inset: 8%;
+  border-radius: 50%;
+  border: 2px solid rgba(30, 58, 117, 0.14);
+  pointer-events: none;
+}
+
+.icc-objectives-graphic__ring--inner {
+  inset: 22%;
+  border-style: dashed;
+  border-color: rgba(116, 0, 0, 0.18);
+}
+
+@keyframes icc-orbit-spin {
+  from {
+    rotate: 0deg;
+  }
+
+  to {
+    rotate: 360deg;
+  }
+}
+
+.icc-objectives-graphic__core {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  width: 4.75rem;
+  height: 4.75rem;
+  border-radius: 50%;
+  background: linear-gradient(145deg, var(--color-secondary) 0%, var(--color-secondary-dark) 100%);
+  box-shadow: 0 10px 24px rgba(116, 0, 0, 0.22);
+  transform: translate(-50%, -50%);
+}
+
+.icc-objectives-graphic__shield {
+  width: 2.75rem;
+  height: 2.75rem;
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.icc-objectives-graphic__core-label {
+  position: absolute;
+  bottom: 0.55rem;
+  font-family: var(--font-hero);
+  font-size: 0.6875rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: #fff;
+}
+
+.icc-objectives-graphic__pillars {
+  position: absolute;
+  inset: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.icc-objectives-graphic__pillar {
+  position: absolute;
+  width: 5.75rem;
+  translate: -50% -50%;
+}
+
+.icc-objectives-graphic__pillar-upright {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.4rem;
+  text-align: center;
+  rotate: 0deg;
+  transform-origin: center center;
+  animation: icc-orbit-spin 28s linear infinite reverse;
+}
+
+.icc-objectives-graphic__pillar--1 {
+  top: 8%;
+  left: 50%;
+}
+
+.icc-objectives-graphic__pillar--2 {
+  top: 50%;
+  left: 92%;
+}
+
+.icc-objectives-graphic__pillar--3 {
+  top: 92%;
+  left: 50%;
+}
+
+.icc-objectives-graphic__pillar--4 {
+  top: 50%;
+  left: 8%;
+}
+
+.icc-objectives-graphic__icon {
+  display: grid;
+  flex-shrink: 0;
+  place-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  color: var(--color-primary);
+  background: #fff;
+  border: 1px solid rgba(30, 58, 117, 0.14);
+  box-shadow: 0 4px 12px rgba(30, 58, 117, 0.1);
+}
+
+.icc-objectives-graphic__icon svg {
+  width: 1.2rem;
+  height: 1.2rem;
+}
+
+.icc-objectives-graphic__pillar-label {
+  flex-shrink: 0;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  line-height: 1.25;
+  color: var(--color-primary-dark);
+}
+
+.icc-objectives-graphic__badge {
+  margin: 1rem 0 0;
+  padding: 0.45rem 0.75rem;
+  border-radius: var(--btn-radius);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  text-align: center;
+  color: var(--color-secondary);
+  background: rgba(116, 0, 0, 0.08);
+}
+
+.icc-page__objectives-list {
+  margin: 0;
+  max-width: 28rem;
+}
+
+.icc-page__committee {
+  padding: clamp(3rem, 6vw, 4.5rem) var(--icc-pad-x) clamp(4rem, 8vw, 5.5rem);
+  background: var(--bihe-cream, #f4f6fa);
+}
+
+.icc-page__committee-lead {
+  margin: 0 auto 2.5rem;
+  max-width: 52rem;
+  font-size: 1rem;
+  line-height: 1.75;
+  text-align: justify;
+  color: var(--color-text-secondary);
+}
+
+.icc-page__committee .bihe-data-table-card {
+  margin-top: 0;
+}
+
+@media (max-width: 768px) {
+  .icc-page__objectives-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .icc-page__objectives-list {
+    max-width: none;
+  }
+
+  .icc-page__intro-text {
+    text-align: justify;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .icc-objectives-graphic__orbit,
+  .icc-objectives-graphic__pillar-upright {
+    animation: none;
+  }
+}

@@ -1,0 +1,206 @@
+/* Constituent Units — About Us inner page */
+
+.cu-page {
+  --cu-pad-x: clamp(1.25rem, 5vw, 7.5rem);
+}
+
+.cu-page__container {
+  width: min(100%, var(--container-max));
+  margin-inline: auto;
+}
+
+.cu-page__intro {
+  padding: clamp(3rem, 6vw, 4.5rem) var(--cu-pad-x) clamp(2rem, 4vw, 3rem);
+  background: #fff;
+}
+
+.cu-page__lead {
+  margin: 1.25rem 0 0;
+  max-width: 52rem;
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  color: var(--color-text-secondary);
+}
+
+.cu-page__documents {
+  padding: clamp(2.5rem, 5vw, 4rem) var(--cu-pad-x) clamp(4rem, 8vw, 5.5rem);
+  background: var(--bihe-cream, #f4f6fa);
+}
+
+.cu-page__doc-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.25rem;
+  margin: 2.5rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.cu-page__doc-grid--single {
+  grid-template-columns: minmax(0, 22rem);
+  justify-content: center;
+}
+
+.cu-page__doc-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem 1.25rem;
+  border-radius: var(--radius-lg);
+  background: #fff;
+  border: 1px solid rgba(30, 58, 117, 0.08);
+  box-shadow: var(--shadow-soft);
+  list-style: none;
+  transition:
+    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.35s ease,
+    border-color 0.25s ease;
+}
+
+.cu-page__doc-card--pdf {
+  padding-top: 1.25rem;
+  border-color: rgba(30, 58, 117, 0.12);
+}
+
+.cu-page__doc-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-elevated);
+  border-color: rgba(30, 58, 117, 0.2);
+}
+
+.cu-page__doc-card:has(:focus-visible) {
+  border-color: rgba(30, 58, 117, 0.2);
+  box-shadow:
+    var(--shadow-elevated),
+    0 0 0 3px rgba(30, 58, 117, 0.2);
+}
+
+.cu-page__doc-card-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  margin: 0 0 1rem;
+}
+
+.cu-page__doc-pdf-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  align-self: flex-start;
+  margin-bottom: 0.75rem;
+  padding: 0.35rem 0.55rem;
+  border-radius: var(--radius-sm, 6px);
+  background: rgba(116, 0, 0, 0.08);
+  color: var(--color-secondary, #740000);
+}
+
+.cu-page__doc-pdf-icon {
+  width: 1.125rem;
+  height: 1.125rem;
+}
+
+.cu-page__doc-pdf-label {
+  font-size: 0.6875rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+}
+
+.cu-page__doc-title {
+  margin: 0 0 0.5rem;
+  font-size: 1.0625rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  line-height: 1.35;
+}
+
+.cu-page__doc-desc {
+  margin: 0;
+  flex: 1;
+  font-size: 0.875rem;
+  line-height: 1.55;
+  color: var(--color-text-secondary);
+}
+
+.cu-page__doc-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6rem;
+  margin-top: auto;
+}
+
+.cu-page__doc-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.5rem 0.95rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  line-height: 1;
+  text-decoration: none;
+  border-radius: 999px;
+  outline: none;
+  transition:
+    gap 0.25s ease,
+    color 0.2s ease,
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.cu-page__doc-btn--view {
+  color: #fff;
+  background: var(--color-primary);
+  border: 1px solid var(--color-primary);
+}
+
+.cu-page__doc-btn--view:hover,
+.cu-page__doc-btn--view:focus-visible {
+  background: var(--color-primary-dark);
+  border-color: var(--color-primary-dark);
+}
+
+.cu-page__doc-btn--download {
+  color: var(--color-primary);
+  background: #fff;
+  border: 1px solid rgba(30, 58, 117, 0.18);
+}
+
+.cu-page__doc-card:hover .cu-page__doc-btn--download,
+.cu-page__doc-btn--download:hover,
+.cu-page__doc-btn--download:focus-visible {
+  gap: 0.55rem;
+  color: var(--color-secondary);
+  border-color: rgba(116, 0, 0, 0.25);
+}
+
+.cu-page__doc-btn:focus-visible {
+  box-shadow: 0 0 0 2px rgba(30, 58, 117, 0.25);
+}
+
+.cu-page__doc-link-icon {
+  width: 1rem;
+  height: 1rem;
+}
+
+@media (max-width: 1024px) {
+  .cu-page__doc-grid {
+    grid-template-columns: minmax(0, 1fr);
+    max-width: 22rem;
+    margin-inline: auto;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 1024px) {
+  .cu-page__doc-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    max-width: 36rem;
+  }
+
+  .cu-page__doc-grid > :last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+    max-width: 22rem;
+    margin-inline: auto;
+    width: 100%;
+  }
+}

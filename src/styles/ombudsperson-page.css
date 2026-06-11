@@ -1,0 +1,103 @@
+/* Ombudsperson — Figma node 1:6146 */
+
+.ombudsperson-page {
+  --ombud-pad-x: clamp(1.25rem, 5vw, 7.5rem);
+}
+
+.bihe-wrap:has(.ombudsperson-page) > .bihe-page-bg {
+  display: none;
+}
+
+.ombudsperson-page__container {
+  width: min(100%, var(--container-max));
+  margin-inline: auto;
+}
+
+.ombudsperson-page__intro {
+  padding: clamp(2.5rem, 5vw, 3.5rem) var(--ombud-pad-x) clamp(1.5rem, 3vw, 2rem);
+  background: #fff;
+  text-align: center;
+}
+
+.ombudsperson-page__intro-title {
+  margin: 0 0 1.25rem;
+  font-family: var(--font-hero);
+  font-size: clamp(1.125rem, 2.2vw, 1.5rem);
+  font-weight: 700;
+  line-height: 1.35;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-secondary);
+}
+
+.ombudsperson-page__intro-text {
+  margin: 0 auto;
+  max-width: 52rem;
+  font-size: 1rem;
+  line-height: 1.75;
+  color: var(--color-text-secondary);
+  text-align: justify;
+}
+
+.ombudsperson-page__lists {
+  padding: 0 var(--ombud-pad-x) clamp(2.5rem, 5vw, 3.5rem);
+  background: #fff;
+}
+
+.ombudsperson-page__lists-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(1.25rem, 3vw, 2rem);
+}
+
+.ombudsperson-page__list-card {
+  height: 100%;
+  padding: clamp(1.5rem, 3vw, 2rem);
+  border: 1px solid rgba(30, 58, 117, 0.1);
+  border-radius: var(--radius-lg);
+  background: #fff;
+  box-shadow: var(--shadow-soft);
+}
+
+.ombudsperson-page__list-title {
+  margin: 0 0 1.25rem;
+  font-family: var(--font-hero);
+  font-size: clamp(1rem, 2vw, 1.125rem);
+  font-weight: 700;
+  line-height: 1.35;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--color-secondary);
+}
+
+.ombudsperson-page__outcome {
+  padding: clamp(3rem, 6vw, 4.5rem) var(--ombud-pad-x) clamp(4rem, 8vw, 5.5rem);
+  background: var(--bihe-cream, #f4f6fa);
+}
+
+.ombudsperson-page__outcome .section-header {
+  margin-bottom: 1.25rem;
+}
+
+.ombudsperson-page__outcome-text {
+  margin: 0 auto 2.5rem;
+  max-width: 52rem;
+  font-size: 1rem;
+  line-height: 1.75;
+  text-align: justify;
+  color: var(--color-text-secondary);
+}
+
+.ombudsperson-page__outcome .bihe-data-table-card {
+  margin-top: 0;
+}
+
+@media (max-width: 768px) {
+  .ombudsperson-page__lists-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ombudsperson-page__intro-text {
+    text-align: justify;
+  }
+}

@@ -1,0 +1,159 @@
+@import "../styles/tokens.css";
+@import "../styles/animations.css";
+@import "../styles/landing.css";
+@import "../styles/liverpool-home.css";
+@import "../styles/modern-page.css";
+@import "../styles/page-background.css";
+@import "../styles/page-background-positions.css";
+@import "../styles/smooth-experience.css";
+@import "../styles/about-bihe-page.css";
+@import "../styles/memorandum-page.css";
+@import "../styles/idp-page.css";
+@import "../styles/constituent-units-page.css";
+@import "../styles/principal-page.css";
+@import "../styles/bihe-data-table.css";
+@import "../styles/bihe-bullet-list.css";
+@import "../styles/controller-of-examination-page.css";
+@import "../styles/ombudsperson-page.css";
+@import "../styles/internal-complaint-committee-page.css";
+@import "../styles/governing-bodies-page.css";
+@import "../styles/academic-leadership-page.css";
+@import "../styles/b-com-admin-page.css";
+@import "../styles/academic-calendar-page.css";
+@import "../styles/academics-examination-page.css";
+@import "../styles/iqac-page.css";
+@import "../styles/library-page.css";
+@import "../styles/admissions-page-nav.css";
+@import "../styles/admission-process-page.css";
+@import "../styles/fee-refund-policy-page.css";
+@import "../styles/online-admission-format-page.css";
+@import "../styles/research-development-cell-page.css";
+@import "../styles/academic-projects-page.css";
+@import "../styles/incubation-centre-page.css";
+@import "../styles/central-research-facilities-page.css";
+@import "../styles/sports-facilities-page.css";
+@import "../styles/nss-details-page.css";
+@import "../styles/student-life-rich-page.css";
+@import "../styles/mega-placement-drive-page.css";
+@import "../styles/differently-abled-page.css";
+@import "../styles/student-facilities-nav.css";
+@import "../styles/info-corner-pages.css";
+@import "../styles/international-students-page.css";
+@import "../styles/gallery-page.css";
+@import "../styles/gallery-detail-page.css";
+@import "../styles/contact-page.css";
+@import "lenis/dist/lenis.css";
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html:not(.has-smooth-scroll) {
+    scroll-behavior: smooth;
+  }
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+  color: var(--color-text);
+  background: var(--color-bg);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+  margin: 0;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Consistent corner radius on interactive buttons site-wide */
+.btn,
+.bihe-btn,
+.hero__cta,
+.hero__arrow,
+.back-to-hero,
+.bihe-site-header__nav-link,
+.bihe-site-header__nav-link-group,
+.bihe-site-header__submenu-link,
+.bihe-site-header__apply-top,
+.bihe-site-header__chevron-btn,
+.bihe-site-header__social-btn,
+.bihe-site-header__menu-btn,
+.bihe-wrap .footer__social-btn,
+.bihe-wrap .about__more,
+.about__more,
+.news__cta .btn,
+.recruiters__cta .btn,
+input[type="submit"],
+input[type="button"],
+input[type="reset"] {
+  border-radius: var(--btn-radius);
+}
+
+/* Site-wide paragraph justification */
+.bihe-wrap p {
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+/* Card body text — left-aligned */
+.bihe-wrap .course-card__desc,
+.bihe-wrap .facilities__card-desc,
+.bihe-wrap .edu-service-card__desc,
+.bihe-wrap .sl-rich-page__page-ref-desc,
+.bihe-wrap .sl-rich-page__page-ref-card--panel .sl-rich-page__page-ref-desc,
+.bihe-wrap .sl-rich-page__facility-text,
+.bihe-wrap .library-page__facility-desc,
+.bihe-wrap .ic-page__facility-desc,
+.bihe-wrap .bihe-mission__card p {
+  text-align: left;
+  text-justify: auto;
+}

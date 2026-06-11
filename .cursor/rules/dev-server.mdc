@@ -1,0 +1,13 @@
+---
+description: Keep the local dev server stable during edits in this Next.js project
+alwaysApply: true
+---
+
+# Dev server workflow (BIHE Website)
+
+- Local preview: `npm run dev` → http://127.0.0.1:3000
+- **While the dev server is running, use `npm run verify` for checks — NOT `npm run build`.**
+- `npm run build` writes to `.next-build` (safe), but still slows the machine; prefer `npm run verify` during active dev.
+- If the browser shows 500 or "disconnected", run `npm run dev` once (do not kill/restart repeatedly).
+- `npm run dev:status` checks whether the server is healthy.
+- Only use `npm run dev:clean` for stale chunk errors.

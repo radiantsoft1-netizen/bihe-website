@@ -1,0 +1,120 @@
+/* Shared BIHE data tables — Figma-aligned */
+
+.bihe-data-table-card {
+  max-width: 100%;
+  min-width: 0;
+  padding: clamp(1.5rem, 3vw, 2rem);
+  border: 1px solid rgba(30, 58, 117, 0.1);
+  border-radius: var(--radius-lg);
+  background: var(--navy-50, #eef2f8);
+  box-shadow: var(--shadow-soft);
+}
+
+.bihe-data-table-card .bihe-data-table-wrap {
+  margin: 0;
+}
+
+.bihe-data-table-wrap {
+  overflow-x: auto;
+  max-width: 100%;
+  width: 100%;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-x: contain;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(30, 58, 117, 0.35) transparent;
+  border: 1px solid rgba(30, 58, 117, 0.45);
+  border-radius: var(--radius-md);
+  background: #fff;
+}
+
+.bihe-data-table-wrap:focus-visible {
+  outline: 2px solid rgba(30, 58, 117, 0.45);
+  outline-offset: 2px;
+}
+
+.bihe-data-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--font-body);
+  font-size: 0.9375rem;
+  background: #fff;
+  table-layout: fixed;
+}
+
+.bihe-data-table colgroup col {
+  width: calc(100% / var(--bihe-table-cols, 1));
+}
+
+.bihe-data-table th,
+.bihe-data-table td {
+  width: calc(100% / var(--bihe-table-cols, 1));
+  padding: 0.95rem 1rem;
+  font-family: var(--font-body);
+  text-align: center;
+  border-bottom: 1px solid rgba(30, 58, 117, 0.1);
+  vertical-align: middle;
+}
+
+.bihe-data-table th {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-secondary);
+  background: #f5e6ea;
+  white-space: normal;
+  line-height: 1.35;
+}
+
+.bihe-data-table tbody tr {
+  background: #f7f9fc;
+}
+
+.bihe-data-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.bihe-data-table tbody td {
+  color: #1a1a1a;
+  overflow-wrap: anywhere;
+}
+
+.bihe-data-table__line {
+  display: block;
+}
+
+.bihe-data-table__line + .bihe-data-table__line {
+  margin-top: 0.2rem;
+}
+
+.bihe-data-table--index-col tbody td:first-child {
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+@media (max-width: 768px) {
+  .bihe-data-table-card {
+    padding: 1rem;
+  }
+
+  .bihe-data-table-wrap {
+    overflow-x: auto;
+    border: 1px solid rgba(30, 58, 117, 0.45);
+    border-radius: var(--radius-md);
+    background: #fff;
+  }
+
+  .bihe-data-table th,
+  .bihe-data-table td {
+    padding: 0.7rem 0.65rem;
+    font-size: 0.8125rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .bihe-data-table th,
+  .bihe-data-table td {
+    padding: 0.65rem 0.55rem;
+    font-size: 0.8rem;
+  }
+}

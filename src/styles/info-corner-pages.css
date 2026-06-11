@@ -1,0 +1,295 @@
+/* Info Corner dedicated pages — RTI, Circulars, International Students */
+
+.ic-page {
+  --ic-pad-x: clamp(1.25rem, 5vw, 7.5rem);
+  --ic-body-color: var(--color-text-secondary, #4a4a4a);
+}
+
+.ic-page__container {
+  width: min(100%, var(--container-max));
+  margin-inline: auto;
+  padding-inline: var(--ic-pad-x);
+}
+
+.ic-page__intro {
+  padding-block: clamp(2.5rem, 5vw, 3.5rem);
+}
+
+.ic-page__intro-body {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+  max-width: none;
+  margin-top: 1.25rem;
+}
+
+.ic-page__text {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: clamp(0.9375rem, 1.5vw, 1.0625rem);
+  line-height: 1.65;
+  color: var(--ic-body-color);
+  text-align: justify;
+}
+
+.ic-page__cpio-showcase {
+  min-height: auto;
+  padding-block: clamp(2rem, 4vw, 3rem);
+}
+
+.ic-page__cpio-portrait {
+  object-position: center top;
+}
+
+.ic-page__cpio-title {
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+}
+
+.ic-page__cpio-details {
+  margin: 1.5rem 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.ic-page__cpio-detail-row {
+  display: grid;
+  grid-template-columns: 8.5rem 1fr;
+  gap: 0.75rem;
+  align-items: baseline;
+}
+
+.ic-page__cpio-detail-label {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--navy-800, #172554);
+}
+
+.ic-page__cpio-detail-label::after {
+  content: " :";
+}
+
+.ic-page__cpio-detail-value {
+  margin: 0;
+  font-size: 0.9375rem;
+  line-height: 1.55;
+  color: var(--ic-body-color);
+}
+
+.ic-page__cpio-detail-link {
+  color: var(--navy-700, #1e3a75);
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+.ic-page__cpio-detail-link:hover {
+  color: var(--color-secondary, #c41e3a);
+}
+
+.ic-page__cpio-summary {
+  margin-top: 1.25rem;
+}
+
+.ic-page__steps {
+  padding-block: clamp(2rem, 4vw, 3rem);
+  background: linear-gradient(180deg, rgba(238, 242, 248, 0.5) 0%, transparent 100%);
+}
+
+.ic-page__steps-list {
+  list-style: none;
+  margin: 1.75rem 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.ic-page__step-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+  padding: clamp(1rem, 2.5vw, 1.35rem) clamp(1.15rem, 3vw, 1.5rem);
+  border: 1px solid rgba(30, 58, 117, 0.1);
+  border-radius: var(--radius-lg);
+  background: #fff;
+  box-shadow: var(--shadow-soft);
+}
+
+.ic-page__step-number {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background: var(--navy-700, #1e3a75);
+  color: #fff;
+  font-family: var(--font-display);
+  font-size: 0.875rem;
+  font-weight: 700;
+}
+
+.ic-page__step-text {
+  margin: 0.35rem 0 0;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--ic-body-color);
+}
+
+.ic-page--rti .cu-page__documents {
+  padding-block: clamp(2.5rem, 5vw, 4rem);
+}
+
+.ic-page__admission-steps {
+  padding-block: clamp(2rem, 4vw, 3rem);
+}
+
+.ic-page__two-col {
+  padding-block: clamp(2rem, 4vw, 3rem);
+}
+
+.ic-page__panel-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(1.25rem, 3vw, 2rem);
+}
+
+.ic-page__panel {
+  padding: clamp(1.5rem, 3vw, 2rem);
+  border: 1px solid rgba(30, 58, 117, 0.1);
+  border-radius: var(--radius-lg);
+  background: var(--navy-50, #eef2f8);
+  box-shadow: var(--shadow-soft);
+}
+
+.ic-page__panel .bihe-bullet-list {
+  margin-top: 1rem;
+}
+
+.ic-page__facilities {
+  padding-block: clamp(2.5rem, 5vw, 3.5rem);
+  background: linear-gradient(180deg, transparent 0%, rgba(238, 242, 248, 0.45) 100%);
+}
+
+.ic-page__facility-grid {
+  list-style: none;
+  margin: 1.75rem 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(1rem, 2.5vw, 1.5rem);
+}
+
+.ic-page__facility-card {
+  padding: clamp(1.25rem, 2.5vw, 1.5rem);
+  border: 1px solid rgba(30, 58, 117, 0.1);
+  border-radius: var(--radius-lg);
+  background: #fff;
+  box-shadow: var(--shadow-soft);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.ic-page__facility-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(30, 58, 117, 0.1);
+}
+
+.ic-page__facility-title {
+  margin: 0 0 0.65rem;
+  font-family: var(--font-display);
+  font-size: 1.0625rem;
+  font-weight: 700;
+  color: var(--navy-800, #172554);
+}
+
+.ic-page__facility-desc {
+  margin: 0;
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: var(--ic-body-color);
+}
+
+.ic-page__contact {
+  padding-block: clamp(2rem, 4vw, 3.5rem);
+}
+
+.ic-page__contact-panel {
+  max-width: 42rem;
+  padding: clamp(1.5rem, 3vw, 2rem);
+  border: 1px solid rgba(30, 58, 117, 0.1);
+  border-radius: var(--radius-lg);
+  background: #fff;
+  box-shadow: var(--shadow-soft);
+}
+
+.ic-page__contact-list {
+  margin: 1.25rem 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.ic-page__contact-row {
+  display: grid;
+  grid-template-columns: 7rem 1fr;
+  gap: 0.75rem;
+  align-items: baseline;
+}
+
+.ic-page__contact-label {
+  margin: 0;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--navy-600, #214998);
+}
+
+.ic-page__contact-value {
+  margin: 0;
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  color: var(--ic-body-color);
+}
+
+@media (max-width: 960px) {
+  .ic-page__panel-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ic-page__facility-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .ic-page__facility-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ic-page__contact-row,
+  .ic-page__cpio-detail-row {
+    grid-template-columns: 1fr;
+    gap: 0.25rem;
+  }
+
+  .ic-page__step-item {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+}
+
+/* Page background positioning for info corner pages */
+.bihe-wrap:has(.ic-page) > .bihe-page-bg .bihe-page-bg__blob--2 {
+  top: 18%;
+  right: 4%;
+}
+
+.bihe-wrap:has(.ic-page) > .bihe-page-bg .bihe-page-bg__dot--2 {
+  top: 72%;
+  left: 6%;
+}

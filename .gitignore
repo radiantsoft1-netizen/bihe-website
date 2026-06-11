@@ -1,0 +1,21 @@
+# dependencies
+node_modules/
+
+# next.js
+.next/
+.next-build/
+out/
+
+# gallery uploads (local dev)
+data/gallery.json
+public/uploads/gallery/*
+!public/uploads/gallery/.gitkeep
+
+# misc
+.DS_Store
+*.pem
+.env*.local
+
+# debug
+npm-debug.log*
+.cursor/debug-*.log

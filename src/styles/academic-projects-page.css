@@ -1,0 +1,19 @@
+/* Academic Projects — Figma node 1:20614 */
+
+.ap-page {
+  --ap-pad-x: clamp(1.25rem, 5vw, 7.5rem);
+}
+
+.bihe-wrap:has(.ap-page) {
+  background: #f7f9fc;
+}
+
+.bihe-wrap:has(.ap-page) > .bihe-page-bg {
+  display: none;
+}
+
+.ap-page .cu-page__documents {
+  padding-top: clamp(3.5rem, 7vw, 5.5rem);
+  padding-bottom: clamp(4.5rem, 9vw, 7rem);
+  padding-inline: var(--ap-pad-x);
+}

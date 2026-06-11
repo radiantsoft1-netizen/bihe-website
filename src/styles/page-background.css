@@ -1,0 +1,220 @@
+/* Scrollable page background shapes (not fixed) */
+
+.bihe-wrap {
+  position: relative;
+  isolation: isolate;
+  overflow-x: hidden;
+}
+
+.bihe-wrap > main {
+  overflow-x: clip;
+}
+
+.bihe-wrap > .bihe-page-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  min-height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.bihe-wrap > main {
+  position: relative;
+  z-index: 1;
+  padding-top: var(--site-header-height, 7.5rem);
+  transition: padding-top var(--header-motion, 0.55s) var(--header-ease, cubic-bezier(0.22, 1, 0.36, 1));
+}
+
+.bihe-wrap > footer {
+  position: relative;
+  z-index: 1;
+}
+
+.bihe-page-bg__blob,
+.bihe-page-bg__ring,
+.bihe-page-bg__zigzag,
+.bihe-page-bg__plus,
+.bihe-page-bg__triangle,
+.bihe-page-bg__dot {
+  position: absolute;
+  pointer-events: none;
+}
+
+/* Blobs — navy & maroon, low opacity */
+.bihe-page-bg__blob--1 {
+  top: 6%;
+  left: -8%;
+  width: min(22rem, 38vw);
+  color: var(--color-primary);
+  opacity: 0.09;
+  animation: page-bg-float 14s ease-in-out infinite;
+}
+
+.bihe-page-bg__blob--2 {
+  top: 22%;
+  right: -6%;
+  width: min(20rem, 34vw);
+  color: var(--color-secondary);
+  opacity: 0.08;
+  animation: page-bg-float-alt 16s ease-in-out infinite;
+}
+
+.bihe-page-bg__blob--3 {
+  top: 48%;
+  left: 4%;
+  width: min(14rem, 26vw);
+  color: var(--color-primary-500);
+  opacity: 0.07;
+  animation: page-bg-float 18s ease-in-out infinite reverse;
+}
+
+/* Extra blobs via pseudo on container — use ring/dot for mid page */
+.bihe-page-bg__ring--1 {
+  top: 14%;
+  right: 12%;
+  width: min(9rem, 16vw);
+  color: var(--color-secondary);
+  opacity: 0.14;
+  animation: page-bg-float-alt 20s ease-in-out infinite;
+}
+
+.bihe-page-bg__ring--2 {
+  top: 62%;
+  right: 8%;
+  width: min(7rem, 12vw);
+  color: var(--color-primary);
+  opacity: 0.12;
+  animation: page-bg-float 22s ease-in-out infinite;
+}
+
+.bihe-page-bg__dot--1 {
+  top: 32%;
+  left: 18%;
+  width: 0.75rem;
+  height: 0.75rem;
+  border-radius: 50%;
+  background: var(--color-secondary);
+  opacity: 0.35;
+}
+
+.bihe-page-bg__dot--2 {
+  top: 55%;
+  right: 22%;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background: var(--color-primary);
+  opacity: 0.3;
+}
+
+.bihe-page-bg__dot--3 {
+  top: 72%;
+  left: 12%;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  background: transparent;
+  border: 2px solid var(--color-secondary);
+  opacity: 0.25;
+}
+
+.bihe-page-bg__dot--4 {
+  top: 88%;
+  right: 28%;
+  width: 0.65rem;
+  height: 0.65rem;
+  border-radius: 50%;
+  background: var(--color-primary-500);
+  opacity: 0.28;
+}
+
+.bihe-page-bg__zigzag {
+  top: 38%;
+  right: 4%;
+  width: min(6rem, 12vw);
+  color: var(--color-secondary);
+  opacity: 0.12;
+  animation: page-bg-float 11s ease-in-out infinite;
+}
+
+.bihe-page-bg__plus {
+  top: 68%;
+  left: 6%;
+  width: 2.5rem;
+  color: var(--color-primary);
+  opacity: 0.1;
+  animation: page-bg-float-alt 13s ease-in-out infinite;
+}
+
+.bihe-page-bg__triangle {
+  top: 82%;
+  left: -2%;
+  width: 4rem;
+  color: var(--color-secondary);
+  opacity: 0.06;
+  transform: rotate(12deg);
+  animation: page-bg-float 17s ease-in-out infinite reverse;
+}
+
+/* Light sections: slight translucency so shapes peek through */
+.bihe-wrap .about,
+.bihe-wrap .accreditation,
+.bihe-wrap .courses,
+.bihe-wrap .facilities,
+.bihe-wrap .news,
+.bihe-wrap .recruiters,
+.bihe-wrap .gallery {
+  background: linear-gradient(
+    180deg,
+    rgba(248, 250, 252, 0.88) 0%,
+    rgba(238, 242, 248, 0.85) 100%
+  );
+}
+
+.bihe-wrap .accreditation {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.9) 0%,
+    rgba(244, 246, 250, 0.88) 100%
+  );
+}
+
+.bihe-wrap .courses {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 248, 248, 0.94) 0%,
+    rgba(255, 255, 255, 0.92) 50%,
+    rgba(244, 246, 250, 0.9) 100%
+  );
+}
+
+.bihe-wrap .facilities {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.95) 0%,
+    rgba(244, 246, 250, 0.92) 100%
+  );
+}
+
+.bihe-wrap .news {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.92) 0%,
+    rgba(244, 246, 250, 0.88) 100%
+  );
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bihe-page-bg__blob,
+  .bihe-page-bg__ring,
+  .bihe-page-bg__zigzag,
+  .bihe-page-bg__plus,
+  .bihe-page-bg__triangle {
+    animation: none;
+  }
+}

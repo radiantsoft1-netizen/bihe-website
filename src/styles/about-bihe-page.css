@@ -1,0 +1,118 @@
+/* About BIHE inner page */
+
+.about-bihe-page {
+  --about-bihe-pad-x: clamp(1.25rem, 5vw, 7.5rem);
+}
+
+.about-bihe-hero {
+  position: relative;
+  padding: clamp(2rem, 5vw, 3.5rem) var(--about-bihe-pad-x)
+    clamp(2.5rem, 6vw, 4rem);
+  background: linear-gradient(
+    135deg,
+    var(--color-primary-dark) 0%,
+    var(--color-primary) 55%,
+    #2a4f9c 100%
+  );
+  color: #fff;
+  overflow: hidden;
+}
+
+.about-bihe-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 85% 20%, rgba(116, 0, 0, 0.35) 0%, transparent 45%),
+    radial-gradient(circle at 10% 80%, rgba(255, 255, 255, 0.08) 0%, transparent 40%);
+  pointer-events: none;
+}
+
+.about-bihe-hero__container {
+  position: relative;
+  z-index: 1;
+  width: min(100%, var(--container-max));
+  margin-inline: auto;
+}
+
+.about-bihe-breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem 0.5rem;
+  margin-bottom: 1.25rem;
+  font-size: 0.8125rem;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.about-bihe-breadcrumb a {
+  color: rgba(255, 255, 255, 0.9);
+  transition: color 0.2s ease;
+}
+
+.about-bihe-breadcrumb a:hover {
+  color: #fff;
+}
+
+.about-bihe-breadcrumb [aria-current="page"] {
+  color: #fff;
+  font-weight: 600;
+}
+
+.about-bihe-hero__eyebrow {
+  margin: 0 0 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--maroon-100);
+}
+
+.about-bihe-hero__title {
+  margin: 0;
+  font-family: var(--font-hero);
+  font-size: clamp(2rem, 5vw, 3.25rem);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.about-bihe-hero__lead {
+  margin: 1rem 0 0;
+  max-width: 40rem;
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.88);
+}
+
+/* About BIHE intro — reuses .about layout from modern-page.css (Figma-aligned) */
+.bihe-wrap .about-bihe-intro {
+  padding-inline: var(--about-bihe-pad-x);
+}
+
+.bihe-wrap .about-bihe-intro .about__content {
+  gap: 0;
+}
+
+.bihe-wrap .about-bihe-intro .about__intro {
+  gap: 1.25rem;
+}
+
+.bihe-wrap .about-bihe-intro__body {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.bihe-wrap .about-bihe-intro__body .about__desc {
+  margin: 0;
+  text-align: justify;
+}
+
+.bihe-wrap .about-bihe-intro__subtitle {
+  margin: 1.25rem 0 0.25rem;
+  font-family: var(--font-hero);
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--color-secondary);
+}

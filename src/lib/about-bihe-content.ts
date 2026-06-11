@@ -1,0 +1,6 @@
+export const ABOUT_BIHE_OVERVIEW_PARAGRAPHS = [
+  `Bapuji Institute of Hi-Tech Education imparts advanced curriculum course on Bachelor of Computer Application (BCA) & Bachelor of Commerce (B.Com). At BIHE, we believe that learning is most fruitful when knowledge and expertise of individuals from various disciplines and diverse backgrounds are shared. As this provides a cutting edge to professional education, we encourage such diversity which is reflected in the institute.`,
+  `We also believe that innovation is the key to progress in the technical world, so in our pursuit of excellence, we constantly upgrade and add newer areas of education and research to make our programs more relevant to the students.`,
+  `Most importantly, we believe that openness, participation and fairness are necessary for building a culture conducive to learning and growth.`,
+  `The zeal and enthusiasm depicted in the number of enrolments each year only proves our credentials. Our programs combine highly researched curriculum designed by the University integrated with industry-related concepts and practices. Each of the Group offers a unique blend of theoretical and cutting edge inputs to students, making them technically well-grounded professionals.`,
+] as const;

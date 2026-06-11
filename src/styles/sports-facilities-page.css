@@ -1,0 +1,361 @@
+/* Sports Facilities — Figma node 1:10990 */
+
+.sf-page {
+  --sf-pad-x: clamp(1.25rem, 5vw, 7.5rem);
+}
+
+.bihe-wrap:has(.sf-page) {
+  background: #f7f9fc;
+}
+
+.bihe-wrap:has(.sf-page) > .bihe-page-bg {
+  display: none;
+}
+
+.sf-page__container {
+  width: min(100%, var(--container-max));
+  margin-inline: auto;
+}
+
+.sf-page__section-title {
+  margin: 0 0 clamp(1rem, 2vw, 1.35rem);
+  font-family: var(--font-hero);
+  font-size: clamp(1.125rem, 2.2vw, 1.375rem);
+  font-weight: 700;
+  line-height: 1.35;
+  color: var(--color-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.sf-page__section-title--maroon {
+  color: var(--color-secondary);
+}
+
+.sf-page__text {
+  margin: 0 0 0.9rem;
+  font-size: 1rem;
+  line-height: 1.75;
+  color: var(--color-text-secondary);
+  text-align: justify;
+}
+
+.sf-page__text:last-child {
+  margin-bottom: 0;
+}
+
+/* Hero banner */
+.sf-page__banner {
+  padding: clamp(2rem, 4vw, 2.75rem) var(--sf-pad-x);
+  background: #fff;
+}
+
+.sf-page__banner-frame {
+  position: relative;
+  width: min(100%, var(--container-max));
+  margin-inline: auto;
+  aspect-ratio: 16 / 6;
+  min-height: clamp(11rem, 28vw, 18rem);
+  overflow: hidden;
+  border-radius: 0.85rem;
+  background: var(--color-primary-dark);
+  border-left: 4px solid var(--color-secondary);
+  box-shadow:
+    0 1.25rem 2.5rem rgba(30, 58, 117, 0.14),
+    0 0.5rem 1.25rem rgba(30, 58, 117, 0.06);
+}
+
+.sf-page__banner-img {
+  object-fit: cover;
+  object-position: center;
+}
+
+.sf-page__banner-scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(15, 23, 42, 0.08) 0%, rgba(15, 23, 42, 0.22) 100%);
+  pointer-events: none;
+}
+
+/* Intro */
+.sf-page__intro {
+  padding: clamp(2.5rem, 5vw, 3.5rem) var(--sf-pad-x);
+  background: #fff;
+}
+
+.sf-page__intro-body {
+  width: 100%;
+  max-width: none;
+}
+
+/* Facilities navigation cards */
+.sf-page__facilities {
+  padding: clamp(2.5rem, 5vw, 3.5rem) var(--sf-pad-x) clamp(3rem, 6vw, 4.5rem);
+  background: #f7f9fc;
+}
+
+.sf-page__facility-nav-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.9rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.sf-page__facility-card {
+  height: 100%;
+  border-radius: 1rem;
+  overflow: hidden;
+  background: var(--color-primary-dark);
+  box-shadow: 0 0.75rem 2rem rgba(30, 58, 117, 0.12);
+  transition:
+    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.35s ease;
+}
+
+.sf-page__facility-card-link {
+  display: block;
+  height: 100%;
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.sf-page__facility-card-link:focus-visible {
+  outline: 2px solid var(--color-secondary);
+  outline-offset: 3px;
+}
+
+.sf-page__facility-card-link:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 1rem 2.25rem rgba(30, 58, 117, 0.16);
+}
+
+.sf-page__facility-media {
+  position: relative;
+  min-height: clamp(10.5rem, 20vw, 13.5rem);
+}
+
+.sf-page__facility-img {
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.sf-page__facility-card-link:hover .sf-page__facility-img {
+  transform: scale(1.04);
+}
+
+.sf-page__facility-scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 35%, rgba(15, 23, 42, 0.72) 100%);
+  pointer-events: none;
+}
+
+.sf-page__facility-label {
+  position: absolute;
+  left: 1rem;
+  right: 1rem;
+  bottom: 0.9rem;
+  z-index: 1;
+  margin: 0;
+  font-family: var(--font-hero);
+  font-size: clamp(0.8125rem, 1.5vw, 0.95rem);
+  font-weight: 700;
+  line-height: 1.35;
+  color: #fff;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
+}
+
+.sf-page__anchor {
+  scroll-margin-top: calc(var(--scroll-anchor-offset, 6.5rem) + 0.5rem);
+}
+
+/* Events */
+.sf-page__events {
+  padding: clamp(3rem, 6vw, 4.5rem) var(--sf-pad-x);
+  background: #fff;
+}
+
+.sf-page__events-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  gap: clamp(2rem, 4vw, 3.5rem);
+  align-items: center;
+}
+
+.sf-page__events-subtitle {
+  margin: 0 0 0.65rem;
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.sf-page__events-block + .sf-page__events-block {
+  margin-top: 1.35rem;
+}
+
+.sf-page__events-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 0.45rem;
+}
+
+.sf-page__events-list li {
+  position: relative;
+  padding-left: 1.1rem;
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  color: var(--color-text-secondary);
+}
+
+.sf-page__events-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 0.4rem;
+  height: 0.4rem;
+  border-radius: 50%;
+  background: var(--color-secondary);
+}
+
+.sf-page__events-visual {
+  margin: 0;
+}
+
+.sf-page__events-frame {
+  position: relative;
+  width: min(100%, 24rem);
+  margin-inline: auto;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  border-radius: 1.25rem;
+  background: var(--color-primary-dark);
+  border-left: 4px solid var(--color-secondary);
+  box-shadow: 0 1.25rem 2.5rem rgba(30, 58, 117, 0.14);
+}
+
+.sf-page__events-img {
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Inter-college tournaments */
+.sf-page__tournaments {
+  padding: clamp(3rem, 6vw, 4.5rem) var(--sf-pad-x) clamp(4rem, 7vw, 5rem);
+  background: #f7f9fc;
+}
+
+.sf-page__tournaments-lead {
+  margin: 0 0 clamp(1.75rem, 3vw, 2.5rem);
+  max-width: 48rem;
+  font-size: 1rem;
+  line-height: 1.75;
+  color: var(--color-text-secondary);
+}
+
+.sf-page__tournament-stack {
+  display: grid;
+  gap: 0;
+}
+
+.sf-page__tournament {
+  padding: clamp(2rem, 4vw, 2.75rem) 0;
+}
+
+.sf-page__tournament--light {
+  background: transparent;
+}
+
+.sf-page__tournament--muted {
+  background: #fff;
+  border-radius: 1rem;
+  padding-inline: clamp(1rem, 3vw, 1.75rem);
+  box-shadow: 0 0.5rem 1.5rem rgba(30, 58, 117, 0.06);
+}
+
+.sf-page__tournament-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+  gap: clamp(1.5rem, 3vw, 2.5rem);
+  align-items: center;
+}
+
+.sf-page__tournament--reverse .sf-page__tournament-grid {
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+}
+
+.sf-page__tournament--reverse .sf-page__tournament-visual {
+  order: 2;
+}
+
+.sf-page__tournament--reverse .sf-page__tournament-copy {
+  order: 1;
+}
+
+.sf-page__tournament-frame {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  min-height: clamp(10rem, 22vw, 14rem);
+  overflow: hidden;
+  border-radius: 0.85rem;
+  background: var(--color-primary-dark);
+  border-left: 4px solid var(--color-secondary);
+  box-shadow: 0 1rem 2rem rgba(30, 58, 117, 0.12);
+}
+
+.sf-page__tournament-img {
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.sf-page__tournament-frame:hover .sf-page__tournament-img {
+  transform: scale(1.03);
+}
+
+.sf-page__tournament-title {
+  margin: 0 0 0.85rem;
+  font-family: var(--font-hero);
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  font-weight: 700;
+  line-height: 1.4;
+  color: var(--color-primary);
+}
+
+@media (max-width: 960px) {
+  .sf-page__facility-nav-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .sf-page__events-grid,
+  .sf-page__tournament-grid,
+  .sf-page__tournament--reverse .sf-page__tournament-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .sf-page__tournament--reverse .sf-page__tournament-visual,
+  .sf-page__tournament--reverse .sf-page__tournament-copy {
+    order: initial;
+  }
+}
+
+@media (max-width: 640px) {
+  .sf-page__facility-nav-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .sf-page__banner-frame {
+    aspect-ratio: 16 / 9;
+    min-height: 10rem;
+  }
+
+  .sf-page__facility-media {
+    min-height: 11rem;
+  }
+}

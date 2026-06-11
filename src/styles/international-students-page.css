@@ -1,0 +1,28 @@
+/* International Students Admission — Principal-style showcases */
+
+.international-students-page .principal-page__showcase {
+  min-height: 820px;
+}
+
+.international-students-page__portrait-img {
+  object-position: center top;
+}
+
+.international-students-page .principal-page__grid--reverse .principal-page__visual {
+  order: 2;
+}
+
+.international-students-page .principal-page__grid--reverse .principal-page__content {
+  order: 1;
+}
+
+@media (max-width: 960px) {
+  .international-students-page .principal-page__showcase {
+    min-height: auto;
+  }
+
+  .international-students-page .principal-page__grid--reverse .principal-page__visual,
+  .international-students-page .principal-page__grid--reverse .principal-page__content {
+    order: unset;
+  }
+}

@@ -1,0 +1,183 @@
+/* Online Admission Format — Figma node 714:2863 */
+
+.online-admission-format-page {
+  --oaf-pad-x: clamp(1.25rem, 5vw, 7.5rem);
+}
+
+.bihe-wrap:has(.online-admission-format-page) {
+  background: #f7f9fc;
+}
+
+.bihe-wrap:has(.online-admission-format-page) > .bihe-page-bg {
+  display: none;
+}
+
+.online-admission-format-page__container {
+  width: min(100%, 56rem);
+  margin-inline: auto;
+}
+
+.online-admission-format-page__intro {
+  padding: clamp(3rem, 6vw, 4rem) var(--oaf-pad-x);
+  background: #fff;
+}
+
+.online-admission-format-page__lead {
+  margin: 1.15rem 0 1.5rem;
+  max-width: none;
+  font-size: 1.0625rem;
+  line-height: 1.75;
+  color: var(--color-text-secondary);
+}
+
+.online-admission-format-page__portal-line {
+  margin: 0 0 clamp(1.25rem, 2.5vw, 1.75rem);
+  font-size: 1rem;
+  line-height: 1.65;
+  color: var(--color-text-secondary);
+}
+
+.online-admission-format-page__portal-link {
+  color: var(--color-primary);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+  word-break: break-all;
+}
+
+.online-admission-format-page__portal-link:hover {
+  color: var(--color-secondary);
+}
+
+.online-admission-format-page__form-caption {
+  margin: 0;
+  padding: 0.85rem 1rem;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  text-align: center;
+  color: var(--color-primary);
+  background: var(--navy-50, #eef2f8);
+  border-top: 1px solid rgba(30, 58, 117, 0.08);
+}
+
+.online-admission-format-page__step {
+  padding: clamp(2.5rem, 5vw, 3.5rem) var(--oaf-pad-x);
+}
+
+.online-admission-format-page__step--light {
+  background: #fff;
+}
+
+.online-admission-format-page__step--cream {
+  background: var(--bihe-cream, #f4f6fa);
+}
+
+.online-admission-format-page__step-title {
+  margin: 0 0 clamp(1rem, 2vw, 1.35rem);
+  font-family: var(--font-hero);
+  font-size: clamp(1.125rem, 2.2vw, 1.5rem);
+  font-weight: 700;
+  line-height: 1.35;
+  color: var(--color-secondary);
+}
+
+.online-admission-format-page__step-text {
+  margin: 0 0 0.9rem;
+  font-size: 1rem;
+  line-height: 1.75;
+  color: var(--color-text-secondary);
+}
+
+.online-admission-format-page__step-text:last-of-type {
+  margin-bottom: clamp(1.25rem, 2.5vw, 1.75rem);
+}
+
+.online-admission-format-page__form-panel {
+  margin: 0 0 clamp(1.5rem, 3vw, 2rem);
+  overflow: hidden;
+  border-radius: 1rem;
+  border: 1px solid rgba(30, 58, 117, 0.12);
+  box-shadow: 0 1rem 2.25rem rgba(30, 58, 117, 0.12);
+  background: #fff;
+}
+
+.online-admission-format-page__form-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.online-admission-format-page__sub-block {
+  margin-top: 0.5rem;
+  padding: clamp(1.15rem, 2.5vw, 1.5rem);
+  border-radius: 1rem;
+  background: rgba(30, 58, 117, 0.04);
+  border: 1px solid rgba(30, 58, 117, 0.08);
+}
+
+.online-admission-format-page__sub-title {
+  margin: 0 0 0.85rem;
+  font-family: var(--font-hero);
+  font-size: 1.0625rem;
+  font-weight: 700;
+  line-height: 1.35;
+  color: var(--color-primary);
+}
+
+.online-admission-format-page__bullet-list {
+  gap: 0.65rem;
+}
+
+.online-admission-format-page__ordered-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: oaf-step;
+  display: grid;
+  gap: 0.85rem;
+}
+
+.online-admission-format-page__ordered-list li {
+  position: relative;
+  counter-increment: oaf-step;
+  padding: 1rem 1rem 1rem 3.25rem;
+  border-radius: 0.95rem;
+  background: #fff;
+  border: 1px solid rgba(30, 58, 117, 0.1);
+  box-shadow: 0 0.35rem 1rem rgba(30, 58, 117, 0.06);
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--color-text-secondary);
+}
+
+.online-admission-format-page__step--light .online-admission-format-page__ordered-list li {
+  background: var(--bihe-cream, #f4f6fa);
+}
+
+.online-admission-format-page__ordered-list li::before {
+  content: counter(oaf-step);
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  display: grid;
+  place-items: center;
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: 50%;
+  background: var(--color-primary);
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.online-admission-format-page__step:nth-child(even) .online-admission-format-page__ordered-list li::before {
+  background: var(--color-secondary);
+}
+
+@media (max-width: 720px) {
+  .online-admission-format-page__container {
+    width: min(100%, var(--container-max));
+  }
+}

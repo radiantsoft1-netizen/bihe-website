@@ -1,0 +1,53 @@
+/* Academic Calendar */
+
+.calendar-page {
+  --calendar-pad-x: clamp(1.25rem, 5vw, 7.5rem);
+}
+
+.bihe-wrap:has(.calendar-page) {
+  background: #f7f9fc;
+}
+
+.bihe-wrap:has(.calendar-page) > .bihe-page-bg {
+  display: none;
+}
+
+.calendar-page__container {
+  width: min(100%, var(--container-max));
+  margin-inline: auto;
+}
+
+.calendar-page__intro {
+  padding: clamp(2.5rem, 5vw, 4rem) var(--calendar-pad-x);
+  background: #fff;
+}
+
+.calendar-page__intro .reveal {
+  width: 100%;
+}
+
+.calendar-page__lead {
+  margin: 1.25rem 0 0;
+  width: 100%;
+  max-width: none;
+  font-size: 1rem;
+  line-height: 1.75;
+  color: var(--color-text-secondary);
+  text-align: justify;
+}
+
+.calendar-page .cu-page__documents {
+  padding: clamp(2.5rem, 5vw, 4rem) var(--calendar-pad-x);
+  background: #fff;
+}
+
+.calendar-page .cu-page__documents::before {
+  display: none;
+}
+
+.calendar-page .reveal {
+  opacity: 1;
+  transform: none;
+  will-change: auto;
+}
+
