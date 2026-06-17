@@ -24,7 +24,7 @@ export const ABOUT_SUBMENU: AboutSubmenuItem[] = [
       "Strategic roadmap for academic growth, infrastructure, and quality enhancement across programs.",
   },
   {
-    label: "Constituent Units",
+    label: "Affliation",
     href: "/constituent-units",
     description:
       "Affiliation and university recognition documents for BIHE constituent programmes.",

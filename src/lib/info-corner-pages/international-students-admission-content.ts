@@ -3,17 +3,13 @@ import { images } from "@/lib/images";
 export const INTERNATIONAL_STUDENTS_PAGE_LEAD =
   "Admission guidelines, eligibility criteria, required documentation, and campus facilities for international students at BIHE, Davangere.";
 
-export const INTERNATIONAL_STUDENTS_INTRO = {
-  badge: "International Admissions",
-  title: "Admission procedure",
-  paragraphs: [
-    "The admission process at BIHE College begins with students completing the online registration form available on the college website and submitting it along with the required academic documents and ID proof. After receiving the application, the admissions team verifies all documents and checks the eligibility criteria for the chosen course. If applicable, candidates may be asked to attend an entrance assessment or interview. Once shortlisted, students must pay the admission or registration fee to confirm their seat. After successful verification and payment, the college issues an official admission confirmation, followed by details regarding orientation, class schedules, and academic guidelines.",
-  ],
-} as const;
+const ADMISSION_PROCEDURE_TEXT =
+  "The admission process at BIHE College begins with students completing the online registration form available on the college website and submitting it along with the required academic documents and ID proof. After receiving the application, the admissions team verifies all documents and checks the eligibility criteria for the chosen course. If applicable, candidates may be asked to attend an entrance assessment or interview. Once shortlisted, students must pay the admission or registration fee to confirm their seat. After successful verification and payment, the college issues an official admission confirmation, followed by details regarding orientation, class schedules, and academic guidelines.";
 
 export type InternationalStudentsShowcase = {
   id: string;
   reverse?: boolean;
+  hideVisual?: boolean;
   badge: string;
   title: {
     lead: string;
@@ -25,6 +21,23 @@ export type InternationalStudentsShowcase = {
 };
 
 export const INTERNATIONAL_STUDENTS_SHOWCASES: readonly InternationalStudentsShowcase[] = [
+  {
+    id: "admission-procedure",
+    hideVisual: true,
+    badge: "International Admissions",
+    title: {
+      lead: "Admission",
+      accent: "procedure",
+    },
+    paragraphs: [
+      {
+        text: ADMISSION_PROCEDURE_TEXT,
+        emphasis: false,
+      },
+    ],
+    image: images.internationalStudentsAdmissionProcess,
+    imageAlt: "International students admission process at BIHE, Davangere",
+  },
   {
     id: "hostel-details",
     badge: "Accommodation",

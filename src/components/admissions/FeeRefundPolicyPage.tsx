@@ -18,16 +18,16 @@ export function FeeRefundPolicyPage() {
         sectionHref={ADMISSIONS_BASE_PATH}
       />
 
-      <section className="fee-refund-policy-page__intro" aria-labelledby="fee-refund-intro-title">
-        <div className="fee-refund-policy-page__container">
+      <section className="about-bihe-intro" aria-labelledby="fee-refund-intro-title">
+        <div className="about-bihe-hero__container">
           <Reveal>
-            <div className="fee-refund-policy-page__intro-copy">
-              <p className="fee-refund-policy-page__eyebrow">{FEE_REFUND_POLICY_INTRO.eyebrow}</p>
-              <h2 className="fee-refund-policy-page__intro-title" id="fee-refund-intro-title">
-                {FEE_REFUND_POLICY_INTRO.title}
-              </h2>
+            <p className="fee-refund-policy-page__eyebrow">{FEE_REFUND_POLICY_INTRO.eyebrow}</p>
+            <h2 className="fee-refund-policy-page__intro-title" id="fee-refund-intro-title">
+              {FEE_REFUND_POLICY_INTRO.title}
+            </h2>
+            <div className="about-bihe-intro__body">
               {FEE_REFUND_POLICY_INTRO.paragraphs.map((paragraph) => (
-                <p key={paragraph.slice(0, 48)} className="fee-refund-policy-page__intro-text">
+                <p key={paragraph.slice(0, 48)} className="about__desc">
                   {paragraph}
                 </p>
               ))}

@@ -1,19 +1,23 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { InfoCornerCategoryPage } from "@/components/info-corner/InfoCornerCategoryPage";
 import { CircularsAndNoticesPage } from "@/components/info-corner/CircularsAndNoticesPage";
-import { InfoCornerContentPage } from "@/components/info-corner/InfoCornerContentPage";
 import { InternationalStudentsAdmissionPage } from "@/components/info-corner/InternationalStudentsAdmissionPage";
+import { JobOpeningsPage } from "@/components/info-corner/JobOpeningsPage";
+import { NewsEventsAchievementsPage } from "@/components/info-corner/NewsEventsAchievementsPage";
+import { NewslettersPage } from "@/components/info-corner/NewslettersPage";
 import { RtiDetailsPage } from "@/components/info-corner/RtiDetailsPage";
 import { SitePageShell } from "@/components/layout/SitePageShell";
-import {
-  getInfoCornerPage,
-  INFO_CORNER_PAGE_SLUGS,
-} from "@/lib/info-corner-content";
+import { INFO_CORNER_CATEGORY_SLUGS, isInfoCornerCategorySlug } from "@/lib/info-corner-items-service";
+import { getInfoCornerPage } from "@/lib/info-corner-service";
 
 const DEDICATED_INFO_CORNER_PAGES = {
   "rti-details": RtiDetailsPage,
-  "circulars-and-notices": CircularsAndNoticesPage,
   "international-students-admission": InternationalStudentsAdmissionPage,
+  newsletters: NewslettersPage,
+  "news-events-achievements": NewsEventsAchievementsPage,
+  "job-openings": JobOpeningsPage,
+  "circulars-and-notices": CircularsAndNoticesPage,
 } as const;
 
 type InfoCornerRoutePageProps = {
@@ -21,14 +25,17 @@ type InfoCornerRoutePageProps = {
 };
 
 export function generateStaticParams() {
-  return INFO_CORNER_PAGE_SLUGS.map((slug) => ({ slug }));
+  const dedicated = ["rti-details", "international-students-admission"];
+  const slugs = [...new Set([...INFO_CORNER_CATEGORY_SLUGS, ...dedicated])];
+
+  return slugs.map((slug) => ({ slug }));
 }
 
 export async function generateMetadata({
   params,
 }: InfoCornerRoutePageProps): Promise<Metadata> {
   const { slug } = await params;
-  const page = getInfoCornerPage(slug);
+  const page = await getInfoCornerPage(slug);
 
   if (!page) {
     return { title: "Info - Corner | BIHE" };
@@ -42,20 +49,27 @@ export async function generateMetadata({
 
 export default async function InfoCornerRoutePage({ params }: InfoCornerRoutePageProps) {
   const { slug } = await params;
-  const page = getInfoCornerPage(slug);
-
-  if (!page) {
-    notFound();
-  }
 
   const DedicatedPage =
     slug in DEDICATED_INFO_CORNER_PAGES
       ? DEDICATED_INFO_CORNER_PAGES[slug as keyof typeof DEDICATED_INFO_CORNER_PAGES]
       : null;
 
-  return (
-    <SitePageShell>
-      {DedicatedPage ? <DedicatedPage /> : <InfoCornerContentPage {...page} />}
-    </SitePageShell>
-  );
+  if (DedicatedPage) {
+    return (
+      <SitePageShell>
+        <DedicatedPage />
+      </SitePageShell>
+    );
+  }
+
+  if (isInfoCornerCategorySlug(slug)) {
+    return (
+      <SitePageShell>
+        <InfoCornerCategoryPage categorySlug={slug} />
+      </SitePageShell>
+    );
+  }
+
+  notFound();
 }

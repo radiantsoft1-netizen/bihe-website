@@ -1,10 +1,13 @@
 import { Reveal } from "@/components/ui/Reveal";
 import { SmartImage } from "@/components/ui/SmartImage";
+import { ProgrammeStatIcon } from "@/components/academics/ProgrammeStatIcon";
 
 type ProgrammeStat = {
   value: string;
   label: string;
   suffix: string;
+  icon: "intake" | "duration" | "level";
+  tone?: "navy" | "maroon";
 };
 
 export type AcademicsProgrammeShowcaseConfig = {
@@ -13,12 +16,6 @@ export type AcademicsProgrammeShowcaseConfig = {
   headline: string;
   subline: string;
   description?: string;
-  glass: {
-    title: string;
-    subtitle: string;
-    statValue: string;
-    statLabel: string;
-  };
   stats: readonly ProgrammeStat[];
   tagsLabel: string;
   tags: readonly string[];
@@ -59,16 +56,6 @@ export function AcademicsProgrammeShowcase({ config }: AcademicsProgrammeShowcas
                     priority
                   />
                   <span className="b-com-admin__editorial-vignette" aria-hidden />
-                  <div className="b-com-admin__programme-glass">
-                    <div className="b-com-admin__programme-glass-copy">
-                      <p className="b-com-admin__programme-glass-title">{config.glass.title}</p>
-                      <p className="b-com-admin__programme-glass-sub">{config.glass.subtitle}</p>
-                    </div>
-                    <div className="b-com-admin__programme-glass-stat">
-                      <strong>{config.glass.statValue}</strong>
-                      <span>{config.glass.statLabel}</span>
-                    </div>
-                  </div>
                 </div>
               </div>
             </figure>
@@ -85,12 +72,25 @@ export function AcademicsProgrammeShowcase({ config }: AcademicsProgrammeShowcas
 
             <ul className="b-com-admin__programme-stats" aria-label={`${config.headline} programme highlights`}>
               {config.stats.map((stat) => (
-                <li key={stat.label} className="b-com-admin__programme-stat">
-                  <strong>
-                    {stat.value}
-                    {stat.suffix}
-                  </strong>
-                  <span>{stat.label}</span>
+                <li
+                  key={stat.label}
+                  className={
+                    "b-com-admin__programme-stat" +
+                    (stat.tone === "maroon"
+                      ? " b-com-admin__programme-stat--maroon"
+                      : " b-com-admin__programme-stat--navy")
+                  }
+                >
+                  <span className="b-com-admin__programme-stat-icon" aria-hidden>
+                    <ProgrammeStatIcon icon={stat.icon} />
+                  </span>
+                  <div className="b-com-admin__programme-stat-body">
+                    <strong>
+                      {stat.value}
+                      {stat.suffix}
+                    </strong>
+                    <span>{stat.label}</span>
+                  </div>
                 </li>
               ))}
             </ul>

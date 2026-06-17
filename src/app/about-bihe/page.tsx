@@ -1,3 +1,4 @@
+/** Phase 1 static — see `src/lib/phase1-static-pages.ts`. No API/CMS wiring. */
 import type { Metadata } from "next";
 import { AboutBihePage } from "@/components/about/AboutBihePage";
 import { SitePageShell } from "@/components/layout/SitePageShell";

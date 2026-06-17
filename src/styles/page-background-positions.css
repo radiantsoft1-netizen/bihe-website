@@ -447,15 +447,17 @@
 }
 
 /* —— Internal Complaint Committee sections —— */
-.icc-page__intro,
-.icc-page__objectives,
+.icc-page__about,
+.icc-page__pillars,
+.icc-page__values,
+.icc-page__commitment,
 .icc-page__committee {
   position: relative;
   overflow: hidden;
   isolation: isolate;
 }
 
-.icc-page__intro::before {
+.icc-page__about::before {
   content: "";
   position: absolute;
   top: 10%;

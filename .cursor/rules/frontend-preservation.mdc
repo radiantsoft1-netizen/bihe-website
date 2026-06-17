@@ -1,0 +1,77 @@
+---
+description: Preserve existing frontend UI/UX — Blade conversion and dynamic data only
+alwaysApply: true
+---
+
+# Frontend preservation (BIHE)
+
+**Do not redesign or modify the frontend UI/UX.**
+
+## Must preserve (identical appearance)
+
+- Existing HTML structure
+- Existing CSS classes
+- Existing responsiveness
+- Existing animations
+- Existing layout hierarchy
+- Existing JavaScript functionality
+
+## Allowed changes only
+
+- Convert static HTML → Laravel Blade templates (`@extends`, `@section`, `@include`, `@forelse`, `{{ }}`, `@csrf`, `@error`)
+- Inject dynamic database / API content
+- Add backend logic, auth, admin CRUD, API routes
+
+## Forbidden without explicit approval
+
+- Changing colours, fonts, spacing, or breakpoints
+- Renaming or removing CSS classes
+- Replacing vanilla JS with frameworks or build pipelines on Hostinger
+- Redesigning components, layouts, or navigation chrome
+- Adding new visual UI patterns not present in the source HTML
+
+## Project layout
+
+| Surface | Frontend source | Dynamic layer |
+|---------|-----------------|---------------|
+| Public website | Next.js + existing CSS (`src/`, `src/styles/`) | Fetch from Laravel `/api/v1/*` later — **do not change public UI when wiring data** |
+
+## Homepage sections (public site)
+
+**Dynamic only** (via `src/lib/api/homepage.ts`):
+
+- Hero banners
+- Announcements / notices
+- News & events
+- Gallery highlights
+- Recruiters / partners logos
+
+**Keep static** (hardcoded in components or `src/lib/*-content.ts`):
+
+- About content
+- Principal message
+- Statistics
+- Academic / courses information
+- Accreditation, facilities, and all other informational sections
+
+## Phase 1 static pages (no CMS / API)
+
+**Do not wire these to Laravel admin or `/api/v1/*` in Phase 1.** Content stays in `src/lib/*-content.ts` and page components. Canonical list: `src/lib/phase1-static-pages.ts`.
+
+| Category | Routes (examples) |
+|----------|-------------------|
+| About Us | `/about-bihe`, `/recognition`, `/annual-reports`, … |
+| Vision & Mission | `/institutional-development-plan` (`idp-content.ts`) |
+| IQAC | `/academics/iqac` |
+| NAAC | Homepage `#accreditation` + IQAC copy (no dedicated NAAC page yet) |
+| Principal Message | `/principal`, homepage `PrincipalMessage.tsx` |
+| Academic Calendar | `/academics/academic-calendar` |
+| Committee pages | `/governing-bodies`, `/internal-complaint-committee`, `/ombudsperson`, … |
+| Admission information | `/admissions/*`, international students admission |
+| Academic information | `/academics/bca`, `/academics/b-com`, library, examination, … |
+
+**Already dynamic in Phase 1** (outside the list above): homepage hero/announcements/news/gallery/recruiters, `/news/*`, `/gallery/*`, faculty roster on `/academics/faculty-and-staff`, contact form.
+
+| Admin panel | `bihe-admin/public/assets/` + `resources/views/` | Laravel controllers, models, Blade loops |
+
+When in doubt: copy HTML verbatim into Blade, then add directives only where data varies.

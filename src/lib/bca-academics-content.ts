@@ -7,15 +7,14 @@ export const BCA_PROGRAMME = {
   title: "Department of BCA",
   description:
     "Bachelor of Computer Applications (BCA) prepares undergraduate students for productive careers in software, information technology, and academia through industry-aligned teaching, practical exposure, and emerging technology training at BIHE.",
-  image: images.bcaLab,
-  imageAlt: "BCA students learning in a modern computer laboratory at BIHE",
+  image: images.bcomDepartment,
+  imageAlt: "BCA students collaborating with laptops at BIHE Davangere",
 } as const;
 
 export const BCA_STATS = [
-  { value: "180", label: "Annual Intake", suffix: "+" },
-  { value: "3", label: "Year Programme", suffix: " Yrs" },
-  { value: "UG", label: "Level", suffix: "" },
-  { value: "DAVV", label: "Affiliation", suffix: "" },
+  { value: "360", label: "Annual Intake", suffix: "", icon: "intake", tone: "navy" },
+  { value: "3", label: "Year Programme", suffix: " Yrs", icon: "duration", tone: "maroon" },
+  { value: "UG", label: "Level", suffix: "", icon: "level", tone: "navy" },
 ] as const;
 
 export const BCA_TECH_TAGS = [
@@ -31,12 +30,6 @@ export const BCA_PROGRAMME_SHOWCASE = {
   badge: "Undergraduate Programme",
   headline: "BCA",
   subline: "Bachelor of Computer Applications · Department of BCA",
-  glass: {
-    title: "BCA Laboratory",
-    subtitle: "Hands-on IT learning at BIHE",
-    statValue: "180+",
-    statLabel: "Annual Intake",
-  },
   stats: BCA_STATS,
   tagsLabel: "Emerging Technologies",
   tags: BCA_TECH_TAGS,
@@ -57,10 +50,16 @@ export const BCA_ELIGIBILITY = [
   },
 ] as const;
 
+export const BCA_DEPARTMENT_IMAGE_ALT =
+  "BIHE campus building with landscaped lawns at Davangere";
+
 export const BCA_DEPARTMENT = {
   id: "bca",
   label: "Admissions process",
   title: "Department of BCA",
+  image: images.bcaCampus,
+  imageAlt: BCA_DEPARTMENT_IMAGE_ALT,
+  imageBadge: "BIHE Campus",
   paragraphs: [
     "The wider objective is to prepare undergraduate students of BCA for productive careers in software industry/information technology/academia by providing an outstanding environment for teaching and research in the core and emerging areas of the discipline.",
     "With the fast-growing demand for computer skills and applications, the popularity of computers in education has also increased rapidly over the past few years. Students prefer to take up computers as their specialized subjects of study or pursue their educational careers in Computer Applications. India has become an IT hub and Indian computer professionals are proving their steps in the present global market.",
@@ -81,7 +80,7 @@ export const BCA_PROGRAM_TABLE = {
       level: "UG",
       programName: "BCA",
       duration: "3 Years",
-      intake: "180",
+      intake: "360",
     },
   ],
 } as const;

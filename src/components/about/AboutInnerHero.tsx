@@ -1,10 +1,12 @@
 import Link from "next/link";
 import { Reveal } from "@/components/ui/Reveal";
+import { RichTextParagraph } from "@/components/ui/RichTextParagraph";
 
 type AboutInnerHeroProps = {
   currentPage: string;
   title: string;
-  lead: string;
+  lead?: string;
+  titleId?: string;
   eyebrow?: string;
   sectionLabel?: string;
   sectionHref?: string;
@@ -16,8 +18,9 @@ export function AboutInnerHero({
   currentPage,
   title,
   lead,
-  eyebrow = "About Us",
-  sectionLabel = "About Us",
+  titleId,
+  eyebrow = "About the Institution",
+  sectionLabel = "About the Institution",
   sectionHref = "/about-bihe",
   parentPage,
   parentHref,
@@ -40,8 +43,12 @@ export function AboutInnerHero({
         </nav>
         <Reveal>
           <p className="about-bihe-hero__eyebrow">{eyebrow}</p>
-          <h1 className="about-bihe-hero__title">{title}</h1>
-          <p className="about-bihe-hero__lead">{lead}</p>
+          <h1 className="about-bihe-hero__title" id={titleId}>
+            {title}
+          </h1>
+          {lead?.trim() ? (
+            <RichTextParagraph html={lead} className="about-bihe-hero__lead" />
+          ) : null}
         </Reveal>
       </div>
     </header>

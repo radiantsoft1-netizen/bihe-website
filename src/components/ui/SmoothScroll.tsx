@@ -2,8 +2,6 @@
 
 import Lenis from "lenis";
 import { useEffect } from "react";
-import { debugPerf, logDebug } from "@/lib/debug-perf";
-
 const SCROLL_IDLE_MS = 150;
 
 const anchorEasing = (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t));
@@ -69,46 +67,19 @@ export function SmoothScroll() {
     let isScrollingActive = false;
 
     const markScrolling = () => {
-      const now = performance.now();
-      if (debugPerf.lastScrollTickAt > 0) {
-        const delta = now - debugPerf.lastScrollTickAt;
-        debugPerf.scroll.ticks += 1;
-        if (delta > debugPerf.scroll.maxFrameDeltaMs) {
-          debugPerf.scroll.maxFrameDeltaMs = Math.round(delta);
-        }
-      }
-      debugPerf.lastScrollTickAt = now;
-
       if (!isScrollingActive) {
         isScrollingActive = true;
-        debugPerf.scroll.isScrollingToggles += 1;
         document.documentElement.classList.add("is-scrolling");
       }
 
       if (idleTimer) clearTimeout(idleTimer);
       idleTimer = setTimeout(() => {
         isScrollingActive = false;
-        debugPerf.scroll.isScrollingToggles += 1;
         document.documentElement.classList.remove("is-scrolling");
       }, SCROLL_IDLE_MS);
     };
 
     lenis.on("scroll", markScrolling);
-
-    const reportTimer = window.setTimeout(() => {
-      logDebug(
-        "H6",
-        "SmoothScroll.tsx:lenis",
-        "lenis scroll frame sample",
-        {
-          scrollTicks: debugPerf.scroll.ticks,
-          maxFrameDeltaMs: debugPerf.scroll.maxFrameDeltaMs,
-          isScrollingToggles: debugPerf.scroll.isScrollingToggles,
-          lerp: 0.13,
-        },
-        "scroll-tune",
-      );
-    }, 4000);
 
     const scrollToLocationHash = () => {
       const hash = window.location.hash;
@@ -133,7 +104,6 @@ export function SmoothScroll() {
     window.addEventListener("hashchange", scrollToLocationHash);
 
     return () => {
-      window.clearTimeout(reportTimer);
       window.removeEventListener("hashchange", scrollToLocationHash);
       document.removeEventListener("click", onAnchorClick);
       if (idleTimer) clearTimeout(idleTimer);

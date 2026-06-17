@@ -1,0 +1,85 @@
+name: Deploy BIHE Admin to Hostinger (FTP)
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "bihe-admin/**"
+      - ".github/workflows/deploy-bihe-admin.yml"
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: Log planned changes only (no upload)
+        type: boolean
+        default: false
+
+concurrency:
+  group: deploy-bihe-admin-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    name: Build and FTP deploy
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: bihe-admin
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: "8.2"
+          extensions: mbstring, xml, ctype, fileinfo, pdo_mysql, tokenizer, openssl, json
+          coverage: none
+
+      - name: Get Composer cache directory
+        id: composer-cache
+        run: echo "dir=$(composer config cache-files-dir)" >> "$GITHUB_OUTPUT"
+
+      - name: Cache Composer packages
+        uses: actions/cache@v4
+        with:
+          path: ${{ steps.composer-cache.outputs.dir }}
+          key: ${{ runner.os }}-composer-${{ hashFiles('bihe-admin/composer.lock', 'bihe-admin/composer.json') }}
+          restore-keys: ${{ runner.os }}-composer-
+
+      - name: Install Composer dependencies (production)
+        run: composer install --no-dev --optimize-autoloader --no-interaction --prefer-dist
+
+      - name: Deploy to Hostinger via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          port: ${{ secrets.FTP_PORT || 21 }}
+          protocol: ${{ secrets.FTP_PROTOCOL || 'ftp' }}
+          local-dir: bihe-admin/
+          server-dir: ${{ secrets.FTP_SERVER_DIR }}
+          log-level: minimal
+          dry-run: ${{ github.event_name == 'workflow_dispatch' && inputs.dry_run }}
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/.github/**
+            **/node_modules/**
+            **/.env
+            **/.env.*
+            **/tests/**
+            **/.phpunit.cache/**
+            **/.phpunit.result.cache/**
+            **/.idea/**
+            **/.vscode/**
+            **/.DS_Store
+            **/docker-compose.yml
+            **/Dockerfile
+            **/html-frontend/**
+            **/.ftp-deploy-sync-state.json
+            **/html-frontend/**
+            **/README.md
+            **/docs/**

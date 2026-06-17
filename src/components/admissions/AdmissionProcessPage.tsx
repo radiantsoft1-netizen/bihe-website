@@ -8,8 +8,6 @@ import {
   ADMISSION_PROCESS_INTRO,
   ADMISSION_PROCESS_PAGE_LEAD,
   ADMISSION_PROCESS_SHOWCASES,
-  ADMISSION_STEPS,
-  ADMISSION_STEPS_TITLE,
 } from "@/lib/admission-process-content";
 
 export function AdmissionProcessPage() {
@@ -52,37 +50,6 @@ export function AdmissionProcessPage() {
           isFirst={index === 0}
         />
       ))}
-
-      <section className="admission-process-page__steps" aria-labelledby="admission-steps-title">
-        <div className="admission-process-page__container">
-          <Reveal>
-            <h2 className="admission-process-page__section-title" id="admission-steps-title">
-              {ADMISSION_STEPS_TITLE}
-            </h2>
-          </Reveal>
-
-          <ol className="admission-process-page__steps-flow">
-            {ADMISSION_STEPS.map((step, index) => (
-              <li key={step.id} className="admission-process-page__step-item">
-                <Reveal delay={80 + index * 70} direction="up">
-                  <article className="admission-process-page__step-card">
-                    <span className="admission-process-page__step-number">{step.step}</span>
-                    <div className="admission-process-page__step-body">
-                      <h3 className="admission-process-page__step-title">{step.title}</h3>
-                      <p className="admission-process-page__step-desc">{step.description}</p>
-                    </div>
-                  </article>
-                </Reveal>
-                {index < ADMISSION_STEPS.length - 1 ? (
-                  <span className="admission-process-page__step-arrow" aria-hidden>
-                    ↓
-                  </span>
-                ) : null}
-              </li>
-            ))}
-          </ol>
-        </div>
-      </section>
 
       <section
         className="admission-process-page__documents"

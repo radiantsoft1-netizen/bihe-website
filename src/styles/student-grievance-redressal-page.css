@@ -1,0 +1,198 @@
+/* Student Grievance Redressal Committee (SGRC) */
+
+.grc-page {
+  --grc-pad-x: clamp(1.25rem, 5vw, 7.5rem);
+}
+
+.bihe-wrap:has(.grc-page) > .bihe-page-bg {
+  display: none;
+}
+
+.grc-page__container {
+  width: min(100%, var(--container-max));
+  margin-inline: auto;
+}
+
+.grc-page__text {
+  margin: 0 0 0.85rem;
+  font-size: 1.0625rem;
+  line-height: 1.75;
+  color: var(--color-text-secondary);
+  text-align: justify;
+}
+
+.grc-page__text:last-child {
+  margin-bottom: 0;
+}
+
+.grc-page__about {
+  padding: clamp(2rem, 4vw, 3rem) var(--grc-pad-x);
+  background: #fff;
+}
+
+.grc-page__about-copy {
+  width: 100%;
+  max-width: none;
+}
+
+.grc-page__about .section-header {
+  margin-bottom: 1rem;
+}
+
+.grc-page__objectives {
+  padding: clamp(2rem, 4vw, 3rem) var(--grc-pad-x) clamp(1.25rem, 2.5vw, 1.75rem);
+  background: var(--bihe-cream, #f4f6fa);
+}
+
+.grc-page__objectives .section-header {
+  margin-bottom: clamp(1.25rem, 2.5vw, 1.75rem);
+}
+
+.grc-page__objective-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(0.85rem, 2vw, 1.15rem);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.grc-page__objective-grid > li {
+  display: flex;
+}
+
+.grc-page__objective-grid > li > .reveal {
+  display: flex;
+  flex: 1;
+  width: 100%;
+}
+
+.grc-page__objective-card {
+  position: relative;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 0.65rem;
+  min-height: 100%;
+  padding: 1.1rem 1.05rem 1.15rem;
+  border: 1px solid rgba(30, 58, 117, 0.1);
+  border-radius: var(--radius-lg);
+  background: #fff;
+  box-shadow: 0 0.45rem 1.15rem rgba(30, 58, 117, 0.08);
+}
+
+.grc-page__objective-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  background: linear-gradient(90deg, var(--color-primary) 0%, #2d4f9e 100%);
+}
+
+.grc-page__objective-grid > li:nth-child(even) .grc-page__objective-card::before {
+  background: linear-gradient(90deg, var(--color-secondary) 0%, #a01830 100%);
+}
+
+.grc-page__objective-index {
+  font-family: var(--font-hero);
+  font-size: clamp(1.5rem, 2.5vw, 1.85rem);
+  font-weight: 800;
+  line-height: 1;
+  color: rgba(30, 58, 117, 0.1);
+}
+
+.grc-page__objective-grid > li:nth-child(even) .grc-page__objective-index {
+  color: rgba(116, 0, 0, 0.12);
+}
+
+.grc-page__objective-text {
+  flex: 1;
+  margin: 0;
+  font-size: 0.9375rem;
+  line-height: 1.65;
+  color: var(--color-text-secondary);
+}
+
+.grc-page__process {
+  padding: clamp(1.75rem, 3.5vw, 2.5rem) var(--grc-pad-x) clamp(1.25rem, 2.5vw, 1.75rem);
+  background: #fff;
+}
+
+.grc-page__process-panel,
+.grc-page__commitment-panel {
+  padding: clamp(1.25rem, 2.5vw, 1.75rem) clamp(1.15rem, 2.5vw, 1.5rem);
+  border-left: 4px solid var(--color-secondary);
+  border-radius: var(--radius-lg);
+  background: var(--bihe-cream, #f4f6fa);
+}
+
+.grc-page__panel-title {
+  margin: 0 0 0.85rem;
+  font-family: var(--font-hero);
+  font-size: clamp(1rem, 2vw, 1.125rem);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-secondary);
+}
+
+.grc-page__issues {
+  padding: clamp(1.25rem, 2.5vw, 1.75rem) var(--grc-pad-x) clamp(1.25rem, 2.5vw, 1.75rem);
+  background: #fff;
+}
+
+.grc-page__issues-card {
+  padding: clamp(1.25rem, 2.5vw, 1.75rem);
+  border: 1px solid rgba(30, 58, 117, 0.1);
+  border-radius: var(--radius-lg);
+  background: linear-gradient(160deg, #f8faff 0%, #fff 100%);
+  box-shadow: 0 0.45rem 1.15rem rgba(30, 58, 117, 0.08);
+}
+
+.grc-page__issues-list {
+  margin: 0;
+  columns: 2;
+  column-gap: 2rem;
+}
+
+.grc-page__commitment {
+  padding: clamp(1.25rem, 2.5vw, 1.75rem) var(--grc-pad-x) clamp(2rem, 4vw, 3rem);
+  background: #fff;
+}
+
+.grc-page__commitment-panel {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.grc-page__committee {
+  padding: clamp(2.5rem, 5vw, 3.5rem) var(--grc-pad-x) clamp(4rem, 8vw, 5.5rem);
+  background: var(--bihe-cream, #f4f6fa);
+}
+
+.grc-page__committee .section-header {
+  margin-bottom: 1.75rem;
+}
+
+.grc-page__committee .bihe-data-table-card {
+  margin-top: 0;
+}
+
+@media (max-width: 1024px) {
+  .grc-page__objective-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .grc-page__objective-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .grc-page__issues-list {
+    columns: 1;
+  }
+}

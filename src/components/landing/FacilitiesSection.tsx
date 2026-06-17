@@ -1,4 +1,4 @@
-import type { CSSProperties } from "react";
+import Link from "next/link";
 
 import { FacilityIcon } from "@/components/landing/FacilityIcon";
 import { Reveal } from "@/components/ui/Reveal";
@@ -32,22 +32,12 @@ export function FacilitiesSection() {
         </Reveal>
 
         <ul className="facilities__grid">
-          {FACILITIES_ITEMS.map((item, index) => {
-            const column = index % 4;
-            const row = Math.floor(index / 4);
-            const enterX =
-              column === 0 ? "-44px" : column === 3 ? "44px" : "0px";
-
-            return (
+          {FACILITIES_ITEMS.map((item) => (
             <Reveal key={item.title} as="li" className="facilities__cell">
-              <article
+              <Link
+                href={item.href}
                 className="facilities__card"
-                style={
-                  {
-                    "--facilities-delay": `${row * 160 + column * 110}ms`,
-                    "--facilities-x": enterX,
-                  } as CSSProperties
-                }
+                aria-label={`Learn more about ${item.title}`}
               >
                 <div className="facilities__card-media">
                   <SmartImage
@@ -65,10 +55,9 @@ export function FacilitiesSection() {
                   <h3 className="facilities__card-title">{item.title}</h3>
                   <p className="facilities__card-desc">{item.description}</p>
                 </div>
-              </article>
+              </Link>
             </Reveal>
-            );
-          })}
+          ))}
         </ul>
       </div>
     </section>

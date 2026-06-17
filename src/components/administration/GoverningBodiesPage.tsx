@@ -3,11 +3,20 @@ import { Reveal } from "@/components/ui/Reveal";
 import { SmartImage } from "@/components/ui/SmartImage";
 import {
   GOVERNING_BODIES_PAGE_LEAD,
-  GOVERNING_BODIES_SHOWCASES,
   type GoverningBodiesShowcase,
 } from "@/lib/governing-bodies-content";
+import { isRichHtml, sanitizeRichHtml } from "@/lib/sanitize-html";
 
 function renderParagraph(paragraph: GoverningBodiesShowcase["paragraphs"][number]) {
+  if (isRichHtml(paragraph.text)) {
+    return (
+      <span
+        className="principal-page__rich-text"
+        dangerouslySetInnerHTML={{ __html: sanitizeRichHtml(paragraph.text) }}
+      />
+    );
+  }
+
   if (paragraph.emphasis) {
     const firstSentenceEnd = paragraph.text.indexOf(".");
     return (
@@ -108,7 +117,11 @@ function GovernanceShowcaseSection({
   );
 }
 
-export function GoverningBodiesPage() {
+type GoverningBodiesPageProps = {
+  showcases: readonly GoverningBodiesShowcase[];
+};
+
+export function GoverningBodiesPage({ showcases }: GoverningBodiesPageProps) {
   return (
     <article className="principal-page governing-bodies-page about-bihe-page">
       <AboutInnerHero
@@ -120,7 +133,7 @@ export function GoverningBodiesPage() {
         sectionHref="/governing-bodies"
       />
 
-      {GOVERNING_BODIES_SHOWCASES.map((section, index) => (
+      {showcases.map((section, index) => (
         <GovernanceShowcaseSection
           key={section.id}
           section={section}

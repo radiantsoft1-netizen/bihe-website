@@ -85,6 +85,10 @@
   color: rgba(255, 255, 255, 0.88);
 }
 
+.about-bihe-hero__lead p {
+  margin: 0;
+}
+
 /* About BIHE intro — reuses .about layout from modern-page.css (Figma-aligned) */
 .bihe-wrap .about-bihe-intro {
   padding-inline: var(--about-bihe-pad-x);
@@ -106,7 +110,20 @@
 
 .bihe-wrap .about-bihe-intro__body .about__desc {
   margin: 0;
-  text-align: justify;
+  text-align: left;
+  text-justify: auto;
+}
+
+.bihe-wrap .about-bihe-intro__body .about__desc img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 0.85rem auto;
+  border-radius: 0.5rem;
+}
+
+.bihe-wrap .about-bihe-intro__photo {
+  object-position: center center;
 }
 
 .bihe-wrap .about-bihe-intro__subtitle {

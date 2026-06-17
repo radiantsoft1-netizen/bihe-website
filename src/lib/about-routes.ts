@@ -1,4 +1,4 @@
-/** Routes that belong under the About Us section (nav highlight + submenu). */
+/** Routes that belong under the About the Institution section (nav highlight + submenu). */
 export const ABOUT_US_PAGE_PATHS = [
   "/about-bihe",
   "/memorandum-of-association",

@@ -42,7 +42,7 @@ export function AcademicCalendarPage() {
           <Reveal>
             <SectionHeader badge="PDF" title="Academic calendar documents" align="center" />
           </Reveal>
-          <ul className="cu-page__doc-grid">
+          <ul className="cu-page__doc-grid cu-page__doc-grid--single">
             {ACADEMIC_CALENDAR_DOCUMENTS.map((doc, index) => (
               <Reveal key={doc.title} delay={80 + index * 60} direction="up">
                 <BihePdfDocumentCard

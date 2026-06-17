@@ -4,42 +4,34 @@ import Link from "next/link";
 import { useCallback, useEffect, useState } from "react";
 import { SmartImage } from "@/components/ui/SmartImage";
 import { ArrowRightIcon, ChevronLeftIcon, ChevronRightIcon } from "@/components/ui/icons";
-import { images } from "@/lib/images";
+import { FALLBACK_HERO_IMAGE, FALLBACK_HERO_SLIDES } from "@/lib/homepage-fallbacks";
 import { SITE_LINKS } from "@/lib/site-links";
+import type { HeroSlide } from "@/lib/types/content";
 
-const slides = [
-  {
-    eyebrow: "Your journey to success starts here",
-    title: "Bapuji Institute of Hi-Tech Education",
-    subtitle:
-      "BCA & B.Com programs with industry-ready learning, expert faculty, and a vibrant campus in Davangere.",
-  },
-  {
-    eyebrow: "Excellence in education & innovation",
-    title: "Building brighter futures together",
-    subtitle:
-      "Hands-on labs, placement support, and a community focused on real-world skills and growth.",
-  },
-  {
-    eyebrow: "AICTE approved · Davangere University affiliated",
-    title: "Quality education since 2000",
-    subtitle:
-      "Trusted programs backed by accreditation, modern infrastructure, and decades of academic excellence.",
-  },
-];
+type HeroSliderProps = {
+  slides?: HeroSlide[];
+  backgroundImage?: string;
+};
 
-export function HeroSlider() {
+export function HeroSlider({
+  slides = FALLBACK_HERO_SLIDES,
+  backgroundImage = FALLBACK_HERO_IMAGE,
+}: HeroSliderProps) {
   const [index, setIndex] = useState(0);
   const [animKey, setAnimKey] = useState(0);
-  const slide = slides[index];
+  const slide = slides[index] ?? slides[0];
   const total = slides.length;
   const counter = String(index + 1).padStart(2, "0");
   const totalLabel = String(total).padStart(2, "0");
+  const heroImage = slide?.image ?? backgroundImage;
 
-  const go = useCallback((next: number) => {
-    setIndex(next);
-    setAnimKey((k) => k + 1);
-  }, []);
+  const go = useCallback(
+    (next: number) => {
+      setIndex(next);
+      setAnimKey((k) => k + 1);
+    },
+    [],
+  );
 
   const prev = () => go(index === 0 ? slides.length - 1 : index - 1);
   const next = () => go((index + 1) % slides.length);
@@ -50,16 +42,19 @@ export function HeroSlider() {
       setAnimKey((k) => k + 1);
     }, 7000);
     return () => clearInterval(timer);
-  }, []);
+  }, [slides.length]);
 
   return (
     <section className="hero" id="hero" aria-label="Hero">
       <div className="hero__media">
         <SmartImage
-          src={images.hero}
+          key={heroImage}
+          src={heroImage}
           alt="Bapuji Institute campus"
           fill
           className="hero__bg"
+          sizes="100vw"
+          quality={80}
           priority
         />
       </div>
@@ -78,10 +73,6 @@ export function HeroSlider() {
               <div className="hero__actions">
                 <Link href={SITE_LINKS.courses} className="btn btn--primary btn--shine hero__cta">
                   Explore Courses
-                  <ArrowRightIcon />
-                </Link>
-                <Link href={SITE_LINKS.apply} className="btn hero__cta hero__cta--ghost">
-                  Apply Now
                   <ArrowRightIcon />
                 </Link>
               </div>

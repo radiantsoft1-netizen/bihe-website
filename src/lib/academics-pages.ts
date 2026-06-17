@@ -1,5 +1,6 @@
 import { COURSES } from "@/lib/courses-content";
 import { ACADEMICS_SUBMENU } from "@/lib/academics-submenu";
+import { FACULTY_PAGES } from "@/lib/faculty-pages";
 
 export type AcademicsPageConfig = {
   slug: string;
@@ -77,6 +78,33 @@ const ACADEMICS_PAGE_CONTENT: Record<string, AcademicsPageConfig> = {
       "Department heads and programme coordinators guide academic planning, mentoring, and day-to-day coordination for undergraduate students.",
     ],
   },
+  "b-com-faculty": {
+    slug: "b-com-faculty",
+    currentPage: FACULTY_PAGES["b-com-faculty"].currentPage,
+    title: FACULTY_PAGES["b-com-faculty"].title,
+    lead: FACULTY_PAGES["b-com-faculty"].lead,
+    introBadge: "Academics",
+    introTitle: FACULTY_PAGES["b-com-faculty"].title,
+    paragraphs: [FACULTY_PAGES["b-com-faculty"].lead],
+  },
+  "bca-faculty": {
+    slug: "bca-faculty",
+    currentPage: FACULTY_PAGES["bca-faculty"].currentPage,
+    title: FACULTY_PAGES["bca-faculty"].title,
+    lead: FACULTY_PAGES["bca-faculty"].lead,
+    introBadge: "Academics",
+    introTitle: FACULTY_PAGES["bca-faculty"].title,
+    paragraphs: [FACULTY_PAGES["bca-faculty"].lead],
+  },
+  "non-teaching-staff": {
+    slug: "non-teaching-staff",
+    currentPage: FACULTY_PAGES["non-teaching-staff"].currentPage,
+    title: FACULTY_PAGES["non-teaching-staff"].title,
+    lead: FACULTY_PAGES["non-teaching-staff"].lead,
+    introBadge: "Academics",
+    introTitle: FACULTY_PAGES["non-teaching-staff"].title,
+    paragraphs: [FACULTY_PAGES["non-teaching-staff"].lead],
+  },
   iqac: {
     slug: "iqac",
     currentPage: "Internal Quality Assurance Cell",
@@ -103,7 +131,10 @@ const ACADEMICS_PAGE_CONTENT: Record<string, AcademicsPageConfig> = {
   },
 };
 
-export const ACADEMICS_PAGE_SLUGS = ACADEMICS_SUBMENU.map((item) => item.slug);
+export const ACADEMICS_PAGE_SLUGS = [
+  ...ACADEMICS_SUBMENU.map((item) => item.slug),
+  "faculty-and-staff",
+];
 
 export function getAcademicsPage(slug: string): AcademicsPageConfig | undefined {
   return ACADEMICS_PAGE_CONTENT[slug];

@@ -1,13 +1,13 @@
-import { debugPerf, logDebug } from "./debug-perf";
-
 /** Canonical image files under /public/images */
 export const imageRewriteMap = {
   logo: "/images/logo.webp",
   hero: "/images/hero.webp",
   "about-main": "/images/about-main.webp",
+  "about-bihe-campus": "/images/about-bihe-campus-building.png",
+  "ombudsperson-intro": "/images/ombudsperson-intro.png",
   "about-badge": "/images/about-badge.webp",
   principal: "/images/principal.png",
-  "finance-section": "/images/finance-section.png",
+  "finance-section": "/images/finance-section-fda.jpg",
   "gb-hon-secretary": "/images/governing-bodies-hon-secretary.png",
   "gb-joint-secretary": "/images/governing-bodies-joint-secretary.png",
   "gb-chairman": "/images/governing-bodies-chairman.png",
@@ -16,6 +16,7 @@ export const imageRewriteMap = {
   "bca-hod": "/images/bca-hod.png",
   "bca-dean": "/images/bca-dean.png",
   "bcom-hod": "/images/bcom-hod.png",
+  "bca-campus": "/images/bca-campus.png",
   "bca-lab": "/images/bca-lab.webp",
   bcom: "/images/bcom.webp",
   "bcom-department": "/images/bcom-department.png",
@@ -23,6 +24,7 @@ export const imageRewriteMap = {
   "bcom-programme-students": "/images/bcom-programme-students.png",
   "bcom-programme-student-2": "/images/bcom-programme-student-2.png",
   "exam-internal-main": "/images/exam-internal-main.jpg",
+  "coe-exam-intro-main": "/images/coe-exam-intro-main.png",
   "exam-internal-panel-1": "/images/exam-internal-panel-1.jpg",
   "exam-internal-panel-2": "/images/exam-internal-panel-2.jpg",
   "exam-university-main": "/images/exam-university-main.jpg",
@@ -36,7 +38,7 @@ export const imageRewriteMap = {
   "idp-vision-mission": "/images/idp-vision-mission.png",
   "idp-academic-growth": "/images/idp-academic-growth.png",
   "facility-library": "/images/facility-library.webp",
-  "library-intro": "/images/library-intro.png",
+  "library-intro": "/images/library-intro-campus.jpg",
   "library-gallery-reading-hall": "/images/library-gallery-reading-hall.png",
   "library-gallery-group-study": "/images/library-gallery-group-study.png",
   "library-gallery-bookshelves": "/images/library-gallery-bookshelves.png",
@@ -118,10 +120,13 @@ export const imageRewriteMap = {
   "incubation-beneficiary-secondary": "/images/incubation/beneficiary-secondary.png",
   "crf-library": "/images/crf/library.png",
   "crf-computer-laboratories": "/images/crf/computer-laboratories.png",
-  "sports-events-celebration": "/images/sports/events-celebration.png",
+  "sports-events-celebration": "/images/sports/inter-college/events-volleyball.jpg",
+  "sports-facilities-banner": "/images/sports/sports-facilities-hero.jpg",
   "sports-badminton-tournament": "/images/sports/badminton-tournament.png",
   "sports-chess-tournament": "/images/sports/chess-tournament.png",
-  "sports-football-tournament": "/images/sports/football-tournament.png",
+  "sports-football-tournament": "/images/sports/inter-college/football-match.jpg",
+  "sports-football-ground": "/images/sports/football-ground.jpg",
+  "sports-basketball-court": "/images/sports/basketball-court.jpg",
   "sports-table-tennis-tournament": "/images/sports/table-tennis-tournament.png",
   "nss-emblem": "/images/nss/National-Service-scheme.png",
   "nss-hero-banner": "/images/nss/nss-hero-banner.jpg",
@@ -134,6 +139,7 @@ export const imageRewriteMap = {
   "nss-gallery-4": "/images/nss/NSS5.jpg",
   "nss-gallery-5": "/images/nss/NSS6-1.jpg",
   "sl-hostel-1": "/images/student-life/hostel/1.jpg",
+  "sl-hostel-banner": "/images/student-life/hostel/hostel-banner.png",
   "sl-hostel-2": "/images/student-life/hostel/2.jpg",
   "sl-hostel-3": "/images/student-life/hostel/3.jpg",
   "sl-placement-officer": "/images/student-life/placement/officer.jpg",
@@ -146,17 +152,21 @@ export const imageRewriteMap = {
   "sl-canteen-1": "/images/student-life/canteen/1.jpg",
   "sl-canteen-2": "/images/student-life/canteen/2.jpg",
   "sl-yrc-banner": "/images/student-life/yrc/banner.png",
-  "sl-yrc-officer": "/images/student-life/yrc/officer.jpg",
+  "sl-yrc-officer": "/images/student-life/yrc/officer.png",
   "mpd-hr-interview": "/images/mega-placement-drive/hr-interview-process.png",
   "mpd-inaugural-ceremony": "/images/mega-placement-drive/inaugural-ceremony.png",
   "mpd-company-hr-interviews": "/images/mega-placement-drive/company-hr-interviews.png",
   "mpd-offer-letters-banner": "/images/mega-placement-drive/offer-letters-banner.png",
-  "health-first-aid-kit": "/images/health-facilities/first-aid-kit.png",
+  "placement-bca-batch-2025-26": "/images/placement/placement-bca-batch-2025-26.png",
+  "health-first-aid-kit": "/images/health-facilities/first-aid-kit-highlight.png",
   "health-awareness-camp": "/images/health-facilities/health-awareness-camp.png",
-  "health-fire-safety": "/images/health-facilities/fire-safety-equipment.png",
-  "health-banner": "/images/health-facilities/health-banner.png",
+  "health-fire-safety": "/images/health-facilities/fire-safety-training.png",
+  "health-banner": "/images/health-facilities/health-banner-first-aid.png",
   "anti-ragging-banner": "/images/anti-ragging/banner.png",
-  "anti-ragging-awareness": "/images/anti-ragging/awareness-programme.png",
+  "anti-ragging-awareness": "/images/anti-ragging/awareness-programme.jpg",
+  "alumni-home-welcome": "/images/alumni/alumni-home-welcome.jpg",
+  "alumni-about-mission": "/images/alumni/alumni-about-mission.jpg",
+  "alumni-about-objectives": "/images/alumni/alumni-about-objectives.jpg",
 } as const satisfies Record<string, string>;
 
 export type ImageSlug = keyof typeof imageRewriteMap;
@@ -168,6 +178,11 @@ export const images = {
   logo: short("logo"),
   hero: short("hero"),
   aboutMain: short("about-main"),
+  aboutBiheCampus: short("about-bihe-campus"),
+  alumniHomeWelcome: short("alumni-home-welcome"),
+  alumniAboutMission: short("alumni-about-mission"),
+  alumniAboutObjectives: short("alumni-about-objectives"),
+  ombudspersonIntro: short("ombudsperson-intro"),
   aboutBadge: short("about-badge"),
   principal: short("principal"),
   financeSection: short("finance-section"),
@@ -179,6 +194,7 @@ export const images = {
   bcaHod: short("bca-hod"),
   bcaDean: short("bca-dean"),
   bcomHod: short("bcom-hod"),
+  bcaCampus: short("bca-campus"),
   bcaLab: short("bca-lab"),
   bcom: short("bcom"),
   bcomDepartment: short("bcom-department"),
@@ -186,6 +202,7 @@ export const images = {
   bcomProgrammeStudents: short("bcom-programme-students"),
   bcomProgrammeStudent2: short("bcom-programme-student-2"),
   examInternalMain: short("exam-internal-main"),
+  coeExamIntroMain: short("coe-exam-intro-main"),
   examInternalPanel1: short("exam-internal-panel-1"),
   examInternalPanel2: short("exam-internal-panel-2"),
   examUniversityMain: short("exam-university-main"),
@@ -295,7 +312,7 @@ export const images = {
     canteen2: short("sl-canteen-2"),
     yrcBanner: short("sl-yrc-banner"),
     yrcOfficer: short("sl-yrc-officer"),
-    hostelBanner: short("sl-hostel-1"),
+    hostelBanner: short("sl-hostel-banner"),
     placementBanner: short("facility-placement"),
     healthBanner: short("facility-hostel"),
     grievanceBanner: short("about-main"),
@@ -320,6 +337,9 @@ export const images = {
     companyHrInterviews: short("mpd-company-hr-interviews"),
     offerLettersBanner: short("mpd-offer-letters-banner"),
   },
+  placement: {
+    bcaBatch202526: short("placement-bca-batch-2025-26"),
+  },
   healthFacilities: {
     firstAidKit: short("health-first-aid-kit"),
     healthAwarenessCamp: short("health-awareness-camp"),
@@ -331,10 +351,10 @@ export const images = {
     awarenessProgramme: short("anti-ragging-awareness"),
   },
   sportsFacilities: {
-    heroBanner: short("facility-sports"),
+    heroBanner: short("sports-facilities-banner"),
     cricketGround: short("facility-sports"),
-    basketballCourt: short("facility-extracurricular"),
-    footballGround: short("hero"),
+    basketballCourt: short("sports-basketball-court"),
+    footballGround: short("sports-football-ground"),
     events: short("sports-events-celebration"),
     badminton: short("sports-badminton-tournament"),
     footballTournament: short("sports-football-tournament"),
@@ -423,18 +443,24 @@ export function resolveImageSrc(src: string): string {
   const localPath = resolveImagePath(src);
 
   if (localPath.startsWith("/images/")) {
-    debugPerf.images.local += 1;
-    if (debugPerf.images.local <= 2) {
-      logDebug("H1", "images.ts:resolveImageSrc", "local image path resolved", {
-        src,
-        localPath,
-      });
-    }
     return localPath;
   }
 
-  if (src.startsWith("/i/")) {
-    debugPerf.images.shortUrl += 1;
+  if (src.startsWith("http://") || src.startsWith("https://")) {
+    try {
+      const url = new URL(src);
+
+      if (url.pathname.startsWith("/storage/")) {
+        url.pathname = url.pathname
+          .split("/")
+          .map((segment) => (segment === "" ? "" : encodeURIComponent(decodeURIComponent(segment))))
+          .join("/");
+
+        return url.toString();
+      }
+    } catch {
+      return src;
+    }
   }
 
   return src;

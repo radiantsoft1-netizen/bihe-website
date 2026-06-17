@@ -1,0 +1,86 @@
+[
+  {
+    "id": "alumni-gallery-01",
+    "src": "/images/alumni/gallery/alumni-gallery-01.jpg",
+    "alt": "Alumni events & reunions photo 1",
+    "sectionId": "events",
+    "sectionTitle": "Alumni events & reunions"
+  },
+  {
+    "id": "alumni-gallery-02",
+    "src": "/images/alumni/gallery/alumni-gallery-02.jpg",
+    "alt": "Alumni events & reunions photo 2",
+    "sectionId": "events",
+    "sectionTitle": "Alumni events & reunions"
+  },
+  {
+    "id": "alumni-gallery-03",
+    "src": "/images/alumni/gallery/alumni-gallery-03.jpg",
+    "alt": "Alumni events & reunions photo 3",
+    "sectionId": "events",
+    "sectionTitle": "Alumni events & reunions"
+  },
+  {
+    "id": "alumni-gallery-04",
+    "src": "/images/alumni/gallery/alumni-gallery-04.jpg",
+    "alt": "Alumni events & reunions photo 4",
+    "sectionId": "events",
+    "sectionTitle": "Alumni events & reunions"
+  },
+  {
+    "id": "alumni-gallery-05",
+    "src": "/images/alumni/gallery/alumni-gallery-05.jpg",
+    "alt": "Alumni events & reunions photo 5",
+    "sectionId": "events",
+    "sectionTitle": "Alumni events & reunions"
+  },
+  {
+    "id": "alumni-gallery-06",
+    "src": "/images/alumni/gallery/alumni-gallery-06.jpg",
+    "alt": "Alumni events & reunions photo 6",
+    "sectionId": "events",
+    "sectionTitle": "Alumni events & reunions"
+  },
+  {
+    "id": "alumni-gallery-07",
+    "src": "/images/alumni/gallery/alumni-gallery-07.jpg",
+    "alt": "Alumni events & reunions photo 7",
+    "sectionId": "events",
+    "sectionTitle": "Alumni events & reunions"
+  },
+  {
+    "id": "alumni-gallery-08",
+    "src": "/images/alumni/gallery/alumni-gallery-08.jpg",
+    "alt": "Alumni events & reunions photo 8",
+    "sectionId": "events",
+    "sectionTitle": "Alumni events & reunions"
+  },
+  {
+    "id": "alumni-gallery-09",
+    "src": "/images/alumni/gallery/alumni-gallery-09.jpg",
+    "alt": "Alumni events & reunions photo 9",
+    "sectionId": "events",
+    "sectionTitle": "Alumni events & reunions"
+  },
+  {
+    "id": "alumni-gallery-10",
+    "src": "/images/alumni/gallery/alumni-gallery-10.jpg",
+    "alt": "Alumni events & reunions photo 10",
+    "sectionId": "events",
+    "sectionTitle": "Alumni events & reunions"
+  },
+  {
+    "id": "alumni-gallery-11",
+    "src": "/images/alumni/gallery/alumni-gallery-11.jpg",
+    "alt": "Alumni events & reunions photo 11",
+    "sectionId": "events",
+    "sectionTitle": "Alumni events & reunions"
+  },
+  {
+    "id": "alumni-gallery-12",
+    "src": "/images/alumni/gallery/alumni-gallery-12.jpg",
+    "alt": "Alumni events & reunions photo 12",
+    "sectionId": "events",
+    "sectionTitle": "Alumni events & reunions"
+  }
+]

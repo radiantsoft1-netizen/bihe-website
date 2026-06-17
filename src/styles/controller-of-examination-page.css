@@ -25,10 +25,34 @@
 
 .coe-page__exam-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(8rem, 11rem);
+  grid-template-columns: 1fr;
   gap: clamp(1.5rem, 4vw, 2.5rem);
-  align-items: center;
-  margin-bottom: clamp(2rem, 4vw, 2.75rem);
+  align-items: start;
+  margin-bottom: clamp(1.5rem, 3vw, 2rem);
+}
+
+.coe-page__intro-visual {
+  display: grid;
+  gap: 0.85rem;
+  min-width: 0;
+  max-width: 22rem;
+}
+
+.coe-page__intro-media {
+  position: relative;
+  margin: 0;
+  aspect-ratio: 4 / 3;
+  min-height: 12rem;
+  overflow: hidden;
+  border: 1px solid rgba(30, 58, 117, 0.1);
+  border-radius: calc(var(--radius-lg, 0.75rem) + 0.15rem);
+  background: #e8edf5;
+  box-shadow: 0 0.65rem 1.5rem rgba(30, 58, 117, 0.1);
+}
+
+.coe-page__intro-img {
+  object-fit: cover;
+  object-position: center;
 }
 
 .coe-page__intro-text {
@@ -39,41 +63,8 @@
   text-align: justify;
 }
 
-.coe-page__intro-decor {
-  position: relative;
-  width: 100%;
-  min-height: 9rem;
-  justify-self: end;
-}
-
-.coe-page__decor-circle {
-  position: absolute;
-  border-radius: 50%;
-  background: var(--color-primary);
-}
-
-.coe-page__decor-circle--1 {
-  top: 0;
-  right: 2rem;
-  width: 4.5rem;
-  height: 4.5rem;
-  opacity: 0.92;
-}
-
-.coe-page__decor-circle--2 {
-  top: 2.5rem;
-  right: 0;
-  width: 6.5rem;
-  height: 6.5rem;
-  opacity: 0.55;
-}
-
-.coe-page__decor-circle--3 {
-  bottom: 0;
-  right: 3.5rem;
-  width: 3.25rem;
-  height: 3.25rem;
-  opacity: 0.35;
+.coe-page__intro-copy .coe-page__intro-text + .coe-page__intro-text {
+  margin-top: 0.85rem;
 }
 
 .coe-page__success-note {
@@ -93,25 +84,27 @@
   margin-bottom: 1rem;
 }
 
-.coe-page__allotment-institute {
+.bihe-wrap .coe-page__allotment-institute {
   margin: 0 0 0.5rem;
   font-family: var(--font-hero);
   font-size: clamp(0.9375rem, 2vw, 1.0625rem);
   font-weight: 700;
   line-height: 1.4;
   text-align: center;
+  text-justify: auto;
   letter-spacing: 0.04em;
   text-transform: uppercase;
   color: var(--color-secondary);
 }
 
-.coe-page__allotment-title {
+.bihe-wrap .coe-page__allotment-title {
   margin: 0 0 clamp(2rem, 4vw, 2.75rem);
   font-family: var(--font-hero);
   font-size: clamp(0.875rem, 1.8vw, 1rem);
   font-weight: 700;
   line-height: 1.45;
   text-align: center;
+  text-justify: auto;
   letter-spacing: 0.03em;
   text-transform: uppercase;
   color: var(--color-primary);
@@ -181,16 +174,4 @@
   padding: 0;
   list-style: none;
   max-width: 22rem;
-}
-
-@media (max-width: 768px) {
-  .coe-page__exam-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .coe-page__intro-decor {
-    min-height: 6rem;
-    max-width: 10rem;
-    justify-self: start;
-  }
 }

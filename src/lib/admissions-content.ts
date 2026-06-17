@@ -1,5 +1,3 @@
-import { ADMISSIONS_SUBMENU } from "@/lib/admissions-submenu";
-
 export type AdmissionsPageConfig = {
   slug: string;
   currentPage: string;
@@ -71,8 +69,9 @@ const ADMISSIONS_PAGE_CONTENT: Record<string, AdmissionsPageConfig> = {
 };
 
 export const ADMISSIONS_PAGE_SLUGS = [
-  ...ADMISSIONS_SUBMENU.map((item) => item.slug),
+  "admission-process",
   "online-admission-format",
+  "fee-refund-policy",
 ] as const;
 
 export function getAdmissionsPage(slug: string): AdmissionsPageConfig | undefined {

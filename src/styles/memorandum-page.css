@@ -16,7 +16,8 @@
 
 .moa-page__lead {
   margin: 1.25rem 0 0;
-  max-width: 52rem;
+  max-width: none;
+  width: 100%;
   font-size: 1.0625rem;
   line-height: 1.7;
   color: var(--color-text-secondary);

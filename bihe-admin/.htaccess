@@ -1,0 +1,6 @@
+# Fallback when hPanel document root cannot be set to public/ (not recommended).
+# Preferred: point the domain document root to bihe-admin/public so .env stays outside the web root.
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteRule ^(.*)$ public/$1 [L]
+</IfModule>

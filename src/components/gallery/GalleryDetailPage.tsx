@@ -4,15 +4,13 @@ import { MediaBadge } from "@/components/ui/MediaBadge";
 import { Reveal } from "@/components/ui/Reveal";
 import { SmartImage } from "@/components/ui/SmartImage";
 import type { GalleryDetailView } from "@/lib/gallery-service";
-import type { GalleryDisplayItem } from "@/lib/gallery-display";
 import { SITE_LINKS } from "@/lib/site-links";
 
 type GalleryDetailPageProps = {
   item: GalleryDetailView;
-  relatedItems: GalleryDisplayItem[];
 };
 
-export function GalleryDetailPage({ item, relatedItems }: GalleryDetailPageProps) {
+export function GalleryDetailPage({ item }: GalleryDetailPageProps) {
   return (
     <article className="gallery-detail-page about-bihe-page">
       <AboutInnerHero
@@ -94,51 +92,6 @@ export function GalleryDetailPage({ item, relatedItems }: GalleryDetailPageProps
           </Reveal>
         </div>
       </section>
-
-      {relatedItems.length > 0 ? (
-        <section
-          className="gallery-detail-page__related"
-          aria-labelledby="gallery-detail-related-title"
-        >
-          <div className="gallery-detail-page__container">
-            <Reveal>
-              <h2 className="gallery-detail-page__related-title" id="gallery-detail-related-title">
-                More from {item.category}
-              </h2>
-              <p className="gallery-detail-page__related-lead">
-                Explore more campus photos from the same gallery category.
-              </p>
-            </Reveal>
-
-            <ul className="gallery-detail-page__related-grid">
-              {relatedItems.map((related, index) => (
-                <Reveal key={related.id} as="li" delay={index * 60} direction="scale">
-                  <Link
-                    href={SITE_LINKS.galleryPhoto(related.id)}
-                    className="gallery-detail-page__related-card"
-                  >
-                    <div className="gallery-detail-page__related-media media-card__media">
-                      <SmartImage
-                        src={related.image}
-                        alt={related.title}
-                        fill
-                        className="gallery-detail-page__related-img"
-                        sizes="(max-width: 900px) 50vw, 20vw"
-                      />
-                      <div className="gallery-detail-page__related-overlay" aria-hidden>
-                        <span className="gallery-detail-page__related-category">
-                          {related.category}
-                        </span>
-                        <h3 className="gallery-detail-page__related-name">{related.title}</h3>
-                      </div>
-                    </div>
-                  </Link>
-                </Reveal>
-              ))}
-            </ul>
-          </div>
-        </section>
-      ) : null}
     </article>
   );
 }

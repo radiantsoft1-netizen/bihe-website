@@ -15,11 +15,15 @@ export const PRINCIPAL_QUOTE_TITLE = {
 
 export const PRINCIPAL_MESSAGE_PARAGRAPHS = [
   {
-    text: "The global economic order, the rapid rate of technological advancement, and the information revolution have all opened new series of challenges as well as opportunities. The ability to innovate and the capacity to adapt to the latest technologies are going to be the forte in this century. India's cherished vision to becoming a superpower can only be attained by its vast pool of high-quality human resources. The educational institutions, especially those imparting technical education, have to take the responsibility of developing and nurturing the world class information technology professionals.",
+    text: "The global economic order, rapid technological advancements, and the information revolution have created a new set of challenges as well as opportunities. The ability to innovate and the capacity to adapt to emerging technologies will be the defining strengths of this century. India's cherished vision of becoming a global superpower can only be realized through its vast pool of highly skilled and quality human resources.",
     emphasis: false,
   },
   {
-    text: "I am proud to be the Principal of one of the Premier technical institutions in the country. BIHE has a rich legacy of contributing to nation's development by producing highly skilled professionals.",
+    text: "Educational institutions, particularly those imparting technical education, have a vital responsibility in developing and nurturing world-class information technology professionals who can contribute effectively to national growth and global competitiveness.",
+    emphasis: false,
+  },
+  {
+    text: "I am proud to serve as the Principal of one of the premier technical institutions in the country. BIHE has a rich legacy of contributing to the nation's development by producing highly skilled professionals who have excelled in their respective fields and made meaningful contributions to society.",
     emphasis: true,
   },
 ] as const;

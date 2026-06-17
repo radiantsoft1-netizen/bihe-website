@@ -35,7 +35,7 @@ export const CONTACT_METHODS = [
     id: "fax",
     label: "Fax",
     value: "08192-220987",
-    href: undefined,
+    href: "tel:08192220987",
   },
 ] as const;
 
@@ -67,7 +67,7 @@ export const CONTACT_MAP = {
 export const CONTACT_FORM_COPY = {
   title: "Send us a message",
   lead: "Fill in the form and our office will get back to you regarding your enquiry.",
-  successTitle: "Message ready to send",
+  successTitle: "Message sent",
   successMessage:
-    "Thank you for contacting BIHE. Your message has been prepared — please use your email client to complete sending, or call us directly for urgent enquiries.",
+    "Thank you for contacting BIHE. Your enquiry has been emailed to our office and an acknowledgement has been sent to your email address.",
 } as const;

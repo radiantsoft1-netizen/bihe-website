@@ -4,7 +4,6 @@ import { SectionHeader } from "@/components/ui/SectionHeader";
 import { SmartImage } from "@/components/ui/SmartImage";
 import { ArrowRightIcon } from "@/components/ui/icons";
 import { COURSES } from "@/lib/courses-content";
-import { SITE_LINKS } from "@/lib/site-links";
 
 export function CoursesSection() {
   return (
@@ -76,7 +75,7 @@ export function CoursesSection() {
                   </ul>
 
                   <Link
-                    href={SITE_LINKS.aboutBihe}
+                    href={course.href}
                     className="btn btn--primary btn--shine course-card__cta"
                   >
                     View Program

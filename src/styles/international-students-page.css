@@ -1,11 +1,44 @@
-/* International Students Admission — Principal-style showcases */
+/* International Students Admission — compact principal-style showcases */
+
+.international-students-page .about-bihe-hero {
+  padding-bottom: clamp(1.75rem, 4vw, 2.5rem);
+}
 
 .international-students-page .principal-page__showcase {
-  min-height: 820px;
+  min-height: auto;
+  justify-content: flex-start;
+  padding-block: clamp(2rem, 3.5vw, 2.75rem);
+}
+
+.international-students-page .principal-page__showcase--s1 {
+  padding-top: clamp(1rem, 2.5vw, 1.5rem);
+}
+
+.international-students-page .principal-page__grid {
+  gap: clamp(1.5rem, 3vw, 2.25rem);
 }
 
 .international-students-page__portrait-img {
   object-position: center top;
+}
+
+.international-students-page .principal-page__portrait {
+  padding-bottom: 0;
+}
+
+.international-students-page .principal-page__portrait-frame {
+  aspect-ratio: 16 / 11;
+  min-height: clamp(14rem, 28vh, 20rem);
+}
+
+.international-students-page .principal-page__body {
+  gap: 0.85rem;
+}
+
+.international-students-page .principal-page__grid--content-only {
+  grid-template-columns: 1fr;
+  width: 100%;
+  max-width: none;
 }
 
 .international-students-page .principal-page__grid--reverse .principal-page__visual {
@@ -18,7 +51,7 @@
 
 @media (max-width: 960px) {
   .international-students-page .principal-page__showcase {
-    min-height: auto;
+    padding-block: clamp(1.75rem, 5vw, 2.25rem);
   }
 
   .international-students-page .principal-page__grid--reverse .principal-page__visual,

@@ -1,5 +1,6 @@
 import { AboutInnerHero } from "@/components/about/AboutInnerHero";
 import { Reveal } from "@/components/ui/Reveal";
+import { RichTextParagraph } from "@/components/ui/RichTextParagraph";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { INFO_CORNER_BASE_PATH } from "@/lib/info-corner-routes";
 import type { InfoCornerPageConfig } from "@/lib/info-corner-content";
@@ -31,9 +32,11 @@ export function InfoCornerContentPage({
             <SectionHeader badge={introBadge} title={introTitle} align="left" showIcon={false} />
             <div className="about-bihe-intro__body" id="info-corner-content">
               {paragraphs.map((paragraph) => (
-                <p key={paragraph.slice(0, 48)} className="about__desc">
-                  {paragraph}
-                </p>
+                <RichTextParagraph
+                  key={paragraph.slice(0, 48)}
+                  html={paragraph}
+                  className="about__desc"
+                />
               ))}
             </div>
           </Reveal>

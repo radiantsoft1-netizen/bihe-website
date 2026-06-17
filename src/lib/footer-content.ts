@@ -57,7 +57,7 @@ export const FOOTER_LINK_COLUMNS: readonly FooterLinkColumn[] = [
     ],
   },
   {
-    title: "About Us",
+    title: "About the Institution",
     links: [
       { label: "About BEA", href: SITE_LINKS.governingBodies },
       { label: "About BIHE", href: SITE_LINKS.aboutBihe },
@@ -72,8 +72,9 @@ export const FOOTER_LINK_COLUMNS: readonly FooterLinkColumn[] = [
     links: [
       { label: "Programs Offered", href: SITE_LINKS.courses },
       { label: "Academic Calendar", href: SITE_LINKS.academicCalendar },
-      { label: "Teaching Faculty", href: SITE_LINKS.facultyAndStaff },
-      { label: "Non - Teaching Staff", href: SITE_LINKS.facultyAndStaff },
+      { label: "B.Com Faculty", href: SITE_LINKS.academicsBComFaculty },
+      { label: "BCA Faculty", href: SITE_LINKS.academicsBcaFaculty },
+      { label: "Non - Teaching Staff", href: SITE_LINKS.academicsNonTeachingStaff },
       { label: "Library", href: SITE_LINKS.academicsLibrary },
       {
         label: "Internal Quality Assurance Cell (IQAC)",

@@ -20,7 +20,7 @@ const IC_SHOWCASE_SECTIONS = [IC_WHY_SECTION, IC_BENEFICIARY_SECTION] as const;
 
 export function IncubationCentrePage() {
   return (
-    <article className="ic-page about-bihe-page">
+    <article className="ic-page incubation-centre-page about-bihe-page">
       <AboutInnerHero
         currentPage="Incubation Centre"
         title="Incubation Centre"

@@ -1,5 +1,10 @@
 .mpd-page {
   --mpd-pad-x: clamp(1.25rem, 5vw, 7.5rem);
+  --principal-pad-x: var(--mpd-pad-x);
+  --mpd-copy-size: 1rem;
+  --mpd-copy-leading: 1.65;
+  --mpd-section-title-size: clamp(1.125rem, 2.2vw, 1.4rem);
+  overflow-x: clip;
 }
 
 .bihe-wrap:has(.mpd-page) {
@@ -23,10 +28,26 @@
   order: 1;
 }
 
+/* Principal-style showcase sections */
+.mpd-page .principal-page__showcase {
+  min-height: auto;
+  justify-content: flex-start;
+  padding-inline: var(--mpd-pad-x);
+}
+
+.mpd-page .principal-page__container {
+  width: min(100%, var(--container-max));
+}
+
+.mpd-page .principal-page__paragraph {
+  font-size: var(--mpd-copy-size);
+  line-height: var(--mpd-copy-leading);
+}
+
 .mpd-page__section-title {
   margin: 0 0 clamp(1rem, 2vw, 1.35rem);
   font-family: var(--font-hero);
-  font-size: clamp(1.125rem, 2.2vw, 1.4rem);
+  font-size: var(--mpd-section-title-size);
   font-weight: 700;
   line-height: 1.35;
   color: var(--color-primary);
@@ -57,10 +78,9 @@
 
 .mpd-page__text {
   margin: 0 0 0.85rem;
-  font-size: 1rem;
-  line-height: 1.75;
+  font-size: var(--mpd-copy-size);
+  line-height: var(--mpd-copy-leading);
   color: var(--color-text-secondary);
-  text-align: justify;
 }
 
 .mpd-page__text:last-child {
@@ -85,7 +105,20 @@
   box-shadow: 0 0.85rem 2rem rgba(30, 58, 117, 0.1);
 }
 
+.mpd-page__banner-frame > span {
+  position: absolute !important;
+  inset: 0 !important;
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  max-width: none !important;
+}
+
 .mpd-page__banner-img {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+  max-width: none !important;
   object-fit: cover;
   object-position: center;
 }
@@ -100,18 +133,18 @@
   inset: auto 0 0 0;
   z-index: 1;
   margin: 0;
-  padding: clamp(0.85rem, 2vw, 1.15rem) clamp(1.25rem, 3vw, 2rem);
+  padding: clamp(0.85rem, 2vw, 1.15rem) clamp(1rem, 3vw, 2rem);
   border-top: 3px solid var(--color-secondary);
   background: linear-gradient(
     180deg,
     rgba(15, 23, 42, 0.72) 0%,
     rgba(15, 23, 42, 0.92) 100%
   );
-  font-size: clamp(0.875rem, 1.6vw, 1rem);
+  font-size: clamp(0.75rem, 1.4vw, 1rem);
   font-weight: 500;
   line-height: 1.55;
   color: #fff;
-  text-align: center;
+  text-align: left;
 }
 
 .mpd-page__stats {
@@ -130,6 +163,7 @@
 
 .mpd-page__stats-grid > li {
   height: 100%;
+  min-width: 0;
 }
 
 .mpd-page__stats-grid .reveal {
@@ -174,7 +208,7 @@
 .mpd-page__stats-value {
   margin: 0;
   font-family: var(--font-hero);
-  font-size: clamp(1.75rem, 3.2vw, 2.35rem);
+  font-size: clamp(1.5rem, 3vw, 2.35rem);
   font-weight: 700;
   line-height: 1;
   color: var(--color-primary);
@@ -182,7 +216,7 @@
 
 .mpd-page__stats-description {
   margin: 0;
-  font-size: 0.875rem;
+  font-size: clamp(0.8125rem, 1.4vw, 0.875rem);
   line-height: 1.55;
   color: var(--color-text-secondary);
 }
@@ -198,7 +232,7 @@
 }
 
 .mpd-page__stats-card--highlight .mpd-page__stats-description {
-  font-size: 0.9375rem;
+  font-size: clamp(0.8125rem, 1.5vw, 0.9375rem);
   font-weight: 600;
   line-height: 1.5;
   color: #fff;
@@ -234,19 +268,67 @@
 }
 
 @media (max-width: 960px) {
+  .mpd-page {
+    --mpd-pad-x: clamp(1rem, 4vw, 1.75rem);
+    --mpd-copy-size: 0.875rem;
+    --mpd-copy-leading: 1.6;
+    --mpd-section-title-size: 1.125rem;
+  }
+
   .mpd-page .principal-page__grid--reverse .principal-page__visual,
   .mpd-page .principal-page__grid--reverse .principal-page__content {
     order: unset;
   }
 
+  .mpd-page .principal-page__showcase {
+    padding-block: clamp(1.75rem, 5vw, 2.5rem);
+  }
+
+  .mpd-page__intro,
+  .mpd-page__banner,
+  .mpd-page__thanks {
+    padding-block: clamp(2rem, 5vw, 2.75rem);
+  }
+
+  .mpd-page__stats {
+    padding-block: clamp(1.75rem, 4vw, 2.5rem);
+  }
+
   .mpd-page__stats-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
-
 }
 
 @media (max-width: 640px) {
+  .mpd-page {
+    --mpd-copy-size: 0.8125rem;
+    --mpd-section-title-size: 1.0625rem;
+  }
+
+  .mpd-page__banner-frame {
+    aspect-ratio: 16 / 9;
+    min-height: 11rem;
+  }
+
   .mpd-page__stats-grid {
     grid-template-columns: 1fr;
+  }
+
+  .mpd-page__stats-card {
+    padding: 1.1rem 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .mpd-page {
+    --mpd-pad-x: 1rem;
+    --mpd-copy-size: 0.75rem;
+    --mpd-copy-leading: 1.55;
+    --mpd-section-title-size: 1rem;
+  }
+
+  .mpd-page__banner-caption {
+    font-size: 0.75rem;
+    line-height: 1.5;
   }
 }

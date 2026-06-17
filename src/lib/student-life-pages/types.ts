@@ -1,8 +1,21 @@
 import type { StudentLifeShowcase } from "@/lib/student-life-showcase";
 
+export type HostelFacilityIconName =
+  | "accommodation"
+  | "safety"
+  | "dining"
+  | "medical"
+  | "housekeeping"
+  | "common-facilities";
+
 export type StudentLifeImage = {
   src: string;
   alt: string;
+  /** Defaults to cover; use contain for portrait posters and collages. */
+  fit?: "cover" | "contain";
+  caption?: string;
+  /** Short label for split banner panels. */
+  label?: string;
 };
 
 export type StudentLifeOfficer = {
@@ -88,6 +101,14 @@ export type StudentLifeAlternatingSection = {
   reverse?: boolean;
 };
 
+export type StudentLifeIntroHighlight = {
+  id: string;
+  title: string;
+  description: string;
+  image?: StudentLifeImage;
+  icon?: HostelFacilityIconName;
+};
+
 export type StudentLifeRichPageConfig = {
   slug: string;
   currentPage: string;
@@ -97,6 +118,8 @@ export type StudentLifeRichPageConfig = {
     kicker?: string;
     overlayTitle?: string;
     imageFit?: "cover" | "contain";
+    /** When set, renders a side-by-side split banner instead of a single image. */
+    images?: readonly StudentLifeImage[];
   };
   intro?: {
     title: string;
@@ -106,10 +129,18 @@ export type StudentLifeRichPageConfig = {
     bullets?: readonly string[];
     image?: StudentLifeImage;
     images?: readonly StudentLifeImage[];
+    /** Right-side intro slider cards (auto-rotating). */
+    sliderImages?: readonly StudentLifeImage[];
+    /** Full-width infographic layout with highlight cards. */
+    variant?: "default" | "infographic";
+    highlights?: readonly StudentLifeIntroHighlight[];
+    footerParagraphs?: readonly string[];
   };
   officers?: readonly StudentLifeOfficer[];
   showcase?: StudentLifeShowcase;
   showcases?: readonly StudentLifeShowcase[];
+  /** Compact image + text cards instead of full-height showcase strips. */
+  highlightVariant?: "cards" | "rows";
   postIntroSections?: readonly StudentLifeTextSection[];
   sections?: readonly StudentLifeTextSection[];
   tables?: readonly StudentLifeTable[];

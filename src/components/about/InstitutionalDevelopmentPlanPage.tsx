@@ -1,9 +1,7 @@
 import { AboutInnerHero } from "@/components/about/AboutInnerHero";
-import { IdpGrowthIcon } from "@/components/about/IdpGrowthIcon";
 import { Reveal } from "@/components/ui/Reveal";
 import { SmartImage } from "@/components/ui/SmartImage";
 import {
-  IDP_ACADEMIC_GROWTH_CARDS,
   IDP_ACADEMIC_GROWTH_ITEMS,
   IDP_EXPERIENCE_BADGE,
   IDP_MISSION_INTRO,
@@ -141,41 +139,6 @@ export function InstitutionalDevelopmentPlanPage() {
               </ul>
             </div>
           </Reveal>
-        </div>
-      </section>
-
-      <section
-        className="idp-page__growth-panel"
-        aria-labelledby="idp-growth-panel-title"
-      >
-        <div className="idp-page__container idp-page__growth-panel-inner">
-          <Reveal>
-            <header className="idp-page__growth-panel-head">
-              <h2 className="idp-page__growth-panel-title" id="idp-growth-panel-title">
-                Academic Growth
-              </h2>
-              <p className="idp-page__growth-panel-subtitle">
-                Affordable Courses for Everyone
-              </p>
-            </header>
-          </Reveal>
-          <ul className="idp-page__growth-cards">
-            {IDP_ACADEMIC_GROWTH_CARDS.map((card, index) => (
-              <Reveal
-                key={card.title}
-                as="li"
-                className="idp-page__growth-card"
-                delay={60 + index * 45}
-                direction="up"
-              >
-                <span className="idp-page__growth-card-icon" aria-hidden>
-                  <IdpGrowthIcon name={card.icon} />
-                </span>
-                <h3 className="idp-page__growth-card-title">{card.title}</h3>
-                <p className="idp-page__growth-card-text">{card.text}</p>
-              </Reveal>
-            ))}
-          </ul>
         </div>
       </section>
     </article>

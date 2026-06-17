@@ -69,13 +69,9 @@ export function ContactPage() {
                     <ContactMethodIcon id={method.id} />
                   </span>
                   <p className="contact-page__method-label">{method.label}</p>
-                  {method.href ? (
-                    <a className="contact-page__method-value" href={method.href}>
-                      {method.value}
-                    </a>
-                  ) : (
-                    <p className="contact-page__method-value">{method.value}</p>
-                  )}
+                  <a className="contact-page__method-value" href={method.href}>
+                    {method.value}
+                  </a>
                 </div>
               </Reveal>
             ))}

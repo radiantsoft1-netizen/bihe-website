@@ -12,9 +12,25 @@ import {
   FOOTER_DESCRIPTION,
   FOOTER_INSTITUTE_NAME_EN,
   FOOTER_INSTITUTE_NAME_KN,
-  FOOTER_LINK_COLUMNS,
 } from "@/lib/footer-content";
 import { images } from "@/lib/images";
+import { STATIC_FOOTER_NAV, type FooterNavColumn, type FooterNavLink } from "@/lib/static-navigation";
+
+function isExternalHref(href: string): boolean {
+  return /^https?:\/\//i.test(href);
+}
+
+function FooterNavAnchor({ link }: { link: FooterNavLink }) {
+  if (link.openInNewTab || isExternalHref(link.href)) {
+    return (
+      <a href={link.href} target="_blank" rel="noopener noreferrer">
+        {link.label}
+      </a>
+    );
+  }
+
+  return <Link href={link.href}>{link.label}</Link>;
+}
 
 const socialLinks = [
   {
@@ -39,7 +55,13 @@ const socialLinks = [
   },
 ];
 
-export function Footer() {
+type FooterProps = {
+  navigation?: FooterNavColumn[];
+};
+
+export function Footer({ navigation }: FooterProps = {}) {
+  const linkColumns = navigation ?? STATIC_FOOTER_NAV;
+
   return (
     <footer className="footer" id="contact">
       <div className="footer__inner">
@@ -80,13 +102,13 @@ export function Footer() {
           </div>
 
           <nav className="footer__columns" aria-label="Footer navigation">
-            {FOOTER_LINK_COLUMNS.map((col) => (
+            {linkColumns.map((col) => (
               <div key={col.title} className="footer__col">
                 <h3>{col.title}</h3>
                 <ul>
                   {col.links.map((link) => (
                     <li key={link.label}>
-                      <Link href={link.href}>{link.label}</Link>
+                      <FooterNavAnchor link={link} />
                     </li>
                   ))}
                 </ul>

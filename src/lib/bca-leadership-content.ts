@@ -19,12 +19,20 @@ export const BCA_LEADERSHIP_SHOWCASES: readonly AcademicLeadershipShowcase[] = [
     },
     paragraphs: [
       {
-        text: "Mr. Siddalingappa K. holds qualifications in PGDCA and M.Sc. (Information Technology) and has 22 years of teaching experience.",
+        text: "Mr. Siddalingappa K. holds the qualifications of PGDCA and M.Sc. (Information Technology) and has 22 years of rich teaching experience in the field of Information Technology and Computer Applications. He is currently serving at Bapuji Institute of High Tech Education, where he is actively involved in academic teaching, student mentoring, and institutional development activities.",
         emphasis: false,
       },
       {
-        text: "He is serving at Bapuji Institute of High Tech Education and is also a Board of Examiners (BoE) Member at Davangere University.",
-        emphasis: true,
+        text: "In addition to his teaching responsibilities, he serves as a Board of Examiners (BoE) Member at Davangere University, contributing to the academic governance and evaluation process. In this role, he is involved in curriculum review, question paper setting, and ensuring the quality and standards of examinations.",
+        emphasis: false,
+      },
+      {
+        text: "He has also participated in various academic initiatives, workshops, and faculty development programs aimed at enhancing teaching methodologies and keeping pace with advancements in the field of Information Technology.",
+        emphasis: false,
+      },
+      {
+        text: "His contributions to academia reflect his commitment to academic excellence, quality education, and continuous professional development, making him a valuable asset to the institution and the university system.",
+        emphasis: false,
       },
     ],
     image: images.bcaVicePrincipal,
@@ -45,12 +53,20 @@ export const BCA_LEADERSHIP_SHOWCASES: readonly AcademicLeadershipShowcase[] = [
     },
     paragraphs: [
       {
-        text: "Mr. Bakkesh K. S. is serving as an Assistant Professor and Head of the Department at Bapuji Institute of Hi-Tech Education.",
+        text: "Mr. Bakkesh K. S. is serving as an Assistant Professor and Head of the Department at Bapuji Institute of Hi-Tech Education. He holds a Master of Computer Applications (MCA) degree and has 14 years of teaching experience in the field of Computer Applications and Information Technology.",
         emphasis: false,
       },
       {
-        text: "He holds a Master of Computer Applications (MCA) and has 14 years of teaching experience.",
-        emphasis: true,
+        text: "He is actively involved in academic planning, curriculum delivery, and departmental administration. As Head of the Department, he plays a key role in coordinating academic activities, mentoring faculty members, and guiding students toward academic excellence.",
+        emphasis: false,
+      },
+      {
+        text: "He also contributes to institutional development through participation in academic committees, examination duties, and other administrative responsibilities, ensuring the smooth functioning of the department.",
+        emphasis: false,
+      },
+      {
+        text: "His dedication to teaching and leadership reflects his commitment to maintaining high academic standards and fostering a productive learning environment within the institution.",
+        emphasis: false,
       },
     ],
     image: images.bcaHod,
@@ -70,12 +86,16 @@ export const BCA_LEADERSHIP_SHOWCASES: readonly AcademicLeadershipShowcase[] = [
     },
     paragraphs: [
       {
-        text: "Ms. Vindhya S. is serving as an Assistant Professor and Dean of Students' Welfare at the institution. She holds a Bachelor of Engineering (B.E.) in Computer Science and brings with her 24 years of rich teaching and academic experience.",
+        text: "Ms. Vindhya S. is serving as an Assistant Professor and Dean of Students' Welfare at the institution. She holds a Bachelor of Engineering (B.E.) degree in Computer Science and brings with her 24 years of rich teaching and academic experience.",
         emphasis: false,
       },
       {
-        text: "Her extensive experience and commitment to student development significantly contribute to academic excellence and student welfare initiatives.",
-        emphasis: true,
+        text: "She plays a significant role in promoting student development, welfare activities, and mentoring initiatives within the institution. In her capacity as Dean of Students' Welfare, she actively addresses student concerns, supports academic and personal growth, and helps create a supportive and inclusive campus environment.",
+        emphasis: false,
+      },
+      {
+        text: "Her extensive experience and dedication to education contribute significantly to academic excellence, institutional discipline, and the overall development of students. She is also involved in various academic and administrative responsibilities, ensuring the smooth functioning of institutional activities.",
+        emphasis: false,
       },
     ],
     image: images.bcaDean,

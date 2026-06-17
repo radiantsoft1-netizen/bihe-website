@@ -5,13 +5,13 @@ export const IDP_MISSION_INTRO =
   "BIHE strives to provide quality education in computer applications that prepares aspiring youth to excel in the digital era through academic excellence, ethical values and global competencies in a dynamic and evolving environment.";
 
 export const IDP_MISSION_ITEMS = [
-  "Achieve excellence in teaching and research in computer science and applications.",
-  "Generate, disseminate and apply technological knowledge effectively.",
-  "Develop skilled, responsible and innovative IT professionals.",
-  "Enhance the quality of human resources through continuous learning and industry engagement.",
-  "Cultivate strong moral, ethical and professional values.",
-  "Address regional and national IT needs through relevant education and training.",
-  "Anticipate and adapt to emerging trends in technology and global economic development.",
+  "To achieve excellence in teaching and research.",
+  "To generate, disseminate and preserve knowledge.",
+  "To empower through knowledge and information.",
+  "To develop a responsible and productive citizenry.",
+  "To develop, enhance, and improve the quality of human resources.",
+  "To cultivate resolute moral and ethical values.",
+  "To meet contemporary regional and national needs and anticipate future technical and economic development.",
 ] as const;
 
 export const IDP_ACADEMIC_GROWTH_ITEMS = [
@@ -51,6 +51,6 @@ export const IDP_ACADEMIC_GROWTH_CARDS = [
 ] as const;
 
 export const IDP_EXPERIENCE_BADGE = {
-  years: "20+",
+  years: "25",
   label: "Years Of Experience",
 } as const;

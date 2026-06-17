@@ -1,4 +1,5 @@
 import { images } from "@/lib/images";
+import { dropboxGalleryCoverPath, DROPBOX_GALLERY_ALBUMS } from "@/lib/gallery-dropbox-albums";
 import type { GalleryItem, GalleryLayout } from "@/lib/gallery-content";
 
 export const GALLERY_PAGE_LEAD =
@@ -44,20 +45,13 @@ function withLayouts(items: Omit<GalleryPageItem, "layout">[]): GalleryPageItem[
 }
 
 const GALLERY_PAGE_ITEMS_BASE: Omit<GalleryPageItem, "layout">[] = [
-  {
-    id: "campus-overview",
-    title: "BIHE Campus Overview",
-    category: "Campus",
-    filterId: "campus",
-    image: images.hero,
-  },
-  {
-    id: "campus-life",
-    title: "Student Life at BIHE",
-    category: "Campus",
-    filterId: "campus",
-    image: images.aboutMain,
-  },
+  ...DROPBOX_GALLERY_ALBUMS.map((album) => ({
+    id: album.slug,
+    title: album.title,
+    category: album.categoryName,
+    filterId: album.categorySlug,
+    image: dropboxGalleryCoverPath(album.slug),
+  })),
   {
     id: "lake-view-campus",
     title: "Lake View Campus",

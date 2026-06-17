@@ -181,6 +181,7 @@
 .principal-page__portrait-frame {
   position: relative;
   aspect-ratio: 4 / 5;
+  width: 100%;
   min-height: clamp(18rem, 40vh, 26rem);
   overflow: hidden;
   border-radius: 2rem;
@@ -188,6 +189,15 @@
   box-shadow:
     0 24px 48px rgba(30, 58, 117, 0.12),
     0 8px 20px rgba(30, 58, 117, 0.06);
+}
+
+.principal-page__portrait-frame > span {
+  position: absolute !important;
+  inset: 0 !important;
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  max-width: none !important;
 }
 
 .principal-page__portrait-frame::after {
@@ -200,6 +210,11 @@
 }
 
 .principal-page__portrait-img {
+  position: relative;
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+  max-width: none !important;
   object-fit: cover;
   object-position: center top;
 }
@@ -340,6 +355,34 @@
   font-weight: 700;
 }
 
+.principal-page__rich-text p {
+  margin: 0;
+}
+
+.principal-page__rich-text p + p {
+  margin-top: 0.75rem;
+}
+
+.principal-page__rich-text a {
+  color: var(--color-secondary);
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+.principal-page__rich-text ul,
+.principal-page__rich-text ol {
+  margin: 0.5rem 0 0;
+  padding-left: 1.25rem;
+}
+
+.principal-page__rich-text img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 0.75rem auto;
+  border-radius: 0.5rem;
+}
+
 @media (max-width: 960px) {
   .principal-page__showcase {
     min-height: auto;
@@ -352,9 +395,44 @@
     align-items: start;
   }
 
-  .principal-page__portrait-frame {
-    min-height: clamp(17rem, 50vh, 24rem);
+  .principal-page__visual {
+    width: 100%;
+    min-width: 0;
   }
 
+  .principal-page__portrait {
+    width: min(100%, 22rem);
+    padding-bottom: 0;
+  }
+
+  .principal-page__portrait-frame {
+    min-height: clamp(16rem, 62vw, 24rem);
+  }
+
+  .principal-page__float-card--bottom {
+    position: relative;
+    left: auto;
+    bottom: auto;
+    transform: none;
+    width: 100%;
+    max-width: none;
+    margin-top: 0.85rem;
+  }
+
+  .principal-page__portrait:hover .principal-page__float-card {
+    transform: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .principal-page__portrait {
+    width: 100%;
+    max-width: none;
+  }
+
+  .principal-page__portrait-frame {
+    min-height: clamp(14rem, 78vw, 20rem);
+    border-radius: 1.25rem;
+  }
 }
 

@@ -1,10 +1,13 @@
 import { AboutInnerHero } from "@/components/about/AboutInnerHero";
+import { HostelFacilityIcon } from "@/components/student-life/HostelFacilityIcon";
 import { StudentFacilitiesNavSection } from "@/components/student-life/StudentFacilitiesNavSection";
+import { StudentLifeIntroImageSlider } from "@/components/student-life/StudentLifeIntroImageSlider";
 import { StudentLifeShowcaseSection } from "@/components/student-life/StudentLifeShowcaseSection";
 import { StudentLifePageRefCards } from "@/components/student-life/StudentLifePageRefCards";
 import { StudentLifeStatsBar } from "@/components/student-life/StudentLifeStatsBar";
 import { BiheDataTable } from "@/components/ui/BiheDataTable";
 import { Reveal } from "@/components/ui/Reveal";
+import { RichTextParagraph } from "@/components/ui/RichTextParagraph";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { SmartImage } from "@/components/ui/SmartImage";
 import { STUDENT_LIFE_BASE_PATH } from "@/lib/student-life-routes";
@@ -39,9 +42,11 @@ function StudentLifeIntroCopy({
       />
       <div className="sl-rich-page__intro-body">
         {paragraphs.map((paragraph) => (
-          <p key={paragraph.slice(0, 48)} className="sl-rich-page__text">
-            {paragraph}
-          </p>
+          <RichTextParagraph
+            key={paragraph.slice(0, 48)}
+            html={paragraph}
+            className="sl-rich-page__text"
+          />
         ))}
         {bullets && bullets.length > 0 ? (
           <div className="sl-rich-page__intro-objectives">
@@ -111,24 +116,57 @@ function StudentLifePageIntro({
   return (
     <>
       {banner ? (
-        <section className="sl-rich-page__banner" aria-label={`${pageTitle} highlight`}>
-          <div className="sl-rich-page__banner-frame">
-            <SmartImage
-              src={banner.src}
-              alt={banner.alt}
-              fill
-              priority
-              className="sl-rich-page__banner-img"
-              sizes="100vw"
-            />
-            <div className="sl-rich-page__banner-overlay">
-              {banner.kicker ? (
-                <p className="sl-rich-page__banner-kicker">{banner.kicker}</p>
-              ) : null}
-              {banner.overlayTitle ? (
-                <h2 className="sl-rich-page__banner-title">{banner.overlayTitle}</h2>
-              ) : null}
-            </div>
+        <section
+          className={[
+            "sl-rich-page__banner",
+            banner.images && banner.images.length > 1 ? "sl-rich-page__banner--dual" : "",
+          ]
+            .filter(Boolean)
+            .join(" ")}
+          aria-label={`${pageTitle} highlight`}
+        >
+          <div
+            className={[
+              "sl-rich-page__banner-frame",
+              banner.images && banner.images.length > 1
+                ? "sl-rich-page__banner-frame--dual"
+                : "",
+            ]
+              .filter(Boolean)
+              .join(" ")}
+          >
+            {banner.images && banner.images.length > 1 ? (
+              banner.images.map((image) => (
+                <figure
+                  key={image.src}
+                  className="sl-rich-page__banner-panel"
+                  aria-label={image.alt}
+                >
+                  <SmartImage
+                    src={image.src}
+                    alt={image.alt}
+                    fill
+                    priority
+                    className="sl-rich-page__banner-img"
+                    sizes="50vw"
+                  />
+                  {image.label ? (
+                    <figcaption className="sl-rich-page__banner-panel-caption">
+                      <span className="sl-rich-page__banner-panel-label">{image.label}</span>
+                    </figcaption>
+                  ) : null}
+                </figure>
+              ))
+            ) : (
+              <SmartImage
+                src={banner.src}
+                alt={banner.alt}
+                fill
+                priority
+                className="sl-rich-page__banner-img"
+                sizes="100vw"
+              />
+            )}
           </div>
         </section>
       ) : null}
@@ -138,6 +176,7 @@ function StudentLifePageIntro({
           className={[
             "sl-rich-page__intro",
             banner ? "sl-rich-page__intro--after-banner" : "",
+            intro.variant === "infographic" ? "sl-rich-page__intro--infographic" : "",
           ]
             .filter(Boolean)
             .join(" ")}
@@ -145,7 +184,83 @@ function StudentLifePageIntro({
         >
           <div className="sl-rich-page__container">
             <Reveal>
-              {intro.images && intro.images.length > 0 ? (
+              {intro.variant === "infographic" ? (
+                <div className="sl-rich-page__intro-infographic">
+                  <SectionHeader
+                    badge={intro.kicker || "Student Life"}
+                    title={intro.title}
+                    align="left"
+                    showIcon={false}
+                    titleId="sl-rich-intro-title"
+                  />
+                  {intro.paragraphs[0] ? (
+                    <p className="sl-rich-page__intro-lead">{intro.paragraphs[0]}</p>
+                  ) : null}
+                  {intro.highlights && intro.highlights.length > 0 ? (
+                    <ul className="sl-rich-page__intro-info-grid" aria-label="Hostel facility highlights">
+                      {intro.highlights.map((item, index) => (
+                        <li key={item.id}>
+                          <article className="sl-rich-page__intro-info-card">
+                            <span className="sl-rich-page__intro-info-index" aria-hidden>
+                              {String(index + 1).padStart(2, "0")}
+                            </span>
+                            {item.icon ? (
+                              <div className="sl-rich-page__intro-info-icon" aria-hidden>
+                                <span className="sl-rich-page__intro-info-icon-badge">
+                                  <HostelFacilityIcon name={item.icon} />
+                                </span>
+                              </div>
+                            ) : item.image ? (
+                              <div className="sl-rich-page__intro-info-media">
+                                <SmartImage
+                                  src={item.image.src}
+                                  alt={item.image.alt}
+                                  fill
+                                  className="sl-rich-page__intro-info-img"
+                                  sizes="(max-width: 768px) 100vw, 33vw"
+                                />
+                              </div>
+                            ) : (
+                              <div className="sl-rich-page__intro-info-badge" aria-hidden>
+                                <span>{String(index + 1).padStart(2, "0")}</span>
+                              </div>
+                            )}
+                            <div className="sl-rich-page__intro-info-copy">
+                              <h3 className="sl-rich-page__intro-info-title">{item.title}</h3>
+                              <p className="sl-rich-page__intro-info-text">{item.description}</p>
+                            </div>
+                          </article>
+                        </li>
+                      ))}
+                    </ul>
+                  ) : null}
+                  {intro.footerParagraphs && intro.footerParagraphs.length > 0 ? (
+                    <div className="sl-rich-page__intro-footer">
+                      {intro.footerParagraphs.map((paragraph) => (
+                        <p key={paragraph.slice(0, 48)} className="sl-rich-page__intro-footer-text">
+                          {paragraph}
+                        </p>
+                      ))}
+                    </div>
+                  ) : null}
+                </div>
+              ) : intro.sliderImages && intro.sliderImages.length > 0 ? (
+                <div className="sl-rich-page__intro-split sl-rich-page__intro-split--slider">
+                  <div className="sl-rich-page__intro-panel">
+                    <StudentLifeIntroCopy
+                      kicker={intro.kicker}
+                      title={intro.title}
+                      paragraphs={intro.paragraphs}
+                      bulletsTitle={intro.bulletsTitle}
+                      bullets={intro.bullets}
+                    />
+                  </div>
+                  <StudentLifeIntroImageSlider
+                    images={intro.sliderImages}
+                    ariaLabel={`${pageTitle} highlights`}
+                  />
+                </div>
+              ) : intro.images && intro.images.length > 0 ? (
                 <div className="sl-rich-page__intro-feature">
                   <div className="sl-rich-page__intro-panel">
                     <StudentLifeIntroCopy
@@ -304,10 +419,11 @@ export function StudentLifeRichPage({ config }: StudentLifeRichPageProps) {
     pageRefCards,
     splitPanel,
     alternating,
+    highlightVariant,
   } = config;
 
   return (
-    <article className="sl-rich-page about-bihe-page">
+    <article className={`sl-rich-page sl-rich-page--${slug} about-bihe-page`}>
       <AboutInnerHero
         currentPage={currentPage}
         title={title}
@@ -455,6 +571,45 @@ export function StudentLifeRichPage({ config }: StudentLifeRichPageProps) {
         </section>
       ) : null}
 
+      {alternating && alternating.length > 0 && highlightVariant === "cards" ? (
+        <section className="sl-rich-page__highlight-cards" aria-label="Health facility highlights">
+          <div className="sl-rich-page__container">
+            <ul className="sl-rich-page__highlight-grid">
+              {alternating.map((block, index) => (
+                <li key={block.id}>
+                  <Reveal delay={40 + index * 40} className="sl-rich-page__highlight-reveal">
+                    <article className="sl-rich-page__highlight-card">
+                      <span className="sl-rich-page__highlight-index" aria-hidden>
+                        {String(index + 1).padStart(2, "0")}
+                      </span>
+                      {block.image ? (
+                        <div className="sl-rich-page__highlight-media">
+                          <SmartImage
+                            src={block.image.src}
+                            alt={block.image.alt}
+                            fill
+                            className="sl-rich-page__highlight-img"
+                            sizes="(max-width: 768px) 100vw, 24rem"
+                          />
+                        </div>
+                      ) : null}
+                      <div className="sl-rich-page__highlight-copy">
+                        <h2 className="sl-rich-page__highlight-title">{block.title}</h2>
+                        {block.paragraphs.map((paragraph) => (
+                          <p key={paragraph.slice(0, 48)} className="sl-rich-page__highlight-text">
+                            {paragraph}
+                          </p>
+                        ))}
+                      </div>
+                    </article>
+                  </Reveal>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+      ) : null}
+
       {tables && tables.length > 0 ? (
         <section className="sl-rich-page__records" aria-labelledby="sl-rich-records-title">
           <div className="sl-rich-page__container">
@@ -472,7 +627,7 @@ export function StudentLifeRichPage({ config }: StudentLifeRichPageProps) {
                 <Reveal key={table.id} delay={60 + index * 40}>
                   <div className="sl-rich-page__table-block">
                     <h3 className="sl-rich-page__table-title">{table.title}</h3>
-                    <div className="bihe-data-table-card">
+                    <div className="bihe-data-table-card sl-rich-page__table-card">
                       <BiheDataTable
                         indexColumn={table.columns[0]?.key === "slNo"}
                         caption={table.caption}
@@ -564,7 +719,7 @@ export function StudentLifeRichPage({ config }: StudentLifeRichPageProps) {
 
       {stats && stats.length > 0 ? <StudentLifeStatsBar stats={stats} /> : null}
 
-      {alternating && alternating.length > 0 ? (
+      {alternating && alternating.length > 0 && highlightVariant !== "cards" ? (
         <section className="sl-rich-page__alternating" aria-label="Facility details">
           <div className="sl-rich-page__container">
             {alternating.map((block, index) => (

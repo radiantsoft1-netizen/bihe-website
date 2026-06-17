@@ -12,22 +12,23 @@ import {
   YouTubeIcon,
 } from "@/components/ui/icons";
 import { isAboutUsPath } from "@/lib/about-routes";
-import { ABOUT_SUBMENU } from "@/lib/about-submenu";
 import { isAcademicsPath } from "@/lib/academics-routes";
-import { ACADEMICS_SUBMENU } from "@/lib/academics-submenu";
 import { isAdmissionsPath } from "@/lib/admissions-routes";
-import { ADMISSIONS_SUBMENU } from "@/lib/admissions-submenu";
 import { isResearchPath } from "@/lib/research-routes";
-import { RESEARCH_SUBMENU } from "@/lib/research-submenu";
 import { isInfoCornerPath } from "@/lib/info-corner-routes";
-import { INFO_CORNER_SUBMENU } from "@/lib/info-corner-submenu";
 import { isStudentLifePath } from "@/lib/student-life-routes";
-import { STUDENT_LIFE_SUBMENU } from "@/lib/student-life-submenu";
 import { isAdministrationPath } from "@/lib/administration-routes";
-import { ADMINISTRATION_SUBMENU } from "@/lib/administration-submenu";
-import { debugPerf, logDebug } from "@/lib/debug-perf";
 import { images } from "@/lib/images";
+import { isAlumniPath } from "@/lib/alumni-routes";
+import { ALUMNI_SUBMENU } from "@/lib/alumni-submenu";
 import { SITE_LINKS } from "@/lib/site-links";
+import { STATIC_HEADER_NAV, type HeaderNavItem } from "@/lib/static-navigation";
+
+const ALUMNI_TOPBAR_ITEM = {
+  label: "Alumni",
+  href: SITE_LINKS.alumniHome,
+  children: ALUMNI_SUBMENU,
+} as const;
 
 type NavChild = {
   label: string;
@@ -41,90 +42,14 @@ type NavItem = {
   children?: NavChild[];
 };
 
-/** About Us dropdown — submenu links from ABOUT_SUBMENU */
-const aboutSubmenu: NavChild[] = ABOUT_SUBMENU.map(({ label, href }) => ({
-  label,
-  href,
-}));
-
-const administrationSubmenu: NavChild[] = ADMINISTRATION_SUBMENU.map(
-  ({ label, href }) => ({
-    label,
-    href,
-  }),
-);
-
-const academicsSubmenu: NavChild[] = ACADEMICS_SUBMENU.map(({ label, href }) => ({
-  label,
-  href,
-}));
-
-const admissionsSubmenu: NavChild[] = ADMISSIONS_SUBMENU.map(({ label, href }) => ({
-  label,
-  href,
-}));
-
-const researchSubmenu: NavChild[] = RESEARCH_SUBMENU.map(({ label, href }) => ({
-  label,
-  href,
-}));
-
-const studentLifeSubmenu: NavChild[] = STUDENT_LIFE_SUBMENU.map(({ label, href }) => ({
-  label,
-  href,
-}));
-
-const infoCornerSubmenu: NavChild[] = INFO_CORNER_SUBMENU.map(({ label, href }) => ({
-  label,
-  href,
-}));
-
-const navItems: NavItem[] = [
-  { label: "Home", href: SITE_LINKS.home },
-  {
-    label: "About Us",
-    href: SITE_LINKS.aboutBihe,
-    dropdown: true,
-    children: aboutSubmenu,
-  },
-  {
-    label: "Administration",
-    href: "/principal",
-    dropdown: true,
-    children: administrationSubmenu,
-  },
-  {
-    label: "Academics",
-    href: SITE_LINKS.academicsBca,
-    dropdown: true,
-    children: academicsSubmenu,
-  },
-  {
-    label: "Admissions",
-    href: SITE_LINKS.admissionsAdmissionProcess,
-    dropdown: true,
-    children: admissionsSubmenu,
-  },
-  {
-    label: "Research",
-    href: SITE_LINKS.researchIncubationCentre,
-    dropdown: true,
-    children: researchSubmenu,
-  },
-  {
-    label: "Student Life",
-    href: SITE_LINKS.studentLifeSportsFacilities,
-    dropdown: true,
-    children: studentLifeSubmenu,
-  },
-  {
-    label: "Info - Corner",
-    href: SITE_LINKS.infoCornerRtiDetails,
-    dropdown: true,
-    children: infoCornerSubmenu,
-  },
-  { label: "Contact Us", href: SITE_LINKS.contact },
-];
+type HeaderProps = {
+  navigation?: HeaderNavItem[];
+  prospectus?: {
+    label: string;
+    href: string;
+    openInNewTab?: boolean;
+  } | null;
+};
 
 function IconChevron() {
   return (
@@ -156,12 +81,44 @@ function SocialIcon({
   );
 }
 
+function submenuHrefPath(href: string): string {
+  const hashIndex = href.indexOf("#");
+  return hashIndex === -1 ? href : href.slice(0, hashIndex);
+}
+
+function pathMatchesSubmenuLink(pathname: string, href: string): boolean {
+  const path = submenuHrefPath(href);
+  if (!path) return false;
+  if (path === "/") return pathname === "/";
+  return pathname === path || pathname.startsWith(`${path}/`);
+}
+
+function isSubmenuLinkActive(
+  pathname: string,
+  href: string,
+  siblings: NavChild[],
+): boolean {
+  const path = submenuHrefPath(href);
+  if (!pathMatchesSubmenuLink(pathname, path)) return false;
+
+  const bestMatch = siblings
+    .map((child) => submenuHrefPath(child.href))
+    .filter((candidate) => pathMatchesSubmenuLink(pathname, candidate))
+    .sort((a, b) => b.length - a.length)[0];
+
+  return bestMatch === path;
+}
+
+function isGalleryPath(pathname: string): boolean {
+  return pathname === SITE_LINKS.gallery || pathname.startsWith(`${SITE_LINKS.gallery}/`);
+}
+
 function isNavItemActive(pathname: string, item: NavItem): boolean {
   if (item.label === "Home") return pathname === "/";
-  if (item.label === "About Us") return isAboutUsPath(pathname);
+  if (item.label === "About the Institution") return isAboutUsPath(pathname);
   if (item.label === "Administration") return isAdministrationPath(pathname);
   if (item.label === "Academics") return isAcademicsPath(pathname);
-  if (item.label === "Admissions") return isAdmissionsPath(pathname);
+  if (item.label === "Admissions & Fee") return isAdmissionsPath(pathname);
   if (item.label === "Research") return isResearchPath(pathname);
   if (item.label === "Student Life") return isStudentLifePath(pathname);
   if (item.label === "Info - Corner") return isInfoCornerPath(pathname);
@@ -175,7 +132,8 @@ function isNavItemActive(pathname: string, item: NavItem): boolean {
   return pathname === path || (path !== "/" && pathname.startsWith(`${path}/`));
 }
 
-export function Header() {
+export function Header({ navigation, prospectus }: HeaderProps = {}) {
+  const navItems = navigation ?? STATIC_HEADER_NAV;
   const pathname = usePathname();
   const headerRef = useRef<HTMLElement>(null);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -187,22 +145,34 @@ export function Header() {
     if (!el) return;
 
     const syncHeaderHeight = () => {
+      const topbar = el.querySelector<HTMLElement>(".bihe-site-header__topbar");
+      const navbar = el.querySelector<HTMLElement>(".bihe-site-header__navbar");
+      if (!topbar || !navbar) return;
+
+      const height =
+        topbar.getBoundingClientRect().height +
+        navbar.getBoundingClientRect().height;
+
       document.documentElement.style.setProperty(
         "--site-header-height",
-        `${el.offsetHeight}px`,
+        `${Math.round(height)}px`,
       );
     };
 
     syncHeaderHeight();
     const ro = new ResizeObserver(syncHeaderHeight);
     ro.observe(el);
+    const topbar = el.querySelector<HTMLElement>(".bihe-site-header__topbar");
+    const navbar = el.querySelector<HTMLElement>(".bihe-site-header__navbar");
+    if (topbar) ro.observe(topbar);
+    if (navbar) ro.observe(navbar);
     window.addEventListener("resize", syncHeaderHeight);
 
     return () => {
       ro.disconnect();
       window.removeEventListener("resize", syncHeaderHeight);
     };
-  }, []);
+  }, [menuOpen]);
 
   useEffect(() => {
     let rafId = 0;
@@ -221,12 +191,6 @@ export function Header() {
     };
 
     const onScroll = () => {
-      debugPerf.headerScroll.window += 1;
-      const now = Date.now();
-      if (now - debugPerf.lastLenisScrollAt < 16) {
-        debugPerf.headerScroll.duplicateBurst += 1;
-      }
-      debugPerf.lastWindowScrollAt = now;
       if (rafId) return;
       rafId = requestAnimationFrame(() => {
         rafId = 0;
@@ -235,12 +199,6 @@ export function Header() {
     };
 
     const onLenisScroll = (e: { scroll: number }) => {
-      debugPerf.headerScroll.lenis += 1;
-      const now = Date.now();
-      if (now - debugPerf.lastWindowScrollAt < 16) {
-        debugPerf.headerScroll.duplicateBurst += 1;
-      }
-      debugPerf.lastLenisScrollAt = now;
       if (rafId) return;
       rafId = requestAnimationFrame(() => {
         rafId = 0;
@@ -269,17 +227,7 @@ export function Header() {
       window.addEventListener("scroll", onScroll, { passive: true });
     }
 
-    const reportTimer = window.setTimeout(() => {
-      logDebug("H2", "Header.tsx:scrollEffect", "scroll listener activity sample", {
-        windowEvents: debugPerf.headerScroll.window,
-        lenisEvents: debugPerf.headerScroll.lenis,
-        duplicateBurst: debugPerf.headerScroll.duplicateBurst,
-        usesLenis: Boolean(window.__lenis),
-      });
-    }, 3500);
-
     return () => {
-      window.clearTimeout(reportTimer);
       if (rafId) cancelAnimationFrame(rafId);
       window.removeEventListener("scroll", onScroll);
       window.removeEventListener("lenis:ready", bindLenis);
@@ -314,9 +262,17 @@ export function Header() {
       const submenu = item?.querySelector<HTMLElement>(".bihe-site-header__submenu");
       if (!item || !submenu) return;
 
+      if (item.classList.contains("bihe-site-header__topbar-dropdown")) {
+        submenu.style.removeProperty("--submenu-top");
+        submenu.style.removeProperty("--submenu-left");
+        submenu.style.removeProperty("--submenu-right");
+        return;
+      }
+
       const rect = item.getBoundingClientRect();
       submenu.style.setProperty("--submenu-top", `${rect.bottom + 4}px`);
       submenu.style.setProperty("--submenu-left", `${rect.left}px`);
+      submenu.style.removeProperty("--submenu-right");
     };
 
     syncSubmenuPosition();
@@ -343,6 +299,7 @@ export function Header() {
         .forEach((submenu) => {
           submenu.style.removeProperty("--submenu-top");
           submenu.style.removeProperty("--submenu-left");
+          submenu.style.removeProperty("--submenu-right");
         });
     };
   }, [openDropdown]);
@@ -370,7 +327,7 @@ export function Header() {
   return (
     <header
       ref={headerRef}
-      className={`bihe-site-header${scrolled ? " bihe-site-header--scrolled" : ""}`}
+      className={`bihe-site-header${scrolled ? " bihe-site-header--scrolled" : ""}${menuOpen ? " bihe-site-header--menu-open" : ""}`}
     >
       <div className="bihe-site-header__topbar">
         <div className="bihe-site-header__container bihe-site-header__topbar-inner">
@@ -390,12 +347,86 @@ export function Header() {
             </SocialIcon>
           </div>
           <div className="bihe-site-header__topbar-actions">
-            <Link href={SITE_LINKS.gallery} className="bihe-site-header__topbar-link">
+            {prospectus ? (
+              <a
+                href={prospectus.href}
+                className="bihe-site-header__topbar-link bihe-site-header__topbar-link--prospectus"
+                target={prospectus.openInNewTab ? "_blank" : undefined}
+                rel={prospectus.openInNewTab ? "noopener noreferrer" : undefined}
+              >
+                {prospectus.label}
+              </a>
+            ) : null}
+            <Link
+              href={SITE_LINKS.gallery}
+              className={`bihe-site-header__topbar-link${isGalleryPath(pathname) ? " is-active" : ""}`}
+              aria-current={isGalleryPath(pathname) ? "page" : undefined}
+            >
               Gallery
             </Link>
-            <Link href={SITE_LINKS.aboutBihe} className="bihe-site-header__topbar-link">
-              Alumni
-            </Link>
+            <div
+              className={`bihe-site-header__topbar-dropdown bihe-site-header__nav-item--dropdown${
+                openDropdown === ALUMNI_TOPBAR_ITEM.label ? " is-open" : ""
+              }${isAlumniPath(pathname) ? " is-active" : ""}`}
+              data-nav-dropdown={ALUMNI_TOPBAR_ITEM.label}
+            >
+              <div
+                className={`bihe-site-header__topbar-link-group bihe-site-header__topbar-link-group--menu${
+                  isAlumniPath(pathname) ? " is-active" : ""
+                }${openDropdown === ALUMNI_TOPBAR_ITEM.label ? " is-open" : ""}`}
+              >
+                <Link
+                  href={ALUMNI_TOPBAR_ITEM.href}
+                  className="bihe-site-header__topbar-link bihe-site-header__topbar-link--menu"
+                  aria-current={isAlumniPath(pathname) ? "page" : undefined}
+                  aria-expanded={openDropdown === ALUMNI_TOPBAR_ITEM.label}
+                  onClick={(e) => handleDropdownTrigger(e, ALUMNI_TOPBAR_ITEM, true)}
+                >
+                  {ALUMNI_TOPBAR_ITEM.label}
+                </Link>
+                <button
+                  type="button"
+                  className={`bihe-site-header__topbar-chevron-btn bihe-site-header__topbar-chevron-btn--menu${
+                    openDropdown === ALUMNI_TOPBAR_ITEM.label ? " is-open" : ""
+                  }`}
+                  aria-expanded={openDropdown === ALUMNI_TOPBAR_ITEM.label}
+                  aria-label={`${openDropdown === ALUMNI_TOPBAR_ITEM.label ? "Close" : "Open"} Alumni submenu`}
+                  onClick={(e) => handleDropdownTrigger(e, ALUMNI_TOPBAR_ITEM, true)}
+                >
+                  <IconChevron />
+                </button>
+              </div>
+              <ul
+                className={`bihe-site-header__submenu${
+                  openDropdown === ALUMNI_TOPBAR_ITEM.label ? " bihe-site-header__submenu--open" : ""
+                }`}
+                role="menu"
+              >
+                {ALUMNI_TOPBAR_ITEM.children.map((child) => {
+                  const isChildActive = isSubmenuLinkActive(
+                    pathname,
+                    child.href,
+                    ALUMNI_TOPBAR_ITEM.children,
+                  );
+
+                  return (
+                    <li key={child.label} role="none">
+                      <Link
+                        href={child.href}
+                        className={`bihe-site-header__submenu-link${
+                          isChildActive ? " is-active" : ""
+                        }`}
+                        role="menuitem"
+                        aria-current={isChildActive ? "page" : undefined}
+                        onClick={() => setOpenDropdown(null)}
+                      >
+                        {child.label}
+                      </Link>
+                    </li>
+                  );
+                })}
+              </ul>
+            </div>
             <Link href={SITE_LINKS.apply} className="bihe-site-header__apply-top">
               Apply Now
               <ArrowRightIcon />
@@ -485,27 +516,142 @@ export function Header() {
                         }`}
                         role="menu"
                       >
-                        {item.children!.map((child) => (
-                          <li key={child.label} role="none">
-                            <Link
-                              href={child.href}
-                              className="bihe-site-header__submenu-link"
-                              role="menuitem"
-                              onClick={() => {
-                                setOpenDropdown(null);
-                                closeMenu();
-                              }}
-                            >
-                              {child.label}
-                            </Link>
-                          </li>
-                        ))}
+                        {item.children!.map((child) => {
+                          const isChildActive = isSubmenuLinkActive(
+                            pathname,
+                            child.href,
+                            item.children!,
+                          );
+
+                          return (
+                            <li key={child.label} role="none">
+                              <Link
+                                href={child.href}
+                                className={`bihe-site-header__submenu-link${
+                                  isChildActive ? " is-active" : ""
+                                }`}
+                                role="menuitem"
+                                aria-current={isChildActive ? "page" : undefined}
+                                onClick={() => {
+                                  setOpenDropdown(null);
+                                  closeMenu();
+                                }}
+                              >
+                                {child.label}
+                              </Link>
+                            </li>
+                          );
+                        })}
                       </ul>
                     ) : null}
                   </li>
                 );
               })}
             </ul>
+
+            <div className="bihe-site-header__nav-extras" aria-label="Quick links">
+              <ul className="bihe-site-header__nav-extras-list">
+                {prospectus ? (
+                  <li className="bihe-site-header__nav-extras-item">
+                    <a
+                      href={prospectus.href}
+                      className="bihe-site-header__nav-extras-link"
+                      target={prospectus.openInNewTab ? "_blank" : undefined}
+                      rel={prospectus.openInNewTab ? "noopener noreferrer" : undefined}
+                      onClick={closeMenu}
+                    >
+                      {prospectus.label}
+                    </a>
+                  </li>
+                ) : null}
+                <li className="bihe-site-header__nav-extras-item">
+                  <Link
+                    href={SITE_LINKS.gallery}
+                    className={`bihe-site-header__nav-extras-link${isGalleryPath(pathname) ? " is-active" : ""}`}
+                    aria-current={isGalleryPath(pathname) ? "page" : undefined}
+                    onClick={closeMenu}
+                  >
+                    Gallery
+                  </Link>
+                </li>
+                <li
+                  className={`bihe-site-header__nav-extras-item bihe-site-header__nav-item--dropdown${
+                    openDropdown === "Alumni (menu)" ? " is-open" : ""
+                  }`}
+                  data-nav-dropdown="Alumni (menu)"
+                >
+                  <div className="bihe-site-header__nav-link-group">
+                    <Link
+                      href={ALUMNI_TOPBAR_ITEM.href}
+                      className={`bihe-site-header__nav-extras-link${isAlumniPath(pathname) ? " is-active" : ""}`}
+                      aria-expanded={openDropdown === "Alumni (menu)"}
+                      onClick={(e) =>
+                        handleDropdownTrigger(
+                          e,
+                          { ...ALUMNI_TOPBAR_ITEM, label: "Alumni (menu)" },
+                          true,
+                        )
+                      }
+                    >
+                      Alumni
+                    </Link>
+                    <button
+                      type="button"
+                      className={`bihe-site-header__chevron-btn${openDropdown === "Alumni (menu)" ? " is-open" : ""}`}
+                      aria-expanded={openDropdown === "Alumni (menu)"}
+                      aria-label={`${openDropdown === "Alumni (menu)" ? "Close" : "Open"} Alumni submenu`}
+                      onClick={(e) =>
+                        handleDropdownTrigger(
+                          e,
+                          { ...ALUMNI_TOPBAR_ITEM, label: "Alumni (menu)" },
+                          true,
+                        )
+                      }
+                    >
+                      <IconChevron />
+                    </button>
+                  </div>
+                  <ul
+                    className={`bihe-site-header__submenu${
+                      openDropdown === "Alumni (menu)" ? " bihe-site-header__submenu--open" : ""
+                    }`}
+                    role="menu"
+                  >
+                    {ALUMNI_TOPBAR_ITEM.children.map((child) => {
+                      const isChildActive = isSubmenuLinkActive(
+                        pathname,
+                        child.href,
+                        ALUMNI_TOPBAR_ITEM.children,
+                      );
+
+                      return (
+                        <li key={child.label} role="none">
+                          <Link
+                            href={child.href}
+                            className={`bihe-site-header__submenu-link${
+                              isChildActive ? " is-active" : ""
+                            }`}
+                            role="menuitem"
+                            aria-current={isChildActive ? "page" : undefined}
+                            onClick={closeMenu}
+                          >
+                            {child.label}
+                          </Link>
+                        </li>
+                      );
+                    })}
+                  </ul>
+                </li>
+              </ul>
+              <Link
+                href={SITE_LINKS.apply}
+                className="bihe-site-header__nav-extras-apply"
+                onClick={closeMenu}
+              >
+                Apply Now
+                <ArrowRightIcon />
+              </Link>
+            </div>
           </nav>
 
           <button

@@ -35,7 +35,7 @@ export const STUDENT_LIFE_SUBMENU: StudentLifeSubmenuItem[] = [
       "Training, internships, campus recruitment, and career development support for students.",
   },
   {
-    label: "Student Grievance Redressal Committee",
+    label: "Student Grievance Redressal Committee (SGRC)",
     href: "/student-life/student-grievance-redressal-committee",
     slug: "student-grievance-redressal-committee",
     description:
@@ -70,14 +70,14 @@ export const STUDENT_LIFE_SUBMENU: StudentLifeSubmenuItem[] = [
       "Promoting equity, inclusion, and equal access to academic and campus opportunities.",
   },
   {
-    label: "Socio-Economically Disadvantaged Groups",
+    label: "Socio-Economically Disadvantaged Groups (SEDG) Cell",
     href: "/student-life/socio-economically-disadvantaged-groups",
     slug: "socio-economically-disadvantaged-groups",
     description:
       "Support schemes and welfare measures for students from socio-economically disadvantaged backgrounds.",
   },
   {
-    label: "Facilities for Differently-abled Students",
+    label: "Facilities for Differently-Abled Students",
     href: "/student-life/facilities-for-differently-abled-students",
     slug: "facilities-for-differently-abled-students",
     description:

@@ -4,7 +4,7 @@ import { SitePageShell } from "@/components/layout/SitePageShell";
 import { ICC_PAGE_LEAD } from "@/lib/internal-complaint-committee-content";
 
 export const metadata: Metadata = {
-  title: "Internal Complaint Committee | Administration | BIHE",
+  title: "Internal Complaints Committee (ICC) | Student Life | BIHE",
   description: ICC_PAGE_LEAD,
 };
 

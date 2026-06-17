@@ -15,7 +15,7 @@ export function IqacQualityGraphic() {
               src={images.iqacQualityMain}
               alt="Faculty reviewing academic performance data and charts"
               fill
-              sizes="(max-width: 960px) 92vw, 20rem"
+              sizes="(max-width: 480px) 42vw, (max-width: 960px) 55vw, 20rem"
               className="iqac-page__graphic-img"
             />
           </div>
@@ -27,7 +27,7 @@ export function IqacQualityGraphic() {
               src={images.iqacQualityPanel}
               alt="IQAC members reviewing quality documentation"
               fill
-              sizes="(max-width: 960px) 50vw, 12rem"
+              sizes="(max-width: 480px) 38vw, (max-width: 960px) 40vw, 12rem"
               className="iqac-page__graphic-img"
             />
           </div>

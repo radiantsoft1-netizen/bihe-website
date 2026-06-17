@@ -3,45 +3,12 @@
 @import "../styles/landing.css";
 @import "../styles/liverpool-home.css";
 @import "../styles/modern-page.css";
+@import "../styles/news-ticker.css";
 @import "../styles/page-background.css";
 @import "../styles/page-background-positions.css";
 @import "../styles/smooth-experience.css";
-@import "../styles/about-bihe-page.css";
-@import "../styles/memorandum-page.css";
-@import "../styles/idp-page.css";
-@import "../styles/constituent-units-page.css";
-@import "../styles/principal-page.css";
 @import "../styles/bihe-data-table.css";
 @import "../styles/bihe-bullet-list.css";
-@import "../styles/controller-of-examination-page.css";
-@import "../styles/ombudsperson-page.css";
-@import "../styles/internal-complaint-committee-page.css";
-@import "../styles/governing-bodies-page.css";
-@import "../styles/academic-leadership-page.css";
-@import "../styles/b-com-admin-page.css";
-@import "../styles/academic-calendar-page.css";
-@import "../styles/academics-examination-page.css";
-@import "../styles/iqac-page.css";
-@import "../styles/library-page.css";
-@import "../styles/admissions-page-nav.css";
-@import "../styles/admission-process-page.css";
-@import "../styles/fee-refund-policy-page.css";
-@import "../styles/online-admission-format-page.css";
-@import "../styles/research-development-cell-page.css";
-@import "../styles/academic-projects-page.css";
-@import "../styles/incubation-centre-page.css";
-@import "../styles/central-research-facilities-page.css";
-@import "../styles/sports-facilities-page.css";
-@import "../styles/nss-details-page.css";
-@import "../styles/student-life-rich-page.css";
-@import "../styles/mega-placement-drive-page.css";
-@import "../styles/differently-abled-page.css";
-@import "../styles/student-facilities-nav.css";
-@import "../styles/info-corner-pages.css";
-@import "../styles/international-students-page.css";
-@import "../styles/gallery-page.css";
-@import "../styles/gallery-detail-page.css";
-@import "../styles/contact-page.css";
 @import "lenis/dist/lenis.css";
 
 *,
@@ -52,6 +19,7 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: clip;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -68,12 +36,19 @@ body {
   background: var(--color-bg);
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
+  overflow-x: clip;
 }
 
 img {
   max-width: 100%;
   height: auto;
   display: block;
+}
+
+img[data-nimg="fill"] {
+  max-width: none;
+  width: 100%;
+  height: 100%;
 }
 
 a {
@@ -151,9 +126,29 @@ input[type="reset"] {
 .bihe-wrap .sl-rich-page__page-ref-desc,
 .bihe-wrap .sl-rich-page__page-ref-card--panel .sl-rich-page__page-ref-desc,
 .bihe-wrap .sl-rich-page__facility-text,
+.bihe-wrap .sl-rich-page__text,
+.bihe-wrap .sl-rich-page__highlight-text,
+.bihe-wrap .sl-rich-page .principal-page__paragraph,
 .bihe-wrap .library-page__facility-desc,
 .bihe-wrap .ic-page__facility-desc,
-.bihe-wrap .bihe-mission__card p {
+.bihe-wrap .incubation-centre-page .ic-page__banner-text,
+.bihe-wrap .incubation-centre-page .ic-page__showcase-text,
+.bihe-wrap .incubation-centre-page .ic-page__status-text,
+.bihe-wrap .nss-page__text,
+.bihe-wrap .nss-page .principal-page__paragraph,
+.bihe-wrap .mpd-page__text,
+.bihe-wrap .mpd-page .principal-page__paragraph,
+.bihe-wrap .bihe-mission__card p,
+.bihe-wrap .faculty-staff__designation,
+.bihe-wrap .about-bihe-hero__lead,
+.bihe-wrap .about-bihe-intro__body .about__desc,
+.bihe-wrap .idp-page__growth-card-text,
+.bihe-wrap .cu-page__intro-list,
+.bihe-wrap .principal-page__float-name,
+.bihe-wrap .principal-page__float-role,
+.bihe-wrap .principal-page__float-quals,
+.bihe-wrap .gallery-detail-page__text,
+.bihe-wrap .alumni-gallery-detail-page__copy .gallery-detail-page__text {
   text-align: left;
   text-justify: auto;
 }

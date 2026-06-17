@@ -1,15 +1,27 @@
-const ANNOUNCEMENT =
-  "Bapuji Institute of Hi-Tech Education (BIHE) Established in 2000. offers UG Programs. Known for its academic Excellence and Extensive campus, focusing on student placement, leadership and ethical values with AICTE approval and Davangere University affiliation.";
+import { FALLBACK_ANNOUNCEMENTS } from "@/lib/homepage-fallbacks";
+import type { AnnouncementItem } from "@/lib/types/content";
 
-export function AnnouncementBar() {
+type AnnouncementBarProps = {
+  announcements?: AnnouncementItem[];
+};
+
+function announcementText(announcements: AnnouncementItem[]): string {
+  return announcements.map((item) => item.message).join("   •   ");
+}
+
+export function AnnouncementBar({
+  announcements = FALLBACK_ANNOUNCEMENTS,
+}: AnnouncementBarProps) {
+  const text = announcementText(announcements);
+
   return (
     <section className="announcement" id="announcement" aria-label="Announcements">
       <div className="announcement__inner">
         <p className="announcement__label">Announcement</p>
         <div className="announcement__marquee" aria-live="polite">
           <div className="announcement__track">
-            <span>{ANNOUNCEMENT}</span>
-            <span aria-hidden>{ANNOUNCEMENT}</span>
+            <span>{text}</span>
+            <span aria-hidden>{text}</span>
           </div>
         </div>
       </div>

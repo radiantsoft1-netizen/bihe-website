@@ -3,6 +3,11 @@ export const OMBUDSPERSON_PAGE_LEAD =
 
 export const OMBUDSPERSON_INTRO_TITLE = "Grievance Redressal and Welfare Committee";
 
+export const OMBUDSPERSON_INTRO_BADGE = "Student & Staff Welfare";
+
+export const OMBUDSPERSON_INTRO_IMAGE_ALT =
+  "BIHE campus — supportive environment for grievance redressal and welfare";
+
 export const OMBUDSPERSON_INTRO_TEXT =
   "Bapuji Institute of Hi-Tech Education has constituted the Grievance Redressal and Welfare Committee to provide an impartial platform for students, parents, and staff to raise concerns and seek fair resolution. The committee functions in accordance with institutional policies and regulatory guidelines to maintain a harmonious and supportive academic environment.";
 
@@ -55,8 +60,40 @@ export const OMBUDSPERSON_COMMITTEE_MEMBERS = [
     slNo: "04",
     name: "Anup K G",
     designation: "Assistant Professor",
-    status: "Member",
+    status: "First Year BCA student counselor",
     mobile: "8296436397",
     email: "anupakira@gmail.com",
+  },
+  {
+    slNo: "05",
+    name: "Kiran N V",
+    designation: "Assistant Professor",
+    status: "Second Year BCA student counselor",
+    mobile: "9380982557",
+    email: "kirannvv@gmail.com",
+  },
+  {
+    slNo: "06",
+    name: "Nagaraj B S",
+    designation: "Assistant Professor",
+    status: "Third Year BCA student counselor",
+    mobile: "9886696272",
+    email: "reach2bs@gmail.com",
+  },
+  {
+    slNo: "07",
+    name: "Tarun B S",
+    designation: "Student",
+    status: "Student Member",
+    mobile: "8660594420",
+    email: "traunbs@gmail.com",
+  },
+  {
+    slNo: "08",
+    name: "Harshitha",
+    designation: "Student",
+    status: "Student Member",
+    mobile: "7676287930",
+    email: "harshitha12@gmail.com",
   },
 ] as const;

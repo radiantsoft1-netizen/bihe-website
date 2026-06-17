@@ -1,37 +1,25 @@
-/* Facilities for Differently-abled Students — principal-style showcase layout */
+/* Facilities for Differently-abled Students — compact principal-style showcase */
 
-.differently-abled-page__intro {
-  padding: clamp(2.5rem, 5vw, 3.5rem) var(--principal-pad-x);
-  background: #fff;
+.differently-abled-page .about-bihe-hero {
+  padding-bottom: clamp(1.75rem, 4vw, 2.5rem);
 }
 
-.differently-abled-page__intro-kicker {
-  margin: 0 0 0.5rem;
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--color-secondary);
-}
-
-.differently-abled-page__intro-title {
-  margin: 0 0 1rem;
-  font-family: var(--font-hero);
-  font-size: clamp(1.5rem, 3vw, 2.25rem);
-  font-weight: 700;
-  line-height: 1.2;
-  color: var(--color-primary);
-}
-
-.differently-abled-page__intro-lead {
-  margin: 0;
-  font-size: 1rem;
-  line-height: 1.75;
-  color: #475569;
+.differently-abled-page .about-bihe-hero__lead {
+  max-width: 52rem;
 }
 
 .differently-abled-page .principal-page__showcase {
-  min-height: 920px;
+  min-height: auto;
+  justify-content: flex-start;
+  padding-block: clamp(2rem, 3.5vw, 2.75rem);
+}
+
+.differently-abled-page .principal-page__showcase--s1 {
+  padding-top: clamp(1rem, 2.5vw, 1.5rem);
+}
+
+.differently-abled-page .principal-page__grid {
+  gap: clamp(1.5rem, 3vw, 2.25rem);
 }
 
 .differently-abled-page__portrait-img {
@@ -42,12 +30,21 @@
   padding-bottom: 0;
 }
 
+.differently-abled-page .principal-page__portrait-frame {
+  aspect-ratio: 16 / 11;
+  min-height: clamp(14rem, 28vh, 20rem);
+}
+
 .differently-abled-page .principal-page__float-card {
   display: none;
 }
 
 .differently-abled-page__bullet-list {
-  gap: 0.75rem;
+  gap: 0.65rem;
+}
+
+.differently-abled-page .principal-page__body {
+  gap: 0.85rem;
 }
 
 .differently-abled-page .principal-page__grid--reverse .principal-page__visual {
@@ -62,6 +59,10 @@
   .differently-abled-page .principal-page__grid--reverse .principal-page__visual,
   .differently-abled-page .principal-page__grid--reverse .principal-page__content {
     order: unset;
+  }
+
+  .differently-abled-page .principal-page__showcase {
+    padding-block: clamp(1.75rem, 5vw, 2.25rem);
   }
 }
 
@@ -158,14 +159,13 @@
 }
 
 .differently-abled-page .principal-page__showcase--s7 {
-  min-height: auto;
-  padding-bottom: clamp(3rem, 6vw, 4rem);
+  padding-bottom: clamp(2rem, 4vw, 2.75rem);
 }
 
 .differently-abled-page__closing-highlight {
-  margin: 0 0 clamp(1.75rem, 3vw, 2.25rem);
+  margin: 0 0 1.25rem;
   max-width: none;
-  padding: clamp(1.25rem, 3vw, 1.75rem) clamp(1.5rem, 4vw, 2.25rem);
+  padding: clamp(1rem, 2.5vw, 1.35rem) clamp(1.25rem, 3vw, 1.75rem);
   border-left: 4px solid var(--color-secondary);
   border-radius: 0.5rem;
   background: linear-gradient(

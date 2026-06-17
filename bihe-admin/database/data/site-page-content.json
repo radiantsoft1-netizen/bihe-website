@@ -1,0 +1,462 @@
+{
+  "/student-life/sports-facilities": {
+    "title": "Sports Facilities",
+    "lead": "Outdoor grounds, indoor games, and fitness activities that encourage teamwork and student wellness.",
+    "currentPage": "Sports Facilities",
+    "introBadge": "Student Life",
+    "introTitle": "Sports Facilities",
+    "paragraphs": [
+      "BIHE provides sports facilities that encourage physical fitness, teamwork, and participation in indoor and outdoor games. Students are motivated to balance academics with active campus life through regular practice and institutional sports events.",
+      "Sports activities at the institute support holistic development and help students build discipline, leadership, and collaborative skills beyond the classroom."
+    ]
+  },
+  "/student-life/nss-details": {
+    "title": "NSS Details",
+    "lead": "National Service Scheme programmes, community outreach, and social responsibility initiatives at BIHE.",
+    "currentPage": "NSS Details",
+    "introBadge": "Student Life",
+    "introTitle": "National Service Scheme (NSS)",
+    "paragraphs": [
+      "The National Service Scheme (NSS) is a centrally sponsored programme under the Ministry of Youth Affairs and Sports, Government of India, launched with the objective of developing the personality and character of students through voluntary community service. NSS aims to inculcate social responsibility, leadership qualities, discipline, and a spirit of selfless service among youth, guided by its motto, \"Not Me But You.\"",
+      "The National Service Scheme (NSS) Unit of Bapuji Institute of Hi-Tech Education (BIHE) was formally inaugurated on 10th October 2024 with great enthusiasm and active participation from students, faculty members, and invited dignitaries. The inauguration marked the beginning of structured community-oriented activities under the NSS banner and served as a platform to familiarize students with the ideals of voluntary service, civic responsibility, and national development. The programme aimed to inculcate values of empathy, leadership, discipline, and civic consciousness among students.",
+      "Since its inception, the NSS Unit has been actively involved in organizing a variety of extension and outreach programmes that address social, environmental, health, and educational issues. Students actively participate in activities such as tree plantation drives, cleanliness campaigns, awareness rallies, blood donation camps, health and hygiene awareness programmes, road safety campaigns, environmental conservation initiatives, voter awareness programmes, and community development activities.",
+      "The NSS unit also encourages students to engage with local communities through village visits, educational support programmes, and awareness campaigns on issues such as digital literacy, women's empowerment, substance abuse prevention, and public health. These activities help students understand societal challenges and contribute meaningfully towards community welfare.",
+      "Special emphasis is placed on developing leadership skills, teamwork, communication abilities, and problem-solving capabilities among student volunteers. Through participation in NSS activities, students gain practical exposure to social realities and develop a sense of responsibility towards society and the nation.",
+      "The institution regularly observes important national and international days, including Independence Day, Republic Day, National Youth Day, International Yoga Day, World Environment Day, Constitution Day, and National Voters' Day. These programmes promote awareness of national values, constitutional responsibilities, environmental sustainability, and healthy lifestyles.",
+      "BIHE encourages NSS volunteers to participate in university-level, state-level, and national-level NSS programmes, camps, and workshops. Such participation provides students with opportunities to interact with peers from diverse backgrounds, broaden their perspectives, and enhance their leadership and organizational skills.",
+      "Through its NSS activities, Bapuji Institute of Hi-Tech Education remains committed to nurturing socially responsible citizens who are dedicated to community service, nation-building, and sustainable development. The NSS Unit continues to play a vital role in bridging the gap between academic learning and societal engagement, thereby contributing to the holistic development of students."
+    ]
+  },
+  "/student-life/hostel-facilities": {
+    "title": "Hostel Facilities",
+    "lead": "The college hostel provides a safe, comfortable, and disciplined living environment for students with well-furnished rooms, hygienic dining, and round-the-clock security.",
+    "currentPage": "Hostel Facilities",
+    "introBadge": "Student Life",
+    "introTitle": "Hostel Facilities",
+    "paragraphs": [
+      "The college hostel provides a safe, comfortable, and disciplined living environment for students, creating a home-like atmosphere that supports their academic and personal development. The hostel is designed to meet the residential needs of students by offering a secure and conducive environment for study, recreation, and overall well-being.",
+      "The hostel is equipped with well-furnished and ventilated rooms, adequate furniture, clean drinking water facilities, hygienic dining services, and uninterrupted electricity supply. Spacious accommodation and a peaceful environment help students focus on their studies while enjoying a comfortable stay on campus.",
+      "To ensure the safety and security of residents, the hostel is supervised by dedicated wardens who monitor the day-to-day functioning of the hostel and provide guidance and support to students whenever required. Security measures such as controlled entry and exit, visitor registers, and surveillance systems are maintained to ensure the safety of all residents.",
+      "The hostel provides nutritious and hygienically prepared meals through a well-maintained dining facility. Special attention is given to cleanliness, food quality, and nutritional standards to promote the health and well-being of students.",
+      "First-aid facilities and basic medical support are available for hostellers to address minor health concerns. In case of emergencies, students are provided with necessary medical assistance and referred to nearby healthcare facilities when required.",
+      "Regular housekeeping services ensure cleanliness and sanitation in rooms, corridors, washrooms, dining areas, and common spaces. Proper waste management practices and periodic sanitation drives are undertaken to maintain a healthy and hygienic living environment.",
+      "The hostel also provides common facilities such as study areas, recreation rooms, indoor games, internet access, and spaces for group discussions and academic activities. These facilities contribute to the holistic development of students and encourage interaction, collaboration, and community living.",
+      "Various awareness programmes, cultural activities, celebrations of national festivals, and recreational events are organized periodically to foster a sense of belonging, teamwork, and cultural harmony among residents.",
+      "The hostel administration ensures strict adherence to rules and regulations regarding discipline, attendance, safety, and responsible conduct. Through effective management and student-friendly services, the hostel aims to provide a peaceful, secure, and supportive atmosphere that enables students to achieve academic excellence and personal growth."
+    ]
+  },
+  "/student-life/placement-cell-and-activities": {
+    "title": "Placement Cell & Activities",
+    "lead": "The Placement Cell guides students towards successful careers through training, industry interaction, and campus recruitment.",
+    "currentPage": "Placement Cell & Activities",
+    "introBadge": "Placement Cell",
+    "introTitle": "Placement Cell and its activities",
+    "paragraphs": [
+      "The Placement Cell of Bapuji Institute of Hi-Tech Education plays a vital role in guiding students towards successful careers and employment opportunities. The cell acts as a bridge between students and industries by facilitating campus recruitment and career-oriented activities. It works continuously to enhance students' employability skills and prepare them for the competitive job market.",
+      "The Placement Cell organizes campus drives, job fairs, and recruitment programs in collaboration with reputed companies from various sectors. It conducts regular training programs such as aptitude training, communication skills, resume writing, interview techniques, and personality development to build confidence among students. Industrial visits, internships, guest lectures, and career guidance sessions are also arranged to expose students to real-world industry practices.",
+      "All our committee members will take responsibilities and participation in all the activities of Placement committee to make all the events to get success in this committee."
+    ],
+    "introSliderImages": [
+      {
+        "src": "/images/placement/placement-bca-batch-2025-26.png",
+        "alt": "BCA Batch 2025-26 placement congratulations poster with selected students and recruiter logos",
+        "fit": "contain",
+        "caption": "BCA Batch 2025-26 · Placement Success"
+      },
+      {
+        "src": "/images/mega-placement-drive/offer-letters-banner.png",
+        "alt": "Students receiving offer letters during the Mega Placement Drive at BIHE",
+        "caption": "Mega Placement Drive 2025"
+      },
+      {
+        "src": "/images/mega-placement-drive/inaugural-ceremony.png",
+        "alt": "Inaugural ceremony of the Mega Placement Drive at BIHE campus",
+        "caption": "Campus Recruitment Drive"
+      },
+      {
+        "src": "/images/mega-placement-drive/company-hr-interviews.png",
+        "alt": "Company HR representatives conducting interviews with BIHE students",
+        "caption": "Industry Interview Sessions"
+      }
+    ],
+    "pageRefCards": [
+      {
+        "id": "mega-placement-drive-2025",
+        "eyebrow": "Campus to Corporate · Batch 1",
+        "title": "Mega Placement Drive 2025",
+        "description": "26th September 2025 · BIHE Campus, Davangere",
+        "dateLabel": "26 SEP",
+        "yearLabel": "2025",
+        "href": "/student-life/placement-cell-and-activities/mega-placement-drive-2025"
+      }
+    ]
+  },
+  "/student-life/student-grievance-redressal-committee": {
+    "title": "Student Grievance Redressal Committee",
+    "lead": "Fair and transparent grievance redressal for students in accordance with institutional policies.",
+    "currentPage": "Student Grievance Redressal Committee",
+    "introBadge": "Student Life",
+    "introTitle": "Details of Student Grievance Redressal Committee",
+    "paragraphs": [
+      "The Grievance Redressal & Welfare Committee is established at Bapuji Institute of High Tech Education to ensure a fair, transparent, and supportive system for addressing grievances of students, faculty, and staff. The committee aims to maintain a harmonious academic environment by resolving issues related to academics, administration, facilities, and welfare, thereby ensuring justice and institutional accountability."
+    ]
+  },
+  "/student-life/health-facilities": {
+    "title": "Health Facilities",
+    "lead": "First-aid support, health awareness programmes, and referral assistance for students on campus.",
+    "currentPage": "Health Facilities",
+    "introBadge": "Student Life",
+    "introTitle": "HEALTH FACILITIES",
+    "paragraphs": [
+      "Bapuji Institute of Hi-Tech Education College places strong emphasis on the health and well-being of its students and staff, recognizing that a healthy academic environment is essential for effective learning and personal development. The institution ensures the availability of basic healthcare facilities, first-aid services, and health awareness initiatives within the campus to support physical and mental wellness.",
+      "Through systematic health record maintenance, preventive care measures, and timely medical assistance, the college strives to provide a safe, hygienic, and supportive environment for all members of the institution."
+    ]
+  },
+  "/student-life/anti-ragging-cell": {
+    "title": "Anti-Ragging Cell",
+    "lead": "Zero-tolerance anti-ragging measures, awareness programmes, and student protection on campus.",
+    "currentPage": "Anti-Ragging Cell",
+    "introBadge": "Student Life",
+    "introTitle": "Anti-Ragging Cell",
+    "paragraphs": [
+      "Bapuji Institute of Hi-Tech Education maintains a zero-tolerance policy towards ragging in any form. Ragging is strictly prohibited within the campus, hostels, and all institute-related activities, in accordance with UGC regulations and Supreme Court guidelines.",
+      "The institute is committed to providing a safe, respectful, and inclusive learning environment for all students. An Anti-Ragging Committee and Anti-Ragging Squad have been constituted to prevent, monitor, and address any incidents promptly. Strict disciplinary action, including suspension or expulsion, will be taken against those found guilty of ragging.",
+      "All students are required to submit an Anti-Ragging Affidavit at the time of admission. New students are encouraged to report any instance of ragging without fear, as the institute ensures confidentiality and protection for complainants.",
+      "Bapuji Institute of Hi-Tech Education strives to promote discipline, mutual respect, and harmony among students to foster academic excellence and personal growth."
+    ]
+  },
+  "/student-life/equal-opportunity-cell": {
+    "title": "Equal Opportunity Cell",
+    "lead": "Promoting equity, inclusion, and equal access to academic and campus opportunities.",
+    "currentPage": "Equal Opportunity Cell",
+    "introBadge": "Student Life",
+    "introTitle": "Equal Opportunity Cell",
+    "paragraphs": [
+      "In accordance with the guidelines issued by the University Grants Commission (UGC) and the Ministry of Education, Government of India, Bapuji Institute of Hi-Tech Education (BIHE), Davangere has established an Equal Opportunity Cell to promote inclusiveness and equity on campus. The Cell focuses on supporting students from disadvantaged and deprived groups such as SC, ST, OBC, Minority communities including Jain, and Persons with Disabilities by facilitating their academic, social and personal development. It oversees the effective implementation of policies and programmes meant for these groups and provides guidance and counselling related to academic progress, financial assistance, career development and social well-being. Through its initiatives, the Equal Opportunity Cell strives to enhance diversity, ensure equal access to institutional resources, and create a supportive environment that enables all students to mainstream themselves successfully."
+    ]
+  },
+  "/student-life/socio-economically-disadvantaged-groups": {
+    "title": "Socio-Economically Disadvantaged Groups",
+    "lead": "Support schemes and welfare measures for students from socio-economically disadvantaged backgrounds.",
+    "currentPage": "Socio-Economically Disadvantaged Groups",
+    "introBadge": "Student Life",
+    "introTitle": "Socio-Economically Disadvantaged Groups (SEDG) Cell",
+    "paragraphs": [
+      "In accordance with the guidelines issued by the University Grants Commission (UGC) and Davangere University, to provide equitable opportunities for Socio-Economically Disadvantaged Groups (SEDGs) in Higher Education Institutions (HEIs), a Socio-Economically Disadvantaged Groups Cell (SEDG Cell) has been constituted at Bapuji Institute of Hi-Tech Education (BIHE), Davangere, for the welfare and support of BCA students."
+    ]
+  },
+  "/student-life/facilities-for-differently-abled-students": {
+    "title": "Facilities for Differently-abled Students",
+    "lead": "Accessible infrastructure and assistance for differently-abled students at BIHE.",
+    "currentPage": "Facilities for Differently-abled Students",
+    "introBadge": "Student Life",
+    "introTitle": "Facilities for Differently-abled Students",
+    "paragraphs": [
+      "The institute provides facilities and support services for differently-abled students to ensure accessible learning and comfortable participation in campus life.",
+      "Reasonable accommodations, assistance, and inclusive practices are encouraged across academic and administrative processes."
+    ]
+  },
+  "/student-life/computer-lab": {
+    "title": "Computer Lab",
+    "lead": "Modern computer laboratories with updated systems for practical learning and projects.",
+    "currentPage": "Computer Lab",
+    "introBadge": "Student Life",
+    "introTitle": "Computer Lab",
+    "paragraphs": [
+      "Keeping in view the growing importance of computer learning, the college has established a well-equipped set of five computer labs to keep students updated with the latest computer knowledge. The labs can accommodate 160 students at a time. The college provides Hi-Tech computers with LAN and internet services through wireless connectivity, as well as LCD projection systems, hardware and software tools, printers, and scanners.",
+      "Students, faculty, and staff have access to the computer labs, which provide the tools and technologies needed to produce websites, edit papers, complete class assignments, communicate via email, conduct data analysis, and access library resources. Microsoft Windows software is available for word processing, statistics, spreadsheets, and database management. A variety of graphics and website-creation software programs are also available.",
+      "The computers in the lab are well-configured and suitable for users. These systems are upgraded as per the university syllabus requirements and software version updates.",
+      "The computers and related electronic equipment are tested and maintained on a scheduled basis to keep the facility up and running."
+    ]
+  },
+  "/student-life/auditorium": {
+    "title": "Auditorium",
+    "lead": "Spacious auditorium for seminars, cultural programmes, and institutional events.",
+    "currentPage": "Auditorium",
+    "introBadge": "Student Life",
+    "introTitle": "Auditorium",
+    "paragraphs": [
+      "The Institute has state of the art Auditorium. This auditorium is used for several occasions such as Graduation ceremony, First year inauguration, Fresher's party, Felicitation functions, Alumni events, Major department level events, and others. The following is the list of auditoriums with seating capacities."
+    ]
+  },
+  "/student-life/canteen": {
+    "title": "Canteen",
+    "lead": "Hygienic canteen facilities offering affordable meals for students and staff.",
+    "currentPage": "Canteen",
+    "introBadge": "Student Life",
+    "introTitle": "Canteen",
+    "paragraphs": [
+      "Owing to the diverse student culture at BIHE, the college canteen caters to a wide range of palates. We have an experienced cooking team that specializes in healthy and green diet. The canteen is a favorite hangout for all the students. It provides year round day service. The outsourced canteen provides quality food."
+    ]
+  },
+  "/student-life/youth-red-cross": {
+    "title": "Youth Red Cross",
+    "lead": "Youth Red Cross activities promoting health, humanitarian service, and community care.",
+    "currentPage": "Youth Red Cross",
+    "introBadge": "Student Life",
+    "introTitle": "Youth Red Cross",
+    "paragraphs": [
+      "The Youth Red Cross is a constituent of the Indian Red Cross Society (Karnataka). A group movement organized at the initial stages for students between 18 to 25 years of age. We in our college, have a Youth Red Cross wing. Any student of any discipline can become a YRC member. Our YRC unit has 100 members, under the guidance of a programme officer."
+    ]
+  },
+  "/academics/b-com": {
+    "title": "Bachelor of Commerce",
+    "lead": "Program aims to develop a strong understanding of commerce, business, finance, accounting, and management principles. The course equips students with analytical, decision-making, and problem-solving skills required in today's competitive business environment.",
+    "currentPage": "B.COM",
+    "introBadge": "Academics",
+    "introTitle": "Bachelor of Commerce",
+    "paragraphs": [
+      "Program aims to develop a strong understanding of commerce, business, finance, accounting, and management principles. The course equips students with analytical, decision-making, and problem-solving skills required in today's competitive business environment.",
+      "The B.Com programme is a 3 Years, Full Time, DAVV Affiliated undergraduate course affiliated to Davangere University, designed to build strong foundations in commerce, accounting, finance, and management.",
+      "Students gain analytical and decision-making skills through classroom learning, practical assignments, and career-oriented guidance from the department faculty."
+    ]
+  },
+  "/academics/bca": {
+    "title": "Bachelor of Computer Applications",
+    "lead": "The wider objective is to prepare undergraduate students of BCA for productive careers in software industry/information technology / academia by providing an outstanding environment for teaching and research in the core and emerging areas of the discipline.",
+    "currentPage": "BCA",
+    "introBadge": "Academics",
+    "introTitle": "Bachelor of Computer Application",
+    "paragraphs": [
+      "The wider objective is to prepare undergraduate students of BCA for productive careers in software industry/information technology / academia by providing an outstanding environment for teaching and research in the core and emerging areas of the discipline.",
+      "The BCA programme is a 3 Years, Full Time, DAVV Affiliated undergraduate course affiliated to Davangere University, with access to modern computer laboratories and industry-aligned learning.",
+      "The curriculum prepares students for careers in software development, information technology, and further studies in computer applications."
+    ]
+  },
+  "/academics/academic-calendar": {
+    "title": "Academic Calendar",
+    "lead": "Semester schedules, holidays, and examination timelines for BIHE programmes.",
+    "currentPage": "Academic Calendar",
+    "introBadge": "Academics",
+    "introTitle": "Key academic dates",
+    "paragraphs": [
+      "The academic calendar outlines semester commencement, internal assessment periods, university examinations, and institutional holidays for BCA and B.Com students.",
+      "Students are advised to follow notices from the examination cell and respective departments for updates to schedules and examination timetables."
+    ]
+  },
+  "/academics/academics-and-examination": {
+    "title": "Academics & Examination",
+    "lead": "Examination conduct, evaluation norms, and academic regulations at BIHE.",
+    "currentPage": "Academics & Examination",
+    "introBadge": "Academics",
+    "introTitle": "Examination framework",
+    "paragraphs": [
+      "BIHE follows Davangere University examination guidelines for end-semester examinations, internal assessments, and result processing.",
+      "The Controller of Examination coordinates schedules, hall tickets, and academic records in consultation with programme departments and university authorities."
+    ]
+  },
+  "/academics/b-com-faculty": {
+    "title": "B.Com Faculty",
+    "lead": "Experienced faculty members guiding the Bachelor of Commerce programme with strong foundations in commerce, accounting, and management.",
+    "currentPage": "B.Com Faculty",
+    "introBadge": "Academics",
+    "introTitle": "B.Com Faculty",
+    "paragraphs": [
+      "Experienced faculty members guiding the Bachelor of Commerce programme with strong foundations in commerce, accounting, and management."
+    ]
+  },
+  "/academics/bca-faculty": {
+    "title": "BCA Faculty",
+    "lead": "Dedicated faculty supporting the Bachelor of Computer Applications programme through practical learning and industry-aligned instruction.",
+    "currentPage": "BCA Faculty",
+    "introBadge": "Academics",
+    "introTitle": "BCA Faculty",
+    "paragraphs": [
+      "Dedicated faculty supporting the Bachelor of Computer Applications programme through practical learning and industry-aligned instruction."
+    ]
+  },
+  "/academics/non-teaching-staff": {
+    "title": "Non Teaching Staff",
+    "lead": "Administrative and support staff who coordinate day-to-day operations and student services across BIHE departments.",
+    "currentPage": "Non Teaching Staff",
+    "introBadge": "Academics",
+    "introTitle": "Non Teaching Staff",
+    "paragraphs": [
+      "Administrative and support staff who coordinate day-to-day operations and student services across BIHE departments."
+    ]
+  },
+  "/academics/iqac": {
+    "title": "Internal Quality Assurance Cell",
+    "lead": "Quality assurance, academic benchmarking, and continuous improvement at BIHE.",
+    "currentPage": "Internal Quality Assurance Cell",
+    "introBadge": "Academics",
+    "introTitle": "IQAC at BIHE",
+    "paragraphs": [
+      "The Internal Quality Assurance Cell promotes institutional quality through academic audits, feedback mechanisms, and best-practice initiatives.",
+      "IQAC works with departments to strengthen teaching–learning processes, documentation, and accreditation-related quality benchmarks."
+    ]
+  },
+  "/academics/library": {
+    "title": "Library",
+    "lead": "Digital and print learning resources for BCA and B.Com students.",
+    "currentPage": "Library",
+    "introBadge": "Academics",
+    "introTitle": "Library & learning resources",
+    "paragraphs": [
+      "The BIHE library provides textbooks, reference materials, journals, and quiet study spaces to support coursework and research.",
+      "Students can access curated print collections and digital resources aligned with university syllabus requirements and programme needs."
+    ]
+  },
+  "/academics/faculty-and-staff": {
+    "title": "Faculty And Staff Details",
+    "lead": "Academic faculty and departmental staff supporting BCA and B.Com programmes.",
+    "currentPage": "Faculty And Staff Details",
+    "introBadge": "Academics",
+    "introTitle": "Our academic team",
+    "paragraphs": [
+      "BIHE is supported by experienced faculty members across Computer Applications and Commerce disciplines, along with administrative and student-support staff.",
+      "Department heads and programme coordinators guide academic planning, mentoring, and day-to-day coordination for undergraduate students."
+    ]
+  },
+  "/research/incubation-centre": {
+    "title": "Incubation Centre",
+    "lead": "Fostering innovation, entrepreneurship, and startup development among BIHE students and faculty.",
+    "currentPage": "Incubation Centre",
+    "introBadge": "Research",
+    "introTitle": "Incubation Centre",
+    "paragraphs": [
+      "The Incubation Centre at Bapuji Institute of Hi-Tech Education supports students and faculty in transforming ideas into viable ventures through mentorship, workspace, and industry connect.",
+      "The centre encourages interdisciplinary collaboration, prototype development, and participation in innovation challenges and startup programmes."
+    ]
+  },
+  "/research/central-research-facilities": {
+    "title": "Central Research Facilities",
+    "lead": "Shared research infrastructure and laboratory facilities available to BIHE researchers and project teams.",
+    "currentPage": "Central Research Facilities",
+    "introBadge": "Research",
+    "introTitle": "Central Research Facilities",
+    "paragraphs": [
+      "Central Research Facilities provide access to specialised equipment, computing resources, and laboratory spaces that support academic and applied research across programmes.",
+      "These facilities are maintained to enable quality experimentation, data collection, and project work aligned with institutional and university research standards."
+    ]
+  },
+  "/research/research-and-development-cell": {
+    "title": "Research and Development Cell",
+    "lead": "Student and faculty research projects coordinated by the Research and Development Cell at Bapuji Institute of Hi-Tech Education.",
+    "currentPage": "Research and Development Cell",
+    "introBadge": "Research",
+    "introTitle": "Research and Development Cell",
+    "paragraphs": [
+      "The Research and Development Cell promotes a research-oriented culture by facilitating project proposals, faculty development, and collaboration with industry and academia.",
+      "The cell guides researchers on funding opportunities, ethical practices, and documentation required for institutional and accreditation-related reporting."
+    ],
+    "projects": [
+      {
+        "id": "electricity-billing",
+        "aim": "The aim of the Online Electricity Billing System project is to develop a web-based application that automates electricity bill generation, payment, and customer account management. The system reduces manual paperwork and human errors associated with traditional billing processes. It provides customers with convenient online access to view bills and make payments. The project supports transparent and efficient utility service management. Overall, it aims to improve operational productivity and enhance the customer experience.",
+        "conclusion": "The Online Electricity Billing System successfully automates the conventional electricity billing process through a user-friendly web interface. It ensures accurate bill calculation based on meter readings and maintains secure customer records. The system reduces administrative workload and improves billing transparency. Customers can conveniently access their account details and payment history online. The project demonstrates the effective integration of database management and web application development. It can be enhanced with payment gateways, SMS notifications, and mobile app integration. Thus, the system provides a practical and efficient solution for modern electricity billing management."
+      },
+      {
+        "id": "skin-cancer-classification",
+        "aim": "The aim of the Deep Learning Based Face Skin Cancer Classification System is to detect and classify facial skin cancer at an early stage using deep learning and image processing techniques. The system analyzes facial skin images to identify abnormal patterns that may indicate cancerous growth. It assists medical professionals in making accurate and timely diagnostic decisions. The project explores the application of artificial intelligence in healthcare diagnostics. Overall, it aims to improve early detection rates and support better patient outcomes.",
+        "conclusion": "The Deep Learning Based Face Skin Cancer Classification System effectively classifies facial skin cancer using trained deep learning models. It demonstrates high accuracy in analyzing skin images and identifying cancerous patterns. The system reduces diagnostic time and supports doctors in clinical decision-making. Advanced image processing techniques improve the reliability of classification results. The project highlights the importance of AI in modern healthcare applications. It can be enhanced with larger datasets, multi-class classification, and real-time mobile screening. Thus, the system serves as a valuable tool for early skin cancer detection and medical research."
+      },
+      {
+        "id": "biometric-ignition",
+        "aim": "The aim of the Biometric Based Car Ignition system is to enhance vehicle security using biometric authentication. The project uses fingerprint recognition to allow only authorized users to start the vehicle. It prevents unauthorized access and reduces the risk of vehicle theft. The system replaces traditional keys with a secure biometric method. Overall, the project aims to provide a reliable and advanced vehicle security solution.",
+        "conclusion": "The Biometric Based Car Ignition system successfully improves vehicle security through biometric verification. It ensures that only authorized users can start the car engine. The system reduces the chances of theft and unauthorized usage. Biometric authentication provides higher accuracy compared to traditional keys. The project demonstrates the effective use of embedded systems and biometrics. It can be enhanced by integrating multiple biometric methods and IoT features. Thus, the system offers a smart, secure, and efficient solution for modern vehicles."
+      },
+      {
+        "id": "customer-churn",
+        "aim": "The aim of the Customer Churn Analysis project is to predict customers who are likely to leave a business using machine learning techniques. The system analyzes customer data such as usage patterns and service history. It helps organizations identify high-risk customers in advance. The project supports data-driven decision-making to improve customer retention. Overall, it aims to reduce customer loss and increase business profitability.",
+        "conclusion": "The Customer Churn Analysis Using Machine Learning project effectively predicts customer churn using trained ML models. It helps businesses understand customer behavior and identify key factors influencing churn. Early prediction allows companies to take preventive actions to retain customers. The system improves marketing strategies and customer relationship management. Machine learning models provide better accuracy compared to traditional methods. The project can be enhanced with real-time data and advanced algorithms. Thus, the system serves as a valuable tool for improving customer retention and business growth."
+      },
+      {
+        "id": "vehicle-emission",
+        "aim": "The aim of the IOT-Based Vehicle Emission Monitoring System is to continuously monitor vehicle emission levels using sensors. The system collects emission data and sends it to a cloud platform through IoT technology. It helps in detecting vehicles that exceed permissible pollution limits. The project supports environmental protection by reducing air pollution. Overall, it aims to promote smart and eco-friendly transportation systems.",
+        "conclusion": "The IOT-Based Vehicle Emission Monitoring System provides an efficient solution for monitoring vehicle pollution in real time. It enables accurate detection of harmful gas emissions using sensors. The use of IoT allows remote monitoring and data analysis. Authorities can take timely action against vehicles exceeding emission limits. The system reduces manual inspection and improves transparency. It can be enhanced by integrating GPS, mobile applications, and alert systems. Thus, the project contributes to environmental safety and smart city development."
+      }
+    ]
+  },
+  "/research/academic-projects": {
+    "title": "Academic Projects",
+    "lead": "Student and faculty academic projects that strengthen practical learning and research outcomes.",
+    "currentPage": "Academic Projects",
+    "introBadge": "Research",
+    "introTitle": "Academic Projects",
+    "paragraphs": [
+      "Academic Projects at BIHE enable students to apply classroom knowledge through mini-projects, major projects, and interdisciplinary assignments under faculty supervision.",
+      "Project work encourages analytical thinking, technical documentation, and presentation skills that prepare graduates for higher studies and professional careers."
+    ]
+  },
+  "/info-corner/rti-details": {
+    "title": "RTI Details",
+    "lead": "Right to Information Act details, public information officers, and disclosure procedures at BIHE.",
+    "currentPage": "RTI Details",
+    "introBadge": "Info - Corner",
+    "introTitle": "RTI Details",
+    "paragraphs": [
+      "Bapuji Institute of Hi-Tech Education complies with the Right to Information Act and provides access to information in accordance with statutory requirements.",
+      "Details regarding the Public Information Officer, Assistant Public Information Officer, and the procedure for submitting RTI applications will be published here."
+    ]
+  },
+  "/info-corner/announcements": {
+    "title": "Announcements",
+    "lead": "Official college announcements, notices, and updates for students, faculty, and stakeholders.",
+    "currentPage": "Announcements",
+    "introBadge": "Info - Corner",
+    "introTitle": "Announcements",
+    "paragraphs": [
+      "Official announcements from Bapuji Institute of Hi-Tech Education are published here for students, parents, faculty, and other stakeholders.",
+      "Please check this section regularly for admission updates, examination notices, holiday declarations, and other institutional communications."
+    ]
+  },
+  "/info-corner/newsletters": {
+    "title": "Newsletters",
+    "lead": "Institutional newsletters highlighting campus news, academic updates, and community activities.",
+    "currentPage": "Newsletters",
+    "introBadge": "Info - Corner",
+    "introTitle": "Newsletters",
+    "paragraphs": [
+      "Institutional newsletters highlighting academic developments, campus activities, and community initiatives at BIHE are made available in this section.",
+      "Browse current and archived B.com programme newsletters published by the college.",
+      "Each edition can be opened for a summary; PDF downloads will be linked when available from the college office."
+    ]
+  },
+  "/info-corner/news-events-achievements": {
+    "title": "News, Events & Achievements",
+    "lead": "Latest news, campus events, student achievements, and institutional milestones at BIHE.",
+    "currentPage": "News, Events & Achievements",
+    "introBadge": "Info - Corner",
+    "introTitle": "News, Events & Achievements",
+    "paragraphs": [
+      "This section showcases news coverage, campus events, and notable student and institutional achievements at Bapuji Institute of Hi-Tech Education.",
+      "Browse highlights from placement drives, graduation ceremonies, commerce fests, cultural programmes, and academic initiatives across BCA and B.Com.",
+      "Each story opens with a summary and supporting details; new coverage is added as events and achievements are documented by the college."
+    ]
+  },
+  "/info-corner/international-students-admission": {
+    "title": "Admission procedure and facilities provided to International Students",
+    "lead": "Admission guidelines, eligibility, and campus facilities available for international students at BIHE.",
+    "currentPage": "Admission procedure and facilities provided to International Students",
+    "introBadge": "Info - Corner",
+    "introTitle": "Admission procedure and facilities provided to International Students",
+    "paragraphs": [
+      "Bapuji Institute of Hi-Tech Education welcomes international students and provides guidance on admission procedures, eligibility criteria, and required documentation.",
+      "Information on facilities, support services, and campus resources available to international students will be published in this section."
+    ]
+  },
+  "/info-corner/circulars-and-notices": {
+    "title": "Circulars and Notices",
+    "lead": "Official circulars, administrative notices, and compliance-related communications from the institution.",
+    "currentPage": "Circulars and Notices",
+    "introBadge": "Info - Corner",
+    "introTitle": "Circulars and Notices",
+    "paragraphs": [
+      "Official circulars and administrative notices issued by the institution are published here for reference by students, staff, and affiliated bodies.",
+      "Compliance-related communications and time-bound notices will be listed chronologically in this section."
+    ]
+  },
+  "/info-corner/job-openings": {
+    "title": "Job Openings",
+    "lead": "Current faculty and staff recruitment opportunities at Bapuji Institute of Hi-Tech Education.",
+    "currentPage": "Job Openings",
+    "introBadge": "Info - Corner",
+    "introTitle": "Job Openings",
+    "paragraphs": [
+      "Current recruitment opportunities for teaching and non-teaching positions at Bapuji Institute of Hi-Tech Education are announced in this section.",
+      "Vacancy notices include eligibility criteria, number of posts, and application instructions for faculty and administrative roles at BIHE.",
+      "Interested candidates may submit applications to the college office or email principal@bihedvg.org with the post title clearly mentioned in the subject line."
+    ]
+  }
+}

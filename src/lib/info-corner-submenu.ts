@@ -1,3 +1,5 @@
+import { INFO_CORNER_DEDICATED_NAV } from "@/lib/info-corner-nav";
+
 export type InfoCornerSubmenuItem = {
   label: string;
   href: string;
@@ -5,14 +7,7 @@ export type InfoCornerSubmenuItem = {
   description: string;
 };
 
-export const INFO_CORNER_SUBMENU: InfoCornerSubmenuItem[] = [
-  {
-    label: "RTI Details",
-    href: "/info-corner/rti-details",
-    slug: "rti-details",
-    description:
-      "Right to Information Act details, public information officers, and disclosure procedures at BIHE.",
-  },
+const INFO_CORNER_CATEGORY_SUBMENU: InfoCornerSubmenuItem[] = [
   {
     label: "Announcements",
     href: "/info-corner/announcements",
@@ -35,13 +30,6 @@ export const INFO_CORNER_SUBMENU: InfoCornerSubmenuItem[] = [
       "Latest news, campus events, student achievements, and institutional milestones at BIHE.",
   },
   {
-    label: "Admission procedure and facilities provided to International Students",
-    href: "/info-corner/international-students-admission",
-    slug: "international-students-admission",
-    description:
-      "Admission guidelines, eligibility, and campus facilities available for international students at BIHE.",
-  },
-  {
     label: "Circulars and Notices",
     href: "/info-corner/circulars-and-notices",
     slug: "circulars-and-notices",
@@ -55,4 +43,19 @@ export const INFO_CORNER_SUBMENU: InfoCornerSubmenuItem[] = [
     description:
       "Current faculty and staff recruitment opportunities at Bapuji Institute of Hi-Tech Education.",
   },
+];
+
+function dedicatedToSubmenu(entry: (typeof INFO_CORNER_DEDICATED_NAV)[number]): InfoCornerSubmenuItem {
+  return {
+    label: entry.name,
+    href: entry.href,
+    slug: entry.slug,
+    description: entry.description ?? "",
+  };
+}
+
+export const INFO_CORNER_SUBMENU: InfoCornerSubmenuItem[] = [
+  dedicatedToSubmenu(INFO_CORNER_DEDICATED_NAV[0]),
+  ...INFO_CORNER_CATEGORY_SUBMENU,
+  dedicatedToSubmenu(INFO_CORNER_DEDICATED_NAV[1]),
 ];

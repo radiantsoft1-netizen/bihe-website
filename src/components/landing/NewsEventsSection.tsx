@@ -5,37 +5,23 @@ import { Reveal } from "@/components/ui/Reveal";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { SmartImage } from "@/components/ui/SmartImage";
 import { ArrowRightIcon } from "@/components/ui/icons";
-import { images } from "@/lib/images";
+import { getFeaturedNews } from "@/lib/news-service";
 import { SITE_LINKS } from "@/lib/site-links";
+import type { NewsItem } from "@/lib/types/news";
 
-const events = [
-  {
-    title: "Academic Excellence & Intellectual Development",
-    tag: "Academics",
-    date: "Mar 2026",
-    image: images.news[0],
-  },
-  {
-    title: "Annual Day & Cultural Celebrations",
-    tag: "Campus Life",
-    date: "Feb 2026",
-    image: images.news[1],
-  },
-  {
-    title: "National Festival & Community Outreach",
-    tag: "Events",
-    date: "Jan 2026",
-    image: images.news[2],
-  },
-  {
-    title: "Student Leadership & Orientation Program",
-    tag: "Student Life",
-    date: "Dec 2025",
-    image: images.news[3],
-  },
-];
+type NewsEventsSectionProps = {
+  events?: NewsItem[];
+};
 
-export function NewsEventsSection() {
+function eventHref(event: NewsItem): string {
+  if (event.slug && !event.slug.startsWith("fallback-")) {
+    return SITE_LINKS.newsDetail(event.slug);
+  }
+  return SITE_LINKS.news;
+}
+
+export async function NewsEventsSection({ events }: NewsEventsSectionProps) {
+  const items = events ?? (await getFeaturedNews());
   return (
     <section className="news" id="events" aria-labelledby="events-title">
       <div className="news__decor" aria-hidden>
@@ -62,10 +48,10 @@ export function NewsEventsSection() {
         </Reveal>
 
         <div className="news__grid">
-          {events.map((event, i) => (
-            <Reveal key={event.image} delay={i * 90} direction="up">
+          {items.map((event, i) => (
+            <Reveal key={event.id ?? event.image} delay={i * 90} direction="up">
               <article className="news-card">
-                <Link href={SITE_LINKS.events} className="news-card__media media-card__media">
+                <Link href={eventHref(event)} className="news-card__media media-card__media">
                   <SmartImage
                     src={event.image}
                     alt={event.title}
@@ -78,7 +64,7 @@ export function NewsEventsSection() {
                 </Link>
                 <div className="news-card__body">
                   <h3 className="news-card__title">{event.title}</h3>
-                  <Link href={SITE_LINKS.events} className="news-card__link">
+                  <Link href={eventHref(event)} className="news-card__link">
                     Read more
                     <ArrowRightIcon />
                   </Link>

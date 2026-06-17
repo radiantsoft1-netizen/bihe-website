@@ -1,6 +1,51 @@
 import { images } from "@/lib/images";
 import type { StudentLifeRichPageConfig } from "./types";
 
+export const HOSTEL_FACILITIES_INTRO_HIGHLIGHTS = [
+  {
+    id: "accommodation",
+    title: "Accommodation & Comfort",
+    description:
+      "Well-furnished and ventilated rooms with adequate furniture, clean drinking water, hygienic dining services, and uninterrupted electricity supply for a peaceful campus stay.",
+    icon: "accommodation",
+  },
+  {
+    id: "safety",
+    title: "Safety & Security",
+    description:
+      "Dedicated wardens supervise daily hostel operations while controlled entry, visitor registers, and surveillance systems protect every resident.",
+    icon: "safety",
+  },
+  {
+    id: "dining",
+    title: "Dining & Nutrition",
+    description:
+      "Nutritious, hygienically prepared meals are served through a well-maintained dining facility with strong standards for cleanliness, food quality, and nutrition.",
+    icon: "dining",
+  },
+  {
+    id: "medical",
+    title: "Medical Support",
+    description:
+      "First-aid facilities and basic medical support address minor health concerns, with emergency assistance and referrals to nearby healthcare centres when required.",
+    icon: "medical",
+  },
+  {
+    id: "housekeeping",
+    title: "Housekeeping & Hygiene",
+    description:
+      "Regular housekeeping, waste management, and sanitation drives keep rooms, corridors, washrooms, dining areas, and common spaces clean and healthy.",
+    icon: "housekeeping",
+  },
+  {
+    id: "common-facilities",
+    title: "Common Facilities",
+    description:
+      "Study areas, recreation rooms, indoor games, internet access, and discussion spaces encourage collaboration, community living, and holistic development.",
+    icon: "common-facilities",
+  },
+] as const;
+
 export const HOSTEL_FACILITIES_PAGE: StudentLifeRichPageConfig = {
   slug: "hostel-facilities",
   currentPage: "Hostel Facilities",
@@ -9,14 +54,32 @@ export const HOSTEL_FACILITIES_PAGE: StudentLifeRichPageConfig = {
     "The college hostel provides a safe, comfortable, and disciplined living environment for students with well-furnished rooms, hygienic dining, and round-the-clock security.",
   banner: {
     src: images.studentLife.hostelBanner,
-    alt: "BIHE hostel building and campus accommodation",
+    alt: "Bapuji B-School executive hostel building for boys at BIHE campus",
     kicker: "Student Life",
     overlayTitle: "Hostel Facilities",
+    images: [
+      {
+        src: images.studentLife.hostel1,
+        alt: "Ladies hostel building at BIHE campus",
+        label: "Ladies Hostel",
+      },
+      {
+        src: images.studentLife.hostelBanner,
+        alt: "Bapuji B-School executive hostel building for boys at BIHE campus",
+        label: "Executive Hostel for Boys",
+      },
+    ],
   },
   intro: {
-    title: "Hostel Details",
+    title: "Hostel Facilities",
+    variant: "infographic",
     paragraphs: [
-      "The college hostel provides a safe, comfortable, and disciplined living environment for students. The hostel is equipped with basic facilities such as well-furnished rooms, clean drinking water, hygienic dining services, and uninterrupted electricity supply. Proper security arrangements, including wardens and surveillance systems, are in place to ensure the safety of residents. First-aid facilities and medical support are available for hostellers, and regular cleanliness and sanitation measures are maintained. The hostel administration ensures that rules and regulations are followed to promote a healthy, peaceful, and supportive atmosphere for students' academic and personal growth.",
+      "The college hostel provides a safe, comfortable, and disciplined living environment for students, creating a home-like atmosphere that supports their academic and personal development. The hostel is designed to meet the residential needs of students by offering a secure and conducive environment for study, recreation, and overall well-being.",
+    ],
+    highlights: HOSTEL_FACILITIES_INTRO_HIGHLIGHTS,
+    footerParagraphs: [
+      "Various awareness programmes, cultural activities, celebrations of national festivals, and recreational events are organized periodically to foster a sense of belonging, teamwork, and cultural harmony among residents.",
+      "The hostel administration ensures strict adherence to rules and regulations regarding discipline, attendance, safety, and responsible conduct. Through effective management and student-friendly services, the hostel aims to provide a peaceful, secure, and supportive atmosphere that enables students to achieve academic excellence and personal growth.",
     ],
   },
   sections: [

@@ -1,4 +1,4 @@
-import { images } from "@/lib/images";
+import { dropboxGalleryCoverPath, DROPBOX_GALLERY_ALBUMS } from "@/lib/gallery-dropbox-albums";
 
 export type GalleryLayout = "feature" | "accent" | "wide" | "standard";
 
@@ -10,41 +10,41 @@ export type GalleryItem = {
   layout: GalleryLayout;
 };
 
-/** Homepage gallery mosaic — uses existing campus imagery */
+/** Homepage gallery mosaic — Dropbox album covers with static fallback */
 export const GALLERY_ITEMS: GalleryItem[] = [
   {
-    id: "campus-overview",
-    title: "BIHE Campus Overview",
-    category: "Campus",
-    image: images.hero,
+    id: "inter-college-sports-meet",
+    title: "Inter-College Sports Meet",
+    category: "Sports",
+    image: dropboxGalleryCoverPath("inter-college-sports-meet"),
     layout: "feature",
   },
   {
-    id: "campus-life",
-    title: "Student Life at BIHE",
-    category: "Campus",
-    image: images.aboutMain,
+    id: "basketball-championship",
+    title: "Basketball Championship",
+    category: "Sports",
+    image: dropboxGalleryCoverPath("basketball-championship"),
     layout: "accent",
   },
   {
-    id: "library",
-    title: "Central Library",
-    category: "Facilities",
-    image: images.facility.library,
-    layout: "wide",
-  },
-  {
-    id: "annual-day",
-    title: "Annual Day Celebrations",
+    id: "annual-events-celebrations",
+    title: "Events & Celebrations",
     category: "Events",
-    image: images.facility.auditorium,
+    image: dropboxGalleryCoverPath("annual-events-celebrations"),
     layout: "wide",
   },
   {
-    id: "sports",
-    title: "Sports & Recreation",
-    category: "Sports",
-    image: images.facility.sports,
+    id: "campus-facilities",
+    title: "Campus Facilities",
+    category: "Facilities",
+    image: dropboxGalleryCoverPath("campus-facilities"),
+    layout: "wide",
+  },
+  {
+    id: "campus-life-moments",
+    title: "Campus Life",
+    category: "Campus",
+    image: dropboxGalleryCoverPath("campus-life-moments"),
     layout: "wide",
   },
 ];

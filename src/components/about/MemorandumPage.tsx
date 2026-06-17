@@ -7,7 +7,6 @@ import {
   MOA_DOCUMENTS,
   MOA_FOUNDING_MEMBERS,
   MOA_INTRO,
-  MOA_SECTIONS,
 } from "@/lib/memorandum-content";
 
 export function MemorandumPage() {
@@ -24,33 +23,13 @@ export function MemorandumPage() {
           <Reveal>
             <SectionHeader
               badge="Governance"
-              title="Constitution of the institute"
+              title="Act and Statues or MOA"
               align="left"
             />
             <p className="moa-page__lead" id="moa-overview">
               {MOA_INTRO}
             </p>
           </Reveal>
-        </div>
-      </section>
-
-      <section className="moa-page__sections" aria-label="Memorandum clauses">
-        <div className="moa-page__container">
-          <ol className="moa-page__clause-list">
-            {MOA_SECTIONS.map((section, index) => (
-              <Reveal key={section.title} delay={60 + index * 50} direction="up">
-                <li className="moa-page__clause">
-                  <span className="moa-page__clause-num">
-                    {String(index + 1).padStart(2, "0")}
-                  </span>
-                  <div>
-                    <h2 className="moa-page__clause-title">{section.title}</h2>
-                    <p>{section.text}</p>
-                  </div>
-                </li>
-              </Reveal>
-            ))}
-          </ol>
         </div>
       </section>
 

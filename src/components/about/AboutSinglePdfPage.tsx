@@ -13,6 +13,7 @@ export function AboutSinglePdfPage({
   introBadge,
   introTitle,
   intro,
+  introPoints,
   documentsBadge,
   documentsTitle,
   document,
@@ -27,9 +28,20 @@ export function AboutSinglePdfPage({
         <div className="cu-page__container">
           <Reveal>
             <SectionHeader badge={introBadge} title={introTitle} align="left" />
-            <p className="cu-page__lead" id={`${sectionId}-overview`}>
-              {intro}
-            </p>
+            {introPoints?.length ? (
+              <ul
+                className="bihe-bullet-list cu-page__intro-list"
+                id={`${sectionId}-overview`}
+              >
+                {introPoints.map((point) => (
+                  <li key={point}>{point}</li>
+                ))}
+              </ul>
+            ) : (
+              <p className="cu-page__lead" id={`${sectionId}-overview`}>
+                {intro}
+              </p>
+            )}
           </Reveal>
         </div>
       </section>

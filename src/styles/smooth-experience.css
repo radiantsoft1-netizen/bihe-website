@@ -89,6 +89,7 @@ html.is-scrolling .hero__bg {
 .bihe-wrap .facility-card--tile,
 .bihe-wrap .course-card,
 .bihe-wrap .news-card,
+.bihe-wrap .facilities__card,
 .bihe-wrap .gallery__item,
 .bihe-wrap .recruiter-card,
 .bihe-wrap .accreditation__logo-item,
@@ -126,7 +127,8 @@ html.is-scrolling .hero__bg {
 
 /* Infinite scroll tracks */
 .bihe-wrap .accreditation__logo-grid,
-.bihe-wrap .announcement__track {
+.bihe-wrap .announcement__track,
+.bihe-wrap .news-ticker__track {
   will-change: transform;
 }
 

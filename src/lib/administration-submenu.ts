@@ -6,19 +6,19 @@ export type AdministrationSubmenuItem = {
 
 export const ADMINISTRATION_SUBMENU: AdministrationSubmenuItem[] = [
   {
+    label: "Governing Bodies",
+    href: "/governing-bodies",
+    description:
+      "Governance structure, committees, and institutional oversight.",
+  },
+  {
     label: "Principal",
     href: "/principal",
     description:
       "Leadership, academic vision, and institutional administration at BIHE.",
   },
   {
-    label: "Finance Section",
-    href: "/finance-section",
-    description:
-      "Financial planning, fee administration, and institutional accounts.",
-  },
-  {
-    label: "Controller of Examination",
+    label: "Controller of Examinations",
     href: "/controller-of-examination",
     description:
       "Examination schedules, evaluation processes, and academic records.",
@@ -30,10 +30,10 @@ export const ADMINISTRATION_SUBMENU: AdministrationSubmenuItem[] = [
       "Independent grievance redressal and stakeholder support.",
   },
   {
-    label: "Governing Bodies",
-    href: "/governing-bodies",
+    label: "Finance Officer",
+    href: "/finance-section",
     description:
-      "Governance structure, committees, and institutional oversight.",
+      "Financial planning, fee administration, and institutional accounts.",
   },
   {
     label: "Internal Complaint Committee",

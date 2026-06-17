@@ -22,6 +22,16 @@
   color: var(--color-text-secondary);
 }
 
+.cu-page__intro-list {
+  margin: 1.25rem 0 0;
+  max-width: none;
+  width: 100%;
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  color: var(--color-text-secondary);
+  text-align: left;
+}
+
 .cu-page__documents {
   padding: clamp(2.5rem, 5vw, 4rem) var(--cu-pad-x) clamp(4rem, 8vw, 5.5rem);
   background: var(--bihe-cream, #f4f6fa);

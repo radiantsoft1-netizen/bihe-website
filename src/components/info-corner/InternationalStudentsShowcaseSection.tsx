@@ -45,27 +45,30 @@ export function InternationalStudentsShowcaseSection({
           className={[
             "principal-page__grid",
             section.reverse ? "principal-page__grid--reverse" : "",
+            section.hideVisual ? "principal-page__grid--content-only" : "",
           ]
             .filter(Boolean)
             .join(" ")}
         >
-          <Reveal
-            direction={section.reverse ? "right" : "left"}
-            className="principal-page__visual"
-          >
-            <div className="principal-page__portrait">
-              <div className="principal-page__portrait-frame">
-                <SmartImage
-                  src={section.image}
-                  alt={section.imageAlt}
-                  fill
-                  className="principal-page__portrait-img international-students-page__portrait-img"
-                  sizes="(max-width: 960px) 90vw, 28rem"
-                  priority={isFirst}
-                />
+          {!section.hideVisual ? (
+            <Reveal
+              direction={section.reverse ? "right" : "left"}
+              className="principal-page__visual"
+            >
+              <div className="principal-page__portrait">
+                <div className="principal-page__portrait-frame">
+                  <SmartImage
+                    src={section.image}
+                    alt={section.imageAlt}
+                    fill
+                    className="principal-page__portrait-img international-students-page__portrait-img"
+                    sizes="(max-width: 960px) 90vw, 28rem"
+                    priority={isFirst}
+                  />
+                </div>
               </div>
-            </div>
-          </Reveal>
+            </Reveal>
+          ) : null}
 
           <Reveal
             delay={100}

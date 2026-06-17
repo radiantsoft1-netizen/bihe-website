@@ -58,10 +58,12 @@
   );
 }
 
-.sl-facilities-nav__subtitle {
+.sl-facilities-nav__header .sl-facilities-nav__subtitle {
   margin: 0.55rem 0 0;
   font-size: 0.92rem;
   color: rgba(30, 58, 117, 0.68);
+  text-align: center;
+  text-justify: auto;
 }
 
 .sl-facilities-nav__slider {
@@ -532,7 +534,7 @@
     display: none;
   }
 
-  .sl-facilities-nav__subtitle {
+  .sl-facilities-nav__header .sl-facilities-nav__subtitle {
     font-size: 0.85rem;
   }
 }

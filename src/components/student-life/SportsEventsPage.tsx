@@ -21,8 +21,8 @@ export function SportsEventsPage() {
   return (
     <article className="sf-page about-bihe-page">
       <AboutInnerHero
-        currentPage="Events 2024-25"
-        title="Events 2024-25"
+        currentPage={SF_EVENTS_TITLE}
+        title={SF_EVENTS_TITLE}
         lead={SF_EVENTS_PAGE_LEAD}
         eyebrow="Student Life"
         sectionLabel="Student Life"
@@ -46,22 +46,34 @@ export function SportsEventsPage() {
                 {SF_EVENTS_TITLE}
               </h2>
 
-              <div className="sf-page__events-block">
-                <h3 className="sf-page__events-subtitle">Team Events</h3>
-                <ul className="sf-page__events-list">
-                  {SF_TEAM_EVENTS.map((event) => (
-                    <li key={event}>{event}</li>
-                  ))}
-                </ul>
-              </div>
+              <div className="sf-page__events-groups" aria-label="Sports events list">
+                <article className="sf-page__events-group">
+                  <h3 className="sf-page__events-group-title">Team Events</h3>
+                  <ol className="sf-page__events-group-list">
+                    {SF_TEAM_EVENTS.map((event, index) => (
+                      <li key={event}>
+                        <span className="sf-page__events-group-index" aria-hidden>
+                          {String(index + 1).padStart(2, "0")}
+                        </span>
+                        <span>{event}</span>
+                      </li>
+                    ))}
+                  </ol>
+                </article>
 
-              <div className="sf-page__events-block">
-                <h3 className="sf-page__events-subtitle">Athletics Events (Boys &amp; Girls)</h3>
-                <ul className="sf-page__events-list">
-                  {SF_ATHLETICS_EVENTS.map((event) => (
-                    <li key={event}>{event}</li>
-                  ))}
-                </ul>
+                <article className="sf-page__events-group">
+                  <h3 className="sf-page__events-group-title">Athletics Events (Boys &amp; Girls)</h3>
+                  <ol className="sf-page__events-group-list">
+                    {SF_ATHLETICS_EVENTS.map((event, index) => (
+                      <li key={event}>
+                        <span className="sf-page__events-group-index" aria-hidden>
+                          {String(SF_TEAM_EVENTS.length + index + 1).padStart(2, "0")}
+                        </span>
+                        <span>{event}</span>
+                      </li>
+                    ))}
+                  </ol>
+                </article>
               </div>
             </div>
           </Reveal>

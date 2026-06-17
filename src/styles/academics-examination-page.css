@@ -2,6 +2,7 @@
 
 .exam-page {
   --exam-pad-x: clamp(1.25rem, 5vw, 7.5rem);
+  overflow-x: clip;
 }
 
 .bihe-wrap:has(.exam-page) {
@@ -15,6 +16,7 @@
 .exam-page__container {
   width: min(100%, var(--container-max));
   margin-inline: auto;
+  min-width: 0;
 }
 
 /* Intro — library pattern */
@@ -128,6 +130,9 @@
   color: var(--color-primary);
   text-transform: uppercase;
   letter-spacing: 0.04em;
+  overflow-wrap: break-word;
+  word-break: normal;
+  hyphens: auto;
 }
 
 /* Programme-style statute sections */
@@ -140,16 +145,40 @@
   background: var(--navy-50, #eef2f8);
 }
 
+.exam-page__programme-media--cutout {
+  aspect-ratio: auto;
+  min-height: 0;
+  overflow: visible;
+  background: transparent;
+  border-radius: 0;
+  display: flex;
+  align-items: flex-end;
+}
+
+.exam-page__programme-img--cutout {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 28rem;
+}
+
 .exam-page__programme-layout {
   display: grid;
   grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
   gap: clamp(1.5rem, 3vw, 2.5rem);
   align-items: start;
+  min-width: 0;
+}
+
+.exam-page__programme-layout .reveal {
+  min-width: 0;
 }
 
 .exam-page__programme-media {
   position: relative;
   margin: 0;
+  width: 100%;
+  max-width: 28rem;
   aspect-ratio: 4 / 5;
   min-height: 16rem;
   overflow: hidden;
@@ -157,7 +186,20 @@
   background: var(--color-primary-dark);
 }
 
+.exam-page__programme-media > span {
+  position: absolute !important;
+  inset: 0 !important;
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  max-width: none !important;
+}
+
 .exam-page__programme-img {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+  max-width: none !important;
   object-fit: cover;
   object-position: center;
 }
@@ -165,6 +207,7 @@
 .exam-page__programme-list {
   display: grid;
   gap: 0;
+  min-width: 0;
 }
 
 .exam-page__programme-list--full {
@@ -203,6 +246,8 @@
   font-size: 0.9375rem;
   line-height: 1.7;
   color: var(--color-text-secondary);
+  overflow-wrap: break-word;
+  word-break: normal;
 }
 
 /* Resources — library facility pattern */
@@ -219,6 +264,7 @@
   padding: 0;
   max-width: 52rem;
   list-style: none;
+  min-width: 0;
 }
 
 .exam-page__resource-grid > li {
@@ -313,7 +359,23 @@
   height: 0.95rem;
 }
 
+@media (max-width: 1100px) {
+  .exam-page__programme-layout {
+    grid-template-columns: 1fr;
+    gap: clamp(1.75rem, 4vw, 2.5rem);
+  }
+
+  .exam-page__programme-media {
+    max-width: min(100%, 24rem);
+    margin-inline: auto;
+  }
+}
+
 @media (max-width: 960px) {
+  .exam-page {
+    --exam-pad-x: clamp(1rem, 4vw, 1.75rem);
+  }
+
   .exam-page__intro-grid,
   .exam-page__programme-layout {
     grid-template-columns: 1fr;
@@ -321,8 +383,15 @@
 
   .exam-page__programme-media {
     aspect-ratio: 16 / 10;
-    max-width: 28rem;
+    max-width: min(100%, 28rem);
     margin-inline: auto;
+  }
+
+  .exam-page__programme-media--cutout {
+    aspect-ratio: auto;
+    max-width: min(100%, 28rem);
+    margin-inline: auto;
+    background: transparent;
   }
 
   .exam-page__intro-visual {
@@ -331,5 +400,56 @@
 
   .exam-page__resource-grid {
     grid-template-columns: 1fr;
+    max-width: 24rem;
+  }
+
+  .exam-page__section-title {
+    font-size: clamp(1rem, 4.2vw, 1.2rem);
+    letter-spacing: 0.03em;
+  }
+
+  .exam-page__programme-item-title {
+    font-size: 0.9375rem;
+  }
+
+  .exam-page__programme-item-list {
+    font-size: 0.875rem;
+    line-height: 1.65;
+  }
+}
+
+@media (max-width: 640px) {
+  .exam-page__intro,
+  .exam-page__programme,
+  .exam-page__resources {
+    padding-block: clamp(2.25rem, 7vw, 3rem);
+  }
+
+  .exam-page__programme-media {
+    aspect-ratio: 4 / 3;
+    min-height: 14rem;
+  }
+
+  .exam-page__intro-text {
+    text-align: left;
+    hyphens: none;
+  }
+
+  .exam-page__resource-grid {
+    max-width: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .exam-page {
+    --exam-pad-x: 1rem;
+  }
+
+  .exam-page__programme-item {
+    padding: 0.95rem 0;
+  }
+
+  .exam-page__resource-card {
+    padding: 1.15rem;
   }
 }

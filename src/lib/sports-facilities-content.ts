@@ -1,4 +1,5 @@
 import { images } from "@/lib/images";
+import galleryManifest from "@/lib/sports-facilities-gallery.json";
 
 export const SF_PAGE_LEAD =
   "Outdoor grounds, indoor games, and fitness activities that encourage teamwork, discipline, and student wellness at BIHE.";
@@ -23,14 +24,42 @@ export type SportsFacilityNavCard = {
   imageAlt: string;
 };
 
+export type SportsFacilityCard = {
+  id: string;
+  title: string;
+  image: string;
+  imageAlt: string;
+};
+
 export const SF_FACILITIES_TITLE = "Facilities";
+
+export const SF_FACILITY_CARDS: readonly SportsFacilityCard[] = [
+  {
+    id: "cricket-ground",
+    title: "Cricket Ground",
+    image: images.sportsFacilities.cricketGround,
+    imageAlt: "Students playing cricket on the BIHE campus ground",
+  },
+  {
+    id: "basketball-court",
+    title: "Basket Ball Court",
+    image: images.sportsFacilities.basketballCourt,
+    imageAlt: "BIHE faculty and students at a basketball court inauguration on campus",
+  },
+  {
+    id: "football-ground",
+    title: "Foot Ball Ground",
+    image: images.sportsFacilities.footballGround,
+    imageAlt: "Students on the football ground at BIHE",
+  },
+] as const;
 
 export const SF_EVENTS_SECTION_ID = "events-2024-25";
 
-export const SF_EVENTS_TITLE = "Events 2024-25";
+export const SF_EVENTS_TITLE = "Sports Events";
 
 export const SF_EVENTS_PAGE_LEAD =
-  "Annual sports events and Davangere University inter-collegiate tournaments at Bapuji Institute of Hi-Tech Education.";
+  "Annual sports events and Davangere University inter college tournaments at Bapuji Institute of Hi-Tech Education.";
 
 export const SF_TEAM_EVENTS = [
   "Volley Ball",
@@ -51,12 +80,12 @@ export const SF_ATHLETICS_EVENTS = [
 
 export const SF_EVENTS_IMAGE = images.sportsFacilities.events;
 export const SF_EVENTS_IMAGE_ALT =
-  "BIHE students celebrating after a sports event on campus";
+  "BIHE students competing in an inter college volleyball match on campus";
 
 export const SF_INTER_COLLEGE_TITLE = "Inter College Event";
 
 export const SF_INTER_COLLEGE_INTRO =
-  "BIHE students regularly represent the institution in Davangere University inter-collegiate sports tournaments. These events provide competitive exposure, team-building experience, and opportunities to showcase talent beyond the classroom.";
+  "BIHE students regularly represent the institution in Davangere University inter college sports tournaments. These events provide competitive exposure, team-building experience, and opportunities to showcase talent beyond the classroom.";
 
 export type SportsTournament = {
   id: string;
@@ -69,31 +98,31 @@ export type SportsTournament = {
 export const SF_TOURNAMENTS: readonly SportsTournament[] = [
   {
     id: "badminton",
-    title: "Davangere University Inter-Collegiate Badminton Tournament – 2024–25",
+    title: "Davangere University Inter College Badminton Tournament – 2024–25",
     paragraph:
-      "BIHE badminton teams participated with strong competitive spirit in the university inter-collegiate tournament. Coordinated practice sessions and faculty guidance helped players perform consistently across singles and doubles categories.",
+      "BIHE badminton teams participated with strong competitive spirit in the university inter college tournament. Coordinated practice sessions and faculty guidance helped players perform consistently across singles and doubles categories.",
     image: images.sportsFacilities.badminton,
     imageAlt: "BIHE students participating in a badminton tournament",
   },
   {
     id: "football",
-    title: "Davangere University Inter-Collegiate Football Tournament – 2024–25",
+    title: "Davangere University Inter College Football Tournament – 2024–25",
     paragraph:
       "The college football team represented BIHE in the university-level tournament with disciplined teamwork and energetic performances. Regular ground practice and inter-class selections strengthened squad coordination throughout the season.",
     image: images.sportsFacilities.footballTournament,
-    imageAlt: "BIHE football team in action during an inter-collegiate match",
+    imageAlt: "BIHE football team in action during an inter college match",
   },
   {
     id: "table-tennis",
-    title: "Davangere University Inter-Collegiate Table Tennis Tournament – 2024–25",
+    title: "Davangere University Inter College Table Tennis Tournament – 2024–25",
     paragraph:
-      "Table tennis players from BIHE competed in the inter-collegiate championship, demonstrating focus, agility, and sportsmanship. The event encouraged more students to take up indoor racket sports alongside outdoor games.",
+      "Table tennis players from BIHE competed in the inter college championship, demonstrating focus, agility, and sportsmanship. The event encouraged more students to take up indoor racket sports alongside outdoor games.",
     image: images.sportsFacilities.tableTennis,
-    imageAlt: "Students playing table tennis at an inter-collegiate event",
+    imageAlt: "Students playing table tennis at an inter college event",
   },
   {
     id: "chess",
-    title: "Davangere University Inter-College Chess Tournament – 2024–25",
+    title: "Davangere University Inter College Chess Tournament – 2024–25",
     paragraph:
       "BIHE chess participants demonstrated strategic thinking and concentration in the university tournament. Mind-sport events complement physical activities by promoting analytical ability and calm decision-making under pressure.",
     image: images.sportsFacilities.chess,
@@ -118,6 +147,12 @@ export const SF_FACILITY_NAV_CARDS: readonly SportsFacilityNavCard[] = [
   })),
 ];
 
-export const SF_BANNER_IMAGE = images.sportsFacilities.heroBanner;
-export const SF_BANNER_IMAGE_ALT =
-  "Students playing football on the BIHE sports ground at sunset";
+export type SportsGalleryImage = {
+  id: string;
+  src: string;
+  alt: string;
+};
+
+export const SF_GALLERY_TITLE = "Sports Gallery";
+
+export const SF_GALLERY_IMAGES = galleryManifest as readonly SportsGalleryImage[];

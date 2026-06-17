@@ -1,6 +1,7 @@
 import { AboutInnerHero } from "@/components/about/AboutInnerHero";
 import { StudentFacilitiesNavSection } from "@/components/student-life/StudentFacilitiesNavSection";
 import { Reveal } from "@/components/ui/Reveal";
+import { RichTextParagraph } from "@/components/ui/RichTextParagraph";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { STUDENT_LIFE_BASE_PATH } from "@/lib/student-life-routes";
 import type { StudentLifePageConfig } from "@/lib/student-life-content";
@@ -32,9 +33,11 @@ export function StudentLifeContentPage({
             <SectionHeader badge={introBadge} title={introTitle} align="left" showIcon={false} />
             <div className="about-bihe-intro__body" id="student-life-content">
               {paragraphs.map((paragraph) => (
-                <p key={paragraph.slice(0, 48)} className="about__desc">
-                  {paragraph}
-                </p>
+                <RichTextParagraph
+                  key={paragraph.slice(0, 48)}
+                  html={paragraph}
+                  className="about__desc"
+                />
               ))}
             </div>
           </Reveal>

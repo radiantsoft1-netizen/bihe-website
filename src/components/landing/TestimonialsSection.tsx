@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { debugPerf, logDebug } from "@/lib/debug-perf";
 import { Reveal } from "@/components/ui/Reveal";
 
 const quotes = [
@@ -40,8 +39,6 @@ export function TestimonialsSection() {
     return () => {
       clearInterval(timer);
       if (pendingTimeoutRef.current) {
-        debugPerf.testimonialUnmountWithPendingTimeout += 1;
-        logDebug("H4", "TestimonialsSection.tsx:cleanup", "unmount with pending testimonial timeout", {});
         clearTimeout(pendingTimeoutRef.current);
       }
     };

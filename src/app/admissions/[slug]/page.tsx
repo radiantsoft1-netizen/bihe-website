@@ -1,3 +1,4 @@
+/** Phase 1 static — see `src/lib/phase1-static-pages.ts`. No API/CMS wiring. */
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { AdmissionProcessPage } from "@/components/admissions/AdmissionProcessPage";

@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useRef, useState, type ReactNode } from "react";
-import { debugPerf, logDebug } from "@/lib/debug-perf";
 import { observeReveal } from "@/lib/shared-reveal-observer";
 
 type RevealProps = {
@@ -25,13 +24,6 @@ export function Reveal({
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
-
-    debugPerf.revealObservers += 1;
-    if (debugPerf.revealObservers % 10 === 0) {
-      logDebug("H3", "Reveal.tsx:useEffect", "reveal element registered", {
-        total: debugPerf.revealObservers,
-      });
-    }
 
     return observeReveal(el, () => setVisible(true));
   }, []);

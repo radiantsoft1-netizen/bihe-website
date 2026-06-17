@@ -27,9 +27,29 @@
 
 ## 1. Overview
 
+### Laravel Admin Panel (Hostinger)
+
+A standalone Laravel + MySQL admin panel lives in **`bihe-admin/`** at the repo root.
+
+| Layer | Stack |
+|-------|-------|
+| Backend | Laravel 11 (PHP 8.2+) |
+| Frontend | HTML/CSS/JS via Blade templates (`public/assets/css/admin.css`, `public/assets/js/admin.js`) |
+| Database | MySQL |
+| Hosting | Hostinger Shared Hosting |
+| CI/CD | GitHub Actions FTP deploy (`.github/workflows/deploy-bihe-admin.yml`) |
+
+- Blade admin UI at `/admin` (session auth)
+- REST API at `/api/v1/*` for the Next.js site to consume
+- Hostinger-compatible deployment (Apache, MySQL, `public/` document root)
+
+See **`bihe-admin/README.md`** for local setup, GitHub secrets, and Hostinger deployment steps.
+
+**Phase 5 (partial):** The homepage wires five sections to Laravel via `NEXT_PUBLIC_API_URL` and `src/lib/api/homepage.ts` (hero, announcements, news, gallery, recruiters). News, gallery, faculty roster, and contact are also API-backed. About, IQAC, NAAC references, vision/mission, principal message, academic calendar, committee pages, admissions, and other academic information pages remain static per `src/lib/phase1-static-pages.ts`.
+
 ### Current State
 
-The BIHE website is a **static Next.js marketing site**. All content is hardcoded in TypeScript files:
+The BIHE website is a **mostly static Next.js marketing site**. Homepage dynamic sections fetch from `/api/v1/*`; everything else is hardcoded in TypeScript files:
 
 | Content Type | Current Location |
 |--------------|------------------|
@@ -403,23 +423,21 @@ Result: admin saves → public page updates within seconds (no full redeploy).
 
 ---
 
-## 7. Phase 6 — Merge Separate Admin Code
+## 7. Phase 6 — Deploy Laravel Admin (Hostinger)
 
-If admin was started in a separate project:
+The admin panel is **`bihe-admin/`** in this repo — a standalone Laravel app, not Next.js routes.
 
 ```bash
-cd "BIHE Website"
-git checkout -b merge-admin-panel
+# Local: already in repo — see bihe-admin/README.md
+cd bihe-admin && composer install && php artisan migrate --seed
 
-# Option A: Copy folders manually
-cp -r "../bihe-admin/src/app/admin" "./src/app/"
-cp -r "../bihe-admin/src/app/api" "./src/app/"
-cp -r "../bihe-admin/src/components/admin" "./src/components/"
+# Hostinger: upload bihe-admin/, point document root to public/, configure .env
+```
 
-# Option B: Merge Git history
-git remote add admin-repo <ADMIN_REPO_URL>
-git fetch admin-repo
-git merge admin-repo/main --allow-unrelated-histories
+Wire the Next.js site to the Laravel API (no folder merge required):
+
+```env
+NEXT_PUBLIC_API_URL=https://admin.yourdomain.com/api/v1
 ```
 
 Then fix:
@@ -471,6 +489,20 @@ Move duplicate types into `src/lib/types/content.ts`.
 ---
 
 ## 10. Phase 9 — Team Rules (Always)
+
+### Frontend preservation (binding)
+
+**Do not redesign or modify the frontend UI/UX.** Appearance must stay identical to the current website.
+
+| Preserve | Allowed only |
+|----------|----------------|
+| HTML structure, CSS classes, responsiveness | Static HTML → Blade templates |
+| Animations, layout hierarchy, JS behaviour | Inject dynamic DB/API content |
+| | Backend, auth, admin CRUD |
+
+Forbidden without explicit approval: new colours/fonts/spacing, renamed CSS classes, UI component redesigns, or Node/Vite builds on Hostinger admin.
+
+See `.cursor/rules/frontend-preservation.mdc` and `bihe-admin/html-frontend/README.md`.
 
 ### Daily Rules for Both Developers
 
@@ -546,17 +578,69 @@ ADMIN_PASSWORD=
 | Shared types | Both (coordinate via PR) |
 | Content fetch layer | Website team |
 
-### Content to Make Dynamic First
+### Homepage: dynamic vs static
+
+**Dynamic** (wired to Laravel `/api/v1/*` in `src/lib/api/homepage.ts`):
+
+| Section | Component |
+|---------|-----------|
+| Hero banners | `HeroSlider.tsx` |
+| Announcements / notices | `AnnouncementBar.tsx` |
+| News & events | `NewsEventsSection.tsx` |
+| Gallery highlights | `GallerySection.tsx` |
+| Recruiters / partners | `RecruitersSection.tsx` |
+
+**Static** (do not API-wire without explicit approval):
+
+| Section | Source |
+|---------|--------|
+| About content | `AboutSection.tsx` |
+| Principal message | `PrincipalMessage.tsx` (and `/principal` page) |
+| Statistics | `AboutSection.tsx`, `StatsBar.tsx` |
+| Academic / courses info | `CoursesSection.tsx`, `courses-content.ts` |
+| Accreditation, facilities, other info | `AccreditationSection.tsx`, `FacilitiesSection.tsx`, `*-content.ts` |
+
+### Phase 1 static pages (no CMS required)
+
+These public-site pages stay **hardcoded** in Phase 1. Do not add Laravel admin modules or `/api/v1/*` wiring without explicit approval. Canonical manifest: `src/lib/phase1-static-pages.ts`.
+
+| Category | Example routes | Content source |
+|----------|----------------|----------------|
+| About Us | `/about-bihe`, `/recognition`, `/annual-reports` | `about-bihe-content.ts`, `about-document-pages.ts`, … |
+| Vision & Mission | `/institutional-development-plan` | `idp-content.ts` |
+| IQAC | `/academics/iqac` | `iqac-content.ts` |
+| NAAC | `/#accreditation` (homepage), IQAC references | `AccreditationSection.tsx`, `iqac-content.ts` |
+| Principal Message | `/principal` | `principal-content.ts`, `PrincipalMessage.tsx` |
+| Academic Calendar | `/academics/academic-calendar` | `academic-calendar-content.ts` |
+| Committee pages | `/governing-bodies`, `/internal-complaint-committee`, … | `*-content.ts` under `src/lib/` |
+| Admission information | `/admissions/*` | `admissions-content.ts`, `admission-process-content.ts`, … |
+| Academic information | `/academics/bca`, `/academics/library`, … | `academics-pages.ts`, programme `*-content.ts` |
+
+**Phase 1 dynamic modules** (already live): homepage sections (hero, announcements, news, gallery, recruiters), full news and gallery routes, faculty roster on `/academics/faculty-and-staff`, contact form.
+
+### Future Phase modules (architecture only)
+
+Major modules are designed to plug in **without restructuring** the repo. Full module map, checklist, API versioning, and student-portal auth strategy:
+
+**→ [docs/FUTURE-PHASES.md](./FUTURE-PHASES.md)**
+
+| Module | Permission prefix | Registry |
+|--------|-------------------|----------|
+| Alumni Management | `alumni.*` | `bihe-admin/config/modules.php` → `alumni` |
+| Student Portal | `student-portal.*` | `student-portal` (separate `student` auth guard) |
+| Online Admissions | `admissions.online.*` | `admissions-online` (extends static `/admissions/*` info) |
+| Placement Portal | `placement.*` | `placement` |
+| Downloads Management | `downloads.*` | `downloads` (uses `SecureFileUploadService`) |
+
+Next.js mirror: `src/lib/api/modules.ts`. Enable each module by setting `enabled: true` in both registries when implementing.
+
+### Other content to make dynamic later (post–Phase 1)
 
 | Priority | Content | Current File |
 |----------|---------|--------------|
 | High | B.Com programme table | `b-com-admin-content.ts` |
-| High | Faculty lists | `b-com-admin-content.ts`, ICC, etc. |
-| High | Announcement bar | `AnnouncementBar.tsx` |
-| High | News / events | `NewsEventsSection.tsx` |
-| Medium | Course details | `courses-content.ts` |
-| Medium | PDF documents | `public/documents/` |
-| Lower | Full page paragraphs | many `*-content.ts` |
+| Medium | PDF documents | `public/documents/` → future `downloads` module |
+| Lower | Full page paragraphs on static routes above | many `*-content.ts` |
 
 ### Integration Options Compared
 

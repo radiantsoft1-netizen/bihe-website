@@ -4,9 +4,9 @@ import { Reveal } from "@/components/ui/Reveal";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { BihePdfDocumentCard } from "@/components/ui/BihePdfDocumentCard";
 import {
-  CONTROLLER_EXAM_SECTION_INTRO,
+  CONTROLLER_EXAM_SECTION_PARAGRAPHS,
   CONTROLLER_EXAM_STAFF,
-  CONTROLLER_EXAM_SUCCESS_NOTE,
+  CONTROLLER_EXAM_TABLE_NOTES,
   CONTROLLER_OF_EXAMINATION_PAGE_LEAD,
   CONTROLLER_WORK_ALLOTMENT,
 } from "@/lib/controller-of-examination-content";
@@ -35,13 +35,16 @@ export function ControllerOfExaminationPage() {
 
           <Reveal delay={60}>
             <div className="coe-page__exam-grid">
-              <p className="coe-page__intro-text" id="coe-exam-section-title">
-                {CONTROLLER_EXAM_SECTION_INTRO}
-              </p>
-              <div className="coe-page__intro-decor" aria-hidden>
-                <span className="coe-page__decor-circle coe-page__decor-circle--1" />
-                <span className="coe-page__decor-circle coe-page__decor-circle--2" />
-                <span className="coe-page__decor-circle coe-page__decor-circle--3" />
+              <div className="coe-page__intro-copy">
+                {CONTROLLER_EXAM_SECTION_PARAGRAPHS.map((paragraph, index) => (
+                  <p
+                    key={paragraph.slice(0, 48)}
+                    className="coe-page__intro-text"
+                    id={index === 0 ? "coe-exam-section-title" : undefined}
+                  >
+                    {paragraph}
+                  </p>
+                ))}
               </div>
             </div>
           </Reveal>
@@ -62,7 +65,11 @@ export function ControllerOfExaminationPage() {
                   role: member.role,
                 }))}
               />
-              <p className="coe-page__success-note">{CONTROLLER_EXAM_SUCCESS_NOTE}</p>
+              {CONTROLLER_EXAM_TABLE_NOTES.map((note) => (
+                <p key={note} className="coe-page__success-note">
+                  {note}
+                </p>
+              ))}
             </div>
           </Reveal>
         </div>

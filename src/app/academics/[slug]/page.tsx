@@ -1,9 +1,15 @@
+/**
+ * Phase 1 static for iqac, academic-calendar, library, bca, b-com, etc.
+ * Exception: `faculty-and-staff` loads roster from API — see `phase1-static-pages.ts`.
+ */
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { AcademicCalendarPage } from "@/components/academics/AcademicCalendarPage";
 import { AcademicsExaminationPage } from "@/components/academics/AcademicsExaminationPage";
 import { AcademicsContentPage } from "@/components/academics/AcademicsContentPage";
 import { IqacPage } from "@/components/academics/IqacPage";
+import { FacultyAndStaffPage } from "@/components/academics/FacultyAndStaffPage";
+import { FacultyDepartmentPage } from "@/components/academics/FacultyDepartmentPage";
 import { LibraryPage } from "@/components/academics/LibraryPage";
 import { BcaAcademicsPage } from "@/components/academics/BcaAcademicsPage";
 import { BComAcademicsPage } from "@/components/academics/BComAcademicsPage";
@@ -14,10 +20,10 @@ import { LIBRARY_PAGE_LEAD } from "@/lib/library-content";
 import { SitePageShell } from "@/components/layout/SitePageShell";
 import { BCA_PAGE_LEAD } from "@/lib/bca-academics-content";
 import { B_COM_PAGE_LEAD } from "@/lib/b-com-admin-content";
-import {
-  ACADEMICS_PAGE_SLUGS,
-  getAcademicsPage,
-} from "@/lib/academics-pages";
+import { FACULTY_AND_STAFF_PAGE_LEAD } from "@/lib/faculty-service";
+import { isFacultyPageSlug } from "@/lib/faculty-pages";
+import { ACADEMICS_PAGE_SLUGS } from "@/lib/academics-pages";
+import { getAcademicsPage } from "@/lib/academics-service";
 
 type AcademicsRoutePageProps = {
   params: Promise<{ slug: string }>;
@@ -31,7 +37,7 @@ export async function generateMetadata({
   params,
 }: AcademicsRoutePageProps): Promise<Metadata> {
   const { slug } = await params;
-  const page = getAcademicsPage(slug);
+  const page = await getAcademicsPage(slug);
 
   if (!page) {
     return { title: "Academics | BIHE" };
@@ -52,13 +58,15 @@ export async function generateMetadata({
                 ? IQAC_PAGE_LEAD
                 : slug === "library"
                   ? LIBRARY_PAGE_LEAD
-                  : page.lead,
+                  : slug === "faculty-and-staff"
+                    ? FACULTY_AND_STAFF_PAGE_LEAD
+                    : page.lead,
   };
 }
 
 export default async function AcademicsRoutePage({ params }: AcademicsRoutePageProps) {
   const { slug } = await params;
-  const page = getAcademicsPage(slug);
+  const page = await getAcademicsPage(slug);
 
   if (!page) {
     notFound();
@@ -78,6 +86,10 @@ export default async function AcademicsRoutePage({ params }: AcademicsRoutePageP
         <IqacPage />
       ) : slug === "library" ? (
         <LibraryPage />
+      ) : slug === "faculty-and-staff" ? (
+        <FacultyAndStaffPage />
+      ) : isFacultyPageSlug(slug) ? (
+        <FacultyDepartmentPage slug={slug} />
       ) : (
         <AcademicsContentPage {...page} />
       )}

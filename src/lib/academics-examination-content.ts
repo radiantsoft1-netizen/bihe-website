@@ -126,7 +126,7 @@ export const EXAM_STATUTE_SECTIONS: readonly ExamStatuteSection[] = [
     gallery: [
       {
         imageSlug: "examUniversityMain",
-        alt: "University students writing examinations in a classroom hall",
+        alt: "Male college student studying with a laptop in a classroom",
         layout: "main",
       },
       {

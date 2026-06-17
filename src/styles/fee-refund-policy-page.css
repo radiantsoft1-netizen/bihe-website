@@ -1,4 +1,4 @@
-/* Fee Refund Policy — matches admissions inner page pattern */
+/* Fee Refund Policy — matches standard admissions / about-bihe intro layout */
 
 .fee-refund-policy-page {
   --fee-refund-pad-x: clamp(1.25rem, 5vw, 7.5rem);
@@ -10,29 +10,6 @@
 
 .bihe-wrap:has(.fee-refund-policy-page) > .bihe-page-bg {
   display: none;
-}
-
-.fee-refund-policy-page__container {
-  width: min(100%, var(--container-max));
-  margin-inline: auto;
-}
-
-.fee-refund-policy-page__intro {
-  display: flex;
-  align-items: center;
-  min-height: 920px;
-  padding: clamp(3rem, 6vw, 4rem) var(--fee-refund-pad-x);
-  background: #fff;
-  box-sizing: border-box;
-}
-
-.fee-refund-policy-page__intro .fee-refund-policy-page__container {
-  width: 100%;
-}
-
-.fee-refund-policy-page__intro-copy {
-  width: 100%;
-  max-width: none;
 }
 
 .fee-refund-policy-page__eyebrow {
@@ -53,14 +30,6 @@
   color: var(--color-secondary);
 }
 
-.fee-refund-policy-page__intro-text {
-  margin: 0 0 0.9rem;
-  font-size: 1rem;
-  line-height: 1.75;
-  color: var(--color-text-secondary);
+.fee-refund-policy-page .about-bihe-intro__body .about__desc {
   text-align: justify;
-}
-
-.fee-refund-policy-page__intro-text:last-child {
-  margin-bottom: 0;
 }

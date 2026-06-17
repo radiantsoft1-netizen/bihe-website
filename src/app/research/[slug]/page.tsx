@@ -9,7 +9,8 @@ import { SitePageShell } from "@/components/layout/SitePageShell";
 import { AP_PAGE_LEAD } from "@/lib/academic-projects-content";
 import { CRF_PAGE_LEAD } from "@/lib/central-research-facilities-content";
 import { IC_PAGE_LEAD } from "@/lib/incubation-centre-content";
-import { getResearchPage, RESEARCH_PAGE_SLUGS } from "@/lib/research-content";
+import { RESEARCH_PAGE_SLUGS } from "@/lib/research-content";
+import { getResearchPage } from "@/lib/research-service";
 import { RDC_PAGE_LEAD } from "@/lib/research-development-cell-content";
 
 type ResearchRoutePageProps = {
@@ -24,7 +25,7 @@ export async function generateMetadata({
   params,
 }: ResearchRoutePageProps): Promise<Metadata> {
   const { slug } = await params;
-  const page = getResearchPage(slug);
+  const page = await getResearchPage(slug);
 
   if (!page) {
     return { title: "Research | BIHE" };
@@ -49,7 +50,7 @@ export async function generateMetadata({
 
 export default async function ResearchRoutePage({ params }: ResearchRoutePageProps) {
   const { slug } = await params;
-  const page = getResearchPage(slug);
+  const page = await getResearchPage(slug);
 
   if (!page) {
     notFound();

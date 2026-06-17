@@ -52,7 +52,7 @@ export function LibraryPage() {
                 <div className="library-page__intro-photo-wrap">
                   <SmartImage
                     src={images.libraryIntro}
-                    alt="BIHE students reading books in the library"
+                    alt="BIHE students reading books in the BIHE library"
                     fill
                     sizes="(max-width: 960px) 90vw, 24rem"
                     className="library-page__intro-photo"

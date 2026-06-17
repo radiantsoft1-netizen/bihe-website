@@ -1,0 +1,93 @@
+name: Deploy BIHE Admin to Hostinger (SFTP)
+
+# SamKirkland/FTP-Deploy-Action v4 does not support SFTP. Use this workflow when
+# Hostinger provides SSH/SFTP only (port 22) or you prefer key-based deploy.
+on:
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: List files only (rsync --dry-run; no upload)
+        type: boolean
+        default: false
+
+concurrency:
+  group: deploy-bihe-admin-sftp-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    name: Build and SFTP deploy
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: bihe-admin
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: "8.2"
+          extensions: mbstring, xml, ctype, fileinfo, pdo_mysql, tokenizer, openssl, json
+          coverage: none
+
+      - name: Get Composer cache directory
+        id: composer-cache
+        run: echo "dir=$(composer config cache-files-dir)" >> "$GITHUB_OUTPUT"
+
+      - name: Cache Composer packages
+        uses: actions/cache@v4
+        with:
+          path: ${{ steps.composer-cache.outputs.dir }}
+          key: ${{ runner.os }}-composer-${{ hashFiles('bihe-admin/composer.lock', 'bihe-admin/composer.json') }}
+          restore-keys: ${{ runner.os }}-composer-
+
+      - name: Install Composer dependencies (production)
+        run: composer install --no-dev --optimize-autoloader --no-interaction --prefer-dist
+
+      - name: Deploy to Hostinger via SFTP (dry run)
+        if: inputs.dry_run
+        uses: wlixcc/SFTP-Deploy-Action@v1.2.6
+        with:
+          server: ${{ secrets.SFTP_SERVER || secrets.FTP_SERVER }}
+          username: ${{ secrets.SFTP_USERNAME || secrets.FTP_USERNAME }}
+          port: ${{ secrets.SFTP_PORT || 22 }}
+          password: ${{ secrets.SFTP_PASSWORD || secrets.FTP_PASSWORD }}
+          ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
+          ssh_passphrase: ${{ secrets.SSH_PASSPHRASE }}
+          local_path: ./bihe-admin/*
+          remote_path: ${{ secrets.SFTP_SERVER_DIR || secrets.FTP_SERVER_DIR }}
+          sftp_only: true
+          sftpArgs: "-o ConnectTimeout=15 -o StrictHostKeyChecking=no"
+          rsyncArgs: >-
+            --dry-run
+            --exclude=.git --exclude=.github --exclude=node_modules
+            --exclude=.env --exclude=.env.*
+            --exclude=tests --exclude=.phpunit.cache --exclude=.phpunit.result.cache
+            --exclude=.idea --exclude=.vscode --exclude=.DS_Store
+            --exclude=.ftp-deploy-sync-state.json --exclude=html-frontend
+            --exclude=README.md --exclude=docs
+
+      - name: Deploy to Hostinger via SFTP
+        if: ${{ !inputs.dry_run }}
+        uses: wlixcc/SFTP-Deploy-Action@v1.2.6
+        with:
+          server: ${{ secrets.SFTP_SERVER || secrets.FTP_SERVER }}
+          username: ${{ secrets.SFTP_USERNAME || secrets.FTP_USERNAME }}
+          port: ${{ secrets.SFTP_PORT || 22 }}
+          password: ${{ secrets.SFTP_PASSWORD || secrets.FTP_PASSWORD }}
+          ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
+          ssh_passphrase: ${{ secrets.SSH_PASSPHRASE }}
+          local_path: ./bihe-admin/*
+          remote_path: ${{ secrets.SFTP_SERVER_DIR || secrets.FTP_SERVER_DIR }}
+          sftp_only: true
+          sftpArgs: "-o ConnectTimeout=15 -o StrictHostKeyChecking=no"
+          rsyncArgs: >-
+            --exclude=.git --exclude=.github --exclude=node_modules
+            --exclude=.env --exclude=.env.*
+            --exclude=tests --exclude=.phpunit.cache --exclude=.phpunit.result.cache
+            --exclude=.idea --exclude=.vscode --exclude=.DS_Store
+            --exclude=.ftp-deploy-sync-state.json --exclude=html-frontend
+            --exclude=README.md --exclude=docs

@@ -1,0 +1,22 @@
+# Dependencies & builds (large, rarely edited)
+node_modules/
+.next/
+.next-build/
+out/
+bihe-admin/vendor/
+
+# Laravel runtime files
+bihe-admin/storage/logs/
+bihe-admin/storage/framework/cache/
+bihe-admin/storage/framework/sessions/
+bihe-admin/storage/framework/views/
+bihe-admin/bootstrap/cache/
+
+# Static assets (images slow indexing)
+public/images/
+public/uploads/
+
+# Git & tooling
+.git/
+*.tsbuildinfo
+.DS_Store

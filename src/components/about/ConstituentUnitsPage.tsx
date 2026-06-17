@@ -4,15 +4,15 @@ import { SectionHeader } from "@/components/ui/SectionHeader";
 import { BihePdfDocumentCard } from "@/components/ui/BihePdfDocumentCard";
 import {
   CONSTITUENT_UNITS_DOCUMENTS,
-  CONSTITUENT_UNITS_INTRO,
+  CONSTITUENT_UNITS_INTRO_POINTS,
 } from "@/lib/constituent-units-content";
 
 export function ConstituentUnitsPage() {
   return (
     <article className="cu-page about-bihe-page">
       <AboutInnerHero
-        currentPage="Constituent Units"
-        title="Constituent Units"
+        currentPage="Affliation"
+        title="Affliation"
         lead="Affiliation and university recognition documents for BIHE undergraduate programmes."
       />
 
@@ -24,9 +24,11 @@ export function ConstituentUnitsPage() {
               title="University affiliation"
               align="left"
             />
-            <p className="cu-page__lead" id="cu-overview">
-              {CONSTITUENT_UNITS_INTRO}
-            </p>
+            <ul className="bihe-bullet-list cu-page__intro-list" id="cu-overview">
+              {CONSTITUENT_UNITS_INTRO_POINTS.map((point) => (
+                <li key={point}>{point}</li>
+              ))}
+            </ul>
           </Reveal>
         </div>
       </section>

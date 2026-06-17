@@ -19,13 +19,6 @@ export const ACADEMIC_CALENDAR_DOCUMENTS: readonly AcademicCalendarDocument[] = 
     description:
       "Official academic calendar for BCA and B.Com undergraduate programmes at BIHE.",
     href: "/documents/academic-calendar-2025-26.pdf",
-    fileName: "academic-calendar-2025-26.pdf",
-  },
-  {
-    title: "Academic Calendar 2024–25",
-    description:
-      "Academic calendar for the previous academic year — semester dates and examinations.",
-    href: "/documents/academic-calendar-2024-25.pdf",
-    fileName: "academic-calendar-2024-25.pdf",
+    fileName: "A2 Academic Calendar.docx.pdf",
   },
 ] as const;

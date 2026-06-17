@@ -9,13 +9,17 @@
     "dev:status": "node scripts/dev-status.mjs",
     "clean": "rm -rf .next .next-build node_modules/.cache",
     "verify": "node scripts/verify.mjs",
+    "api:check": "node scripts/check-api-link.mjs",
     "build": "BIHE_DIST_DIR=.next-build next build",
     "start": "BIHE_DIST_DIR=.next-build next start --hostname 127.0.0.1 --port 3000",
     "lint": "next lint",
-    "download-assets": "node scripts/download-assets.mjs"
+    "download-assets": "node scripts/download-assets.mjs",
+    "import:dropbox-gallery": "node scripts/import-dropbox-gallery.mjs",
+    "export:site-pages": "npx tsx scripts/export-site-page-content.mjs"
   },
   "dependencies": {
     "@vercel/blob": "^2.4.0",
+    "isomorphic-dompurify": "^3.16.0",
     "lenis": "^1.3.23",
     "next": "^15.3.3",
     "react": "^19.1.0",

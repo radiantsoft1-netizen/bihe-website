@@ -67,7 +67,7 @@ export function ExamStatuteShowcase({ section }: ExamStatuteShowcaseProps) {
                   fill
                   sizes="(max-width: 960px) 100vw, 28rem"
                   className="exam-page__programme-img"
-                  priority={section.id === "internal"}
+                  priority={section.id === "university"}
                 />
               </figure>
             </Reveal>

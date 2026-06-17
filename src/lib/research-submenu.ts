@@ -7,6 +7,20 @@ export type ResearchSubmenuItem = {
 
 export const RESEARCH_SUBMENU: ResearchSubmenuItem[] = [
   {
+    label: "Research & Development Cell",
+    href: "/research/research-and-development-cell",
+    slug: "research-and-development-cell",
+    description:
+      "Institutional R&D initiatives, funding guidance, and research coordination across departments.",
+  },
+  {
+    label: "Academic Projects",
+    href: "/research/academic-projects",
+    slug: "academic-projects",
+    description:
+      "Undergraduate and faculty-led academic projects, publications, and project-based learning.",
+  },
+  {
     label: "Incubation Centre",
     href: "/research/incubation-centre",
     slug: "incubation-centre",
@@ -19,19 +33,5 @@ export const RESEARCH_SUBMENU: ResearchSubmenuItem[] = [
     slug: "central-research-facilities",
     description:
       "Shared laboratories, equipment, and infrastructure for interdisciplinary research at BIHE.",
-  },
-  {
-    label: "Research and Development Cell",
-    href: "/research/research-and-development-cell",
-    slug: "research-and-development-cell",
-    description:
-      "Institutional R&D initiatives, funding guidance, and research coordination across departments.",
-  },
-  {
-    label: "Academic Projects",
-    href: "/research/academic-projects",
-    slug: "academic-projects",
-    description:
-      "Undergraduate and faculty-led academic projects, publications, and project-based learning.",
   },
 ];

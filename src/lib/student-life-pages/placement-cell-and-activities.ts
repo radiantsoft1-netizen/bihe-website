@@ -1,5 +1,42 @@
+import { images } from "@/lib/images";
 import { MEGA_PLACEMENT_DRIVE_2025_PATH } from "@/lib/placement-routes";
-import type { StudentLifeRichPageConfig } from "./types";
+import type { StudentLifeRichPageConfig, StudentLifePageRefCard } from "./types";
+
+export const PLACEMENT_CELL_PAGE_REF_CARDS: readonly StudentLifePageRefCard[] = [
+  {
+    id: "mega-placement-drive-2025",
+    title: "Mega Placement Drive 2025",
+    eyebrow: "Campus to Corporate · Batch 1",
+    description: "26th September 2025 · BIHE Campus, Davangere",
+    dateLabel: "26 SEP",
+    yearLabel: "2025",
+    href: MEGA_PLACEMENT_DRIVE_2025_PATH,
+  },
+] as const;
+
+export const PLACEMENT_CELL_INTRO_SLIDER_IMAGES = [
+  {
+    src: images.placement.bcaBatch202526,
+    alt: "BCA Batch 2025-26 placement congratulations poster with selected students and recruiter logos",
+    fit: "contain" as const,
+    caption: "BCA Batch 2025-26 · Placement Success",
+  },
+  {
+    src: images.megaPlacementDrive.offerLettersBanner,
+    alt: "Students receiving offer letters during the Mega Placement Drive at BIHE",
+    caption: "Mega Placement Drive 2025",
+  },
+  {
+    src: images.megaPlacementDrive.inauguralCeremony,
+    alt: "Inaugural ceremony of the Mega Placement Drive at BIHE campus",
+    caption: "Campus Recruitment Drive",
+  },
+  {
+    src: images.megaPlacementDrive.companyHrInterviews,
+    alt: "Company HR representatives conducting interviews with BIHE students",
+    caption: "Industry Interview Sessions",
+  },
+] as const;
 
 export const PLACEMENT_CELL_PAGE: StudentLifeRichPageConfig = {
   slug: "placement-cell-and-activities",
@@ -15,6 +52,7 @@ export const PLACEMENT_CELL_PAGE: StudentLifeRichPageConfig = {
       "The Placement Cell organizes campus drives, job fairs, and recruitment programs in collaboration with reputed companies from various sectors. It conducts regular training programs such as aptitude training, communication skills, resume writing, interview techniques, and personality development to build confidence among students. Industrial visits, internships, guest lectures, and career guidance sessions are also arranged to expose students to real-world industry practices.",
       "All our committee members will take responsibilities and participation in all the activities of Placement committee to make all the events to get success in this committee.",
     ],
+    sliderImages: PLACEMENT_CELL_INTRO_SLIDER_IMAGES,
   },
   tables: [
     {
@@ -37,15 +75,5 @@ export const PLACEMENT_CELL_PAGE: StudentLifeRichPageConfig = {
       ],
     },
   ],
-  pageRefCards: [
-    {
-      id: "mega-placement-drive-2025",
-      eyebrow: "Campus to Corporate · Batch 1",
-      title: "Mega Placement Drive 2025",
-      description: "26th September 2025 · BIHE Campus, Davangere",
-      dateLabel: "26 SEP",
-      yearLabel: "2025",
-      href: MEGA_PLACEMENT_DRIVE_2025_PATH,
-    },
-  ],
+  pageRefCards: PLACEMENT_CELL_PAGE_REF_CARDS,
 };

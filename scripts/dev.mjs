@@ -120,6 +120,32 @@ function readStoredPid() {
   }
 }
 
+function readEnvValue(name) {
+  for (const file of [".env.local", ".env"]) {
+    const path = join(root, file);
+    if (!existsSync(path)) continue;
+    const match = readFileSync(path, "utf8").match(new RegExp(`^${name}=(.+)$`, "m"));
+    if (match) return match[1].trim().replace(/^['"]|['"]$/g, "");
+  }
+  return process.env[name]?.trim() ?? null;
+}
+
+async function reportApiLink() {
+  if (process.env.DEV_QUIET === "1") return;
+
+  const apiUrl = readEnvValue("NEXT_PUBLIC_API_URL");
+  if (!apiUrl) return;
+
+  try {
+    const response = await fetch(`${apiUrl.replace(/\/$/, "")}/api/v1/announcements`);
+    if (!response.ok) {
+      log(`Admin API returned ${response.status} at ${apiUrl}`);
+    }
+  } catch {
+    log(`Admin API unreachable at ${apiUrl}`);
+  }
+}
+
 async function main() {
   if (await isHealthy()) {
     log(`Already running at ${url}`);
@@ -156,6 +182,8 @@ async function main() {
       }
     }
   }
+
+  await reportApiLink();
 
   log(`Starting Next.js at ${url}`);
   const useTurbopack = process.env.DEV_WEBPACK !== "1";

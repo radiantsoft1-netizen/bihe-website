@@ -22,8 +22,8 @@ export function AboutSection() {
           <div className="about__photo-frame">
             <div className="about__photo-wrap">
               <SmartImage
-                src={images.aboutMain}
-                alt="BIHE students at graduation"
+                src={images.aboutBiheCampus}
+                alt="Bapuji Institute of Hi-Tech Education campus building"
                 fill
                 className="about__photo"
                 sizes="(max-width: 960px) 100vw, 29rem"

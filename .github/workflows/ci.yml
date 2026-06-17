@@ -1,0 +1,84 @@
+name: CI
+
+on:
+  pull_request:
+    branches:
+      - main
+      - develop
+  push:
+    branches:
+      - main
+      - develop
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  changes:
+    name: Detect changed paths
+    runs-on: ubuntu-latest
+    outputs:
+      nextjs: ${{ steps.filter.outputs.nextjs }}
+      bihe-admin: ${{ steps.filter.outputs.bihe-admin }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dorny/paths-filter@v3
+        id: filter
+        with:
+          filters: |
+            nextjs:
+              - 'src/**'
+              - 'public/**'
+              - 'scripts/**'
+              - 'package.json'
+              - 'package-lock.json'
+              - 'tsconfig.json'
+              - 'next.config.*'
+              - 'eslint.config.*'
+              - '.env.example'
+            bihe-admin:
+              - 'bihe-admin/**'
+              - '!bihe-admin/vendor/**'
+
+  verify-nextjs:
+    name: Next.js verify (tsc + lint)
+    needs: changes
+    if: needs.changes.outputs.nextjs == 'true'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Type-check and lint
+        run: npm run verify
+
+  php-syntax:
+    name: PHP syntax check (bihe-admin)
+    needs: changes
+    if: needs.changes.outputs.bihe-admin == 'true'
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: bihe-admin
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: "8.2"
+          coverage: none
+
+      - name: Lint PHP files
+        run: |
+          find app bootstrap config database public routes -name '*.php' -print0 \
+            | xargs -0 -n1 php -l

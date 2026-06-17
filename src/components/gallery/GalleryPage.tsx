@@ -1,23 +1,24 @@
 import { AboutInnerHero } from "@/components/about/AboutInnerHero";
-import { GalleryPageGrid } from "@/components/gallery/GalleryPageGrid";
+import { GalleryAlbumGrid } from "@/components/gallery/GalleryAlbumGrid";
 import { GALLERY_PAGE_LEAD } from "@/lib/gallery-page-content";
-import { getGalleryDisplayItems } from "@/lib/gallery-service";
+import { getGalleryAlbums, getGalleryCategories } from "@/lib/gallery-service";
+import { SITE_LINKS } from "@/lib/site-links";
 
 export async function GalleryPage() {
-  const items = await getGalleryDisplayItems();
+  const [albums, categories] = await Promise.all([getGalleryAlbums(), getGalleryCategories()]);
 
   return (
     <article className="gallery-page about-bihe-page">
       <AboutInnerHero
-        currentPage="Gallery"
-        title="Campus Gallery"
+        currentPage="Moments at BIHE"
+        title="Moments at BIHE"
+        titleId="gallery-title"
         lead={GALLERY_PAGE_LEAD}
-        eyebrow="Gallery"
+        eyebrow="Campus Gallery"
         sectionLabel="Gallery"
-        sectionHref="/gallery"
+        sectionHref={SITE_LINKS.gallery}
       />
-
-      <GalleryPageGrid initialItems={items} />
+      <GalleryAlbumGrid albums={albums} categories={categories} />
     </article>
   );
 }

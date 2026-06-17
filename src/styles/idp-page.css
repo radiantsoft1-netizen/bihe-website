@@ -3,6 +3,12 @@
 .idp-page {
   --idp-pad-x: clamp(1.25rem, 5vw, 7.5rem);
   --idp-label: var(--color-secondary, #740000);
+  --idp-section-gap: clamp(1.25rem, 2.5vw, 1.75rem);
+  --idp-section-gap-lg: clamp(1.75rem, 3.5vw, 2.5rem);
+}
+
+.idp-page .about-bihe-hero {
+  margin-bottom: 0;
 }
 
 .idp-page__container {
@@ -23,14 +29,14 @@
 
 /* Vision — mirrors Mission layout (framed photo + open copy on white) */
 .idp-page__vision {
-  padding: clamp(3rem, 6vw, 4.5rem) var(--idp-pad-x);
+  padding: var(--idp-section-gap-lg) var(--idp-pad-x) var(--idp-section-gap);
   background: #fff;
 }
 
 .idp-page__vision-grid {
   display: grid;
   grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
-  gap: clamp(2rem, 4vw, 3.5rem);
+  gap: clamp(1.5rem, 3vw, 2.5rem);
   align-items: center;
 }
 
@@ -71,14 +77,14 @@
 
 /* Mission */
 .idp-page__mission {
-  padding: clamp(3rem, 6vw, 4.5rem) var(--idp-pad-x);
+  padding: var(--idp-section-gap) var(--idp-pad-x) var(--idp-section-gap-lg);
   background: #fff;
 }
 
 .idp-page__mission-grid {
   display: grid;
   grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
-  gap: clamp(2rem, 4vw, 3.5rem);
+  gap: clamp(1.5rem, 3vw, 2.5rem);
   align-items: center;
 }
 
@@ -207,7 +213,7 @@
 
 /* Academic growth — list + image */
 .idp-page__growth-list {
-  padding: clamp(3rem, 6vw, 4.5rem) var(--idp-pad-x);
+  padding: var(--idp-section-gap-lg) var(--idp-pad-x) var(--idp-section-gap);
   background: linear-gradient(
     180deg,
     #fff 0%,
@@ -218,7 +224,7 @@
 .idp-page__growth-list-grid {
   display: grid;
   grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
-  gap: clamp(2rem, 4vw, 3rem);
+  gap: clamp(1.5rem, 3vw, 2.25rem);
   align-items: center;
 }
 
@@ -226,7 +232,7 @@
   position: relative;
   display: flex;
   justify-content: center;
-  padding: 0.75rem 1rem 2rem 0;
+  padding: 0.5rem 0.75rem 0.75rem 0;
   min-width: 0;
 }
 
@@ -332,7 +338,7 @@
 /* Academic growth — feature panel */
 .idp-page__growth-panel {
   position: relative;
-  padding: clamp(3.5rem, 7vw, 5rem) var(--idp-pad-x);
+  padding: var(--idp-section-gap) var(--idp-pad-x) var(--idp-section-gap-lg);
   background: #fff;
   overflow: hidden;
 }
@@ -362,7 +368,7 @@
 
 .idp-page__growth-panel-head {
   text-align: center;
-  margin-bottom: clamp(2rem, 4vw, 2.75rem);
+  margin-bottom: clamp(1.25rem, 2.5vw, 1.75rem);
 }
 
 .idp-page__growth-panel-title {
@@ -452,10 +458,12 @@
 
 .idp-page__growth-card-text {
   margin: 0;
-  flex: 1;
+  width: 100%;
   font-size: 0.8125rem;
-  line-height: 1.55;
+  line-height: 1.5;
   color: #5c6478;
+  text-align: left;
+  text-justify: auto;
 }
 
 @media (max-width: 1024px) {
@@ -467,12 +475,12 @@
 
   .idp-page__vision-visual {
     order: -1;
-    padding-bottom: 1.5rem;
+    padding-bottom: 0.75rem;
   }
 
   .idp-page__growth-visual {
     order: -1;
-    padding: 0 0 1.5rem;
+    padding: 0 0 0.75rem;
   }
 
   .idp-page__growth-photo {
@@ -490,7 +498,7 @@
 
   .idp-page__mission-visual {
     order: -1;
-    padding-bottom: 1.5rem;
+    padding-bottom: 0.75rem;
   }
 
   .idp-page__mission-frame {

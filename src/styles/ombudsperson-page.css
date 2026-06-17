@@ -14,13 +14,32 @@
 }
 
 .ombudsperson-page__intro {
-  padding: clamp(2.5rem, 5vw, 3.5rem) var(--ombud-pad-x) clamp(1.5rem, 3vw, 2rem);
+  padding: clamp(3rem, 6vw, 4.5rem) var(--ombud-pad-x);
   background: #fff;
-  text-align: center;
+}
+
+.ombudsperson-page__intro-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+  gap: clamp(2rem, 4vw, 3.5rem);
+  align-items: center;
+}
+
+.ombudsperson-page__intro-panel {
+  max-width: 40rem;
+}
+
+.ombudsperson-page__intro-eyebrow {
+  margin: 0 0 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-text-secondary);
 }
 
 .ombudsperson-page__intro-title {
-  margin: 0 0 1.25rem;
+  margin: 0 0 1rem;
   font-family: var(--font-hero);
   font-size: clamp(1.125rem, 2.2vw, 1.5rem);
   font-weight: 700;
@@ -28,15 +47,93 @@
   letter-spacing: 0.04em;
   text-transform: uppercase;
   color: var(--color-secondary);
+  text-align: left;
 }
 
 .ombudsperson-page__intro-text {
-  margin: 0 auto;
-  max-width: 52rem;
+  margin: 0;
   font-size: 1rem;
   line-height: 1.75;
   color: var(--color-text-secondary);
   text-align: justify;
+}
+
+.ombudsperson-page__intro-visual {
+  position: relative;
+  margin: 0;
+  width: min(100%, 26rem);
+  padding: 1rem 0.5rem 1.5rem;
+}
+
+.ombudsperson-page__intro-visual .about__decor {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.ombudsperson-page__intro-frame {
+  position: relative;
+  z-index: 1;
+  padding: 0.65rem 0 0.65rem 0.65rem;
+}
+
+.ombudsperson-page__intro-frame::before {
+  content: "";
+  position: absolute;
+  inset: -0.5rem 0.75rem 0.75rem -0.5rem;
+  border: 3px solid var(--color-secondary);
+  border-radius: 2rem 2.75rem 1.75rem 1.5rem;
+  opacity: 0.75;
+  z-index: 0;
+}
+
+.ombudsperson-page__intro-frame::after {
+  content: "";
+  position: absolute;
+  inset: 0.45rem -0.45rem -0.45rem 0.45rem;
+  border-radius: 1.85rem 2.5rem 1.65rem 1.35rem;
+  background: linear-gradient(135deg, var(--navy-100, #e8eef8) 0%, var(--maroon-50, #faf0f0) 100%);
+  z-index: -1;
+}
+
+.ombudsperson-page__intro-photo-wrap {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  aspect-ratio: 620 / 349;
+  overflow: hidden;
+  border-radius: 1.85rem 2.5rem 1.65rem 1.35rem;
+  background: #fff;
+  box-shadow: 0 1.5rem 3rem rgba(30, 58, 117, 0.2);
+  transform: rotate(-1deg);
+  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.ombudsperson-page__intro-visual:hover .ombudsperson-page__intro-photo-wrap {
+  transform: rotate(0deg) scale(1.01);
+}
+
+.ombudsperson-page__intro-photo {
+  object-fit: contain;
+  object-position: center;
+  background: #fff;
+}
+
+.ombudsperson-page__intro-float-badge {
+  position: absolute;
+  left: 0.5rem;
+  bottom: 0.25rem;
+  z-index: 2;
+  padding: 0.45rem 0.9rem;
+  border-radius: 999px;
+  background: var(--color-primary);
+  color: #fff;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  box-shadow: 0 0.5rem 1.25rem rgba(30, 58, 117, 0.25);
 }
 
 .ombudsperson-page__lists {
@@ -93,11 +190,15 @@
 }
 
 @media (max-width: 768px) {
-  .ombudsperson-page__lists-grid {
+  .ombudsperson-page__intro-grid {
     grid-template-columns: 1fr;
   }
 
-  .ombudsperson-page__intro-text {
-    text-align: justify;
+  .ombudsperson-page__intro-visual {
+    margin-inline: auto;
+  }
+
+  .ombudsperson-page__lists-grid {
+    grid-template-columns: 1fr;
   }
 }

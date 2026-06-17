@@ -4,17 +4,10 @@ import type { StudentLifeShowcase } from "@/lib/student-life-showcase";
 export type DifferentlyAbledShowcase = StudentLifeShowcase;
 
 export const DIFFERENTLY_ABLED_PAGE_LEAD =
-  "Accessible infrastructure and assistance for differently-abled students at BIHE.";
+  "Bapuji Institute of Hi-Tech Education, Davangere is committed to providing an inclusive and supportive learning environment for differently abled students. The institution ensures equal opportunities in access to education, infrastructure, and assessment, enabling students with special needs to pursue quality education and become an integral part of the academic community.";
 
 export const DIFFERENTLY_ABLED_CLOSING_HIGHLIGHT =
   "These facilities aim to enhance the learning experience and academic independence of differently abled students.";
-
-export const DIFFERENTLY_ABLED_HERO = {
-  kicker: "Student Life",
-  overlayTitle: "Facilities for Differently-abled Students",
-  overlayLead:
-    "Bapuji Institute of Hi-Tech Education, Davangere is committed to providing an inclusive and supportive learning environment for differently abled students. The institution ensures equal opportunities in access to education, infrastructure, and assessment, enabling students with special needs to pursue quality education and become an integral part of the academic community.",
-} as const;
 
 export const DIFFERENTLY_ABLED_SHOWCASES: readonly DifferentlyAbledShowcase[] = [
   {

@@ -41,13 +41,10 @@ export function NssDetailsPage() {
             alt={NSS_BANNER_IMAGE_ALT}
             fill
             priority
+            unoptimized
             className="nss-page__banner-img"
-            sizes="100vw"
+            sizes="(max-width: 1200px) 100vw, min(100vw, var(--container-max))"
           />
-          <div className="nss-page__banner-overlay">
-            <p className="nss-page__banner-kicker">Student Life</p>
-            <h2 className="nss-page__banner-title">National Service Scheme</h2>
-          </div>
         </div>
       </section>
 
@@ -83,7 +80,7 @@ export function NssDetailsPage() {
             <Reveal delay={60}>
               <div className="nss-page__table-block">
                 <h3 className="nss-page__table-title">{NSS_COMMITTEE_TITLE}</h3>
-                <div className="bihe-data-table-card">
+                <div className="bihe-data-table-card nss-page__table-card">
                   <BiheDataTable
                     indexColumn
                     caption="NSS advisory committee members"
@@ -109,7 +106,7 @@ export function NssDetailsPage() {
             <Reveal delay={100}>
               <div className="nss-page__table-block">
                 <h3 className="nss-page__table-title">{NSS_ACTIVITIES_TITLE}</h3>
-                <div className="bihe-data-table-card">
+                <div className="bihe-data-table-card nss-page__table-card">
                   <BiheDataTable
                     indexColumn
                     caption="NSS unit activities"

@@ -13,10 +13,9 @@ export const B_COM_PROGRAMME = {
 } as const;
 
 export const B_COM_STATS = [
-  { value: "180", label: "Annual Intake", suffix: "+" },
-  { value: "3", label: "Year Programme", suffix: " Yrs" },
-  { value: "UG", label: "Level", suffix: "" },
-  { value: "DAVV", label: "Affiliation", suffix: "" },
+  { value: "180", label: "Annual Intake", suffix: "+", icon: "intake", tone: "navy" },
+  { value: "3", label: "Year Programme", suffix: " Yrs", icon: "duration", tone: "maroon" },
+  { value: "UG", label: "Level", suffix: "", icon: "level", tone: "navy" },
 ] as const;
 
 export const B_COM_FOCUS_TAGS = [
@@ -41,12 +40,6 @@ export const B_COM_PROGRAMME_SHOWCASE = {
   badge: "Undergraduate Programme",
   headline: "B.Com",
   subline: "Bachelor of Commerce · Department of B.Com",
-  glass: {
-    title: "Commerce Campus",
-    subtitle: "Professional commerce learning at BIHE",
-    statValue: "180+",
-    statLabel: "Annual Intake",
-  },
   stats: B_COM_STATS,
   tagsLabel: "Career Focus Areas",
   tags: B_COM_FOCUS_TAGS,

@@ -66,7 +66,7 @@ export const ANTI_RAGGING_PAGE: StudentLifeRichPageConfig = {
       title: "Anti Ragging Awareness Programme",
       image: {
         src: images.antiRagging.awarenessProgramme,
-        alt: "Students attending the anti-ragging Program",
+        alt: "Students studying together in the campus library",
       },
       paragraphs: [
         "The institution follows a strict zero-tolerance policy towards ragging and is committed to providing a safe and supportive learning environment for all students. Various preventive measures such as round-the-clock availability of hostel wardens, display of anti-ragging helpline numbers, CCTV surveillance, awareness programmers, and orientation sessions are implemented regularly. An active Anti-Ragging Committee functions as per UGC regulations to address complaints promptly and ensure strict action against offenders. Through continuous monitoring, counselling, and student participation, the college strives to create a ragging-free campus that promotes discipline, mutual respect, and holistic student development.",

@@ -1,10 +1,15 @@
 import { AboutInnerHero } from "@/components/about/AboutInnerHero";
+import { AboutVisualDecor } from "@/components/landing/AboutVisualDecor";
 import { BiheDataTable } from "@/components/ui/BiheDataTable";
 import { Reveal } from "@/components/ui/Reveal";
 import { SectionHeader } from "@/components/ui/SectionHeader";
+import { SmartImage } from "@/components/ui/SmartImage";
+import { images } from "@/lib/images";
 import {
   OMBUDSPERSON_COMMITTEE_MEMBERS,
   OMBUDSPERSON_FUNCTIONS,
+  OMBUDSPERSON_INTRO_BADGE,
+  OMBUDSPERSON_INTRO_IMAGE_ALT,
   OMBUDSPERSON_INTRO_TEXT,
   OMBUDSPERSON_INTRO_TITLE,
   OMBUDSPERSON_OBJECTIVES,
@@ -25,12 +30,33 @@ export function OmbudspersonPage() {
       />
 
       <section className="ombudsperson-page__intro" aria-labelledby="ombudsperson-intro-title">
-        <div className="ombudsperson-page__container">
-          <Reveal>
-            <h2 className="ombudsperson-page__intro-title" id="ombudsperson-intro-title">
-              {OMBUDSPERSON_INTRO_TITLE}
-            </h2>
-            <p className="ombudsperson-page__intro-text">{OMBUDSPERSON_INTRO_TEXT}</p>
+        <div className="ombudsperson-page__container ombudsperson-page__intro-grid">
+          <Reveal direction="left">
+            <figure className="ombudsperson-page__intro-visual" aria-label={OMBUDSPERSON_INTRO_IMAGE_ALT}>
+              <AboutVisualDecor />
+              <div className="ombudsperson-page__intro-frame">
+                <div className="ombudsperson-page__intro-photo-wrap">
+                  <SmartImage
+                    src={images.ombudspersonIntro}
+                    alt={OMBUDSPERSON_INTRO_IMAGE_ALT}
+                    fill
+                    sizes="(max-width: 960px) 90vw, 24rem"
+                    className="ombudsperson-page__intro-photo"
+                  />
+                </div>
+                <span className="ombudsperson-page__intro-float-badge">Fair & Impartial</span>
+              </div>
+            </figure>
+          </Reveal>
+
+          <Reveal direction="right" delay={80}>
+            <div className="ombudsperson-page__intro-panel">
+              <p className="ombudsperson-page__intro-eyebrow">{OMBUDSPERSON_INTRO_BADGE}</p>
+              <h2 className="ombudsperson-page__intro-title" id="ombudsperson-intro-title">
+                {OMBUDSPERSON_INTRO_TITLE}
+              </h2>
+              <p className="ombudsperson-page__intro-text">{OMBUDSPERSON_INTRO_TEXT}</p>
+            </div>
           </Reveal>
         </div>
       </section>

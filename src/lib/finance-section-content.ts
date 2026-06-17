@@ -13,11 +13,11 @@ export const FINANCE_SECTION_TITLE = {
 
 export const FINANCE_SECTION_PARAGRAPHS = [
   {
-    text: "The Finance Section of the college plays a vital role in ensuring effective financial planning, transparent utilization of funds, and smooth financial administration. It is responsible for managing all financial activities of the institution. It maintains accurate records of income and expenditure, including tuition fees of students, uniform fees, practical record and blue book fees, ID Card fees and accessories and other institutional receipts.",
+    text: "The Finance Section of the college plays a vital role in ensuring effective financial planning, transparent utilization of funds, and smooth financial administration. It is responsible for managing all financial activities of the institution. It maintains accurate records of income and expenditure, including tuition fees of students, uniform fees, practical record and blue books fees, ID Card fees and Accessories other institutional receipts.",
     emphasis: false,
   },
   {
-    text: "With a commitment to financial discipline and integrity, the Finance Section supports academic and administrative operations, contributing to the institution's overall growth and sustainability.",
+    text: "With a commitment to financial discipline and integrity, the Finance Section supports the academic, administrative, contributing to the institution's overall growth and sustainability.",
     emphasis: true,
   },
 ] as const;

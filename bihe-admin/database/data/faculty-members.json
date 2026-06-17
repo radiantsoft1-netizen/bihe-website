@@ -1,0 +1,579 @@
+[
+    {
+        "name": "Dr. Swamy Tribhuvananda H. V.",
+        "designation": "Asst. Prof. Head of the Department",
+        "qualification": "MBA, MHRM, Ph.D.",
+        "experience": "24 Years",
+        "seminar_workshop": "<p>National seminars on commerce education and management practices.</p>",
+        "subject_teaching": "<p>Financial Accounting, Business Management</p>",
+        "photo_path": "faculty/photos/Dr. B Veerappa-571679a1.png",
+        "resume_path": null,
+        "resume_name": null,
+        "sort_order": 0,
+        "published": true,
+        "departments": [
+            "b-com",
+            "bca"
+        ]
+    },
+    {
+        "name": "Asha M",
+        "designation": "FDA",
+        "qualification": "B.Com",
+        "experience": null,
+        "seminar_workshop": null,
+        "subject_teaching": null,
+        "photo_path": "faculty/photos/1e53d0d1-50f8-418c-a75e-1245f80986bf.png",
+        "resume_path": null,
+        "resume_name": null,
+        "sort_order": 0,
+        "published": true,
+        "departments": [
+            "non-teaching-staff"
+        ]
+    },
+    {
+        "name": "Dr Swamy Tribhuvananda HV",
+        "designation": "HOD, Director DoC",
+        "qualification": "MBA,MHRM,Ph.D",
+        "experience": "28 Years",
+        "seminar_workshop": "<p>20</p>",
+        "subject_teaching": "<p>Human Resource Management, Personality Management</p>",
+        "photo_path": "faculty/photos/f03a3f8b-bf04-4804-84a7-4d15c8c8c477.png",
+        "resume_path": null,
+        "resume_name": null,
+        "sort_order": 1,
+        "published": true,
+        "departments": [
+            "b-com"
+        ]
+    },
+    {
+        "name": "Siddalingappa K",
+        "designation": "Assistant Professor",
+        "qualification": "M.Sc(IT)",
+        "experience": "18 Years",
+        "seminar_workshop": "<p>0</p>",
+        "subject_teaching": "<p>Software Engineering, Digital Electronics, FDS, OS</p>",
+        "photo_path": "faculty/photos/03ff67c7-faa3-492c-8b3f-675b24105012.png",
+        "resume_path": null,
+        "resume_name": null,
+        "sort_order": 1,
+        "published": true,
+        "departments": [
+            "bca"
+        ]
+    },
+    {
+        "name": "Bhyramma N",
+        "designation": "FDA",
+        "qualification": "B.A",
+        "experience": null,
+        "seminar_workshop": null,
+        "subject_teaching": null,
+        "photo_path": "faculty/photos/b450f098-747e-4159-8845-8b5f87ed1147.png",
+        "resume_path": null,
+        "resume_name": null,
+        "sort_order": 1,
+        "published": true,
+        "departments": [
+            "non-teaching-staff"
+        ]
+    },
+    {
+        "name": "Manjunath B Bellada",
+        "designation": "Assistant Professor",
+        "qualification": "M.Com, PGDFM, (MBA)",
+        "experience": "12 Years",
+        "seminar_workshop": "<p>10</p>",
+        "subject_teaching": "<p>Financial Accounting, Investment Management etc</p>",
+        "photo_path": "faculty/photos/fc73d2bb-3066-4a26-8eaa-045076f57d22.png",
+        "resume_path": null,
+        "resume_name": null,
+        "sort_order": 2,
+        "published": true,
+        "departments": [
+            "b-com"
+        ]
+    },
+    {
+        "name": "Syed Azure Nadem Pasha",
+        "designation": "Assistant Professor",
+        "qualification": "M.Sc(IT)",
+        "experience": "19",
+        "seminar_workshop": "<p>2</p>",
+        "subject_teaching": "<p>OS, ADA, DSA, \nC Programming, C++, Java, COA</p>",
+        "photo_path": "faculty/photos/f0306c31-c0e5-43ff-899c-c58b2f68606c.png",
+        "resume_path": null,
+        "resume_name": null,
+        "sort_order": 2,
+        "published": true,
+        "departments": [
+            "bca"
+        ]
+    },
+    {
+        "name": "Rathna H N",
+        "designation": "FDA",
+        "qualification": "B.Com",
+        "experience": null,
+        "seminar_workshop": null,
+        "subject_teaching": null,
+        "photo_path": "faculty/photos/dde9d5ca-f197-4a0c-911b-cf7ef03dd121.png",
+        "resume_path": null,
+        "resume_name": null,
+        "sort_order": 2,
+        "published": true,
+        "departments": [
+            "non-teaching-staff"
+        ]
+    },
+    {
+        "name": "Latha O.H",
+        "designation": "Assistant Professor",
+        "qualification": "M.Com",
+        "experience": "10 Years",
+        "seminar_workshop": "<p>9</p>",
+        "subject_teaching": "<p>Management Accounting, Statistics, Business Mathematics, Auditing</p>",
+        "photo_path": "faculty/photos/1acdbab0-8d4b-4159-847d-5dc956f54e37.png",
+        "resume_path": null,
+        "resume_name": null,
+        "sort_order": 3,
+        "published": true,
+        "departments": [
+            "b-com"
+        ]
+    },
+    {
+        "name": "Vindhya S",
+        "designation": "Assistant Professor",
+        "qualification": "B.E.(CS)",
+        "experience": "24 Years",
+        "seminar_workshop": "<p>20</p>",
+        "subject_teaching": "<p>C,C++, Java, DSA, DBMS,  COA, OS, CN, Logic Design, System Software, IP, Python ADA, SE, FDS, DM</p>",
+        "photo_path": "faculty/photos/3e4d1739-e64c-4b18-aae3-4e71fe361929.png",
+        "resume_path": null,
+        "resume_name": null,
+        "sort_order": 3,
+        "published": true,
+        "departments": [
+            "bca"
+        ]
+    },
+    {
+        "name": "Santhosh T",
+        "designation": "FDA",
+        "qualification": "P.U.C",
+        "experience": null,
+        "seminar_workshop": null,
+        "subject_teaching": null,
+        "photo_path": "faculty/photos/e6209e1c-6375-4529-a326-018a831d1c97.png",
+        "resume_path": null,
+        "resume_name": null,
+        "sort_order": 3,
+        "published": true,
+        "departments": [
+            "non-teaching-staff"
+        ]
+    },
+    {
+        "name": "Nagaraj M S",
+        "designation": "Assistant Professor",
+        "qualification": "M.COM, K-SET, B.ED",
+        "experience": "13 Years",
+        "seminar_workshop": "<p>20</p>",
+        "subject_teaching": "<p>Income Tax, Management Principles &amp; Applications etc</p>",
+        "photo_path": "faculty/photos/b0f36dab-c322-403a-9261-046dbe15d8f0.png",
+        "resume_path": null,
+        "resume_name": null,
+        "sort_order": 4,
+        "published": true,
+        "departments": [
+            "b-com"
+        ]
+    },
+    {
+        "name": "Naveen H",
+        "designation": "Assistant Professor",
+        "qualification": "MCA",
+        "experience": "17 Years",
+        "seminar_workshop": "<p>5</p>",
+        "subject_teaching": "<p>JAVA,AI, R Prog, Networks, Software Engineering.</p>",
+        "photo_path": "faculty/photos/3efb7779-e694-4c8d-b61f-382e8ad76a5e.png",
+        "resume_path": null,
+        "resume_name": null,
+        "sort_order": 4,
+        "published": true,
+        "departments": [
+            "bca"
+        ]
+    },
+    {
+        "name": "Meghana R S",
+        "designation": "FDA",
+        "qualification": "MCA",
+        "experience": null,
+        "seminar_workshop": null,
+        "subject_teaching": null,
+        "photo_path": "faculty/photos/c35f1ddd-89ff-4bf1-8415-639a347c93c1.png",
+        "resume_path": null,
+        "resume_name": null,
+        "sort_order": 4,
+        "published": true,
+        "departments": [
+            "non-teaching-staff"
+        ]
+    },
+    {
+        "name": "Shwetha B V",
+        "designation": "Assistant Professor",
+        "qualification": "M.Com, MBA",
+        "experience": "10 Years",
+        "seminar_workshop": "<p>07</p>",
+        "subject_teaching": "<p>Retail Management, Business Analysis and Market Dynamics, Statistics, Cyber Security</p>",
+        "photo_path": "faculty/photos/71df3660-2072-4155-b186-b9f449392dd5.png",
+        "resume_path": null,
+        "resume_name": null,
+        "sort_order": 5,
+        "published": true,
+        "departments": [
+            "b-com"
+        ]
+    },
+    {
+        "name": "Bakkesh K S",
+        "designation": "Assistant Professor",
+        "qualification": "MCA",
+        "experience": "15 Years",
+        "seminar_workshop": "<p>5</p>",
+        "subject_teaching": "<p>JAVA,  R Program, AI</p>",
+        "photo_path": "faculty/photos/4c4c4ee1-3b73-4b8f-bd53-3c3b592bbecf.jpg",
+        "resume_path": null,
+        "resume_name": null,
+        "sort_order": 5,
+        "published": true,
+        "departments": [
+            "bca"
+        ]
+    },
+    {
+        "name": "Latha S S",
+        "designation": "SDA",
+        "qualification": "P.U.C",
+        "experience": null,
+        "seminar_workshop": null,
+        "subject_teaching": null,
+        "photo_path": "faculty/photos/8e07b584-ff9a-4973-8587-77053e1094ce.png",
+        "resume_path": null,
+        "resume_name": null,
+        "sort_order": 5,
+        "published": true,
+        "departments": [
+            "non-teaching-staff"
+        ]
+    },
+    {
+        "name": "Jnyaneshwara R Sulakhe",
+        "designation": "Assistant Professor",
+        "qualification": "M.Com , NET, KSET",
+        "experience": "7 Years",
+        "seminar_workshop": "<p>10</p>",
+        "subject_teaching": "<p>Corporate Accounting, Business Mathematics, Financial Management</p>",
+        "photo_path": "faculty/photos/11cb9df5-41cd-40d4-82e6-b5ff6741e6f9.png",
+        "resume_path": null,
+        "resume_name": null,
+        "sort_order": 6,
+        "published": true,
+        "departments": [
+            "b-com"
+        ]
+    },
+    {
+        "name": "Channegowda K",
+        "designation": "Assistant Professor",
+        "qualification": "MCA",
+        "experience": "8 Years",
+        "seminar_workshop": "<p>5</p>",
+        "subject_teaching": "<p>JAVA, Python, R Program, AI</p>",
+        "photo_path": "faculty/photos/c89e03b0-707c-4233-aaa4-78fd620affcc.png",
+        "resume_path": null,
+        "resume_name": null,
+        "sort_order": 6,
+        "published": true,
+        "departments": [
+            "bca"
+        ]
+    },
+    {
+        "name": "Ashok M S",
+        "designation": "Senior Lab Instructor",
+        "qualification": "D.E&C",
+        "experience": null,
+        "seminar_workshop": null,
+        "subject_teaching": null,
+        "photo_path": "faculty/photos/54bbefea-f946-4433-b004-b91519261fbe.png",
+        "resume_path": null,
+        "resume_name": null,
+        "sort_order": 6,
+        "published": true,
+        "departments": [
+            "non-teaching-staff"
+        ]
+    },
+    {
+        "name": "Manjula A N",
+        "designation": "Assistant Professor",
+        "qualification": "M.Com , K-SET",
+        "experience": "7 Years",
+        "seminar_workshop": "<p>10</p>",
+        "subject_teaching": "<p>GST, Business Regulatory Framework, Cost Accounting</p>",
+        "photo_path": "faculty/photos/c46a7318-00f2-403a-a72f-0a6f82f23d2a.png",
+        "resume_path": null,
+        "resume_name": null,
+        "sort_order": 7,
+        "published": true,
+        "departments": [
+            "b-com"
+        ]
+    },
+    {
+        "name": "Vageesh M V",
+        "designation": "Assistant Professor",
+        "qualification": "MCA, Ph.D(pursuing)",
+        "experience": "7 + years",
+        "seminar_workshop": "5",
+        "subject_teaching": "C program, DSA, ADE, Java, IP, CCN, ADA, AI, DBM",
+        "photo_path": "faculty/photos/5dbb6b6b-09a1-4938-b47b-2121973327a2.png",
+        "resume_path": null,
+        "resume_name": null,
+        "sort_order": 7,
+        "published": true,
+        "departments": [
+            "bca"
+        ]
+    },
+    {
+        "name": "Mouna B Gowda",
+        "designation": "Lab Instructor",
+        "qualification": "MCA",
+        "experience": null,
+        "seminar_workshop": null,
+        "subject_teaching": null,
+        "photo_path": "faculty/photos/28c407e8-ebee-4231-94da-107201188880.png",
+        "resume_path": null,
+        "resume_name": null,
+        "sort_order": 7,
+        "published": true,
+        "departments": [
+            "non-teaching-staff"
+        ]
+    },
+    {
+        "name": "Prashanthini B M",
+        "designation": "Assistant Professor",
+        "qualification": "B.E.(E&I), M.Tech(CSE)",
+        "experience": "13 Years",
+        "seminar_workshop": "20",
+        "subject_teaching": "C, Logic Design, C++, DSA, Java, DBMS, COA, CMA, IP",
+        "photo_path": "faculty/photos/898db7e3-c30f-485c-92fc-5b98f265194a.png",
+        "resume_path": null,
+        "resume_name": null,
+        "sort_order": 8,
+        "published": true,
+        "departments": [
+            "bca"
+        ]
+    },
+    {
+        "name": "Nagaraja B S",
+        "designation": "Assistant Professor",
+        "qualification": "B.E, M.Tech",
+        "experience": "11+ years",
+        "seminar_workshop": "7",
+        "subject_teaching": "C program, DSA, ADE, Java, AI, R Programming",
+        "photo_path": "faculty/photos/4031aa16-b1e2-46e9-a06e-e180b62ebdf5.png",
+        "resume_path": null,
+        "resume_name": null,
+        "sort_order": 9,
+        "published": true,
+        "departments": [
+            "bca"
+        ]
+    },
+    {
+        "name": "Vijay N Rao",
+        "designation": "Assistant Professor",
+        "qualification": "MCA",
+        "experience": "5 Years",
+        "seminar_workshop": "01",
+        "subject_teaching": "R Prog, JAVA, WCMS, DWDM, Data Science, DBMS",
+        "photo_path": "faculty/photos/838c7815-be5b-4aa7-9339-858c34511ea0.png",
+        "resume_path": null,
+        "resume_name": null,
+        "sort_order": 10,
+        "published": true,
+        "departments": [
+            "bca"
+        ]
+    },
+    {
+        "name": "Pooja M S",
+        "designation": "Assistant Professor",
+        "qualification": "M.Sc(Computer Science)",
+        "experience": "4 Years 5 Months",
+        "seminar_workshop": "5",
+        "subject_teaching": "C++, Web Design, OS, FC, C Programming, DSA, CC, C# and .NET, DBMS, Python, DW&DM, CM&A, CCN",
+        "photo_path": "faculty/photos/40ae0c80-00f5-4d3a-9c8e-2a1d771b0412.png",
+        "resume_path": null,
+        "resume_name": null,
+        "sort_order": 11,
+        "published": true,
+        "departments": [
+            "bca"
+        ]
+    },
+    {
+        "name": "Jyothi N",
+        "designation": "Assistant Professor",
+        "qualification": "BCA",
+        "experience": "2 years",
+        "seminar_workshop": "1",
+        "subject_teaching": "Java Programming, C# and .Net, Python, Cloud Computing, Artificial Intelligence",
+        "photo_path": "faculty/photos/d101e629-ea85-4f49-9763-2be8d4a37402.png",
+        "resume_path": null,
+        "resume_name": null,
+        "sort_order": 12,
+        "published": true,
+        "departments": [
+            "bca"
+        ]
+    },
+    {
+        "name": "Aishwarya G Pattanshetti",
+        "designation": "Assistant Professor",
+        "qualification": "MCA",
+        "experience": "1 Year 10 Months",
+        "seminar_workshop": "01",
+        "subject_teaching": "OS, C# and .NET, SE, Python, DW&DM, Java, PHP",
+        "photo_path": "faculty/photos/91aa1e43-9522-4f2b-93cd-dac8b501040e.png",
+        "resume_path": null,
+        "resume_name": null,
+        "sort_order": 13,
+        "published": true,
+        "departments": [
+            "bca"
+        ]
+    },
+    {
+        "name": "Karthik M",
+        "designation": "Assistant Professor",
+        "qualification": "MCA",
+        "experience": "2 years",
+        "seminar_workshop": "1",
+        "subject_teaching": "R Programming, DBMS, AI, Digital Marketing, Cloud Computing, DWDM",
+        "photo_path": "faculty/photos/60eee576-f950-4d10-a682-8dae5589dab9.png",
+        "resume_path": null,
+        "resume_name": null,
+        "sort_order": 14,
+        "published": true,
+        "departments": [
+            "bca"
+        ]
+    },
+    {
+        "name": "Kiran N V",
+        "designation": "Assistant Professor",
+        "qualification": "MCA",
+        "experience": "1 year",
+        "seminar_workshop": "1",
+        "subject_teaching": "Php, Java, WCMS, Cyber Security",
+        "photo_path": "faculty/photos/53549159-3be6-4f5b-ac02-8076aaaac01d.png",
+        "resume_path": null,
+        "resume_name": null,
+        "sort_order": 15,
+        "published": true,
+        "departments": [
+            "bca"
+        ]
+    },
+    {
+        "name": "Darshan L",
+        "designation": "Assistant Professor",
+        "qualification": "MCA",
+        "experience": "1.5 Years",
+        "seminar_workshop": "1",
+        "subject_teaching": "PHP, DBMS, IP, Python, Cloud Computing, FDS, DM",
+        "photo_path": "faculty/photos/a8bfdef4-b1c8-40c2-8cba-a2c85e531b73.png",
+        "resume_path": null,
+        "resume_name": null,
+        "sort_order": 16,
+        "published": true,
+        "departments": [
+            "bca"
+        ]
+    },
+    {
+        "name": "Anup K G",
+        "designation": "Assistant Professor",
+        "qualification": "MCA",
+        "experience": "1.5 Years",
+        "seminar_workshop": "2",
+        "subject_teaching": "PHP, Java, WCMS, DWDM, Cloud Computing",
+        "photo_path": "faculty/photos/e88eb7c9-a3eb-4995-bab4-36a9e2e5217d.png",
+        "resume_path": null,
+        "resume_name": null,
+        "sort_order": 17,
+        "published": true,
+        "departments": [
+            "bca"
+        ]
+    },
+    {
+        "name": "Nandish G N",
+        "designation": "Assistant Professor",
+        "qualification": "MCA",
+        "experience": "1 Year",
+        "seminar_workshop": "2",
+        "subject_teaching": "IP, Python, CMM&A, DM, FDS",
+        "photo_path": "faculty/photos/c1e6cd1d-885a-49a7-b6bd-ad1771a22b3f.png",
+        "resume_path": null,
+        "resume_name": null,
+        "sort_order": 18,
+        "published": true,
+        "departments": [
+            "bca"
+        ]
+    },
+    {
+        "name": "Nikil S N",
+        "designation": "Assistant Professor",
+        "qualification": "MCA",
+        "experience": "1 Year",
+        "seminar_workshop": "0",
+        "subject_teaching": "IP, DBMS, WCMS, Cloud Computing",
+        "photo_path": "faculty/photos/6be3df88-0c03-4a34-ba48-d46bf0070eec.png",
+        "resume_path": null,
+        "resume_name": null,
+        "sort_order": 19,
+        "published": true,
+        "departments": [
+            "bca"
+        ]
+    },
+    {
+        "name": "Sadashivappa G R",
+        "designation": "Physical Education Director",
+        "qualification": "M.Ped, M.Phil",
+        "experience": "18 Years",
+        "seminar_workshop": "2",
+        "subject_teaching": "Physical education",
+        "photo_path": "faculty/photos/60889852-0e7d-48d5-b23f-85a28d3d71d3.png",
+        "resume_path": null,
+        "resume_name": null,
+        "sort_order": 20,
+        "published": true,
+        "departments": [
+            "bca"
+        ]
+    }
+]

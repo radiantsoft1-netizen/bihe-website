@@ -1,4 +1,5 @@
 import { images } from "@/lib/images";
+import { SITE_LINKS } from "@/lib/site-links";
 
 export type CourseItem = {
   code: string;
@@ -9,6 +10,7 @@ export type CourseItem = {
   reverse: boolean;
   highlights: string[];
   meta: string[];
+  href: string;
 };
 
 export const COURSES: CourseItem[] = [
@@ -21,7 +23,8 @@ export const COURSES: CourseItem[] = [
     image: images.bcaLab,
     reverse: false,
     highlights: [],
-    meta: ["3 Years", "Full Time", "DAVV Affiliated"],
+    meta: ["3 Years", "Full Time"],
+    href: SITE_LINKS.academicsBca,
   },
   {
     code: "B.Com",
@@ -32,6 +35,7 @@ export const COURSES: CourseItem[] = [
     image: images.bcom,
     reverse: true,
     highlights: [],
-    meta: ["3 Years", "Full Time", "DAVV Affiliated"],
+    meta: ["3 Years", "Full Time"],
+    href: SITE_LINKS.academicsBCom,
   },
 ];
