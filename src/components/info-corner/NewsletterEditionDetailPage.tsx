@@ -3,7 +3,10 @@ import { AboutInnerHero } from "@/components/about/AboutInnerHero";
 import { Reveal } from "@/components/ui/Reveal";
 import { RichTextParagraph } from "@/components/ui/RichTextParagraph";
 import { SmartImage } from "@/components/ui/SmartImage";
-import { images } from "@/lib/images";
+import {
+  resolveInfoCornerDetailImage,
+  resolveInfoCornerViewerBadge,
+} from "@/lib/info-corner-detail";
 import type { InfoCornerItem } from "@/lib/info-corner-items-service";
 import {
   NEWSLETTERS_BASE_PATH,
@@ -40,9 +43,9 @@ export function NewsletterEditionDetailPage({
       : item.excerpt
         ? [item.excerpt]
         : [];
-  const previewSrc = item.image?.trim() || images.aboutBiheCampus;
-  const previewAlt = item.imageAlt ?? item.title;
+  const { src: previewSrc, alt: previewAlt } = resolveInfoCornerDetailImage(item);
   const seriesLabel = resolveNewsletterSeriesLabel(item);
+  const viewerBadge = resolveInfoCornerViewerBadge(item) || seriesLabel;
   const pdfHref = item.pdf?.trim() || null;
 
   return (
@@ -119,7 +122,7 @@ export function NewsletterEditionDetailPage({
                 <div className="ic-page__notice-detail-viewer">
                   <div className="ic-page__notice-detail-viewer-bar">
                     <span className="ic-page__notice-detail-viewer-label">Newsletters</span>
-                    <span className="ic-page__notice-detail-viewer-badge">{seriesLabel}</span>
+                    <span className="ic-page__notice-detail-viewer-badge">{viewerBadge}</span>
                   </div>
                   <div className="ic-page__notice-detail-gallery">
                     <figure className="ic-page__notice-detail-frame">

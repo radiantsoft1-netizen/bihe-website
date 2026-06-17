@@ -1,11 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { InfoCornerCategoryPage } from "@/components/info-corner/InfoCornerCategoryPage";
-import { CircularsAndNoticesPage } from "@/components/info-corner/CircularsAndNoticesPage";
 import { InternationalStudentsAdmissionPage } from "@/components/info-corner/InternationalStudentsAdmissionPage";
-import { JobOpeningsPage } from "@/components/info-corner/JobOpeningsPage";
-import { NewsEventsAchievementsPage } from "@/components/info-corner/NewsEventsAchievementsPage";
-import { NewslettersPage } from "@/components/info-corner/NewslettersPage";
 import { RtiDetailsPage } from "@/components/info-corner/RtiDetailsPage";
 import { SitePageShell } from "@/components/layout/SitePageShell";
 import { INFO_CORNER_CATEGORY_SLUGS, isInfoCornerCategorySlug } from "@/lib/info-corner-items-service";
@@ -14,10 +10,6 @@ import { getInfoCornerPage } from "@/lib/info-corner-service";
 const DEDICATED_INFO_CORNER_PAGES = {
   "rti-details": RtiDetailsPage,
   "international-students-admission": InternationalStudentsAdmissionPage,
-  newsletters: NewslettersPage,
-  "news-events-achievements": NewsEventsAchievementsPage,
-  "job-openings": JobOpeningsPage,
-  "circulars-and-notices": CircularsAndNoticesPage,
 } as const;
 
 type InfoCornerRoutePageProps = {

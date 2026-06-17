@@ -1,27 +1,7 @@
-import DOMPurify from "isomorphic-dompurify";
+import sanitizeHtml from "sanitize-html";
 
 const STORAGE_IMAGE_SRC =
   /^\/storage\/|^(?:https?:)?\/\/[^/]+\/storage\//i;
-
-let imageSrcHookRegistered = false;
-
-function ensureImageSrcHook(): void {
-  if (imageSrcHookRegistered) {
-    return;
-  }
-
-  DOMPurify.addHook("uponSanitizeAttribute", (node, data) => {
-    if (data.attrName !== "src" || node.nodeName !== "IMG") {
-      return;
-    }
-
-    if (!STORAGE_IMAGE_SRC.test(data.attrValue)) {
-      data.keepAttr = false;
-    }
-  });
-
-  imageSrcHookRegistered = true;
-}
 
 const ALLOWED_TAGS = [
   "p",
@@ -39,11 +19,20 @@ const ALLOWED_TAGS = [
 ];
 
 export function sanitizeRichHtml(html: string): string {
-  ensureImageSrcHook();
+  return sanitizeHtml(html, {
+    allowedTags: ALLOWED_TAGS,
+    allowedAttributes: {
+      a: ["href", "title", "target", "rel"],
+      img: ["src", "alt", "width", "height", "class"],
+    },
+    exclusiveFilter(frame) {
+      if (frame.tag !== "img") {
+        return false;
+      }
 
-  return DOMPurify.sanitize(html, {
-    ALLOWED_TAGS,
-    ALLOWED_ATTR: ["href", "title", "target", "rel", "src", "alt", "width", "height", "class"],
+      const src = frame.attribs.src ?? "";
+      return !STORAGE_IMAGE_SRC.test(src);
+    },
   });
 }
 

@@ -1,6 +1,7 @@
 import "server-only";
 
-import { fetchApiList, getApiBaseUrl } from "@/lib/api/client";
+import { fetchApiList } from "@/lib/api/client";
+import { toPublicStoragePath } from "@/lib/images";
 import facultyMembersFallback from "@/lib/faculty-members-fallback.json";
 import { images } from "@/lib/images";
 import { FACULTY_DEPARTMENT_TITLES } from "@/lib/faculty-pages";
@@ -79,12 +80,11 @@ function resolveStorageUrl(relativePath: string | null | undefined): string | nu
     return null;
   }
 
-  const base = getApiBaseUrl();
-  if (!base) {
-    return null;
-  }
+  const path = relativePath.startsWith("/storage/")
+    ? relativePath
+    : `/storage/${relativePath.replace(/^\/+/, "")}`;
 
-  return `${base}/storage/${relativePath.replace(/^\/+/, "")}`;
+  return toPublicStoragePath(path) ?? path;
 }
 
 function loadFallbackMembersFromFile(): FacultyMember[] {

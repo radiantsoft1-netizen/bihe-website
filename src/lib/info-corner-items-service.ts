@@ -1,6 +1,7 @@
 import "server-only";
 
 import { fetchApiItem, fetchApiList } from "@/lib/api/client";
+import { FALLBACK_ANNOUNCEMENT_ITEMS } from "@/lib/info-corner-pages/announcements-content";
 import { FALLBACK_JOB_OPENING_ITEMS } from "@/lib/info-corner-pages/job-openings-content";
 import { FALLBACK_NEWSLETTER_ITEMS, normalizeNewsletterItem } from "@/lib/info-corner-pages/newsletters-content";
 import { FALLBACK_NEWS_EVENTS_ACHIEVEMENTS_ITEMS } from "@/lib/info-corner-pages/news-events-achievements-content";
@@ -133,6 +134,7 @@ function mergeInfoCornerFallbackItems(items: InfoCornerItem[]): InfoCornerItem[]
   const merged = [...items];
 
   for (const [categorySlug, fallbackItems] of [
+    ["announcements", FALLBACK_ANNOUNCEMENT_ITEMS],
     ["newsletters", FALLBACK_NEWSLETTER_ITEMS],
     ["news-events-achievements", FALLBACK_NEWS_EVENTS_ACHIEVEMENTS_ITEMS],
     ["job-openings", FALLBACK_JOB_OPENING_ITEMS],
@@ -156,6 +158,10 @@ export async function getInfoCornerItems(categorySlug?: string): Promise<InfoCor
   const data = await fetchApiList<InfoCornerItem>(path);
 
   if (!data || data.length === 0) {
+    if (categorySlug === "announcements") {
+      return FALLBACK_ANNOUNCEMENT_ITEMS.map(mapItem);
+    }
+
     if (categorySlug === "newsletters") {
       return FALLBACK_NEWSLETTER_ITEMS.map(mapItem);
     }
@@ -184,13 +190,15 @@ export async function getInfoCornerItem(
 
   if (!data) {
     const fallbackItems =
-      categorySlug === "newsletters"
-        ? FALLBACK_NEWSLETTER_ITEMS
-        : categorySlug === "news-events-achievements"
-          ? FALLBACK_NEWS_EVENTS_ACHIEVEMENTS_ITEMS
-          : categorySlug === "job-openings"
-            ? FALLBACK_JOB_OPENING_ITEMS
-            : [];
+      categorySlug === "announcements"
+        ? FALLBACK_ANNOUNCEMENT_ITEMS
+        : categorySlug === "newsletters"
+          ? FALLBACK_NEWSLETTER_ITEMS
+          : categorySlug === "news-events-achievements"
+            ? FALLBACK_NEWS_EVENTS_ACHIEVEMENTS_ITEMS
+            : categorySlug === "job-openings"
+              ? FALLBACK_JOB_OPENING_ITEMS
+              : [];
     const fallback = fallbackItems.find((item) => item.slug === itemSlug);
     return fallback ? mapItem(fallback) : null;
   }
@@ -202,7 +210,7 @@ export async function getInfoCornerHomeScrollerItems(): Promise<InfoCornerItem[]
   const data = await fetchApiList<InfoCornerItem>("/api/v1/info-corner/items/home-scroller");
 
   if (!data || data.length === 0) {
-    return [];
+    return FALLBACK_ANNOUNCEMENT_ITEMS.filter((item) => item.showInHomeScroller).map(mapItem);
   }
 
   return data.map(mapItem);

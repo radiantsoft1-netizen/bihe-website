@@ -1,6 +1,10 @@
 import Link from "next/link";
 import { SmartImage } from "@/components/ui/SmartImage";
 import {
+  circularNoticeHref,
+  type CircularNotice,
+} from "@/lib/info-corner-pages/circulars-and-notices-content";
+import {
   resolveInfoCornerBadgeLabel,
   type InfoCornerItem,
 } from "@/lib/info-corner-items-service";
@@ -92,7 +96,22 @@ export function infoCornerItemToCardProps(item: InfoCornerItem): InfoCornerItemC
     publishedDateIso: item.publishedDate,
     excerpt: item.excerpt ?? "",
     detailHref: item.href ?? "#",
-    image: item.image,
-    imageAlt: item.imageAlt,
+    image: null,
+    imageAlt: null,
+  };
+}
+
+export function circularNoticeToCardProps(notice: CircularNotice): InfoCornerItemCardProps {
+  return {
+    title: notice.title,
+    subtitle: notice.subtitle,
+    badgeLabel: "Notice",
+    showBadge: true,
+    publishedDate: notice.publishedDate,
+    publishedDateIso: notice.publishedDateIso,
+    excerpt: notice.excerpt,
+    detailHref: circularNoticeHref(notice.slug),
+    image: null,
+    imageAlt: null,
   };
 }

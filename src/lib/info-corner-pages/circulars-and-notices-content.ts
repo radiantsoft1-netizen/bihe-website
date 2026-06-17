@@ -71,6 +71,8 @@ export const CIRCULARS_NOTICES: readonly CircularNotice[] = [
 
 export const CIRCULARS_SECTION_TITLE = "Circulars & notices";
 
+export const CIRCULARS_FEED_TITLE = "All notifications";
+
 export const CIRCULARS_BASE_PATH = "/info-corner/circulars-and-notices";
 
 export function circularNoticeHref(slug: string): string {

@@ -430,6 +430,38 @@ export const figmaSources: Record<string, string> = {
     "https://www.figma.com/api/mcp/asset/58175b0f-7550-4522-b7e4-6d9ca71014b3",
 };
 
+export function encodeStoragePath(pathname: string): string {
+  return pathname
+    .split("/")
+    .map((segment) => (segment === "" ? "" : encodeURIComponent(decodeURIComponent(segment))))
+    .join("/");
+}
+
+/** Rewrite Laravel /storage URLs to same-origin paths proxied by Vercel. */
+export function toPublicStoragePath(src: string): string | null {
+  const trimmed = src?.trim();
+  if (!trimmed) {
+    return null;
+  }
+
+  if (trimmed.startsWith("/storage/")) {
+    return encodeStoragePath(trimmed);
+  }
+
+  if (trimmed.startsWith("http://") || trimmed.startsWith("https://")) {
+    try {
+      const url = new URL(trimmed);
+      if (url.pathname.startsWith("/storage/")) {
+        return encodeStoragePath(url.pathname);
+      }
+    } catch {
+      return null;
+    }
+  }
+
+  return null;
+}
+
 export function resolveImagePath(src: string): string {
   if (src.startsWith("/i/")) {
     const slug = src.slice(3) as ImageSlug;
@@ -440,27 +472,15 @@ export function resolveImagePath(src: string): string {
 }
 
 export function resolveImageSrc(src: string): string {
+  const storagePath = toPublicStoragePath(src);
+  if (storagePath) {
+    return storagePath;
+  }
+
   const localPath = resolveImagePath(src);
 
   if (localPath.startsWith("/images/")) {
     return localPath;
-  }
-
-  if (src.startsWith("http://") || src.startsWith("https://")) {
-    try {
-      const url = new URL(src);
-
-      if (url.pathname.startsWith("/storage/")) {
-        url.pathname = url.pathname
-          .split("/")
-          .map((segment) => (segment === "" ? "" : encodeURIComponent(decodeURIComponent(segment))))
-          .join("/");
-
-        return url.toString();
-      }
-    } catch {
-      return src;
-    }
   }
 
   return src;

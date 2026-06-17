@@ -53,6 +53,16 @@ const nextConfig: NextConfig = {
         hostname: "admin.bihe.edu",
         pathname: "/storage/**",
       },
+      {
+        protocol: "https",
+        hostname: "admin.bihedvg.org",
+        pathname: "/storage/**",
+      },
+      {
+        protocol: "https",
+        hostname: "*.trycloudflare.com",
+        pathname: "/storage/**",
+      },
     ],
   },
   experimental: {

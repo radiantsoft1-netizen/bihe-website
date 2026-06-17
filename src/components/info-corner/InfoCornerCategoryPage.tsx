@@ -1,16 +1,16 @@
 import Link from "next/link";
 import { AboutInnerHero } from "@/components/about/AboutInnerHero";
-import { InfoCornerItemCard, infoCornerItemToCardProps } from "@/components/info-corner/InfoCornerItemCard";
+import { InfoCornerListFeed } from "@/components/info-corner/InfoCornerListFeed";
 import { Reveal } from "@/components/ui/Reveal";
 import { SectionHeader } from "@/components/ui/SectionHeader";
+import {
+  getInfoCornerCategoryFeed,
+  resolveInfoCornerEmptyMessage,
+  resolveInfoCornerFeedTitle,
+} from "@/lib/info-corner-category-feed";
 import { INFO_CORNER_BASE_PATH } from "@/lib/info-corner-routes";
 import { buildInfoCornerSidebarLinks } from "@/lib/info-corner-nav";
-import {
-  getInfoCornerCategories,
-  getInfoCornerItems,
-  infoCornerItemHref,
-  type InfoCornerCategory,
-} from "@/lib/info-corner-items-service";
+import { getInfoCornerCategories, type InfoCornerCategory } from "@/lib/info-corner-items-service";
 import { getInfoCornerPage } from "@/lib/info-corner-service";
 
 type InfoCornerCategoryPageProps = {
@@ -18,9 +18,9 @@ type InfoCornerCategoryPageProps = {
 };
 
 export async function InfoCornerCategoryPage({ categorySlug }: InfoCornerCategoryPageProps) {
-  const [categories, items, page] = await Promise.all([
+  const [categories, feedEntries, page] = await Promise.all([
     getInfoCornerCategories(),
-    getInfoCornerItems(categorySlug),
+    getInfoCornerCategoryFeed(categorySlug),
     getInfoCornerPage(categorySlug),
   ]);
 
@@ -35,11 +35,16 @@ export async function InfoCornerCategoryPage({ categorySlug }: InfoCornerCategor
 
   const lead = page?.lead ?? category.description ?? "";
   const sidebarLinks = buildInfoCornerSidebarLinks(categories);
-  const feedTitle =
-    categorySlug === "announcements" ? "Latest announcements" : category.name;
+  const feedTitle = resolveInfoCornerFeedTitle(categorySlug, category.name);
+  const emptyMessage = resolveInfoCornerEmptyMessage(categorySlug);
+
+  const categoryModifierClass =
+    categorySlug === "circulars-and-notices" ? " ic-page--circulars" : "";
 
   return (
-    <article className={`ic-page ic-page--category ic-page--${categorySlug} about-bihe-page`}>
+    <article
+      className={`ic-page ic-page--category ic-page--${categorySlug}${categoryModifierClass} about-bihe-page`}
+    >
       <AboutInnerHero
         currentPage={category.name}
         title={page?.title ?? category.name}
@@ -76,24 +81,26 @@ export async function InfoCornerCategoryPage({ categorySlug }: InfoCornerCategor
       <section className="ic-page__notifications" aria-labelledby={`info-corner-${categorySlug}-feed`}>
         <div className="ic-page__container">
           <div className="ic-page__notifications-layout">
-            <Reveal className="ic-page__notifications-sidebar">
-              <h2 className="ic-page__notifications-sidebar-title">Important Links</h2>
-              <ul className="ic-page__notifications-sidebar-list">
-                {sidebarLinks.map((entry) => (
-                  <li key={entry.slug}>
-                    <Link
-                      href={entry.href}
-                      className={`ic-page__notifications-sidebar-link${
-                        entry.slug === categorySlug ? " ic-page__notifications-sidebar-link--active" : ""
-                      }`}
-                      aria-current={entry.slug === categorySlug ? "page" : undefined}
-                    >
-                      <span className="ic-page__notifications-sidebar-name">{entry.name}</span>
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </Reveal>
+            <div className="ic-page__notifications-sidebar-sticky">
+              <Reveal className="ic-page__notifications-sidebar">
+                <h2 className="ic-page__notifications-sidebar-title">Important Links</h2>
+                <ul className="ic-page__notifications-sidebar-list">
+                  {sidebarLinks.map((entry) => (
+                    <li key={entry.slug}>
+                      <Link
+                        href={entry.href}
+                        className={`ic-page__notifications-sidebar-link${
+                          entry.slug === categorySlug ? " ic-page__notifications-sidebar-link--active" : ""
+                        }`}
+                        aria-current={entry.slug === categorySlug ? "page" : undefined}
+                      >
+                        <span className="ic-page__notifications-sidebar-name">{entry.name}</span>
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </Reveal>
+            </div>
 
             <div className="ic-page__notifications-main">
               <Reveal>
@@ -102,26 +109,26 @@ export async function InfoCornerCategoryPage({ categorySlug }: InfoCornerCategor
                 </h2>
               </Reveal>
 
-              <div className="ic-page__notifications-feed">
-                {items.length > 0 ? (
-                  items.map((item, index) => (
-                    <Reveal key={item.slug} delay={index * 70} direction="up">
-                      <InfoCornerItemCard
-                        {...infoCornerItemToCardProps({
-                          ...item,
-                          href: item.href ?? infoCornerItemHref(categorySlug, item.slug),
-                        })}
-                      />
-                    </Reveal>
-                  ))
-                ) : (
-                  <Reveal>
-                    <p className="ic-page__notifications-empty">
-                      No published items in this category yet. Please check back soon.
+              <InfoCornerListFeed entries={feedEntries} emptyMessage={emptyMessage} />
+
+              {categorySlug === "job-openings" ? (
+                <Reveal>
+                  <aside className="ic-page__job-contact" aria-label="Recruitment contact information">
+                    <h3 className="ic-page__job-contact-title">How to apply</h3>
+                    <p className="ic-page__job-contact-text">
+                      Submit applications to the college office during working hours or email{" "}
+                      <a href="mailto:principal@bihedvg.org" className="ic-page__job-contact-link">
+                        principal@bihedvg.org
+                      </a>{" "}
+                      with the post title in the subject line. For enquiries, call{" "}
+                      <a href="tel:+918192221625" className="ic-page__job-contact-link">
+                        08192-221625
+                      </a>
+                      .
                     </p>
-                  </Reveal>
-                )}
-              </div>
+                  </aside>
+                </Reveal>
+              ) : null}
             </div>
           </div>
         </div>
