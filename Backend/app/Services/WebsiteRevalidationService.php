@@ -42,6 +42,7 @@ class WebsiteRevalidationService
             'governing-bodies' => ['/governing-bodies'],
             'menu-items', 'navigation' => ['/', '/governing-bodies'],
             'prospectus-settings' => ['/', '/admissions'],
+            'site-maintenance' => ['/maintenance', '/'],
             'site-pages', 'research-development-cell' => [],
             'documents' => [],
             default => [],
@@ -74,6 +75,7 @@ class WebsiteRevalidationService
             'governing-bodies' => ['api:/api/v1/governing-bodies'],
             'menu-items', 'navigation' => ['api:/api/v1/navigation'],
             'prospectus-settings' => ['api:/api/v1/site-settings/prospectus', 'api:/api/v1/navigation'],
+            'site-maintenance' => ['api:/api/v1/site-settings/maintenance'],
             'site-pages', 'research-development-cell' => [
                 'api:/api/v1/site-pages',
                 'api:/api/v1/site-pages/show',

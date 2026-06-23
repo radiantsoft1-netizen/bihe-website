@@ -84,6 +84,7 @@ class AdminPermissions
         return [
             'navigation',
             'prospectus',
+            'site-maintenance',
             'site-pages',
             'media-library',
             'users',
@@ -153,6 +154,12 @@ class AdminPermissions
                 'label' => 'Prospectus',
                 'route' => 'admin.settings.prospectus.edit',
                 'pattern' => 'admin.settings.prospectus.*',
+            ],
+            'site-maintenance' => [
+                'permission' => self::SETTINGS_MANAGE,
+                'label' => 'Website Maintenance',
+                'route' => 'admin.settings.site-maintenance.edit',
+                'pattern' => 'admin.settings.site-maintenance.*',
             ],
             'site-pages' => [
                 'permission' => self::SITE_PAGES_MANAGE,

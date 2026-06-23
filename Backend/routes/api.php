@@ -22,6 +22,7 @@ use App\Http\Controllers\Api\V1\NewsEventController;
 use App\Http\Controllers\Api\V1\PlacementDriveController;
 use App\Http\Controllers\Api\V1\ProgramController;
 use App\Http\Controllers\Api\V1\ProspectusSettingController;
+use App\Http\Controllers\Api\V1\SiteMaintenanceController;
 use App\Http\Controllers\Api\V1\RecruitingPartnerController;
 use App\Http\Controllers\Api\V1\HeroBannerController;
 use Illuminate\Support\Facades\Route;
@@ -62,6 +63,7 @@ Route::prefix('v1')->group(function () {
     Route::get('/circular-notices', [CircularNoticeController::class, 'index']);
     Route::get('/site-settings/prospectus/pdf', [ProspectusSettingController::class, 'pdf']);
     Route::get('/site-settings/prospectus', [ProspectusSettingController::class, 'show']);
+    Route::get('/site-settings/maintenance', [SiteMaintenanceController::class, 'show']);
     Route::get('/placement-drives/{slug}', [PlacementDriveController::class, 'show']);
     Route::get('/placement-drives', [PlacementDriveController::class, 'index']);
     Route::get('/alumni-profiles/{slug}', [AlumniProfileController::class, 'show']);

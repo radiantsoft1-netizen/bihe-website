@@ -1,5 +1,9 @@
 import { NextResponse, type NextRequest } from "next/server";
 
+import {
+  fetchSiteMaintenanceStatus,
+  isMaintenanceBypassPath,
+} from "@/lib/maintenance-status";
 import { checkAdminLoginRateLimit } from "@/lib/security/admin-login-rate-limit";
 import {
   applyAdminSecurityHeaders,
@@ -27,13 +31,24 @@ function isPublicAdminPath(pathname: string): boolean {
   return pathname.startsWith("/admin/reset-password/");
 }
 
-export function middleware(request: NextRequest) {
+export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
   const isAdminSurface =
     pathname === "/admin" ||
     pathname.startsWith("/admin/") ||
     pathname.startsWith("/assets/") ||
     pathname.startsWith("/storage/");
+
+  if (!isAdminSurface && !isMaintenanceBypassPath(pathname)) {
+    const maintenance = await fetchSiteMaintenanceStatus();
+
+    if (maintenance.enabled) {
+      const maintenanceUrl = request.nextUrl.clone();
+      maintenanceUrl.pathname = "/maintenance";
+      maintenanceUrl.search = "";
+      return NextResponse.redirect(maintenanceUrl);
+    }
+  }
 
   if (isAdminSurface && request.method === "POST" && pathname === "/admin/login") {
     const clientIp = getClientIp(request);

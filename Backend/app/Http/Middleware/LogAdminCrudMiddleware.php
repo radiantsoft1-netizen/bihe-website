@@ -115,6 +115,10 @@ class LogAdminCrudMiddleware
             return 'prospectus-settings';
         }
 
+        if (str_starts_with($routeName, 'admin.settings.site-maintenance.')) {
+            return 'site-maintenance';
+        }
+
         if (str_starts_with($routeName, 'admin.research-development-cell.')) {
             return 'research-development-cell';
         }

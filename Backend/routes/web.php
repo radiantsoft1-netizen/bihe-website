@@ -15,6 +15,7 @@ use App\Http\Controllers\Admin\MediaLibraryController;
 use App\Http\Controllers\Admin\MenuItemController;
 use App\Http\Controllers\Admin\PlacementDriveController;
 use App\Http\Controllers\Admin\ProspectusSettingController;
+use App\Http\Controllers\Admin\SiteMaintenanceController;
 use App\Http\Controllers\Admin\SitePageController;
 use App\Http\Controllers\Admin\GalleryAlbumController;
 use App\Http\Controllers\Admin\HeroBannerController;
@@ -262,6 +263,10 @@ Route::prefix('admin')->name('admin.')->group(function () {
                 ->name('settings.prospectus.edit');
             Route::put('settings/prospectus', [ProspectusSettingController::class, 'update'])
                 ->name('settings.prospectus.update');
+            Route::get('settings/site-maintenance', [SiteMaintenanceController::class, 'edit'])
+                ->name('settings.site-maintenance.edit');
+            Route::put('settings/site-maintenance', [SiteMaintenanceController::class, 'update'])
+                ->name('settings.site-maintenance.update');
         });
 
         Route::middleware('permission:'.AdminPermissions::SESSIONS_MANAGE)->group(function () {
