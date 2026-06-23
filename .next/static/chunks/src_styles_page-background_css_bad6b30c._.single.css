@@ -1,0 +1,182 @@
+/* [project]/src/styles/page-background.css [app-client] (css) */
+.bihe-wrap {
+  isolation: isolate;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.bihe-wrap > main {
+  overflow-x: clip;
+}
+
+.bihe-wrap > .bihe-page-bg {
+  pointer-events: none;
+  z-index: 0;
+  width: 100%;
+  min-height: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  overflow: hidden;
+}
+
+.bihe-wrap > main {
+  z-index: 1;
+  padding-top: var(--site-header-height, 7.5rem);
+  transition: padding-top var(--header-motion, .55s) var(--header-ease, cubic-bezier(.22, 1, .36, 1));
+  position: relative;
+}
+
+.bihe-wrap > footer {
+  z-index: 1;
+  position: relative;
+}
+
+.bihe-page-bg__blob, .bihe-page-bg__ring, .bihe-page-bg__zigzag, .bihe-page-bg__plus, .bihe-page-bg__triangle, .bihe-page-bg__dot {
+  pointer-events: none;
+  position: absolute;
+}
+
+.bihe-page-bg__blob--1 {
+  width: min(22rem, 38vw);
+  color: var(--color-primary);
+  opacity: .09;
+  animation: 14s ease-in-out infinite page-bg-float;
+  top: 6%;
+  left: -8%;
+}
+
+.bihe-page-bg__blob--2 {
+  width: min(20rem, 34vw);
+  color: var(--color-secondary);
+  opacity: .08;
+  animation: 16s ease-in-out infinite page-bg-float-alt;
+  top: 22%;
+  right: -6%;
+}
+
+.bihe-page-bg__blob--3 {
+  width: min(14rem, 26vw);
+  color: var(--color-primary-500);
+  opacity: .07;
+  animation: 18s ease-in-out infinite reverse page-bg-float;
+  top: 48%;
+  left: 4%;
+}
+
+.bihe-page-bg__ring--1 {
+  width: min(9rem, 16vw);
+  color: var(--color-secondary);
+  opacity: .14;
+  animation: 20s ease-in-out infinite page-bg-float-alt;
+  top: 14%;
+  right: 12%;
+}
+
+.bihe-page-bg__ring--2 {
+  width: min(7rem, 12vw);
+  color: var(--color-primary);
+  opacity: .12;
+  animation: 22s ease-in-out infinite page-bg-float;
+  top: 62%;
+  right: 8%;
+}
+
+.bihe-page-bg__dot--1 {
+  background: var(--color-secondary);
+  opacity: .35;
+  border-radius: 50%;
+  width: .75rem;
+  height: .75rem;
+  top: 32%;
+  left: 18%;
+}
+
+.bihe-page-bg__dot--2 {
+  background: var(--color-primary);
+  opacity: .3;
+  border-radius: 50%;
+  width: .5rem;
+  height: .5rem;
+  top: 55%;
+  right: 22%;
+}
+
+.bihe-page-bg__dot--3 {
+  border: 2px solid var(--color-secondary);
+  opacity: .25;
+  background: none;
+  border-radius: 50%;
+  width: 1rem;
+  height: 1rem;
+  top: 72%;
+  left: 12%;
+}
+
+.bihe-page-bg__dot--4 {
+  background: var(--color-primary-500);
+  opacity: .28;
+  border-radius: 50%;
+  width: .65rem;
+  height: .65rem;
+  top: 88%;
+  right: 28%;
+}
+
+.bihe-page-bg__zigzag {
+  width: min(6rem, 12vw);
+  color: var(--color-secondary);
+  opacity: .12;
+  animation: 11s ease-in-out infinite page-bg-float;
+  top: 38%;
+  right: 4%;
+}
+
+.bihe-page-bg__plus {
+  width: 2.5rem;
+  color: var(--color-primary);
+  opacity: .1;
+  animation: 13s ease-in-out infinite page-bg-float-alt;
+  top: 68%;
+  left: 6%;
+}
+
+.bihe-page-bg__triangle {
+  width: 4rem;
+  color: var(--color-secondary);
+  opacity: .06;
+  animation: 17s ease-in-out infinite reverse page-bg-float;
+  top: 82%;
+  left: -2%;
+  transform: rotate(12deg);
+}
+
+.bihe-wrap .about, .bihe-wrap .accreditation, .bihe-wrap .courses, .bihe-wrap .facilities, .bihe-wrap .news, .bihe-wrap .recruiters, .bihe-wrap .gallery {
+  background: linear-gradient(rgba(248, 250, 252, .88) 0%, rgba(238, 242, 248, .85) 100%);
+}
+
+.bihe-wrap .accreditation {
+  background: linear-gradient(135deg, rgba(255, 255, 255, .9) 0%, rgba(244, 246, 250, .88) 100%);
+}
+
+.bihe-wrap .courses {
+  background: linear-gradient(rgba(255, 248, 248, .94) 0%, rgba(255, 255, 255, .92) 50%, rgba(244, 246, 250, .9) 100%);
+}
+
+.bihe-wrap .facilities {
+  background: linear-gradient(rgba(255, 255, 255, .95) 0%, rgba(244, 246, 250, .92) 100%);
+}
+
+.bihe-wrap .news {
+  background: linear-gradient(rgba(255, 255, 255, .92) 0%, rgba(244, 246, 250, .88) 100%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bihe-page-bg__blob, .bihe-page-bg__ring, .bihe-page-bg__zigzag, .bihe-page-bg__plus, .bihe-page-bg__triangle {
+    animation: none;
+  }
+}
+
+/*# sourceMappingURL=src_styles_page-background_css_bad6b30c._.single.css.map*/

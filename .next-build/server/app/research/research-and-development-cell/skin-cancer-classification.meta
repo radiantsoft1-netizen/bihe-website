@@ -1,0 +1,7 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/research/layout,_N_T_/research/research-and-development-cell/layout,_N_T_/research/research-and-development-cell/[projectSlug]/layout,_N_T_/research/research-and-development-cell/[projectSlug]/page,_N_T_/research/research-and-development-cell/skin-cancer-classification,api:/api/v1/site-pages/show,api:/api/v1/navigation,api:/api/v1/site-settings/prospectus"
+  }
+}

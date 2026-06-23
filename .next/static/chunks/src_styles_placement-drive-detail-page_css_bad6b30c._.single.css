@@ -1,0 +1,103 @@
+/* [project]/src/styles/placement-drive-detail-page.css [app-client] (css) */
+.pd-drive-page {
+  --pd-drive-pad-x: clamp(1.25rem, 5vw, 7.5rem);
+}
+
+.bihe-wrap:has(.pd-drive-page) {
+  background: #f4f6fa;
+}
+
+.bihe-wrap:has(.pd-drive-page) > .bihe-page-bg {
+  display: none;
+}
+
+.pd-drive-page__container {
+  width: min(100%, var(--container-max));
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.pd-drive-page__section-title {
+  font-family: var(--font-hero);
+  color: var(--color-primary);
+  text-transform: uppercase;
+  letter-spacing: .04em;
+  margin: 0 0 max(1rem, min(2vw, 1.35rem));
+  font-size: max(1.125rem, min(2.2vw, 1.4rem));
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.pd-drive-page__badge {
+  letter-spacing: .07em;
+  text-transform: uppercase;
+  color: var(--color-secondary);
+  background: #fff;
+  border: 1px solid rgba(116, 0, 0, .14);
+  border-radius: 999px;
+  align-items: center;
+  gap: .45rem;
+  margin-bottom: .85rem;
+  padding: .4rem .9rem .4rem .7rem;
+  font-size: .6875rem;
+  font-weight: 600;
+  display: inline-flex;
+}
+
+.pd-drive-page__text {
+  color: var(--color-text-secondary);
+  text-align: justify;
+  margin: 0 0 .85rem;
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+.pd-drive-page__text:last-child {
+  margin-bottom: 0;
+}
+
+.pd-drive-page__intro {
+  padding: clamp(2.5rem, 5vw, 3.5rem) var(--pd-drive-pad-x);
+  background: #fff;
+}
+
+.pd-drive-page__intro-panel {
+  max-width: 48rem;
+}
+
+.pd-drive-page__intro-body {
+  flex-direction: column;
+  gap: .85rem;
+  display: flex;
+}
+
+.pd-drive-page__highlights {
+  padding: clamp(2.5rem, 5vw, 3.5rem) var(--pd-drive-pad-x);
+  background: #f7f9fc;
+}
+
+.pd-drive-page__highlights-grid {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
+  align-items: center;
+  gap: max(2rem, min(4vw, 3rem));
+  display: grid;
+}
+
+.pd-drive-page__highlights-copy {
+  max-width: 42rem;
+}
+
+.pd-drive-page__highlights .sl-rich-page__intro-slider {
+  width: 100%;
+  max-width: 36rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (max-width: 960px) {
+  .pd-drive-page__highlights-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/*# sourceMappingURL=src_styles_placement-drive-detail-page_css_bad6b30c._.single.css.map*/

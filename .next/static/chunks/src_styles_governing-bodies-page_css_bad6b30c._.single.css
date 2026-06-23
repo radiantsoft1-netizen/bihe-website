@@ -1,0 +1,32 @@
+/* [project]/src/styles/governing-bodies-page.css [app-client] (css) */
+.bihe-wrap:has(.governing-bodies-page) {
+  background: #f7f9fc;
+}
+
+.bihe-wrap:has(.governing-bodies-page) > .bihe-page-bg {
+  display: none;
+}
+
+.governing-bodies-page .principal-page__showcase {
+  min-height: 920px;
+}
+
+.governing-bodies-page__portrait-img {
+  object-position: center top;
+}
+
+.governing-bodies-page .principal-page__grid--reverse .principal-page__visual {
+  order: 2;
+}
+
+.governing-bodies-page .principal-page__grid--reverse .principal-page__content {
+  order: 1;
+}
+
+@media (max-width: 960px) {
+  .governing-bodies-page .principal-page__grid--reverse .principal-page__visual, .governing-bodies-page .principal-page__grid--reverse .principal-page__content {
+    order: unset;
+  }
+}
+
+/*# sourceMappingURL=src_styles_governing-bodies-page_css_bad6b30c._.single.css.map*/

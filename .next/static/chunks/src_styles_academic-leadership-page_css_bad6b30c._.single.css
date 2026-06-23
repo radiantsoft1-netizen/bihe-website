@@ -1,0 +1,32 @@
+/* [project]/src/styles/academic-leadership-page.css [app-client] (css) */
+.bihe-wrap:has(.academic-leadership-page) {
+  background: #f7f9fc;
+}
+
+.bihe-wrap:has(.academic-leadership-page) > .bihe-page-bg {
+  display: none;
+}
+
+.academic-leadership-page .principal-page__showcase {
+  min-height: 920px;
+}
+
+.academic-leadership-page__portrait-img {
+  object-position: center top;
+}
+
+.academic-leadership-page .principal-page__grid--reverse .principal-page__visual {
+  order: 2;
+}
+
+.academic-leadership-page .principal-page__grid--reverse .principal-page__content {
+  order: 1;
+}
+
+@media (max-width: 960px) {
+  .academic-leadership-page .principal-page__grid--reverse .principal-page__visual, .academic-leadership-page .principal-page__grid--reverse .principal-page__content {
+    order: unset;
+  }
+}
+
+/*# sourceMappingURL=src_styles_academic-leadership-page_css_bad6b30c._.single.css.map*/

@@ -1,20 +1,20 @@
 # Dependencies & builds (large, rarely edited)
-node_modules/
-.next/
-.next-build/
-out/
-bihe-admin/vendor/
+Frontend/node_modules/
+Frontend/.next/
+Frontend/.next-build/
+Frontend/out/
+Backend/vendor/
 
 # Laravel runtime files
-bihe-admin/storage/logs/
-bihe-admin/storage/framework/cache/
-bihe-admin/storage/framework/sessions/
-bihe-admin/storage/framework/views/
-bihe-admin/bootstrap/cache/
+Backend/storage/logs/
+Backend/storage/framework/cache/
+Backend/storage/framework/sessions/
+Backend/storage/framework/views/
+Backend/bootstrap/cache/
 
 # Static assets (images slow indexing)
-public/images/
-public/uploads/
+Frontend/public/images/
+Frontend/public/uploads/
 
 # Git & tooling
 .git/

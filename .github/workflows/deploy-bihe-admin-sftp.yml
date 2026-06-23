@@ -11,7 +11,7 @@ on:
         default: false
 
 concurrency:
-  group: deploy-bihe-admin-sftp-${{ github.ref }}
+  group: deploy-Backend-sftp-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
@@ -20,7 +20,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: bihe-admin
+        working-directory: Backend
 
     steps:
       - name: Checkout repository
@@ -41,7 +41,7 @@ jobs:
         uses: actions/cache@v4
         with:
           path: ${{ steps.composer-cache.outputs.dir }}
-          key: ${{ runner.os }}-composer-${{ hashFiles('bihe-admin/composer.lock', 'bihe-admin/composer.json') }}
+          key: ${{ runner.os }}-composer-${{ hashFiles('Backend/composer.lock', 'Backend/composer.json') }}
           restore-keys: ${{ runner.os }}-composer-
 
       - name: Install Composer dependencies (production)
@@ -57,18 +57,22 @@ jobs:
           password: ${{ secrets.SFTP_PASSWORD || secrets.FTP_PASSWORD }}
           ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
           ssh_passphrase: ${{ secrets.SSH_PASSPHRASE }}
-          local_path: ./bihe-admin/*
+          local_path: ./Backend/*
           remote_path: ${{ secrets.SFTP_SERVER_DIR || secrets.FTP_SERVER_DIR }}
           sftp_only: true
           sftpArgs: "-o ConnectTimeout=15 -o StrictHostKeyChecking=no"
           rsyncArgs: >-
             --dry-run
             --exclude=.git --exclude=.github --exclude=node_modules
-            --exclude=.env --exclude=.env.*
+            --exclude=.env --exclude=.env.backup --exclude=.env.production
             --exclude=tests --exclude=.phpunit.cache --exclude=.phpunit.result.cache
             --exclude=.idea --exclude=.vscode --exclude=.DS_Store
             --exclude=.ftp-deploy-sync-state.json --exclude=html-frontend
-            --exclude=README.md --exclude=docs
+            --exclude=database/database.sqlite
+            --exclude=storage/logs
+            --exclude=storage/framework/cache/data
+            --exclude=storage/framework/sessions
+            --exclude=storage/framework/views
 
       - name: Deploy to Hostinger via SFTP
         if: ${{ !inputs.dry_run }}
@@ -80,14 +84,38 @@ jobs:
           password: ${{ secrets.SFTP_PASSWORD || secrets.FTP_PASSWORD }}
           ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
           ssh_passphrase: ${{ secrets.SSH_PASSPHRASE }}
-          local_path: ./bihe-admin/*
+          local_path: ./Backend/*
           remote_path: ${{ secrets.SFTP_SERVER_DIR || secrets.FTP_SERVER_DIR }}
           sftp_only: true
           sftpArgs: "-o ConnectTimeout=15 -o StrictHostKeyChecking=no"
           rsyncArgs: >-
             --exclude=.git --exclude=.github --exclude=node_modules
-            --exclude=.env --exclude=.env.*
+            --exclude=.env --exclude=.env.backup --exclude=.env.production
             --exclude=tests --exclude=.phpunit.cache --exclude=.phpunit.result.cache
             --exclude=.idea --exclude=.vscode --exclude=.DS_Store
             --exclude=.ftp-deploy-sync-state.json --exclude=html-frontend
-            --exclude=README.md --exclude=docs
+            --exclude=database/database.sqlite
+            --exclude=storage/logs
+            --exclude=storage/framework/cache/data
+            --exclude=storage/framework/sessions
+            --exclude=storage/framework/views
+
+      - name: Post-deploy on Hostinger (SSH migrate + cache)
+        if: ${{ !inputs.dry_run && secrets.SSH_HOST != '' }}
+        uses: appleboy/ssh-action@v1.2.2
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USERNAME }}
+          password: ${{ secrets.SSH_PASSWORD }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          passphrase: ${{ secrets.SSH_PASSPHRASE }}
+          port: ${{ secrets.SSH_PORT || 22 }}
+          script: |
+            set -e
+            cd "${{ secrets.SSH_REMOTE_DIR }}"
+            PHP="${{ secrets.SSH_PHP_BIN || '/opt/alt/php85/usr/bin/php' }}"
+            "$PHP" artisan migrate --force
+            "$PHP" artisan config:cache
+            "$PHP" artisan route:cache
+            "$PHP" artisan view:cache
+            echo "Post-deploy complete."

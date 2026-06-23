@@ -1,0 +1,7 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/student-life/layout,_N_T_/student-life/[slug]/layout,_N_T_/student-life/[slug]/page,_N_T_/student-life/socio-economically-disadvantaged-groups,api:/api/v1/site-pages/show,api:/api/v1/navigation,api:/api/v1/site-settings/prospectus"
+  }
+}

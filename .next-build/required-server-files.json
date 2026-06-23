@@ -1,0 +1,1003 @@
+{
+  "version": 1,
+  "config": {
+    "env": {},
+    "webpack": null,
+    "eslint": {
+      "ignoreDuringBuilds": false
+    },
+    "typescript": {
+      "ignoreBuildErrors": false,
+      "tsconfigPath": "tsconfig.json"
+    },
+    "typedRoutes": false,
+    "distDir": ".next-build",
+    "cleanDistDir": true,
+    "assetPrefix": "",
+    "cacheMaxMemorySize": 52428800,
+    "configOrigin": "next.config.ts",
+    "useFileSystemPublicRoutes": true,
+    "generateEtags": true,
+    "pageExtensions": [
+      "tsx",
+      "ts",
+      "jsx",
+      "js"
+    ],
+    "poweredByHeader": false,
+    "compress": true,
+    "images": {
+      "deviceSizes": [
+        640,
+        750,
+        828,
+        1080,
+        1200,
+        1920
+      ],
+      "imageSizes": [
+        64,
+        96,
+        128,
+        256,
+        384,
+        512,
+        640
+      ],
+      "path": "/_next/image",
+      "loader": "default",
+      "loaderFile": "",
+      "domains": [],
+      "disableStaticImages": false,
+      "minimumCacheTTL": 3600,
+      "formats": [
+        "image/avif",
+        "image/webp"
+      ],
+      "maximumResponseBody": 50000000,
+      "dangerouslyAllowSVG": false,
+      "contentSecurityPolicy": "script-src 'none'; frame-src 'none'; sandbox;",
+      "contentDispositionType": "attachment",
+      "remotePatterns": [
+        {
+          "protocol": "https",
+          "hostname": "www.figma.com",
+          "pathname": "/api/mcp/asset/**"
+        },
+        {
+          "protocol": "http",
+          "hostname": "127.0.0.1",
+          "port": "8000",
+          "pathname": "/storage/**"
+        },
+        {
+          "protocol": "http",
+          "hostname": "127.0.0.1",
+          "port": "8001",
+          "pathname": "/storage/**"
+        },
+        {
+          "protocol": "http",
+          "hostname": "localhost",
+          "port": "8000",
+          "pathname": "/storage/**"
+        },
+        {
+          "protocol": "http",
+          "hostname": "localhost",
+          "port": "8001",
+          "pathname": "/storage/**"
+        },
+        {
+          "protocol": "http",
+          "hostname": "127.0.0.1",
+          "port": "8099",
+          "pathname": "/storage/**"
+        },
+        {
+          "protocol": "https",
+          "hostname": "admin.bihe.edu",
+          "pathname": "/storage/**"
+        },
+        {
+          "protocol": "https",
+          "hostname": "admin.bihedvg.org",
+          "pathname": "/storage/**"
+        },
+        {
+          "protocol": "https",
+          "hostname": "*.trycloudflare.com",
+          "pathname": "/storage/**"
+        }
+      ],
+      "qualities": [
+        60,
+        70,
+        75,
+        80,
+        90
+      ],
+      "unoptimized": false
+    },
+    "devIndicators": {
+      "position": "bottom-left"
+    },
+    "onDemandEntries": {
+      "maxInactiveAge": 60000,
+      "pagesBufferLength": 5
+    },
+    "amp": {
+      "canonicalBase": ""
+    },
+    "basePath": "",
+    "sassOptions": {},
+    "trailingSlash": false,
+    "i18n": null,
+    "productionBrowserSourceMaps": false,
+    "excludeDefaultMomentLocales": true,
+    "serverRuntimeConfig": {},
+    "publicRuntimeConfig": {},
+    "reactProductionProfiling": false,
+    "reactStrictMode": null,
+    "reactMaxHeadersLength": 6000,
+    "httpAgentOptions": {
+      "keepAlive": true
+    },
+    "logging": {},
+    "compiler": {},
+    "expireTime": 31536000,
+    "staticPageGenerationTimeout": 60,
+    "modularizeImports": {
+      "@mui/icons-material": {
+        "transform": "@mui/icons-material/{{member}}"
+      },
+      "lodash": {
+        "transform": "lodash/{{member}}"
+      }
+    },
+    "outputFileTracingRoot": "/Users/radiant/Downloads/BIHE Website ",
+    "experimental": {
+      "useSkewCookie": false,
+      "cacheLife": {
+        "default": {
+          "stale": 300,
+          "revalidate": 900,
+          "expire": 4294967294
+        },
+        "seconds": {
+          "stale": 30,
+          "revalidate": 1,
+          "expire": 60
+        },
+        "minutes": {
+          "stale": 300,
+          "revalidate": 60,
+          "expire": 3600
+        },
+        "hours": {
+          "stale": 300,
+          "revalidate": 3600,
+          "expire": 86400
+        },
+        "days": {
+          "stale": 300,
+          "revalidate": 86400,
+          "expire": 604800
+        },
+        "weeks": {
+          "stale": 300,
+          "revalidate": 604800,
+          "expire": 2592000
+        },
+        "max": {
+          "stale": 300,
+          "revalidate": 2592000,
+          "expire": 4294967294
+        }
+      },
+      "cacheHandlers": {},
+      "cssChunking": true,
+      "multiZoneDraftMode": false,
+      "appNavFailHandling": false,
+      "prerenderEarlyExit": true,
+      "serverMinification": true,
+      "serverSourceMaps": false,
+      "linkNoTouchStart": false,
+      "caseSensitiveRoutes": false,
+      "clientSegmentCache": false,
+      "clientParamParsing": false,
+      "dynamicOnHover": false,
+      "preloadEntriesOnStart": true,
+      "clientRouterFilter": true,
+      "clientRouterFilterRedirects": false,
+      "fetchCacheKeyPrefix": "",
+      "middlewarePrefetch": "flexible",
+      "optimisticClientCache": true,
+      "manualClientBasePath": false,
+      "cpus": 9,
+      "memoryBasedWorkersCount": false,
+      "imgOptConcurrency": null,
+      "imgOptTimeoutInSeconds": 7,
+      "imgOptMaxInputPixels": 268402689,
+      "imgOptSequentialRead": null,
+      "imgOptSkipMetadata": null,
+      "isrFlushToDisk": true,
+      "workerThreads": false,
+      "optimizeCss": false,
+      "nextScriptWorkers": false,
+      "scrollRestoration": false,
+      "externalDir": false,
+      "disableOptimizedLoading": false,
+      "gzipSize": true,
+      "craCompat": false,
+      "esmExternals": true,
+      "fullySpecified": false,
+      "swcTraceProfiling": false,
+      "forceSwcTransforms": false,
+      "largePageDataBytes": 128000,
+      "typedEnv": false,
+      "parallelServerCompiles": false,
+      "parallelServerBuildTraces": false,
+      "ppr": false,
+      "authInterrupts": false,
+      "webpackMemoryOptimizations": false,
+      "optimizeServerReact": true,
+      "viewTransition": false,
+      "routerBFCache": false,
+      "removeUncaughtErrorAndRejectionListeners": false,
+      "validateRSCRequestHeaders": false,
+      "staleTimes": {
+        "dynamic": 0,
+        "static": 300
+      },
+      "serverComponentsHmrCache": true,
+      "staticGenerationMaxConcurrency": 8,
+      "staticGenerationMinPagesPerWorker": 25,
+      "cacheComponents": false,
+      "inlineCss": false,
+      "useCache": false,
+      "globalNotFound": false,
+      "devtoolSegmentExplorer": true,
+      "browserDebugInfoInTerminal": false,
+      "optimizeRouterScrolling": false,
+      "middlewareClientMaxBodySize": 10485760,
+      "optimizePackageImports": [
+        "lenis",
+        "lucide-react",
+        "date-fns",
+        "lodash-es",
+        "ramda",
+        "antd",
+        "react-bootstrap",
+        "ahooks",
+        "@ant-design/icons",
+        "@headlessui/react",
+        "@headlessui-float/react",
+        "@heroicons/react/20/solid",
+        "@heroicons/react/24/solid",
+        "@heroicons/react/24/outline",
+        "@visx/visx",
+        "@tremor/react",
+        "rxjs",
+        "@mui/material",
+        "@mui/icons-material",
+        "recharts",
+        "react-use",
+        "effect",
+        "@effect/schema",
+        "@effect/platform",
+        "@effect/platform-node",
+        "@effect/platform-browser",
+        "@effect/platform-bun",
+        "@effect/sql",
+        "@effect/sql-mssql",
+        "@effect/sql-mysql2",
+        "@effect/sql-pg",
+        "@effect/sql-sqlite-node",
+        "@effect/sql-sqlite-bun",
+        "@effect/sql-sqlite-wasm",
+        "@effect/sql-sqlite-react-native",
+        "@effect/rpc",
+        "@effect/rpc-http",
+        "@effect/typeclass",
+        "@effect/experimental",
+        "@effect/opentelemetry",
+        "@material-ui/core",
+        "@material-ui/icons",
+        "@tabler/icons-react",
+        "mui-core",
+        "react-icons/ai",
+        "react-icons/bi",
+        "react-icons/bs",
+        "react-icons/cg",
+        "react-icons/ci",
+        "react-icons/di",
+        "react-icons/fa",
+        "react-icons/fa6",
+        "react-icons/fc",
+        "react-icons/fi",
+        "react-icons/gi",
+        "react-icons/go",
+        "react-icons/gr",
+        "react-icons/hi",
+        "react-icons/hi2",
+        "react-icons/im",
+        "react-icons/io",
+        "react-icons/io5",
+        "react-icons/lia",
+        "react-icons/lib",
+        "react-icons/lu",
+        "react-icons/md",
+        "react-icons/pi",
+        "react-icons/ri",
+        "react-icons/rx",
+        "react-icons/si",
+        "react-icons/sl",
+        "react-icons/tb",
+        "react-icons/tfi",
+        "react-icons/ti",
+        "react-icons/vsc",
+        "react-icons/wi"
+      ],
+      "trustHostHeader": false,
+      "isExperimentalCompile": false
+    },
+    "htmlLimitedBots": "[\\w-]+-Google|Google-[\\w-]+|Chrome-Lighthouse|Slurp|DuckDuckBot|baiduspider|yandex|sogou|bitlybot|tumblr|vkShare|quora link preview|redditbot|ia_archiver|Bingbot|BingPreview|applebot|facebookexternalhit|facebookcatalog|Twitterbot|LinkedInBot|Slackbot|Discordbot|WhatsApp|SkypeUriPreview|Yeti|googleweblight",
+    "bundlePagesRouterDependencies": false,
+    "configFileName": "next.config.ts",
+    "turbopack": {
+      "root": "/Users/radiant/Downloads/BIHE Website "
+    },
+    "_originalRewrites": {
+      "beforeFiles": [],
+      "afterFiles": [
+        {
+          "source": "/i/logo",
+          "destination": "/images/logo.webp"
+        },
+        {
+          "source": "/i/hero",
+          "destination": "/images/hero.webp"
+        },
+        {
+          "source": "/i/about-main",
+          "destination": "/images/about-main.webp"
+        },
+        {
+          "source": "/i/about-bihe-campus",
+          "destination": "/images/about-bihe-campus-building.png"
+        },
+        {
+          "source": "/i/ombudsperson-intro",
+          "destination": "/images/ombudsperson-intro.png"
+        },
+        {
+          "source": "/i/about-badge",
+          "destination": "/images/about-badge.webp"
+        },
+        {
+          "source": "/i/principal",
+          "destination": "/images/principal.png"
+        },
+        {
+          "source": "/i/finance-section",
+          "destination": "/images/finance-section-fda.jpg"
+        },
+        {
+          "source": "/i/gb-hon-secretary",
+          "destination": "/images/governing-bodies-hon-secretary.png"
+        },
+        {
+          "source": "/i/gb-joint-secretary",
+          "destination": "/images/governing-bodies-joint-secretary.png"
+        },
+        {
+          "source": "/i/gb-chairman",
+          "destination": "/images/governing-bodies-chairman.png"
+        },
+        {
+          "source": "/i/icc-objectives",
+          "destination": "/images/icc-objectives-infographic.png"
+        },
+        {
+          "source": "/i/bca-vice-principal",
+          "destination": "/images/bca-vice-principal.png"
+        },
+        {
+          "source": "/i/bca-hod",
+          "destination": "/images/bca-hod.png"
+        },
+        {
+          "source": "/i/bca-dean",
+          "destination": "/images/bca-dean.png"
+        },
+        {
+          "source": "/i/bcom-hod",
+          "destination": "/images/bcom-hod.png"
+        },
+        {
+          "source": "/i/bca-campus",
+          "destination": "/images/bca-campus.png"
+        },
+        {
+          "source": "/i/bca-lab",
+          "destination": "/images/bca-lab.webp"
+        },
+        {
+          "source": "/i/bcom",
+          "destination": "/images/bcom.webp"
+        },
+        {
+          "source": "/i/bcom-department",
+          "destination": "/images/bcom-department.png"
+        },
+        {
+          "source": "/i/bcom-programme-student-1",
+          "destination": "/images/bcom-programme-student-1.png"
+        },
+        {
+          "source": "/i/bcom-programme-students",
+          "destination": "/images/bcom-programme-students.png"
+        },
+        {
+          "source": "/i/bcom-programme-student-2",
+          "destination": "/images/bcom-programme-student-2.png"
+        },
+        {
+          "source": "/i/exam-internal-main",
+          "destination": "/images/exam-internal-main.jpg"
+        },
+        {
+          "source": "/i/coe-exam-intro-main",
+          "destination": "/images/coe-exam-intro-main.png"
+        },
+        {
+          "source": "/i/exam-internal-panel-1",
+          "destination": "/images/exam-internal-panel-1.jpg"
+        },
+        {
+          "source": "/i/exam-internal-panel-2",
+          "destination": "/images/exam-internal-panel-2.jpg"
+        },
+        {
+          "source": "/i/exam-university-main",
+          "destination": "/images/exam-university-main.jpg"
+        },
+        {
+          "source": "/i/exam-university-panel-1",
+          "destination": "/images/exam-university-panel-1.jpg"
+        },
+        {
+          "source": "/i/exam-university-panel-2",
+          "destination": "/images/exam-university-panel-2.jpg"
+        },
+        {
+          "source": "/i/iqac-certified",
+          "destination": "/images/iqac-certified.png"
+        },
+        {
+          "source": "/i/iqac-quality-main",
+          "destination": "/images/iqac-quality-main.jpg"
+        },
+        {
+          "source": "/i/iqac-quality-panel",
+          "destination": "/images/iqac-quality-panel.jpg"
+        },
+        {
+          "source": "/i/world-map",
+          "destination": "/images/world-map.webp"
+        },
+        {
+          "source": "/i/idp-campus",
+          "destination": "/images/idp-campus.webp"
+        },
+        {
+          "source": "/i/idp-vision-mission",
+          "destination": "/images/idp-vision-mission.png"
+        },
+        {
+          "source": "/i/idp-academic-growth",
+          "destination": "/images/idp-academic-growth.png"
+        },
+        {
+          "source": "/i/facility-library",
+          "destination": "/images/facility-library.webp"
+        },
+        {
+          "source": "/i/library-intro",
+          "destination": "/images/library-intro-campus.jpg"
+        },
+        {
+          "source": "/i/library-gallery-reading-hall",
+          "destination": "/images/library-gallery-reading-hall.png"
+        },
+        {
+          "source": "/i/library-gallery-group-study",
+          "destination": "/images/library-gallery-group-study.png"
+        },
+        {
+          "source": "/i/library-gallery-bookshelves",
+          "destination": "/images/library-gallery-bookshelves.png"
+        },
+        {
+          "source": "/i/facility-computer-labs",
+          "destination": "/images/facility-computer-labs.webp"
+        },
+        {
+          "source": "/i/differently-abled-wheelchair-facility",
+          "destination": "/images/differently-abled-wheelchair-facility.png"
+        },
+        {
+          "source": "/i/differently-abled-ramps-railings",
+          "destination": "/images/differently-abled-ramps-railings.png"
+        },
+        {
+          "source": "/i/differently-abled-accessible-classrooms",
+          "destination": "/images/differently-abled-accessible-classrooms.png"
+        },
+        {
+          "source": "/i/differently-abled-scribe-examination",
+          "destination": "/images/differently-abled-scribe-examination.png"
+        },
+        {
+          "source": "/i/differently-abled-special-teaching",
+          "destination": "/images/differently-abled-special-teaching.png"
+        },
+        {
+          "source": "/i/differently-abled-library-facilities",
+          "destination": "/images/differently-abled-library-facilities.png"
+        },
+        {
+          "source": "/i/facility-hostel",
+          "destination": "/images/facility-hostel.webp"
+        },
+        {
+          "source": "/i/facility-placement",
+          "destination": "/images/facility-placement.webp"
+        },
+        {
+          "source": "/i/facility-extracurricular",
+          "destination": "/images/facility-extracurricular.webp"
+        },
+        {
+          "source": "/i/facility-canteen",
+          "destination": "/images/facility-canteen.webp"
+        },
+        {
+          "source": "/i/facility-sports",
+          "destination": "/images/facility-sports.webp"
+        },
+        {
+          "source": "/i/facility-auditorium",
+          "destination": "/images/facility-auditorium.webp"
+        },
+        {
+          "source": "/i/news-1",
+          "destination": "/images/news-1.webp"
+        },
+        {
+          "source": "/i/news-2",
+          "destination": "/images/news-2.webp"
+        },
+        {
+          "source": "/i/news-3",
+          "destination": "/images/news-3.webp"
+        },
+        {
+          "source": "/i/news-4",
+          "destination": "/images/news-4.webp"
+        },
+        {
+          "source": "/i/accreditation-1",
+          "destination": "/images/accreditation-1.webp"
+        },
+        {
+          "source": "/i/accreditation-2",
+          "destination": "/images/accreditation-2.webp"
+        },
+        {
+          "source": "/i/accreditation-3",
+          "destination": "/images/accreditation-3.webp"
+        },
+        {
+          "source": "/i/accreditation-4",
+          "destination": "/images/accreditation-4.webp"
+        },
+        {
+          "source": "/i/accreditation-5",
+          "destination": "/images/accreditation-5.webp"
+        },
+        {
+          "source": "/i/recruiter-1",
+          "destination": "/images/recruiter-1.webp"
+        },
+        {
+          "source": "/i/recruiter-2",
+          "destination": "/images/recruiter-2.webp"
+        },
+        {
+          "source": "/i/recruiter-3",
+          "destination": "/images/recruiter-3.webp"
+        },
+        {
+          "source": "/i/recruiter-4",
+          "destination": "/images/recruiter-4.webp"
+        },
+        {
+          "source": "/i/recruiter-5",
+          "destination": "/images/recruiter-5.webp"
+        },
+        {
+          "source": "/i/recruiter-6",
+          "destination": "/images/recruiter-6.webp"
+        },
+        {
+          "source": "/i/recruiter-7",
+          "destination": "/images/recruiter-7.webp"
+        },
+        {
+          "source": "/i/recruiter-8",
+          "destination": "/images/recruiter-8.webp"
+        },
+        {
+          "source": "/i/recruiter-9",
+          "destination": "/images/recruiter-9.webp"
+        },
+        {
+          "source": "/i/recruiter-10",
+          "destination": "/images/recruiter-10.webp"
+        },
+        {
+          "source": "/i/recruiter-11",
+          "destination": "/images/recruiter-11.webp"
+        },
+        {
+          "source": "/i/recruiter-12",
+          "destination": "/images/recruiter-12.webp"
+        },
+        {
+          "source": "/i/uucms-new-candidate-registration",
+          "destination": "/images/uucms-new-candidate-registration.png"
+        },
+        {
+          "source": "/i/admission-process-student",
+          "destination": "/images/admission-process-student.png"
+        },
+        {
+          "source": "/i/international-students-admission-process",
+          "destination": "/images/international-students-admission-process.png"
+        },
+        {
+          "source": "/i/international-students-eligibility-documents",
+          "destination": "/images/international-students-eligibility-documents.png"
+        },
+        {
+          "source": "/i/international-students-library-facilities",
+          "destination": "/images/international-students-library-facilities.png"
+        },
+        {
+          "source": "/i/international-students-facilities",
+          "destination": "/images/international-students-facilities.png"
+        },
+        {
+          "source": "/i/international-students-hostel-facilities",
+          "destination": "/images/international-students-hostel-facilities.png"
+        },
+        {
+          "source": "/i/international-students-lab-facilities",
+          "destination": "/images/international-students-lab-facilities.png"
+        },
+        {
+          "source": "/i/international-students-guidance-support",
+          "destination": "/images/international-students-guidance-support.png"
+        },
+        {
+          "source": "/i/international-students-health-facilities",
+          "destination": "/images/international-students-health-facilities.png"
+        },
+        {
+          "source": "/i/admission-process-staff",
+          "destination": "/images/admission-process-staff.png"
+        },
+        {
+          "source": "/i/admission-process-bcom-student",
+          "destination": "/images/admission-process-bcom-student.png"
+        },
+        {
+          "source": "/i/admission-process-bcom-staff",
+          "destination": "/images/admission-process-bcom-staff.png"
+        },
+        {
+          "source": "/i/admission-process-support-student",
+          "destination": "/images/admission-process-support-student.png"
+        },
+        {
+          "source": "/i/admission-process-support-staff",
+          "destination": "/images/admission-process-support-staff.png"
+        },
+        {
+          "source": "/i/rdc-electricity-1",
+          "destination": "/images/rdc/electricity-1.png"
+        },
+        {
+          "source": "/i/rdc-electricity-2",
+          "destination": "/images/rdc/electricity-2.png"
+        },
+        {
+          "source": "/i/rdc-skin-cancer-1",
+          "destination": "/images/rdc/skin-cancer-1.png"
+        },
+        {
+          "source": "/i/rdc-skin-cancer-2",
+          "destination": "/images/rdc/skin-cancer-2.png"
+        },
+        {
+          "source": "/i/rdc-biometric-1",
+          "destination": "/images/rdc/biometric-1.png"
+        },
+        {
+          "source": "/i/rdc-biometric-2",
+          "destination": "/images/rdc/biometric-2.png"
+        },
+        {
+          "source": "/i/rdc-churn-1",
+          "destination": "/images/rdc/churn-1.png"
+        },
+        {
+          "source": "/i/rdc-churn-2",
+          "destination": "/images/rdc/churn-2.png"
+        },
+        {
+          "source": "/i/rdc-emission-1",
+          "destination": "/images/rdc/emission-1.png"
+        },
+        {
+          "source": "/i/rdc-emission-2",
+          "destination": "/images/rdc/emission-2.png"
+        },
+        {
+          "source": "/i/academic-projects-preview",
+          "destination": "/images/academic-projects/preview.webp"
+        },
+        {
+          "source": "/i/incubation-why-primary",
+          "destination": "/images/incubation/why-primary.png"
+        },
+        {
+          "source": "/i/incubation-why-secondary",
+          "destination": "/images/incubation/why-secondary.png"
+        },
+        {
+          "source": "/i/incubation-beneficiary-primary",
+          "destination": "/images/incubation/beneficiary-primary.png"
+        },
+        {
+          "source": "/i/incubation-beneficiary-secondary",
+          "destination": "/images/incubation/beneficiary-secondary.png"
+        },
+        {
+          "source": "/i/crf-library",
+          "destination": "/images/crf/library.png"
+        },
+        {
+          "source": "/i/crf-computer-laboratories",
+          "destination": "/images/crf/computer-laboratories.png"
+        },
+        {
+          "source": "/i/sports-events-celebration",
+          "destination": "/images/sports/inter-college/events-volleyball.jpg"
+        },
+        {
+          "source": "/i/sports-facilities-banner",
+          "destination": "/images/sports/sports-facilities-hero.jpg"
+        },
+        {
+          "source": "/i/sports-badminton-tournament",
+          "destination": "/images/sports/badminton-tournament.png"
+        },
+        {
+          "source": "/i/sports-chess-tournament",
+          "destination": "/images/sports/chess-tournament.png"
+        },
+        {
+          "source": "/i/sports-football-tournament",
+          "destination": "/images/sports/inter-college/football-match.jpg"
+        },
+        {
+          "source": "/i/sports-football-ground",
+          "destination": "/images/sports/football-ground.jpg"
+        },
+        {
+          "source": "/i/sports-basketball-court",
+          "destination": "/images/sports/basketball-court.jpg"
+        },
+        {
+          "source": "/i/sports-table-tennis-tournament",
+          "destination": "/images/sports/table-tennis-tournament.png"
+        },
+        {
+          "source": "/i/nss-emblem",
+          "destination": "/images/nss/National-Service-scheme.png"
+        },
+        {
+          "source": "/i/nss-hero-banner",
+          "destination": "/images/nss/nss-hero-banner.jpg"
+        },
+        {
+          "source": "/i/nss-featured-event",
+          "destination": "/images/nss/NSS1-1.jpg"
+        },
+        {
+          "source": "/i/nss-officer-siddalingappa",
+          "destination": "/images/nss/SIDDLINGAPPA-SIR.jpg"
+        },
+        {
+          "source": "/i/nss-officer-sadashivappa",
+          "destination": "/images/nss/SADASHIVAPPA-SIR.jpg"
+        },
+        {
+          "source": "/i/nss-gallery-1",
+          "destination": "/images/nss/nss-environmental-tree-planting.png"
+        },
+        {
+          "source": "/i/nss-gallery-2",
+          "destination": "/images/nss/nss-eye-checkup-camp.png"
+        },
+        {
+          "source": "/i/nss-gallery-3",
+          "destination": "/images/nss/nss-swachh-abhiyan-campaign.png"
+        },
+        {
+          "source": "/i/nss-gallery-4",
+          "destination": "/images/nss/NSS5.jpg"
+        },
+        {
+          "source": "/i/nss-gallery-5",
+          "destination": "/images/nss/NSS6-1.jpg"
+        },
+        {
+          "source": "/i/sl-hostel-1",
+          "destination": "/images/student-life/hostel/1.jpg"
+        },
+        {
+          "source": "/i/sl-hostel-banner",
+          "destination": "/images/student-life/hostel/hostel-banner.png"
+        },
+        {
+          "source": "/i/sl-hostel-2",
+          "destination": "/images/student-life/hostel/2.jpg"
+        },
+        {
+          "source": "/i/sl-hostel-3",
+          "destination": "/images/student-life/hostel/3.jpg"
+        },
+        {
+          "source": "/i/sl-placement-officer",
+          "destination": "/images/student-life/placement/officer.jpg"
+        },
+        {
+          "source": "/i/sl-computer-lab-1",
+          "destination": "/images/student-life/computer-lab/1.jpg"
+        },
+        {
+          "source": "/i/sl-computer-lab-2",
+          "destination": "/images/student-life/computer-lab/2.jpg"
+        },
+        {
+          "source": "/i/sl-auditorium-1",
+          "destination": "/images/student-life/auditorium/1.jpg"
+        },
+        {
+          "source": "/i/sl-auditorium-2",
+          "destination": "/images/student-life/auditorium/2.png"
+        },
+        {
+          "source": "/i/sl-auditorium-3",
+          "destination": "/images/student-life/auditorium/3.png"
+        },
+        {
+          "source": "/i/sl-auditorium-4",
+          "destination": "/images/student-life/auditorium/4.png"
+        },
+        {
+          "source": "/i/sl-canteen-1",
+          "destination": "/images/student-life/canteen/1.jpg"
+        },
+        {
+          "source": "/i/sl-canteen-2",
+          "destination": "/images/student-life/canteen/2.jpg"
+        },
+        {
+          "source": "/i/sl-yrc-banner",
+          "destination": "/images/student-life/yrc/banner.png"
+        },
+        {
+          "source": "/i/sl-yrc-officer",
+          "destination": "/images/student-life/yrc/officer.png"
+        },
+        {
+          "source": "/i/mpd-hr-interview",
+          "destination": "/images/mega-placement-drive/hr-interview-process.png"
+        },
+        {
+          "source": "/i/mpd-inaugural-ceremony",
+          "destination": "/images/mega-placement-drive/inaugural-ceremony.png"
+        },
+        {
+          "source": "/i/mpd-company-hr-interviews",
+          "destination": "/images/mega-placement-drive/company-hr-interviews.png"
+        },
+        {
+          "source": "/i/mpd-offer-letters-banner",
+          "destination": "/images/mega-placement-drive/offer-letters-banner.png"
+        },
+        {
+          "source": "/i/placement-bca-batch-2025-26",
+          "destination": "/images/placement/placement-bca-batch-2025-26.png"
+        },
+        {
+          "source": "/i/health-first-aid-kit",
+          "destination": "/images/health-facilities/first-aid-kit-highlight.png"
+        },
+        {
+          "source": "/i/health-awareness-camp",
+          "destination": "/images/health-facilities/health-awareness-camp.png"
+        },
+        {
+          "source": "/i/health-fire-safety",
+          "destination": "/images/health-facilities/fire-safety-training.png"
+        },
+        {
+          "source": "/i/health-banner",
+          "destination": "/images/health-facilities/health-banner-first-aid.png"
+        },
+        {
+          "source": "/i/anti-ragging-banner",
+          "destination": "/images/anti-ragging/banner.png"
+        },
+        {
+          "source": "/i/anti-ragging-awareness",
+          "destination": "/images/anti-ragging/awareness-programme.jpg"
+        },
+        {
+          "source": "/i/alumni-home-welcome",
+          "destination": "/images/alumni/alumni-home-welcome.jpg"
+        },
+        {
+          "source": "/i/alumni-about-mission",
+          "destination": "/images/alumni/alumni-about-mission.jpg"
+        },
+        {
+          "source": "/i/alumni-about-objectives",
+          "destination": "/images/alumni/alumni-about-objectives.jpg"
+        }
+      ],
+      "fallback": []
+    }
+  },
+  "appDir": "/Users/radiant/Downloads/BIHE Website ",
+  "relativeAppDir": "",
+  "files": [
+    ".next-build/routes-manifest.json",
+    ".next-build/server/pages-manifest.json",
+    ".next-build/build-manifest.json",
+    ".next-build/prerender-manifest.json",
+    ".next-build/server/functions-config-manifest.json",
+    ".next-build/server/middleware-manifest.json",
+    ".next-build/server/middleware-build-manifest.js",
+    ".next-build/server/middleware-react-loadable-manifest.js",
+    ".next-build/react-loadable-manifest.json",
+    ".next-build/server/app-paths-manifest.json",
+    ".next-build/app-path-routes-manifest.json",
+    ".next-build/app-build-manifest.json",
+    ".next-build/server/server-reference-manifest.js",
+    ".next-build/server/server-reference-manifest.json",
+    ".next-build/BUILD_ID",
+    ".next-build/server/next-font-manifest.js",
+    ".next-build/server/next-font-manifest.json",
+    ".next-build/required-server-files.json"
+  ],
+  "ignore": [
+    "node_modules/next/dist/compiled/@ampproject/toolbox-optimizer/**/*"
+  ]
+}

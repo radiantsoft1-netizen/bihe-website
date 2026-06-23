@@ -1,0 +1,174 @@
+/* [project]/src/styles/controller-of-examination-page.css [app-client] (css) */
+.coe-page {
+  --coe-pad-x: clamp(1.25rem, 5vw, 7.5rem);
+}
+
+.bihe-wrap:has(.coe-page) > .bihe-page-bg {
+  display: none;
+}
+
+.coe-page__container {
+  width: min(100%, var(--container-max));
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.coe-page__exam {
+  padding: clamp(3rem, 6vw, 4.5rem) var(--coe-pad-x) clamp(2.5rem, 5vw, 3.5rem);
+  background: #fff;
+}
+
+.coe-page__exam .section-header {
+  margin-bottom: max(1.5rem, min(3vw, 2rem));
+}
+
+.coe-page__exam-grid {
+  grid-template-columns: 1fr;
+  align-items: start;
+  gap: max(1.5rem, min(4vw, 2.5rem));
+  margin-bottom: max(1.5rem, min(3vw, 2rem));
+  display: grid;
+}
+
+.coe-page__intro-visual {
+  gap: .85rem;
+  min-width: 0;
+  max-width: 22rem;
+  display: grid;
+}
+
+.coe-page__intro-media {
+  aspect-ratio: 4 / 3;
+  border-radius: calc(var(--radius-lg, .75rem)  + .15rem);
+  background: #e8edf5;
+  border: 1px solid rgba(30, 58, 117, .1);
+  min-height: 12rem;
+  margin: 0;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 .65rem 1.5rem rgba(30, 58, 117, .1);
+}
+
+.coe-page__intro-img {
+  object-fit: cover;
+  object-position: center;
+}
+
+.coe-page__intro-text {
+  color: var(--color-text-secondary);
+  text-align: justify;
+  margin: 0;
+  font-size: 1.0625rem;
+  line-height: 1.75;
+}
+
+.coe-page__intro-copy .coe-page__intro-text + .coe-page__intro-text {
+  margin-top: .85rem;
+}
+
+.coe-page__success-note {
+  color: var(--color-text-secondary);
+  margin: max(1.25rem, min(2.5vw, 1.75rem)) 0 0;
+  font-size: .9375rem;
+  line-height: 1.7;
+}
+
+.coe-page__allotment {
+  padding: clamp(3rem, 6vw, 4.5rem) var(--coe-pad-x) clamp(4rem, 8vw, 5.5rem);
+  background: var(--bihe-cream, #f4f6fa);
+}
+
+.coe-page__allotment .section-header {
+  margin-bottom: 1rem;
+}
+
+.bihe-wrap .coe-page__allotment-institute {
+  font-family: var(--font-hero);
+  text-align: center;
+  text-justify: auto;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  color: var(--color-secondary);
+  margin: 0 0 .5rem;
+  font-size: max(.9375rem, min(2vw, 1.0625rem));
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.bihe-wrap .coe-page__allotment-title {
+  font-family: var(--font-hero);
+  text-align: center;
+  text-justify: auto;
+  letter-spacing: .03em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+  margin: 0 0 max(2rem, min(4vw, 2.75rem));
+  font-size: max(.875rem, min(1.8vw, 1rem));
+  font-weight: 700;
+  line-height: 1.45;
+}
+
+.coe-page__role-grid {
+  gap: 1.25rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+}
+
+.coe-page__role-card {
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft);
+  background: #fff;
+  border: 1px solid rgba(30, 58, 117, .1);
+  padding: max(1.5rem, min(3vw, 2rem));
+  transition: transform .3s cubic-bezier(.22, 1, .36, 1), box-shadow .3s, border-color .25s;
+}
+
+.coe-page__role-card:hover {
+  box-shadow: var(--shadow-elevated);
+  border-color: rgba(30, 58, 117, .16);
+  transform: translateY(-2px);
+}
+
+.coe-page__role-head {
+  border-bottom: 1px solid rgba(30, 58, 117, .08);
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  display: flex;
+}
+
+.coe-page__role-num {
+  width: 2.5rem;
+  height: 2.5rem;
+  font-family: var(--font-hero);
+  color: var(--color-primary);
+  background: var(--navy-50, #eef2f8);
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(30, 58, 117, .12);
+  flex-shrink: 0;
+  place-items: center;
+  font-size: .875rem;
+  font-weight: 700;
+  display: grid;
+}
+
+.coe-page__role-title {
+  font-family: var(--font-hero);
+  color: #1a1a1a;
+  margin: 0;
+  font-size: 1.0625rem;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.coe-page__pdf-wrap {
+  max-width: 22rem;
+  margin: 1rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+/*# sourceMappingURL=src_styles_controller-of-examination-page_css_bad6b30c._.single.css.map*/

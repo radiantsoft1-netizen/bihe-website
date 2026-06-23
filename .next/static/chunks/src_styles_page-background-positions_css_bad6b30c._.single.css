@@ -1,0 +1,611 @@
+/* [project]/src/styles/page-background-positions.css [app-client] (css) */
+.bihe-wrap:has(.home-fold) > .bihe-page-bg .bihe-page-bg__blob--1 {
+  top: 4%;
+  left: -4%;
+}
+
+.bihe-wrap:has(.home-fold) > .bihe-page-bg .bihe-page-bg__blob--2 {
+  top: 28%;
+  right: -10%;
+}
+
+.bihe-wrap:has(.home-fold) > .bihe-page-bg .bihe-page-bg__blob--3 {
+  top: 58%;
+  left: 10%;
+}
+
+.bihe-wrap:has(.home-fold) > .bihe-page-bg .bihe-page-bg__ring--1 {
+  top: 18%;
+  right: 18%;
+}
+
+.bihe-wrap:has(.home-fold) > .bihe-page-bg .bihe-page-bg__zigzag {
+  top: 44%;
+  right: 10%;
+}
+
+.bihe-wrap:has(.moa-page) > .bihe-page-bg .bihe-page-bg__blob--1 {
+  top: 10%;
+  left: auto;
+  right: -6%;
+}
+
+.bihe-wrap:has(.moa-page) > .bihe-page-bg .bihe-page-bg__blob--2 {
+  top: 42%;
+  left: -10%;
+}
+
+.bihe-wrap:has(.moa-page) > .bihe-page-bg .bihe-page-bg__ring--1 {
+  top: 24%;
+  left: 10%;
+  right: auto;
+}
+
+.bihe-wrap:has(.moa-page) > .bihe-page-bg .bihe-page-bg__plus {
+  top: 72%;
+  left: auto;
+  right: 14%;
+}
+
+.bihe-wrap:has(.idp-page) > .bihe-page-bg .bihe-page-bg__blob--1 {
+  top: 8%;
+  left: 6%;
+}
+
+.bihe-wrap:has(.idp-page) > .bihe-page-bg .bihe-page-bg__blob--3 {
+  top: 52%;
+  left: auto;
+  right: 2%;
+}
+
+.bihe-wrap:has(.idp-page) > .bihe-page-bg .bihe-page-bg__triangle {
+  top: 76%;
+  left: auto;
+  right: 6%;
+}
+
+.bihe-wrap:has(.cu-page) > .bihe-page-bg .bihe-page-bg__blob--2 {
+  top: 16%;
+  right: 4%;
+}
+
+.bihe-wrap:has(.cu-page) > .bihe-page-bg .bihe-page-bg__dot--2 {
+  top: 48%;
+  right: 16%;
+}
+
+.bihe-wrap:has(.cu-page) > .bihe-page-bg .bihe-page-bg__ring--2 {
+  top: 68%;
+  left: 12%;
+}
+
+.bihe-wrap:has(.administration-page) > .bihe-page-bg .bihe-page-bg__blob--1 {
+  top: 12%;
+  left: auto;
+  right: 8%;
+}
+
+.bihe-wrap:has(.administration-page) > .bihe-page-bg .bihe-page-bg__zigzag {
+  top: 62%;
+  left: 8%;
+  right: auto;
+}
+
+.bihe-wrap:has( > main > article.about-bihe-page:not(.moa-page):not(.idp-page):not(.cu-page):not(.coe-page):not(.ombudsperson-page):not(.icc-page):not(.iqac-page):not(.library-page):not(.admission-process-page):not(.fee-refund-policy-page):not(.online-admission-format-page):not(.principal-page):not(.finance-page):not(.governing-bodies-page):not(.academic-leadership-page)) > .bihe-page-bg .bihe-page-bg__blob--1 {
+  top: 14%;
+  left: 2%;
+}
+
+.bihe-wrap:has( > main > article.about-bihe-page:not(.moa-page):not(.idp-page):not(.cu-page):not(.coe-page):not(.ombudsperson-page):not(.icc-page):not(.iqac-page):not(.library-page):not(.admission-process-page):not(.fee-refund-policy-page):not(.online-admission-format-page):not(.principal-page):not(.finance-page):not(.governing-bodies-page):not(.academic-leadership-page)) > .bihe-page-bg .bihe-page-bg__ring--2 {
+  top: 58%;
+  right: 14%;
+}
+
+.bihe-wrap .about__shape--blob-maroon {
+  top: -2%;
+  right: 6%;
+}
+
+.bihe-wrap .about__shape--blob-navy {
+  bottom: 12%;
+  left: -2%;
+}
+
+.bihe-wrap .accreditation__decor-blob {
+  top: -12%;
+  right: 4%;
+}
+
+.bihe-wrap .accreditation__decor-ring {
+  bottom: 16%;
+  left: 8%;
+}
+
+.bihe-wrap .courses__decor-ring {
+  top: 8%;
+  right: 2%;
+}
+
+.bihe-wrap .courses__decor-dot--1 {
+  bottom: 22%;
+  left: 4%;
+}
+
+.bihe-wrap .news__decor-ring {
+  top: 10%;
+  left: 6%;
+  right: auto;
+}
+
+.bihe-wrap .recruiters__decor-ring {
+  bottom: 14%;
+  right: 10%;
+}
+
+.bihe-wrap .gallery__decor-ring {
+  top: 6%;
+  right: 12%;
+}
+
+.principal-page:not(.finance-page):not(.governing-bodies-page) .principal-page__showcase--s1 .principal-page__decor-blob--1 {
+  top: 6%;
+  right: 8%;
+}
+
+.principal-page:not(.finance-page):not(.governing-bodies-page) .principal-page__showcase--s1 .principal-page__decor-blob--2 {
+  bottom: 14%;
+  left: 10%;
+}
+
+.principal-page:not(.finance-page):not(.governing-bodies-page) .principal-page__showcase--s1 .principal-page__decor-ring--1 {
+  top: 20%;
+  left: 8%;
+}
+
+.principal-page:not(.finance-page):not(.governing-bodies-page) .principal-page__showcase--s1 .principal-page__decor-ring--2 {
+  bottom: 22%;
+  right: 14%;
+}
+
+.finance-page .principal-page__showcase--s1 .principal-page__decor-blob--1 {
+  top: 10%;
+  left: 10%;
+  right: auto;
+}
+
+.finance-page .principal-page__showcase--s1 .principal-page__decor-blob--2 {
+  bottom: 8%;
+  left: auto;
+  right: 12%;
+}
+
+.finance-page .principal-page__showcase--s1 .principal-page__decor-ring--1 {
+  top: 16%;
+  left: auto;
+  right: 6%;
+}
+
+.finance-page .principal-page__showcase--s1 .principal-page__decor-ring--2 {
+  bottom: 20%;
+  left: 6%;
+  right: auto;
+}
+
+.governing-bodies-page .principal-page__showcase--s1 .principal-page__decor-blob--1 {
+  top: 5%;
+  right: 10%;
+}
+
+.governing-bodies-page .principal-page__showcase--s1 .principal-page__decor-blob--2 {
+  bottom: 12%;
+  left: 8%;
+}
+
+.governing-bodies-page .principal-page__showcase--s1 .principal-page__decor-ring--2 {
+  bottom: 24%;
+  right: 12%;
+}
+
+.governing-bodies-page .principal-page__showcase--s2 .principal-page__decor-blob--1 {
+  top: 12%;
+  left: 8%;
+  right: auto;
+}
+
+.governing-bodies-page .principal-page__showcase--s2 .principal-page__decor-blob--2 {
+  bottom: 10%;
+  left: auto;
+  right: 10%;
+}
+
+.governing-bodies-page .principal-page__showcase--s2 .principal-page__decor-ring--1 {
+  top: 18%;
+  left: auto;
+  right: 6%;
+}
+
+.governing-bodies-page .principal-page__showcase--s2 .principal-page__decor-ring--2 {
+  bottom: 16%;
+  left: 10%;
+  right: auto;
+}
+
+.governing-bodies-page .principal-page__showcase--s3 .principal-page__decor-blob--1 {
+  top: 8%;
+  right: 6%;
+}
+
+.governing-bodies-page .principal-page__showcase--s3 .principal-page__decor-blob--2 {
+  bottom: 18%;
+  left: 12%;
+}
+
+.governing-bodies-page .principal-page__showcase--s3 .principal-page__decor-ring--1 {
+  top: 22%;
+  left: 5%;
+}
+
+.governing-bodies-page .principal-page__showcase--s3 .principal-page__decor-ring--2 {
+  bottom: 10%;
+  right: 18%;
+}
+
+.governing-bodies-page .principal-page__showcase--s2 .principal-page__decor-grid {
+  opacity: .28;
+  -webkit-mask-image: linear-gradient(rgba(0, 0, 0, 0) 0%, #000 10%, #000 90%, rgba(0, 0, 0, 0) 100%);
+  mask-image: linear-gradient(rgba(0, 0, 0, 0) 0%, #000 10%, #000 90%, rgba(0, 0, 0, 0) 100%);
+}
+
+.governing-bodies-page .principal-page__showcase--s3 .principal-page__decor-grid {
+  background-position: 14px 18px;
+}
+
+.admission-process-page .principal-page__showcase--s1 .principal-page__decor-blob--1 {
+  top: 5%;
+  right: 10%;
+}
+
+.admission-process-page .principal-page__showcase--s1 .principal-page__decor-blob--2 {
+  bottom: 12%;
+  left: 8%;
+}
+
+.admission-process-page .principal-page__showcase--s1 .principal-page__decor-ring--2 {
+  bottom: 24%;
+  right: 12%;
+}
+
+.admission-process-page .principal-page__showcase--s2 .principal-page__decor-blob--1 {
+  top: 12%;
+  left: 8%;
+  right: auto;
+}
+
+.admission-process-page .principal-page__showcase--s2 .principal-page__decor-blob--2 {
+  bottom: 10%;
+  left: auto;
+  right: 10%;
+}
+
+.admission-process-page .principal-page__showcase--s2 .principal-page__decor-ring--1 {
+  top: 18%;
+  left: auto;
+  right: 6%;
+}
+
+.admission-process-page .principal-page__showcase--s2 .principal-page__decor-ring--2 {
+  bottom: 16%;
+  left: 10%;
+  right: auto;
+}
+
+.admission-process-page .principal-page__showcase--s3 .principal-page__decor-blob--1 {
+  top: 8%;
+  right: 6%;
+}
+
+.admission-process-page .principal-page__showcase--s3 .principal-page__decor-blob--2 {
+  bottom: 18%;
+  left: 12%;
+}
+
+.admission-process-page .principal-page__showcase--s3 .principal-page__decor-ring--1 {
+  top: 22%;
+  left: 5%;
+}
+
+.admission-process-page .principal-page__showcase--s3 .principal-page__decor-ring--2 {
+  bottom: 10%;
+  right: 18%;
+}
+
+.admission-process-page .principal-page__showcase--s2 .principal-page__decor-grid {
+  opacity: .28;
+  -webkit-mask-image: linear-gradient(rgba(0, 0, 0, 0) 0%, #000 10%, #000 90%, rgba(0, 0, 0, 0) 100%);
+  mask-image: linear-gradient(rgba(0, 0, 0, 0) 0%, #000 10%, #000 90%, rgba(0, 0, 0, 0) 100%);
+}
+
+.admission-process-page .principal-page__showcase--s3 .principal-page__decor-grid {
+  background-position: 14px 18px;
+}
+
+.coe-page__exam .coe-page__decor-circle--1 {
+  top: .5rem;
+  right: 1rem;
+}
+
+.coe-page__exam .coe-page__decor-circle--2 {
+  top: 3rem;
+  right: -.5rem;
+}
+
+.coe-page__exam .coe-page__decor-circle--3 {
+  bottom: .5rem;
+  right: 2.5rem;
+}
+
+.coe-page__allotment {
+  position: relative;
+  overflow: hidden;
+}
+
+.coe-page__allotment:before, .coe-page__allotment:after {
+  content: "";
+  pointer-events: none;
+  border-radius: 50%;
+  position: absolute;
+}
+
+.coe-page__allotment:before {
+  background: rgba(30, 58, 117, .08);
+  width: 5.5rem;
+  height: 5.5rem;
+  top: 10%;
+  left: 6%;
+}
+
+.coe-page__allotment:after {
+  background: none;
+  border: 2px dashed rgba(116, 0, 0, .14);
+  width: 8rem;
+  height: 8rem;
+  bottom: 14%;
+  right: 8%;
+}
+
+.ombudsperson-page__intro, .ombudsperson-page__lists, .ombudsperson-page__outcome {
+  isolation: isolate;
+  position: relative;
+  overflow: hidden;
+}
+
+.ombudsperson-page__intro:before {
+  content: "";
+  pointer-events: none;
+  background: rgba(30, 58, 117, .07);
+  border-radius: 50%;
+  width: 6rem;
+  height: 6rem;
+  position: absolute;
+  top: 12%;
+  right: 8%;
+}
+
+.ombudsperson-page__lists:before {
+  content: "";
+  pointer-events: none;
+  border: 2px dashed rgba(116, 0, 0, .12);
+  border-radius: 50%;
+  width: 9rem;
+  height: 9rem;
+  position: absolute;
+  bottom: 10%;
+  left: 5%;
+}
+
+.ombudsperson-page__outcome:before {
+  content: "";
+  pointer-events: none;
+  background: rgba(116, 0, 0, .06);
+  border-radius: 50%;
+  width: 7rem;
+  height: 7rem;
+  position: absolute;
+  top: 8%;
+  left: 10%;
+}
+
+.ombudsperson-page__outcome:after {
+  content: "";
+  pointer-events: none;
+  background: rgba(30, 58, 117, .08);
+  border-radius: 50%;
+  width: 5rem;
+  height: 5rem;
+  position: absolute;
+  bottom: 12%;
+  right: 6%;
+}
+
+.icc-page__about, .icc-page__pillars, .icc-page__values, .icc-page__commitment, .icc-page__committee {
+  isolation: isolate;
+  position: relative;
+  overflow: hidden;
+}
+
+.icc-page__about:before {
+  content: "";
+  pointer-events: none;
+  background: rgba(116, 0, 0, .06);
+  border-radius: 50%;
+  width: 7rem;
+  height: 7rem;
+  position: absolute;
+  top: 10%;
+  right: 6%;
+}
+
+.icc-page__committee:before {
+  content: "";
+  pointer-events: none;
+  background: rgba(30, 58, 117, .07);
+  border-radius: 50%;
+  width: 6rem;
+  height: 6rem;
+  position: absolute;
+  top: 6%;
+  left: 8%;
+}
+
+.moa-page__intro, .moa-page__sections, .moa-page__governance, .moa-page__documents {
+  isolation: isolate;
+  position: relative;
+  overflow: hidden;
+}
+
+.moa-page__intro:after {
+  content: "";
+  pointer-events: none;
+  background: rgba(30, 58, 117, .06);
+  border-radius: 50%;
+  width: 5rem;
+  height: 5rem;
+  position: absolute;
+  top: 18%;
+  right: 6%;
+}
+
+.moa-page__sections:before {
+  content: "";
+  pointer-events: none;
+  border: 2px dashed rgba(116, 0, 0, .1);
+  border-radius: 50%;
+  width: 8rem;
+  height: 8rem;
+  position: absolute;
+  top: 6%;
+  left: 4%;
+}
+
+.moa-page__governance:before {
+  content: "";
+  pointer-events: none;
+  background: rgba(30, 58, 117, .07);
+  border-radius: 50%;
+  width: 6.5rem;
+  height: 6.5rem;
+  position: absolute;
+  bottom: 16%;
+  right: 10%;
+}
+
+.moa-page__documents:after {
+  content: "";
+  pointer-events: none;
+  background: rgba(116, 0, 0, .06);
+  border-radius: 50%;
+  width: 4.5rem;
+  height: 4.5rem;
+  position: absolute;
+  top: 10%;
+  left: 8%;
+}
+
+.idp-page__vision:before {
+  content: "";
+  pointer-events: none;
+  background: rgba(30, 58, 117, .06);
+  border-radius: 50%;
+  width: 6rem;
+  height: 6rem;
+  position: absolute;
+  top: 14%;
+  right: 7%;
+}
+
+.idp-page__mission:after {
+  content: "";
+  pointer-events: none;
+  border: 2px dashed rgba(116, 0, 0, .12);
+  border-radius: 50%;
+  width: 7rem;
+  height: 7rem;
+  position: absolute;
+  bottom: 12%;
+  left: 6%;
+}
+
+.idp-page__vision, .idp-page__mission, .idp-page__growth-list, .idp-page__growth-panel {
+  position: relative;
+  overflow: hidden;
+}
+
+.idp-page__mission .idp-page__mission-badge-ring {
+  transform: translate(.5rem, -.5rem);
+}
+
+.idp-page__growth-list .idp-page__growth-photo-deck-back {
+  top: 4%;
+  right: 8%;
+  transform: rotate(3deg);
+}
+
+.idp-page__growth-list .idp-page__growth-photo-deck-ring {
+  bottom: 10%;
+  left: 4%;
+}
+
+.idp-page__growth-panel:before {
+  content: "";
+  pointer-events: none;
+  background: rgba(255, 255, 255, .08);
+  border-radius: 50%;
+  width: 9rem;
+  height: 9rem;
+  position: absolute;
+  top: 8%;
+  left: 5%;
+}
+
+.idp-page__growth-panel:after {
+  content: "";
+  pointer-events: none;
+  border: 2px dashed rgba(255, 255, 255, .18);
+  border-radius: 50%;
+  width: 6rem;
+  height: 6rem;
+  position: absolute;
+  bottom: 10%;
+  right: 8%;
+}
+
+.cu-page__intro:after {
+  content: "";
+  pointer-events: none;
+  background: rgba(30, 58, 117, .07);
+  border-radius: 50%;
+  width: 5.5rem;
+  height: 5.5rem;
+  position: absolute;
+  top: 16%;
+  right: 8%;
+}
+
+.cu-page__documents:before {
+  content: "";
+  pointer-events: none;
+  border: 2px dashed rgba(116, 0, 0, .12);
+  border-radius: 50%;
+  width: 7rem;
+  height: 7rem;
+  position: absolute;
+  bottom: 14%;
+  left: 6%;
+}
+
+.cu-page__intro, .cu-page__documents {
+  position: relative;
+  overflow: hidden;
+}
+
+/*# sourceMappingURL=src_styles_page-background-positions_css_bad6b30c._.single.css.map*/

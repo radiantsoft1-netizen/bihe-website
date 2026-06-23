@@ -1,0 +1,88 @@
+/* [project]/src/app/globals.css [app-client] (css) */
+*, :before, :after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: clip;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html:not(.has-smooth-scroll) {
+    scroll-behavior: smooth;
+  }
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+  color: var(--color-text);
+  background: var(--color-bg);
+  -webkit-font-smoothing: antialiased;
+  margin: 0;
+  line-height: 1.5;
+  overflow-x: clip;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+img[data-nimg="fill"] {
+  width: 100%;
+  max-width: none;
+  height: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+h1, h2, h3, h4, p {
+  margin: 0;
+}
+
+.sr-only {
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  position: absolute;
+  overflow: hidden;
+}
+
+.btn, .bihe-btn, .hero__cta, .hero__arrow, .back-to-hero, .bihe-site-header__nav-link, .bihe-site-header__nav-link-group, .bihe-site-header__submenu-link, .bihe-site-header__apply-top, .bihe-site-header__chevron-btn, .bihe-site-header__social-btn, .bihe-site-header__menu-btn, .bihe-wrap .footer__social-btn, .bihe-wrap .about__more, .about__more, .news__cta .btn, .recruiters__cta .btn, input[type="submit"], input[type="button"], input[type="reset"] {
+  border-radius: var(--btn-radius);
+}
+
+.bihe-wrap p {
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+.bihe-wrap .course-card__desc, .bihe-wrap .facilities__card-desc, .bihe-wrap .edu-service-card__desc, .bihe-wrap .sl-rich-page__page-ref-desc, .bihe-wrap .sl-rich-page__page-ref-card--panel .sl-rich-page__page-ref-desc, .bihe-wrap .sl-rich-page__facility-text, .bihe-wrap .sl-rich-page__text, .bihe-wrap .sl-rich-page__highlight-text, .bihe-wrap .sl-rich-page .principal-page__paragraph, .bihe-wrap .library-page__facility-desc, .bihe-wrap .ic-page__facility-desc, .bihe-wrap .incubation-centre-page .ic-page__banner-text, .bihe-wrap .incubation-centre-page .ic-page__showcase-text, .bihe-wrap .incubation-centre-page .ic-page__status-text, .bihe-wrap .nss-page__text, .bihe-wrap .nss-page .principal-page__paragraph, .bihe-wrap .mpd-page__text, .bihe-wrap .mpd-page .principal-page__paragraph, .bihe-wrap .bihe-mission__card p, .bihe-wrap .faculty-staff__designation, .bihe-wrap .about-bihe-hero__lead, .bihe-wrap .about-bihe-intro__body .about__desc, .bihe-wrap .idp-page__growth-card-text, .bihe-wrap .cu-page__intro-list, .bihe-wrap .principal-page__float-name, .bihe-wrap .principal-page__float-role, .bihe-wrap .principal-page__float-quals, .bihe-wrap .gallery-detail-page__text, .bihe-wrap .alumni-gallery-detail-page__copy .gallery-detail-page__text {
+  text-align: left;
+  text-justify: auto;
+}
+
+/*# sourceMappingURL=src_app_globals_css_bad6b30c._.single.css.map*/

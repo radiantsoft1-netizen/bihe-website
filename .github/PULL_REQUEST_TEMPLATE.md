@@ -4,8 +4,8 @@
 
 ## Scope
 
-- [ ] Public site (Next.js) — `src/`
-- [ ] Admin panel (Laravel) — `bihe-admin/`
+- [ ] Public site (Next.js) — `Frontend/src/`
+- [ ] Admin panel (Laravel) — `Backend/`
 - [ ] CI/CD or docs only
 
 ## Test plan

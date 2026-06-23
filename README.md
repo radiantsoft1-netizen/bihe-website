@@ -2,12 +2,17 @@
 
 Landing page and content site for **Bapuji Institute of Hi-Tech Education**, plus a Laravel admin panel and JSON API.
 
+## Monorepo layout
+
 | Package | Path | Stack | Deploy target |
 |---------|------|-------|---------------|
-| Public site | `/` | Next.js 15, React 19 | **Vercel** (recommended) |
-| Admin + API | `bihe-admin/` | Laravel 11, Blade, MySQL | **Hostinger** (FTP/SFTP via GitHub Actions) |
+| Public site | [`Frontend/`](Frontend/) | Next.js 15, React 19 | **Hostinger Node.js** or **Vercel** (`bihedvg.org`) |
+| Admin + API | [`Backend/`](Backend/) | Laravel 11, Blade, MySQL | **Hostinger** (FTP/SFTP via GitHub Actions) |
+| Shared docs | [`docs/`](docs/) | — | — |
 
 Built from the [Figma design](https://www.figma.com/design/iJhaFUCwUHxeLeOQVHxTJe/BIHE-College?node-id=139-23100) with layout patterns inspired by the Univet reference theme.
+
+**Entry points:** [`Frontend/README.md`](Frontend/README.md) · [`Backend/README.md`](Backend/README.md)
 
 ## Documentation
 
@@ -17,11 +22,11 @@ Built from the [Figma design](https://www.figma.com/design/iJhaFUCwUHxeLeOQVHxTJ
 | [docs/GITHUB-CICD.md](docs/GITHUB-CICD.md) | GitHub Actions, secrets, FTP/SFTP deploy |
 | [docs/FUTURE-PHASES.md](docs/FUTURE-PHASES.md) | Phase 2 module architecture & extension points |
 | [docs/BIHE-Admin-Integration-Guide.md](docs/BIHE-Admin-Integration-Guide.md) | Next.js ↔ Laravel API wiring |
-| [bihe-admin/README.md](bihe-admin/README.md) | Admin setup, API endpoints, schema map |
-| [bihe-admin/docs/HOSTINGER-DEPLOY.md](bihe-admin/docs/HOSTINGER-DEPLOY.md) | Production deploy on Hostinger |
-| [bihe-admin/docs/SECURITY.md](bihe-admin/docs/SECURITY.md) | Auth, uploads, session security |
+| [Backend/README.md](Backend/README.md) | Admin setup, API endpoints, schema map |
+| [Backend/docs/HOSTINGER-DEPLOY.md](Backend/docs/HOSTINGER-DEPLOY.md) | Production deploy on Hostinger |
+| [Backend/docs/SECURITY.md](Backend/docs/SECURITY.md) | Auth, uploads, session security |
 
-**Module registries:** `bihe-admin/config/modules.php` (Laravel) · `src/lib/api/modules.ts` (Next.js)
+**Module registries:** `Backend/config/modules.php` (Laravel) · `Frontend/src/lib/api/modules.ts` (Next.js)
 
 ## Brand
 
@@ -29,52 +34,56 @@ Built from the [Figma design](https://www.figma.com/design/iJhaFUCwUHxeLeOQVHxTJ
 - Secondary maroon: `#740000`
 - Font: **Cabin** (body/UI), **Assistant** (hero headline)
 
-Global design tokens live in `src/styles/tokens.css`.
+Global design tokens live in `Frontend/src/styles/tokens.css`.
 
 ## Quick start — public site
 
 ```bash
-npm install
-npm run download-assets   # Pull images from Figma (expires after ~7 days)
-cp .env.example .env.local   # Optional: point at Laravel API
+npm install --prefix Frontend
+npm run download-assets --prefix Frontend   # Pull images from Figma (expires after ~7 days)
+cp Frontend/.env.example Frontend/.env.local   # Optional: point at Laravel API
 npm run dev
 ```
 
 Open [http://127.0.0.1:3000](http://127.0.0.1:3000).
 
-**Admin from the same site:** [http://127.0.0.1:3000/admin](http://127.0.0.1:3000/admin) proxies to the Laravel panel (run `composer serve` in `bihe-admin/` first).
+**Admin from the same site:** [http://127.0.0.1:3000/admin](http://127.0.0.1:3000/admin) proxies to the Laravel panel (run `composer serve` in `Backend/` first).
 
-### Vercel links (website + admin on one domain)
+### Production URLs (Hostinger)
 
 | | URL |
-|---|-----|
-| **Website** | https://bihe-website.vercel.app |
-| **Admin panel** | https://bihe-website.vercel.app/admin |
-
-Both URLs stay on Vercel. `/admin` is proxied to Laravel on Hostinger (you never need a separate admin domain in the browser).
+|---|---|
+| **Public website** | https://bihedvg.org |
+| **Admin panel** | https://admin.bihedvg.org/admin |
+| **API** | https://admin.bihedvg.org/api/v1/* |
 
 | | Website | Admin |
 |---|---------|-------|
-| **Local** | http://127.0.0.1:3000 | http://127.0.0.1:3000/admin |
-| **Vercel** | https://bihe-website.vercel.app | https://bihe-website.vercel.app/admin |
+| **Local** | http://127.0.0.1:3000 | http://127.0.0.1:3000/admin (proxied) or http://127.0.0.1:8099/admin |
+| **Production** | https://bihedvg.org | https://admin.bihedvg.org/admin |
 
-**Vercel env (required — set in Project → Settings → Environment Variables, then redeploy):**
+**Public site env (Hostinger Node.js / Vercel → Environment variables):**
 
 | Variable | Value |
 |----------|--------|
-| `ADMIN_ORIGIN` | Your Hostinger Laravel URL (e.g. `https://admin.bihedvg.org`) |
-| `NEXT_PUBLIC_API_URL` | Same as `ADMIN_ORIGIN` |
+| `ADMIN_ORIGIN` | `https://admin.bihedvg.org` |
+| `NEXT_PUBLIC_API_URL` | `https://admin.bihedvg.org` |
+| `REVALIDATE_SECRET` | Same as Laravel `.env` |
 
-**Hostinger `.env` (Laravel backend — not visible to users):**
+**Hostinger Laravel `.env` (`admin.bihedvg.org`):**
 
 ```env
 APP_URL=https://admin.bihedvg.org
-ADMIN_PROXY_HOSTS=bihe-website.vercel.app,bihedvg.org,www.bihedvg.org
+NEXTJS_URL=https://bihedvg.org
+ADMIN_PROXY_HOSTS=bihedvg.org,www.bihedvg.org
+REVALIDATE_SECRET=<same-as-public-site>
 ```
+
+Deploy guide: `tmp/HOSTINGER-FRONTEND-DEPLOY.md` · `Backend/HOSTINGER-QUICKSTART.md`
 
 ### Dynamic homepage content (optional)
 
-Hero, announcements, news, gallery highlights, and recruiter logos can load from the Laravel API in `bihe-admin/`. Set in `.env.local`:
+Hero, announcements, news, gallery highlights, and recruiter logos can load from the Laravel API in `Backend/`. Set in `Frontend/.env.local`:
 
 ```env
 NEXT_PUBLIC_API_URL=http://127.0.0.1:8099
@@ -86,7 +95,7 @@ Without this variable (or if the API is unreachable), each section falls back to
 ## Quick start — admin panel
 
 ```bash
-cd bihe-admin
+cd Backend
 composer install
 cp .env.example .env
 php artisan key:generate
@@ -97,13 +106,13 @@ composer serve
 
 Admin login: http://127.0.0.1:8099/admin — or open **http://127.0.0.1:3000/admin** while `npm run dev` is running (redirects to the panel).
 
-See **[bihe-admin/README.md](bihe-admin/README.md)** for API endpoints, Hostinger setup, and security notes.
+See **[Backend/README.md](Backend/README.md)** for API endpoints, Hostinger setup, and security notes.
 
 ## Verify & build
 
 ```bash
 npm run verify    # Type-check + lint (use during dev; does not stop the dev server)
-npm run build     # Production build (writes to .next-build)
+npm run build     # Production build (writes to Frontend/.next-build)
 npm start
 ```
 
@@ -118,15 +127,18 @@ Full setup (secrets, branches, dry-run, Vercel vs Hostinger): **[docs/GITHUB-CIC
 ## Project structure
 
 ```
-├── src/                    # Next.js App Router (public site)
-├── public/                 # Static assets
-├── bihe-admin/             # Laravel CMS + /api/v1 JSON API
+├── Frontend/               # Next.js App Router (public site)
+│   ├── src/
+│   ├── public/
+│   └── scripts/
+├── Backend/                # Laravel CMS + /api/v1 JSON API
 ├── docs/                   # Handoff, CI/CD, integration guides
+├── scripts/                # Repo-level helpers (push-to-github, admin-tunnel)
 └── .github/workflows/      # CI and Hostinger deploy
 ```
 
-- `src/components/landing/` — Homepage sections
-- `src/lib/api/` — API client, homepage fetchers, module registry
-- `src/lib/phase1-static-pages.ts` — Routes that stay hardcoded in Phase 1
-- `src/styles/` — Global CSS and tokens
-- `public/images/` — Downloaded Figma assets
+- `Frontend/src/components/landing/` — Homepage sections
+- `Frontend/src/lib/api/` — API client, homepage fetchers, module registry
+- `Frontend/src/lib/phase1-static-pages.ts` — Routes that stay hardcoded in Phase 1
+- `Frontend/src/styles/` — Global CSS and tokens
+- `Frontend/public/images/` — Downloaded Figma assets

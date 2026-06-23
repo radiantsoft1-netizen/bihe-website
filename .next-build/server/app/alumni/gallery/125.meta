@@ -1,0 +1,7 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/alumni/layout,_N_T_/alumni/gallery/layout,_N_T_/alumni/gallery/[imageId]/layout,_N_T_/alumni/gallery/[imageId]/page,_N_T_/alumni/gallery/125,api:/api/v1/gallery-albums/annual-events-celebrations,api:/api/v1/navigation,api:/api/v1/site-settings/prospectus"
+  }
+}

@@ -11,8 +11,8 @@ This document is the master handoff checklist for developers, operators, and fut
 ## Table of contents
 
 1. [Project overview](#1-project-overview)
-2. [Laravel deliverables (`bihe-admin/`)](#2-laravel-deliverables-bihe-admin)
-3. [Next.js deliverables (`src/`)](#3-nextjs-deliverables-src)
+2. [Laravel deliverables (`Backend/`)](#2-laravel-deliverables-Backend)
+3. [Next.js deliverables (`Frontend/src/`)](#3-nextjs-deliverables-frontendsrc)
 4. [DevOps & deployment](#4-devops--deployment)
 5. [Getting started](#5-getting-started)
 6. [Known limitations & Phase 2](#6-known-limitations--phase-2)
@@ -26,8 +26,8 @@ This document is the master handoff checklist for developers, operators, and fut
 
 | Surface | Path | Stack | Deploy target |
 |---------|------|-------|---------------|
-| **Public website** | `/` | Next.js 15, React 19, App Router | **Vercel** (recommended) |
-| **Admin panel + API** | `bihe-admin/` | Laravel 11, Blade, MySQL | **Hostinger** (FTP/SFTP via GitHub Actions) |
+| **Public website** | `Frontend/` | Next.js 15, React 19, App Router | **Vercel** or **Hostinger Node.js** |
+| **Admin panel + API** | `Backend/` | Laravel 11, Blade, MySQL | **Hostinger** (FTP/SFTP via GitHub Actions) |
 
 The public site consumes read-only JSON from Laravel at `/api/v1/*`. The admin panel is a separate Blade UI on the same Laravel app.
 
@@ -39,16 +39,16 @@ The public site consumes read-only JSON from Laravel at `/api/v1/*`. The admin p
 - Responsiveness, animations, and layout hierarchy
 - Vanilla JS behaviour on Hostinger admin assets
 
-Allowed changes on the public site: wire dynamic API data into existing components without visual changes. See `.cursor/rules/frontend-preservation.mdc` and `bihe-admin/README.md` (Frontend rule).
+Allowed changes on the public site: wire dynamic API data into existing components without visual changes. See `.cursor/rules/frontend-preservation.mdc` and `Backend/README.md` (Frontend rule).
 
 ---
 
-## 2. Laravel deliverables (`bihe-admin/`)
+## 2. Laravel deliverables (`Backend/`)
 
 ### Project structure (summary)
 
 ```
-bihe-admin/
+Backend/
 ├── app/
 │   ├── Enums/UserRole.php
 │   ├── Http/
@@ -223,7 +223,7 @@ Additional: soft deletes (`2024_06_09_000002`), indexes (`2024_06_09_000003`, `2
 | Activity Logs | `admin/activity-logs` | `activity-logs.view` | super_admin, admin |
 | Sessions | `admin/sessions` | `sessions.manage` | super_admin |
 
-Registry source: `bihe-admin/config/modules.php`.
+Registry source: `Backend/config/modules.php`.
 
 ### Activity logs
 
@@ -247,7 +247,7 @@ Registry source: `bihe-admin/config/modules.php`.
 
 ### Security summary
 
-See **[bihe-admin/docs/SECURITY.md](bihe-admin/docs/SECURITY.md)** for captcha, HTTPS forcing, secure uploads, session settings, and API key notes.
+See **[Backend/docs/SECURITY.md](Backend/docs/SECURITY.md)** for captcha, HTTPS forcing, secure uploads, session settings, and API key notes.
 
 ---
 
@@ -290,19 +290,19 @@ Categories: About Us, Vision & Mission, IQAC, NAAC (homepage anchor), Principal 
 | Workflow | Path | Trigger | Purpose |
 |----------|------|---------|---------|
 | CI | `.github/workflows/ci.yml` | PR/push to `main`, `develop` | `npm run verify` + PHP checks on changed paths |
-| FTP deploy | `.github/workflows/deploy-bihe-admin.yml` | Push to `main` (`bihe-admin/**`) | Hostinger FTP upload |
+| FTP deploy | `.github/workflows/deploy-bihe-admin.yml` | Push to `main` (`Backend/**`) | Hostinger FTP upload |
 | SFTP deploy | `.github/workflows/deploy-bihe-admin-sftp.yml` | `workflow_dispatch` | SSH/SFTP alternative |
 
 Full secrets and branch strategy: **[docs/GITHUB-CICD.md](GITHUB-CICD.md)**
 
 ### Hostinger deploy
 
-Step-by-step: **[bihe-admin/docs/HOSTINGER-DEPLOY.md](bihe-admin/docs/HOSTINGER-DEPLOY.md)**
+Step-by-step: **[Backend/docs/HOSTINGER-DEPLOY.md](Backend/docs/HOSTINGER-DEPLOY.md)**
 
 ### Production commands (after deploy)
 
 ```bash
-cd /path/to/bihe-admin
+cd /path/to/Backend
 php artisan migrate --force
 php artisan storage:link   # first deploy only
 php artisan config:cache
@@ -331,7 +331,7 @@ Open http://127.0.0.1:3000
 **Terminal 2 — Laravel admin + API:**
 
 ```bash
-cd bihe-admin
+cd Backend
 composer install
 cp .env.example .env
 php artisan key:generate
@@ -341,7 +341,7 @@ php artisan serve
 ```
 
 Admin: http://127.0.0.1:8000/admin  
-Default super admin: see `ADMIN_*` vars in `bihe-admin/.env.example`
+Default super admin: see `ADMIN_*` vars in `Backend/.env.example`
 
 ### Environment variables
 
@@ -351,7 +351,7 @@ Default super admin: see `ADMIN_*` vars in `bihe-admin/.env.example`
 |----------|---------|
 | `NEXT_PUBLIC_API_URL` | Laravel base URL (no trailing slash) |
 
-**Laravel (`bihe-admin/.env`):**
+**Laravel (`Backend/.env`):**
 
 | Variable | Purpose |
 |----------|---------|
@@ -398,11 +398,11 @@ npm run dev:status # Check dev server health
 | Future module architecture | `docs/FUTURE-PHASES.md` |
 | Next.js ↔ Laravel integration | `docs/BIHE-Admin-Integration-Guide.md` |
 | Monorepo README | `README.md` |
-| Laravel admin README | `bihe-admin/README.md` |
-| Laravel architecture | `bihe-admin/docs/ARCHITECTURE.md` |
-| Security | `bihe-admin/docs/SECURITY.md` |
-| Hostinger deployment | `bihe-admin/docs/HOSTINGER-DEPLOY.md` |
-| Module registry (Laravel) | `bihe-admin/config/modules.php` |
+| Laravel admin README | `Backend/README.md` |
+| Laravel architecture | `Backend/docs/ARCHITECTURE.md` |
+| Security | `Backend/docs/SECURITY.md` |
+| Hostinger deployment | `Backend/docs/HOSTINGER-DEPLOY.md` |
+| Module registry (Laravel) | `Backend/config/modules.php` |
 | Module registry (Next.js) | `src/lib/api/modules.ts` |
 | Phase 1 static routes | `src/lib/phase1-static-pages.ts` |
 

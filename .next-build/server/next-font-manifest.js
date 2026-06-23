@@ -1,0 +1,1 @@
+self.__NEXT_FONT_MANIFEST='{"pages":{},"app":{"/Users/radiant/Downloads/BIHE Website /src/app/layout":["static/media/67ea4463d4a1f79e-s.p.woff2","static/media/6c7b277d2518c12b-s.p.woff2"]},"appUsingSizeAdjust":true,"pagesUsingSizeAdjust":false}';

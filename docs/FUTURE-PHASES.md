@@ -23,7 +23,7 @@
 
 ## 1. Current architecture snapshot
 
-### Laravel admin (`bihe-admin/`)
+### Laravel admin (`Backend/`)
 
 | Concern | Location | Notes |
 |---------|----------|-------|
@@ -49,7 +49,7 @@
 
 ### Deployment
 
-- **Admin:** Hostinger + GitHub Actions (`.github/workflows/deploy-bihe-admin.yml`) — see `bihe-admin/docs/HOSTINGER-DEPLOY.md`
+- **Admin:** Hostinger + GitHub Actions (`.github/workflows/deploy-bihe-admin.yml`) — see `Backend/docs/HOSTINGER-DEPLOY.md`
 - **Public site:** Vercel (or equivalent) — see `docs/BIHE-Admin-Integration-Guide.md`
 
 ---
@@ -250,7 +250,7 @@ Use this checklist for any new module (including the five above). Check off in o
 
 ### Laravel admin
 
-- [ ] **1. Register module** in `bihe-admin/config/modules.php` (`enabled: true`, permission prefix, sidebar metadata).
+- [ ] **1. Register module** in `Backend/config/modules.php` (`enabled: true`, permission prefix, sidebar metadata).
 - [ ] **2. Migration(s)** — tables with indexes, soft deletes where appropriate.
 - [ ] **3. Model(s)** — `$fillable`, casts, scopes (`published`, `active`), relationships.
 - [ ] **4. Upload config** (if files) — add `directories.{key}` and optional new `types.*` in `config/uploads.php`.
@@ -279,7 +279,7 @@ Use this checklist for any new module (including the five above). Check off in o
 
 ### Documentation & deploy
 
-- [ ] **21. Update** `bihe-admin/README.md` API table.
+- [ ] **21. Update** `Backend/README.md` API table.
 - [ ] **22. Run** `php artisan migrate` on Hostinger post-deploy.
 - [ ] **23. Verify** with `npm run verify` (dev) — not full production build during active dev.
 
@@ -418,14 +418,14 @@ When a future module overlaps static content (e.g. placement drives vs placement
 
 | File | Purpose |
 |------|---------|
-| `bihe-admin/config/modules.php` | Admin module registry (enabled flags, permissions, sidebar) |
+| `Backend/config/modules.php` | Admin module registry (enabled flags, permissions, sidebar) |
 | `src/lib/api/modules.ts` | Next.js API module registry |
-| `bihe-admin/app/Support/RoleAccess.php` | Role → module mapping |
-| `bihe-admin/docs/ARCHITECTURE.md` | Layered Laravel architecture + link here |
+| `Backend/app/Support/RoleAccess.php` | Role → module mapping |
+| `Backend/docs/ARCHITECTURE.md` | Layered Laravel architecture + link here |
 | `docs/BIHE-Admin-Integration-Guide.md` | Cross-team integration phases |
 | `src/lib/phase1-static-pages.ts` | Static route manifest |
-| `bihe-admin/config/uploads.php` | Upload types and directories |
-| `bihe-admin/docs/SECURITY.md` | Hardening checklist |
+| `Backend/config/uploads.php` | Upload types and directories |
+| `Backend/docs/SECURITY.md` | Hardening checklist |
 
 ---
 

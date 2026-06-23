@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Temporary admin bridge: local Laravel → Cloudflare tunnel → Vercel /admin
-# Requires: brew install cloudflared, Laravel on :8099 (cd bihe-admin && composer serve)
+# Requires: brew install cloudflared, Laravel on :8099 (cd Backend && composer serve)
 set -euo pipefail
 
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
@@ -12,7 +12,7 @@ if ! command -v cloudflared >/dev/null 2>&1; then
 fi
 
 if ! curl -fsS "http://127.0.0.1:${PORT}/admin" >/dev/null 2>&1; then
-  echo "Start Laravel first: cd bihe-admin && composer serve"
+  echo "Start Laravel first: cd Backend && composer serve"
   exit 1
 fi
 

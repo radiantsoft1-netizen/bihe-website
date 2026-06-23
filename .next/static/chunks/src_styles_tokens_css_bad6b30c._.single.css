@@ -1,0 +1,56 @@
+/* [project]/src/styles/tokens.css [app-client] (css) */
+:root {
+  --color-primary: #1e3a75;
+  --color-primary-dark: #132446;
+  --color-primary-500: #2a4f9c;
+  --color-secondary: #740000;
+  --color-secondary-dark: #5c0000;
+  --color-secondary-gradient-from: #3d0000;
+  --color-secondary-gradient-to: #5d0000;
+  --color-bg: #f7f9fc;
+  --color-surface: #fff;
+  --color-surface-muted: #e9ebf1;
+  --color-courses-bg: #ffefef;
+  --color-facilities-bg: #e7eefa;
+  --color-card: #fdfdff;
+  --color-stroke: #d6d9e4;
+  --color-text: #1a1a1a;
+  --color-text-secondary: #4a4a4a;
+  --color-text-light: #fff;
+  --color-text-muted: #c7c7c7;
+  --color-text-on-dark: #e8e8e8;
+  --color-text-footer: #f1e6e6;
+  --maroon-50: #faf0f0;
+  --maroon-100: #f5e0e0;
+  --navy-50: #eef2f8;
+  --navy-100: #dde5f1;
+  --primary-100: #e7eefa;
+  --font-body: var(--font-cabin), "Cabin", system-ui, sans-serif;
+  --font-hero: var(--font-assistant), "Assistant", system-ui, sans-serif;
+  --text-h1: 3rem;
+  --text-h3: 2.0625rem;
+  --text-h4: 1.75rem;
+  --text-h5: 1.4375rem;
+  --text-title-1: 1.1875rem;
+  --text-title-2: 1rem;
+  --text-body: 1rem;
+  --text-small: .8125rem;
+  --container-max: 75rem;
+  --section-pad-x: clamp(1.25rem, 5vw, 7.5rem);
+  --section-pad-y: clamp(3rem, 6vw, 5rem);
+  --header-height: 5rem;
+  --topbar-height: 3.25rem;
+  --site-header-height: 7.5rem;
+  --header-motion: .55s;
+  --header-ease: cubic-bezier(.22, 1, .36, 1);
+  --home-fold-height: calc(100svh - var(--site-header-height));
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --btn-radius: 999px;
+  --shadow-card: 0 4px 8px rgba(0, 0, 0, .08), 0 -4px 8px rgba(0, 0, 0, .12);
+  --shadow-btn: 0 4px 2px rgba(0, 0, 0, .12);
+  --overlay-hero: rgba(17, 12, 45, .59);
+  --overlay-facility: rgba(30, 58, 117, .85);
+}
+
+/*# sourceMappingURL=src_styles_tokens_css_bad6b30c._.single.css.map*/

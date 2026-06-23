@@ -1,0 +1,20 @@
+/* [project]/src/styles/academic-projects-page.css [app-client] (css) */
+.ap-page {
+  --ap-pad-x: clamp(1.25rem, 5vw, 7.5rem);
+}
+
+.bihe-wrap:has(.ap-page) {
+  background: #f7f9fc;
+}
+
+.bihe-wrap:has(.ap-page) > .bihe-page-bg {
+  display: none;
+}
+
+.ap-page .cu-page__documents {
+  padding-top: max(3.5rem, min(7vw, 5.5rem));
+  padding-bottom: max(4.5rem, min(9vw, 7rem));
+  padding-inline: var(--ap-pad-x);
+}
+
+/*# sourceMappingURL=src_styles_academic-projects-page_css_bad6b30c._.single.css.map*/

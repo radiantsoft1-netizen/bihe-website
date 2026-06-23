@@ -34,11 +34,11 @@ alwaysApply: true
 
 | Surface | Frontend source | Dynamic layer |
 |---------|-----------------|---------------|
-| Public website | Next.js + existing CSS (`src/`, `src/styles/`) | Fetch from Laravel `/api/v1/*` later — **do not change public UI when wiring data** |
+| Public website | Next.js + existing CSS (`Frontend/src/`, `Frontend/src/styles/`) | Fetch from Laravel `/api/v1/*` later — **do not change public UI when wiring data** |
 
 ## Homepage sections (public site)
 
-**Dynamic only** (via `src/lib/api/homepage.ts`):
+**Dynamic only** (via `Frontend/src/lib/api/homepage.ts`):
 
 - Hero banners
 - Announcements / notices
@@ -56,7 +56,7 @@ alwaysApply: true
 
 ## Phase 1 static pages (no CMS / API)
 
-**Do not wire these to Laravel admin or `/api/v1/*` in Phase 1.** Content stays in `src/lib/*-content.ts` and page components. Canonical list: `src/lib/phase1-static-pages.ts`.
+**Do not wire these to Laravel admin or `/api/v1/*` in Phase 1.** Content stays in `Frontend/src/lib/*-content.ts` and page components. Canonical list: `Frontend/src/lib/phase1-static-pages.ts`.
 
 | Category | Routes (examples) |
 |----------|-------------------|
@@ -72,6 +72,6 @@ alwaysApply: true
 
 **Already dynamic in Phase 1** (outside the list above): homepage hero/announcements/news/gallery/recruiters, `/news/*`, `/gallery/*`, faculty roster on `/academics/faculty-and-staff`, contact form.
 
-| Admin panel | `bihe-admin/public/assets/` + `resources/views/` | Laravel controllers, models, Blade loops |
+| Admin panel | `Backend/public/assets/` + `resources/views/` | Laravel controllers, models, Blade loops |
 
 When in doubt: copy HTML verbatim into Blade, then add directives only where data varies.

@@ -1,0 +1,7 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/alumni/layout,_N_T_/alumni/[slug]/layout,_N_T_/alumni/[slug]/page,_N_T_/alumni/sneha-k-s,api:/api/v1/alumni-profiles/sneha-k-s,api:/api/v1/navigation,api:/api/v1/site-settings/prospectus"
+  }
+}

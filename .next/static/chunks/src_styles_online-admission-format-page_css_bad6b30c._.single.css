@@ -1,0 +1,185 @@
+/* [project]/src/styles/online-admission-format-page.css [app-client] (css) */
+.online-admission-format-page {
+  --oaf-pad-x: clamp(1.25rem, 5vw, 7.5rem);
+}
+
+.bihe-wrap:has(.online-admission-format-page) {
+  background: #f7f9fc;
+}
+
+.bihe-wrap:has(.online-admission-format-page) > .bihe-page-bg {
+  display: none;
+}
+
+.online-admission-format-page__container {
+  width: min(100%, 56rem);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.online-admission-format-page__intro {
+  padding: clamp(3rem, 6vw, 4rem) var(--oaf-pad-x);
+  background: #fff;
+}
+
+.online-admission-format-page__lead {
+  max-width: none;
+  color: var(--color-text-secondary);
+  margin: 1.15rem 0 1.5rem;
+  font-size: 1.0625rem;
+  line-height: 1.75;
+}
+
+.online-admission-format-page__portal-line {
+  color: var(--color-text-secondary);
+  margin: 0 0 max(1.25rem, min(2.5vw, 1.75rem));
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
+.online-admission-format-page__portal-link {
+  color: var(--color-primary);
+  text-underline-offset: .15em;
+  word-break: break-all;
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.online-admission-format-page__portal-link:hover {
+  color: var(--color-secondary);
+}
+
+.online-admission-format-page__form-caption {
+  text-align: center;
+  color: var(--color-primary);
+  background: var(--navy-50, #eef2f8);
+  border-top: 1px solid rgba(30, 58, 117, .08);
+  margin: 0;
+  padding: .85rem 1rem;
+  font-size: .9375rem;
+  font-weight: 600;
+}
+
+.online-admission-format-page__step {
+  padding: clamp(2.5rem, 5vw, 3.5rem) var(--oaf-pad-x);
+}
+
+.online-admission-format-page__step--light {
+  background: #fff;
+}
+
+.online-admission-format-page__step--cream {
+  background: var(--bihe-cream, #f4f6fa);
+}
+
+.online-admission-format-page__step-title {
+  font-family: var(--font-hero);
+  color: var(--color-secondary);
+  margin: 0 0 max(1rem, min(2vw, 1.35rem));
+  font-size: max(1.125rem, min(2.2vw, 1.5rem));
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.online-admission-format-page__step-text {
+  color: var(--color-text-secondary);
+  margin: 0 0 .9rem;
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+.online-admission-format-page__step-text:last-of-type {
+  margin-bottom: max(1.25rem, min(2.5vw, 1.75rem));
+}
+
+.online-admission-format-page__form-panel {
+  background: #fff;
+  border: 1px solid rgba(30, 58, 117, .12);
+  border-radius: 1rem;
+  margin: 0 0 max(1.5rem, min(3vw, 2rem));
+  overflow: hidden;
+  box-shadow: 0 1rem 2.25rem rgba(30, 58, 117, .12);
+}
+
+.online-admission-format-page__form-img {
+  object-fit: cover;
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.online-admission-format-page__sub-block {
+  background: rgba(30, 58, 117, .04);
+  border: 1px solid rgba(30, 58, 117, .08);
+  border-radius: 1rem;
+  margin-top: .5rem;
+  padding: max(1.15rem, min(2.5vw, 1.5rem));
+}
+
+.online-admission-format-page__sub-title {
+  font-family: var(--font-hero);
+  color: var(--color-primary);
+  margin: 0 0 .85rem;
+  font-size: 1.0625rem;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.online-admission-format-page__bullet-list {
+  gap: .65rem;
+}
+
+.online-admission-format-page__ordered-list {
+  counter-reset: oaf-step;
+  gap: .85rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+}
+
+.online-admission-format-page__ordered-list li {
+  counter-increment: oaf-step;
+  color: var(--color-text-secondary);
+  background: #fff;
+  border: 1px solid rgba(30, 58, 117, .1);
+  border-radius: .95rem;
+  padding: 1rem 1rem 1rem 3.25rem;
+  font-size: .9375rem;
+  line-height: 1.6;
+  position: relative;
+  box-shadow: 0 .35rem 1rem rgba(30, 58, 117, .06);
+}
+
+.online-admission-format-page__step--light .online-admission-format-page__ordered-list li {
+  background: var(--bihe-cream, #f4f6fa);
+}
+
+.online-admission-format-page__ordered-list li:before {
+  content: counter(oaf-step);
+  background: var(--color-primary);
+  color: #fff;
+  border-radius: 50%;
+  place-items: center;
+  width: 1.75rem;
+  height: 1.75rem;
+  font-size: .75rem;
+  font-weight: 700;
+  display: grid;
+  position: absolute;
+  top: 50%;
+  left: 1rem;
+  transform: translateY(-50%);
+}
+
+.online-admission-format-page__step:nth-child(2n) .online-admission-format-page__ordered-list li:before {
+  background: var(--color-secondary);
+}
+
+@media (max-width: 720px) {
+  .online-admission-format-page__container {
+    width: min(100%, var(--container-max));
+  }
+}
+
+/*# sourceMappingURL=src_styles_online-admission-format-page_css_bad6b30c._.single.css.map*/

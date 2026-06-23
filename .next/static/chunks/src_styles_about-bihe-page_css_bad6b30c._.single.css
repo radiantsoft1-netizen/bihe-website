@@ -1,0 +1,131 @@
+/* [project]/src/styles/about-bihe-page.css [app-client] (css) */
+.about-bihe-page {
+  --about-bihe-pad-x: clamp(1.25rem, 5vw, 7.5rem);
+}
+
+.about-bihe-hero {
+  padding: clamp(2rem, 5vw, 3.5rem) var(--about-bihe-pad-x) clamp(2.5rem, 6vw, 4rem);
+  background: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-primary) 55%, #2a4f9c 100%);
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+
+.about-bihe-hero:before {
+  content: "";
+  pointer-events: none;
+  background: radial-gradient(circle at 85% 20%, rgba(116, 0, 0, .35) 0%, rgba(0, 0, 0, 0) 45%), radial-gradient(circle at 10% 80%, rgba(255, 255, 255, .08) 0%, rgba(0, 0, 0, 0) 40%);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.about-bihe-hero__container {
+  z-index: 1;
+  width: min(100%, var(--container-max));
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+}
+
+.about-bihe-breadcrumb {
+  color: rgba(255, 255, 255, .75);
+  flex-wrap: wrap;
+  align-items: center;
+  gap: .35rem .5rem;
+  margin-bottom: 1.25rem;
+  font-size: .8125rem;
+  display: flex;
+}
+
+.about-bihe-breadcrumb a {
+  color: rgba(255, 255, 255, .9);
+  transition: color .2s;
+}
+
+.about-bihe-breadcrumb a:hover {
+  color: #fff;
+}
+
+.about-bihe-breadcrumb [aria-current="page"] {
+  color: #fff;
+  font-weight: 600;
+}
+
+.about-bihe-hero__eyebrow {
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--maroon-100);
+  margin: 0 0 .5rem;
+  font-size: .75rem;
+  font-weight: 700;
+}
+
+.about-bihe-hero__title {
+  font-family: var(--font-hero);
+  letter-spacing: -.02em;
+  margin: 0;
+  font-size: max(2rem, min(5vw, 3.25rem));
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.about-bihe-hero__lead {
+  color: rgba(255, 255, 255, .88);
+  max-width: 40rem;
+  margin: 1rem 0 0;
+  font-size: max(1rem, min(2vw, 1.2rem));
+  line-height: 1.6;
+}
+
+.about-bihe-hero__lead p {
+  margin: 0;
+}
+
+.bihe-wrap .about-bihe-intro {
+  padding-inline: var(--about-bihe-pad-x);
+}
+
+.bihe-wrap .about-bihe-intro .about__content {
+  gap: 0;
+}
+
+.bihe-wrap .about-bihe-intro .about__intro {
+  gap: 1.25rem;
+}
+
+.bihe-wrap .about-bihe-intro__body {
+  flex-direction: column;
+  gap: 1rem;
+  display: flex;
+}
+
+.bihe-wrap .about-bihe-intro__body .about__desc {
+  text-align: left;
+  text-justify: auto;
+  margin: 0;
+}
+
+.bihe-wrap .about-bihe-intro__body .about__desc img {
+  border-radius: .5rem;
+  max-width: 100%;
+  height: auto;
+  margin: .85rem auto;
+  display: block;
+}
+
+.bihe-wrap .about-bihe-intro__photo {
+  object-position: center center;
+}
+
+.bihe-wrap .about-bihe-intro__subtitle {
+  font-family: var(--font-hero);
+  color: var(--color-secondary);
+  margin: 1.25rem 0 .25rem;
+  font-size: 1.125rem;
+  font-weight: 700;
+}
+
+/*# sourceMappingURL=src_styles_about-bihe-page_css_bad6b30c._.single.css.map*/

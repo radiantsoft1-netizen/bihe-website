@@ -1,0 +1,6 @@
+{
+  "/academics/[slug]/page": "app/academics/[slug]/page.js",
+  "/api/revalidate/route": "app/api/revalidate/route.js",
+  "/page": "app/page.js",
+  "/storage/[[...slug]]/route": "app/storage/[[...slug]]/route.js"
+}

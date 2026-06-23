@@ -1,0 +1,15 @@
+{
+  "app": {
+    "[project]/src/app/academics/[slug]/page": [
+      "static/media/c6cbd2fc23005612-s.p.505cf2f5.woff2",
+      "static/media/1a072933b891bea6-s.p.5b1e0e00.woff2"
+    ],
+    "[project]/src/app/page": [
+      "static/media/c6cbd2fc23005612-s.p.505cf2f5.woff2",
+      "static/media/1a072933b891bea6-s.p.5b1e0e00.woff2"
+    ]
+  },
+  "appUsingSizeAdjust": true,
+  "pages": {},
+  "pagesUsingSizeAdjust": false
+}

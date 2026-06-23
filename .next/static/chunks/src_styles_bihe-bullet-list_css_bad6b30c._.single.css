@@ -1,0 +1,43 @@
+/* [project]/src/styles/bihe-bullet-list.css [app-client] (css) */
+.bihe-bullet-list {
+  gap: .75rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+}
+
+.bihe-bullet-list li {
+  color: var(--color-text-secondary);
+  padding-left: 1.875rem;
+  font-size: .9375rem;
+  line-height: 1.65;
+  position: relative;
+}
+
+.bihe-bullet-list li:before {
+  content: "";
+  background: var(--maroon-50);
+  box-sizing: border-box;
+  border: 1px solid rgba(116, 0, 0, .18);
+  border-radius: 50%;
+  width: 1.125rem;
+  height: 1.125rem;
+  position: absolute;
+  top: .28em;
+  left: 0;
+}
+
+.bihe-bullet-list li:after {
+  content: "";
+  border: solid var(--color-secondary);
+  border-width: 0 2px 2px 0;
+  width: .3125rem;
+  height: .5625rem;
+  position: absolute;
+  top: .5em;
+  left: .4375rem;
+  transform: rotate(45deg);
+}
+
+/*# sourceMappingURL=src_styles_bihe-bullet-list_css_bad6b30c._.single.css.map*/

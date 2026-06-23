@@ -20,7 +20,7 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       nextjs: ${{ steps.filter.outputs.nextjs }}
-      bihe-admin: ${{ steps.filter.outputs.bihe-admin }}
+      backend: ${{ steps.filter.outputs.backend }}
     steps:
       - uses: actions/checkout@v4
       - uses: dorny/paths-filter@v3
@@ -28,18 +28,19 @@ jobs:
         with:
           filters: |
             nextjs:
-              - 'src/**'
-              - 'public/**'
-              - 'scripts/**'
+              - 'Frontend/src/**'
+              - 'Frontend/public/**'
+              - 'Frontend/scripts/**'
+              - 'Frontend/package.json'
+              - 'Frontend/package-lock.json'
+              - 'Frontend/tsconfig.json'
+              - 'Frontend/next.config.*'
+              - 'Frontend/eslint.config.*'
+              - 'Frontend/.env.example'
               - 'package.json'
-              - 'package-lock.json'
-              - 'tsconfig.json'
-              - 'next.config.*'
-              - 'eslint.config.*'
-              - '.env.example'
-            bihe-admin:
-              - 'bihe-admin/**'
-              - '!bihe-admin/vendor/**'
+            backend:
+              - 'Backend/**'
+              - '!Backend/vendor/**'
 
   verify-nextjs:
     name: Next.js verify (tsc + lint)
@@ -54,21 +55,22 @@ jobs:
         with:
           node-version: "22"
           cache: npm
+          cache-dependency-path: Frontend/package-lock.json
 
       - name: Install dependencies
-        run: npm ci
+        run: npm ci --prefix Frontend
 
       - name: Type-check and lint
-        run: npm run verify
+        run: npm run verify --prefix Frontend
 
   php-syntax:
-    name: PHP syntax check (bihe-admin)
+    name: PHP syntax check (Backend)
     needs: changes
-    if: needs.changes.outputs.bihe-admin == 'true'
+    if: needs.changes.outputs.backend == 'true'
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: bihe-admin
+        working-directory: Backend
     steps:
       - uses: actions/checkout@v4
 

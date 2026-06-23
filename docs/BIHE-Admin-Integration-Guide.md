@@ -29,7 +29,7 @@
 
 ### Laravel Admin Panel (Hostinger)
 
-A standalone Laravel + MySQL admin panel lives in **`bihe-admin/`** at the repo root.
+A standalone Laravel + MySQL admin panel lives in **`Backend/`** at the repo root.
 
 | Layer | Stack |
 |-------|-------|
@@ -43,7 +43,7 @@ A standalone Laravel + MySQL admin panel lives in **`bihe-admin/`** at the repo 
 - REST API at `/api/v1/*` for the Next.js site to consume
 - Hostinger-compatible deployment (Apache, MySQL, `public/` document root)
 
-See **`bihe-admin/README.md`** for local setup, GitHub secrets, and Hostinger deployment steps.
+See **`Backend/README.md`** for local setup, GitHub secrets, and Hostinger deployment steps.
 
 **Phase 5 (partial):** The homepage wires five sections to Laravel via `NEXT_PUBLIC_API_URL` and `src/lib/api/homepage.ts` (hero, announcements, news, gallery, recruiters). News, gallery, faculty roster, and contact are also API-backed. About, IQAC, NAAC references, vision/mission, principal message, academic calendar, committee pages, admissions, and other academic information pages remain static per `src/lib/phase1-static-pages.ts`.
 
@@ -425,13 +425,13 @@ Result: admin saves → public page updates within seconds (no full redeploy).
 
 ## 7. Phase 6 — Deploy Laravel Admin (Hostinger)
 
-The admin panel is **`bihe-admin/`** in this repo — a standalone Laravel app, not Next.js routes.
+The admin panel is **`Backend/`** in this repo — a standalone Laravel app, not Next.js routes.
 
 ```bash
-# Local: already in repo — see bihe-admin/README.md
-cd bihe-admin && composer install && php artisan migrate --seed
+# Local: already in repo — see Backend/README.md
+cd Backend && composer install && php artisan migrate --seed
 
-# Hostinger: upload bihe-admin/, point document root to public/, configure .env
+# Hostinger: upload Backend/, point document root to public/, configure .env
 ```
 
 Wire the Next.js site to the Laravel API (no folder merge required):
@@ -502,7 +502,7 @@ Move duplicate types into `src/lib/types/content.ts`.
 
 Forbidden without explicit approval: new colours/fonts/spacing, renamed CSS classes, UI component redesigns, or Node/Vite builds on Hostinger admin.
 
-See `.cursor/rules/frontend-preservation.mdc` and `bihe-admin/html-frontend/README.md`.
+See `.cursor/rules/frontend-preservation.mdc` and `Backend/html-frontend/README.md`.
 
 ### Daily Rules for Both Developers
 
@@ -626,7 +626,7 @@ Major modules are designed to plug in **without restructuring** the repo. Full m
 
 | Module | Permission prefix | Registry |
 |--------|-------------------|----------|
-| Alumni Management | `alumni.*` | `bihe-admin/config/modules.php` → `alumni` |
+| Alumni Management | `alumni.*` | `Backend/config/modules.php` → `alumni` |
 | Student Portal | `student-portal.*` | `student-portal` (separate `student` auth guard) |
 | Online Admissions | `admissions.online.*` | `admissions-online` (extends static `/admissions/*` info) |
 | Placement Portal | `placement.*` | `placement` |

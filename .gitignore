@@ -1,47 +1,51 @@
 # dependencies
 node_modules/
+Frontend/node_modules/
 
 # next.js (public site)
-.next/
-.next-build/
-out/
-tsconfig.tsbuildinfo
+Frontend/.next/
+Frontend/.next-build/
+Frontend/out/
+Frontend/tsconfig.tsbuildinfo
 
 # environment (never commit secrets)
 .env
 .env.*
 !.env.example
-bihe-admin/.env
-bihe-admin/.env.*
+Frontend/.env
+Frontend/.env.*
+!Frontend/.env.example
+Backend/.env
+Backend/.env.*
 
 # gallery uploads (local dev)
 data/gallery.json
-public/uploads/gallery/*
-!public/uploads/gallery/.gitkeep
+Frontend/public/uploads/gallery/*
+!Frontend/public/uploads/gallery/.gitkeep
 
-# Laravel admin (bihe-admin) — vendor is installed in CI and on server
-bihe-admin/vendor/
-bihe-admin/.phpunit.cache/
-bihe-admin/.phpunit.result.cache
-bihe-admin/.ftp-deploy-sync-state.json
-bihe-admin/public/hot
-bihe-admin/public/storage
-bihe-admin/storage/*.key
-bihe-admin/storage/logs/*
-!bihe-admin/storage/logs/.gitignore
-bihe-admin/storage/framework/cache/data/*
-!bihe-admin/storage/framework/cache/.gitignore
-bihe-admin/storage/framework/sessions/*
-!bihe-admin/storage/framework/sessions/.gitignore
-bihe-admin/storage/framework/views/*
-!bihe-admin/storage/framework/views/.gitignore
-bihe-admin/bootstrap/cache/*
-!bihe-admin/bootstrap/cache/.gitignore
-bihe-admin/node_modules/
-bihe-admin/.phpactor.json
-bihe-admin/Homestead.json
-bihe-admin/Homestead.yaml
-bihe-admin/auth.json
+# Laravel admin (Backend) — vendor is installed in CI and on server
+Backend/vendor/
+Backend/.phpunit.cache/
+Backend/.phpunit.result.cache
+Backend/.ftp-deploy-sync-state.json
+Backend/public/hot
+Backend/public/storage
+Backend/storage/*.key
+Backend/storage/logs/*
+!Backend/storage/logs/.gitignore
+Backend/storage/framework/cache/data/*
+!Backend/storage/framework/cache/.gitignore
+Backend/storage/framework/sessions/*
+!Backend/storage/framework/sessions/.gitignore
+Backend/storage/framework/views/*
+!Backend/storage/framework/views/.gitignore
+Backend/bootstrap/cache/*
+!Backend/bootstrap/cache/.gitignore
+Backend/node_modules/
+Backend/.phpactor.json
+Backend/Homestead.json
+Backend/Homestead.yaml
+Backend/auth.json
 
 # IDE / OS
 .DS_Store
@@ -59,8 +63,8 @@ yarn-error.log*
 tmp/
 
 # Local Laravel SQLite (production uses MySQL on Hostinger)
-bihe-admin/database/*.sqlite
-bihe-admin/database/*.sqlite-journal
+Backend/database/*.sqlite
+Backend/database/*.sqlite-journal
 
-# keep composer.lock committed (do not ignore bihe-admin/composer.lock)
+# keep composer.lock committed (do not ignore Backend/composer.lock)
 .vercel

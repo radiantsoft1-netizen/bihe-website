@@ -1,0 +1,290 @@
+/* [project]/src/styles/animations.css [app-client] (css) */
+@media (prefers-reduced-motion: reduce) {
+  *, :before, :after {
+    transition-duration: .01ms !important;
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+
+  .reveal {
+    opacity: 1;
+    will-change: auto;
+    transform: none;
+  }
+
+  .page-enter {
+    animation: none;
+  }
+
+  .announcement__track, .news-ticker__track {
+    animation: none !important;
+  }
+}
+
+@keyframes submenu-panel-in {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -10px, 0)scale(.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0)scale(1);
+  }
+}
+
+@keyframes about-badge-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes submenu-link-in {
+  from {
+    opacity: 0;
+    transform: translate3d(-6px, 0, 0)scale(.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0)scale(1);
+  }
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 24px, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes hero-ken-burns {
+  from {
+    transform: scale(1);
+  }
+
+  to {
+    transform: scale(1.08);
+  }
+}
+
+@keyframes page-bg-float {
+  0%, 100% {
+    transform: translate(0)rotate(0);
+  }
+
+  50% {
+    transform: translate(12px, -16px)rotate(5deg);
+  }
+}
+
+@keyframes page-bg-float-alt {
+  0%, 100% {
+    transform: translate(0)scale(1);
+  }
+
+  50% {
+    transform: translate(-14px, 10px)scale(1.05);
+  }
+}
+
+@keyframes apply-top-glow {
+  0%, 100% {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, .28), 0 0 0 1px rgba(255, 255, 255, .35);
+  }
+
+  50% {
+    box-shadow: 0 6px 22px rgba(0, 0, 0, .32), 0 0 0 3px rgba(255, 255, 255, .5);
+  }
+}
+
+@keyframes prospectus-topbar-glow {
+  0%, 100% {
+    box-shadow: 0 2px 10px rgba(0, 0, 0, .22), 0 0 0 1px rgba(255, 255, 255, .3);
+  }
+
+  50% {
+    box-shadow: 0 4px 14px rgba(0, 0, 0, .28), 0 0 0 2px rgba(255, 255, 255, .45);
+  }
+}
+
+@keyframes about-shape-float {
+  0%, 100% {
+    transform: translate(0)rotate(0);
+  }
+
+  50% {
+    transform: translate(6px, -10px)rotate(4deg);
+  }
+}
+
+@keyframes about-shape-float-alt {
+  0%, 100% {
+    transform: translate(0)scale(1);
+  }
+
+  50% {
+    transform: translate(-8px, 6px)scale(1.04);
+  }
+}
+
+@keyframes about-badge-pulse {
+  0%, 100% {
+    box-shadow: 0 16px 40px rgba(30, 58, 117, .35), 0 0 rgba(116, 0, 0, .35);
+  }
+
+  50% {
+    box-shadow: 0 20px 48px rgba(30, 58, 117, .4), 0 0 0 10px rgba(116, 0, 0, 0);
+  }
+}
+
+@keyframes hero-content-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes marquee {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+@keyframes pulse-dot {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: .85;
+    transform: scale(1.15);
+  }
+}
+
+@keyframes shimmer {
+  from {
+    transform: translateX(-100%);
+  }
+
+  to {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes float-badge {
+  0%, 100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes logo-row-scroll {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+@keyframes line-grow {
+  from {
+    transform: scaleY(0);
+  }
+
+  to {
+    transform: scaleY(1);
+  }
+}
+
+@keyframes stagger-in {
+  from {
+    opacity: 0;
+    transform: translateY(32px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.reveal {
+  opacity: 0;
+  will-change: opacity, transform;
+  transition: opacity 1s cubic-bezier(.22, 1, .36, 1), transform 1s cubic-bezier(.22, 1, .36, 1);
+}
+
+.reveal--up {
+  transform: translate3d(0, 28px, 0);
+}
+
+.reveal--down {
+  transform: translate3d(0, -20px, 0);
+}
+
+.reveal--left {
+  transform: translate3d(-28px, 0, 0);
+}
+
+.reveal--right {
+  transform: translate3d(28px, 0, 0);
+}
+
+.reveal--scale {
+  transform: scale3d(.97, .97, 1);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  will-change: auto;
+  transform: translate3d(0, 0, 0)scale3d(1, 1, 1);
+}
+
+.page-enter {
+  animation: 1s cubic-bezier(.22, 1, .36, 1) both page-enter-in;
+}
+
+@keyframes page-enter-in {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 12px, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+/*# sourceMappingURL=src_styles_animations_css_bad6b30c._.single.css.map*/

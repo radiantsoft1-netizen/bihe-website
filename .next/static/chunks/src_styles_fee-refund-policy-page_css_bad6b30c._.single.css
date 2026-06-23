@@ -1,0 +1,36 @@
+/* [project]/src/styles/fee-refund-policy-page.css [app-client] (css) */
+.fee-refund-policy-page {
+  --fee-refund-pad-x: clamp(1.25rem, 5vw, 7.5rem);
+}
+
+.bihe-wrap:has(.fee-refund-policy-page) {
+  background: #f7f9fc;
+}
+
+.bihe-wrap:has(.fee-refund-policy-page) > .bihe-page-bg {
+  display: none;
+}
+
+.fee-refund-policy-page__eyebrow {
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--color-text-secondary);
+  margin: 0 0 .5rem;
+  font-size: .75rem;
+  font-weight: 700;
+}
+
+.fee-refund-policy-page__intro-title {
+  font-family: var(--font-hero);
+  color: var(--color-secondary);
+  margin: 0 0 1rem;
+  font-size: max(1.25rem, min(2.5vw, 1.5rem));
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.fee-refund-policy-page .about-bihe-intro__body .about__desc {
+  text-align: justify;
+}
+
+/*# sourceMappingURL=src_styles_fee-refund-policy-page_css_bad6b30c._.single.css.map*/

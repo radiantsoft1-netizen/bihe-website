@@ -1,0 +1,261 @@
+/* [project]/src/styles/memorandum-page.css [app-client] (css) */
+.moa-page {
+  --moa-pad-x: clamp(1.25rem, 5vw, 7.5rem);
+}
+
+.moa-page__container {
+  width: min(100%, var(--container-max));
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.moa-page__intro {
+  padding: clamp(3rem, 6vw, 4.5rem) var(--moa-pad-x) clamp(2rem, 4vw, 3rem);
+  background: #fff;
+}
+
+.moa-page__lead {
+  width: 100%;
+  max-width: none;
+  color: var(--color-text-secondary);
+  margin: 1.25rem 0 0;
+  font-size: 1.0625rem;
+  line-height: 1.7;
+}
+
+.moa-page__sections {
+  padding: 0 var(--moa-pad-x) clamp(3rem, 6vw, 4.5rem);
+  background: linear-gradient(#fff 0%, rgba(244, 246, 250, .95) 100%);
+}
+
+.moa-page__clause-list {
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+}
+
+.moa-page__clause {
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft);
+  background: #fff;
+  border: 1px solid rgba(30, 58, 117, .08);
+  grid-template-columns: auto 1fr;
+  align-items: start;
+  gap: 1.25rem 1.5rem;
+  padding: max(1.25rem, min(3vw, 1.75rem));
+  transition: transform .35s cubic-bezier(.22, 1, .36, 1), box-shadow .35s;
+  display: grid;
+}
+
+.moa-page__clause:hover {
+  box-shadow: var(--shadow-elevated);
+  transform: translateY(-3px);
+}
+
+.moa-page__clause-num {
+  font-family: var(--font-hero);
+  color: var(--color-secondary);
+  opacity: .25;
+  font-size: max(1.75rem, min(3vw, 2.25rem));
+  font-weight: 700;
+  line-height: 1;
+}
+
+.moa-page__clause-title {
+  font-family: var(--font-hero);
+  color: var(--color-primary);
+  margin: 0 0 .5rem;
+  font-size: max(1.125rem, min(2vw, 1.375rem));
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.moa-page__clause p {
+  color: var(--color-text-secondary);
+  margin: 0;
+  font-size: .9375rem;
+  line-height: 1.65;
+}
+
+.moa-page__governance {
+  padding: clamp(3rem, 6vw, 4.5rem) var(--moa-pad-x);
+  background: #fff;
+}
+
+.moa-page__governance .bihe-data-table-card {
+  margin-top: 2rem;
+}
+
+.moa-page__documents {
+  padding: clamp(3rem, 6vw, 4.5rem) var(--moa-pad-x) clamp(4rem, 8vw, 5.5rem);
+  background: var(--bihe-cream, #f4f6fa);
+}
+
+.moa-page__doc-grid {
+  grid-template-columns: minmax(0, 22rem);
+  justify-content: center;
+  gap: 1.25rem;
+  margin: 2.5rem 0 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+}
+
+.moa-page__doc-card {
+  border-radius: var(--radius-lg);
+  height: 100%;
+  box-shadow: var(--shadow-soft);
+  background: #fff;
+  border: 1px solid rgba(30, 58, 117, .08);
+  flex-direction: column;
+  padding: 1.5rem 1.25rem;
+  list-style: none;
+  transition: transform .35s cubic-bezier(.22, 1, .36, 1), box-shadow .35s, border-color .25s;
+  display: flex;
+}
+
+.moa-page__doc-card--pdf {
+  border-color: rgba(30, 58, 117, .12);
+  padding-top: 1.25rem;
+}
+
+.moa-page__doc-card:hover {
+  box-shadow: var(--shadow-elevated);
+  border-color: rgba(30, 58, 117, .2);
+  transform: translateY(-4px);
+}
+
+.moa-page__doc-card:has(:focus-visible) {
+  box-shadow: var(--shadow-elevated), 0 0 0 3px rgba(30, 58, 117, .2);
+  border-color: rgba(30, 58, 117, .2);
+}
+
+.moa-page__doc-card-body {
+  flex-direction: column;
+  flex: 1;
+  margin: 0 0 1rem;
+  display: flex;
+}
+
+.moa-page__doc-pdf-badge {
+  border-radius: var(--radius-sm, 6px);
+  color: var(--color-secondary, #740000);
+  background: rgba(116, 0, 0, .08);
+  align-self: flex-start;
+  align-items: center;
+  gap: .35rem;
+  margin-bottom: .75rem;
+  padding: .35rem .55rem;
+  display: inline-flex;
+}
+
+.moa-page__doc-pdf-icon {
+  width: 1.125rem;
+  height: 1.125rem;
+}
+
+.moa-page__doc-pdf-label {
+  letter-spacing: .06em;
+  font-size: .6875rem;
+  font-weight: 800;
+}
+
+.moa-page__doc-title {
+  color: var(--color-primary);
+  margin: 0 0 .5rem;
+  font-size: 1.0625rem;
+  font-weight: 700;
+}
+
+.moa-page__doc-desc {
+  color: var(--color-text-secondary);
+  flex: 1;
+  margin: 0;
+  font-size: .875rem;
+  line-height: 1.55;
+}
+
+.moa-page__doc-actions {
+  flex-wrap: wrap;
+  align-items: center;
+  gap: .6rem;
+  margin-top: auto;
+  display: flex;
+}
+
+.moa-page__doc-btn {
+  border-radius: 999px;
+  outline: none;
+  align-items: center;
+  gap: .35rem;
+  padding: .5rem .95rem;
+  font-size: .8125rem;
+  font-weight: 600;
+  line-height: 1;
+  text-decoration: none;
+  transition: gap .25s, color .2s, background .2s, border-color .2s, transform .2s;
+  display: inline-flex;
+}
+
+.moa-page__doc-btn--view {
+  color: #fff;
+  background: var(--color-primary);
+  border: 1px solid var(--color-primary);
+}
+
+.moa-page__doc-btn--view:hover {
+  background: var(--color-primary-dark);
+  border-color: var(--color-primary-dark);
+}
+
+.moa-page__doc-btn--view:focus-visible {
+  background: var(--color-primary-dark);
+  border-color: var(--color-primary-dark);
+}
+
+.moa-page__doc-btn--download {
+  color: var(--color-primary);
+  background: #fff;
+  border: 1px solid rgba(30, 58, 117, .18);
+}
+
+.moa-page__doc-card:hover .moa-page__doc-btn--download, .moa-page__doc-btn--download:hover {
+  color: var(--color-secondary);
+  border-color: rgba(116, 0, 0, .25);
+  gap: .55rem;
+}
+
+.moa-page__doc-btn--download:focus-visible {
+  color: var(--color-secondary);
+  border-color: rgba(116, 0, 0, .25);
+  gap: .55rem;
+}
+
+.moa-page__doc-btn:focus-visible {
+  box-shadow: 0 0 0 2px rgba(30, 58, 117, .25);
+}
+
+.moa-page__doc-link-icon {
+  width: 1rem;
+  height: 1rem;
+}
+
+@media (max-width: 1024px) {
+  .moa-page__doc-grid {
+    grid-template-columns: minmax(0, 1fr);
+    max-width: 22rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (max-width: 640px) {
+  .moa-page__clause {
+    grid-template-columns: 1fr;
+    gap: .5rem;
+  }
+}
+
+/*# sourceMappingURL=src_styles_memorandum-page_css_bad6b30c._.single.css.map*/

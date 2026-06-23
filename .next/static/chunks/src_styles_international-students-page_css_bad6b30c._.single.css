@@ -1,0 +1,63 @@
+/* [project]/src/styles/international-students-page.css [app-client] (css) */
+.international-students-page .about-bihe-hero {
+  padding-bottom: max(1.75rem, min(4vw, 2.5rem));
+}
+
+.international-students-page .principal-page__showcase {
+  justify-content: flex-start;
+  min-height: auto;
+  padding-top: max(2rem, min(3.5vw, 2.75rem));
+  padding-bottom: max(2rem, min(3.5vw, 2.75rem));
+}
+
+.international-students-page .principal-page__showcase--s1 {
+  padding-top: max(1rem, min(2.5vw, 1.5rem));
+}
+
+.international-students-page .principal-page__grid {
+  gap: max(1.5rem, min(3vw, 2.25rem));
+}
+
+.international-students-page__portrait-img {
+  object-position: center top;
+}
+
+.international-students-page .principal-page__portrait {
+  padding-bottom: 0;
+}
+
+.international-students-page .principal-page__portrait-frame {
+  aspect-ratio: 16 / 11;
+  min-height: max(14rem, min(28vh, 20rem));
+}
+
+.international-students-page .principal-page__body {
+  gap: .85rem;
+}
+
+.international-students-page .principal-page__grid--content-only {
+  grid-template-columns: 1fr;
+  width: 100%;
+  max-width: none;
+}
+
+.international-students-page .principal-page__grid--reverse .principal-page__visual {
+  order: 2;
+}
+
+.international-students-page .principal-page__grid--reverse .principal-page__content {
+  order: 1;
+}
+
+@media (max-width: 960px) {
+  .international-students-page .principal-page__showcase {
+    padding-top: max(1.75rem, min(5vw, 2.25rem));
+    padding-bottom: max(1.75rem, min(5vw, 2.25rem));
+  }
+
+  .international-students-page .principal-page__grid--reverse .principal-page__visual, .international-students-page .principal-page__grid--reverse .principal-page__content {
+    order: unset;
+  }
+}
+
+/*# sourceMappingURL=src_styles_international-students-page_css_bad6b30c._.single.css.map*/

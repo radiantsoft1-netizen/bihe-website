@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 1, "column": 0}, "map": {"version":3,"sources":["turbopack:///[project]/src/styles/governing-bodies-page.css"],"sourcesContent":["/* Governing Bodies — Principal-style showcase */\n\n.bihe-wrap:has(.governing-bodies-page) {\n  background: #f7f9fc;\n}\n\n.bihe-wrap:has(.governing-bodies-page) > .bihe-page-bg {\n  display: none;\n}\n\n.governing-bodies-page .principal-page__showcase {\n  min-height: 920px;\n}\n\n.governing-bodies-page__portrait-img {\n  object-position: center top;\n}\n\n.governing-bodies-page .principal-page__grid--reverse .principal-page__visual {\n  order: 2;\n}\n\n.governing-bodies-page .principal-page__grid--reverse .principal-page__content {\n  order: 1;\n}\n\n@media (max-width: 960px) {\n  .governing-bodies-page .principal-page__grid--reverse .principal-page__visual,\n  .governing-bodies-page .principal-page__grid--reverse .principal-page__content {\n    order: unset;\n  }\n}\n\n"],"names":[],"mappings":"AAEA;;;;AAIA;;;;AAIA;;;;AAIA;;;;AAIA;;;;AAIA;;;;AAIA;EACE"}}]
+}

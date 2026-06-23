@@ -1,0 +1,7 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/governing-bodies/layout,_N_T_/governing-bodies/page,_N_T_/governing-bodies,api:/api/v1/governing-bodies,api:/api/v1/navigation,api:/api/v1/site-settings/prospectus"
+  }
+}

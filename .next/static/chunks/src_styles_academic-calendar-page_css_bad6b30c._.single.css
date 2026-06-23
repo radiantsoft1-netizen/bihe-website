@@ -1,0 +1,54 @@
+/* [project]/src/styles/academic-calendar-page.css [app-client] (css) */
+.calendar-page {
+  --calendar-pad-x: clamp(1.25rem, 5vw, 7.5rem);
+}
+
+.bihe-wrap:has(.calendar-page) {
+  background: #f7f9fc;
+}
+
+.bihe-wrap:has(.calendar-page) > .bihe-page-bg {
+  display: none;
+}
+
+.calendar-page__container {
+  width: min(100%, var(--container-max));
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.calendar-page__intro {
+  padding: clamp(2.5rem, 5vw, 4rem) var(--calendar-pad-x);
+  background: #fff;
+}
+
+.calendar-page__intro .reveal {
+  width: 100%;
+}
+
+.calendar-page__lead {
+  width: 100%;
+  max-width: none;
+  color: var(--color-text-secondary);
+  text-align: justify;
+  margin: 1.25rem 0 0;
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+.calendar-page .cu-page__documents {
+  padding: clamp(2.5rem, 5vw, 4rem) var(--calendar-pad-x);
+  background: #fff;
+}
+
+.calendar-page .cu-page__documents:before {
+  display: none;
+}
+
+.calendar-page .reveal {
+  opacity: 1;
+  will-change: auto;
+  transform: none;
+}
+
+/*# sourceMappingURL=src_styles_academic-calendar-page_css_bad6b30c._.single.css.map*/

@@ -1,0 +1,111 @@
+{
+  "version": 1,
+  "images": {
+    "deviceSizes": [
+      640,
+      750,
+      828,
+      1080,
+      1200,
+      1920
+    ],
+    "imageSizes": [
+      64,
+      96,
+      128,
+      256,
+      384,
+      512,
+      640
+    ],
+    "path": "/_next/image",
+    "loader": "default",
+    "loaderFile": "",
+    "domains": [],
+    "disableStaticImages": false,
+    "minimumCacheTTL": 3600,
+    "formats": [
+      "image/avif",
+      "image/webp"
+    ],
+    "maximumResponseBody": 50000000,
+    "dangerouslyAllowSVG": false,
+    "contentSecurityPolicy": "script-src 'none'; frame-src 'none'; sandbox;",
+    "contentDispositionType": "attachment",
+    "remotePatterns": [
+      {
+        "protocol": "https",
+        "hostname": "^(?:^(?:www\\.figma\\.com)$)$",
+        "pathname": "^(?:\\/api\\/mcp\\/asset(?:\\/(?!\\.{1,2}(?:\\/|$))(?:(?:(?!(?:^|\\/)\\.{1,2}(?:\\/|$)).)*?)|$))$"
+      },
+      {
+        "protocol": "http",
+        "hostname": "^(?:^(?:127\\.0\\.0\\.1)$)$",
+        "port": "8000",
+        "pathname": "^(?:\\/storage(?:\\/(?!\\.{1,2}(?:\\/|$))(?:(?:(?!(?:^|\\/)\\.{1,2}(?:\\/|$)).)*?)|$))$"
+      },
+      {
+        "protocol": "http",
+        "hostname": "^(?:^(?:127\\.0\\.0\\.1)$)$",
+        "port": "8001",
+        "pathname": "^(?:\\/storage(?:\\/(?!\\.{1,2}(?:\\/|$))(?:(?:(?!(?:^|\\/)\\.{1,2}(?:\\/|$)).)*?)|$))$"
+      },
+      {
+        "protocol": "http",
+        "hostname": "^(?:^(?:localhost)$)$",
+        "port": "8000",
+        "pathname": "^(?:\\/storage(?:\\/(?!\\.{1,2}(?:\\/|$))(?:(?:(?!(?:^|\\/)\\.{1,2}(?:\\/|$)).)*?)|$))$"
+      },
+      {
+        "protocol": "http",
+        "hostname": "^(?:^(?:localhost)$)$",
+        "port": "8001",
+        "pathname": "^(?:\\/storage(?:\\/(?!\\.{1,2}(?:\\/|$))(?:(?:(?!(?:^|\\/)\\.{1,2}(?:\\/|$)).)*?)|$))$"
+      },
+      {
+        "protocol": "http",
+        "hostname": "^(?:^(?:127\\.0\\.0\\.1)$)$",
+        "port": "8099",
+        "pathname": "^(?:\\/storage(?:\\/(?!\\.{1,2}(?:\\/|$))(?:(?:(?!(?:^|\\/)\\.{1,2}(?:\\/|$)).)*?)|$))$"
+      },
+      {
+        "protocol": "https",
+        "hostname": "^(?:^(?:admin\\.bihe\\.edu)$)$",
+        "pathname": "^(?:\\/storage(?:\\/(?!\\.{1,2}(?:\\/|$))(?:(?:(?!(?:^|\\/)\\.{1,2}(?:\\/|$)).)*?)|$))$"
+      },
+      {
+        "protocol": "https",
+        "hostname": "^(?:^(?:admin\\.bihedvg\\.org)$)$",
+        "pathname": "^(?:\\/storage(?:\\/(?!\\.{1,2}(?:\\/|$))(?:(?:(?!(?:^|\\/)\\.{1,2}(?:\\/|$)).)*?)|$))$"
+      },
+      {
+        "protocol": "https",
+        "hostname": "^(?:(?!\\.)(?=.)[^/]*?\\.trycloudflare\\.com\\/?)$",
+        "pathname": "^(?:\\/storage(?:\\/(?!\\.{1,2}(?:\\/|$))(?:(?:(?!(?:^|\\/)\\.{1,2}(?:\\/|$)).)*?)|$))$"
+      }
+    ],
+    "qualities": [
+      60,
+      70,
+      75,
+      80,
+      90
+    ],
+    "unoptimized": false,
+    "sizes": [
+      640,
+      750,
+      828,
+      1080,
+      1200,
+      1920,
+      64,
+      96,
+      128,
+      256,
+      384,
+      512,
+      640
+    ]
+  }
+}

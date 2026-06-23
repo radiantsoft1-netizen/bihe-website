@@ -5,7 +5,7 @@ on:
     branches:
       - main
     paths:
-      - "bihe-admin/**"
+      - "Backend/**"
       - ".github/workflows/deploy-bihe-admin.yml"
   workflow_dispatch:
     inputs:
@@ -15,7 +15,7 @@ on:
         default: false
 
 concurrency:
-  group: deploy-bihe-admin-${{ github.ref }}
+  group: deploy-Backend-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
@@ -24,7 +24,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: bihe-admin
+        working-directory: Backend
 
     steps:
       - name: Checkout repository
@@ -45,7 +45,7 @@ jobs:
         uses: actions/cache@v4
         with:
           path: ${{ steps.composer-cache.outputs.dir }}
-          key: ${{ runner.os }}-composer-${{ hashFiles('bihe-admin/composer.lock', 'bihe-admin/composer.json') }}
+          key: ${{ runner.os }}-composer-${{ hashFiles('Backend/composer.lock', 'Backend/composer.json') }}
           restore-keys: ${{ runner.os }}-composer-
 
       - name: Install Composer dependencies (production)
@@ -59,7 +59,7 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           port: ${{ secrets.FTP_PORT || 21 }}
           protocol: ${{ secrets.FTP_PROTOCOL || 'ftp' }}
-          local-dir: bihe-admin/
+          local-dir: Backend/
           server-dir: ${{ secrets.FTP_SERVER_DIR }}
           log-level: minimal
           dry-run: ${{ github.event_name == 'workflow_dispatch' && inputs.dry_run }}
@@ -69,7 +69,8 @@ jobs:
             **/.github/**
             **/node_modules/**
             **/.env
-            **/.env.*
+            **/.env.backup
+            **/.env.production
             **/tests/**
             **/.phpunit.cache/**
             **/.phpunit.result.cache/**
@@ -80,6 +81,28 @@ jobs:
             **/Dockerfile
             **/html-frontend/**
             **/.ftp-deploy-sync-state.json
-            **/html-frontend/**
-            **/README.md
-            **/docs/**
+            **/database/database.sqlite
+            **/storage/logs/**
+            **/storage/framework/cache/data/**
+            **/storage/framework/sessions/**
+            **/storage/framework/views/**
+
+      - name: Post-deploy on Hostinger (SSH migrate + cache)
+        if: ${{ secrets.SSH_HOST != '' && (github.event_name != 'workflow_dispatch' || !inputs.dry_run) }}
+        uses: appleboy/ssh-action@v1.2.2
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USERNAME }}
+          password: ${{ secrets.SSH_PASSWORD }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          passphrase: ${{ secrets.SSH_PASSPHRASE }}
+          port: ${{ secrets.SSH_PORT || 22 }}
+          script: |
+            set -e
+            cd "${{ secrets.SSH_REMOTE_DIR }}"
+            PHP="${{ secrets.SSH_PHP_BIN || '/opt/alt/php85/usr/bin/php' }}"
+            "$PHP" artisan migrate --force
+            "$PHP" artisan config:cache
+            "$PHP" artisan route:cache
+            "$PHP" artisan view:cache
+            echo "Post-deploy complete."

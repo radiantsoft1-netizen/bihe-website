@@ -1,0 +1,216 @@
+/* [project]/src/styles/ombudsperson-page.css [app-client] (css) */
+.ombudsperson-page {
+  --ombud-pad-x: clamp(1.25rem, 5vw, 7.5rem);
+}
+
+.bihe-wrap:has(.ombudsperson-page) > .bihe-page-bg {
+  display: none;
+}
+
+.ombudsperson-page__container {
+  width: min(100%, var(--container-max));
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.ombudsperson-page__intro {
+  padding: clamp(3rem, 6vw, 4.5rem) var(--ombud-pad-x);
+  background: #fff;
+}
+
+.ombudsperson-page__intro-grid {
+  grid-template-columns: minmax(0, .92fr) minmax(0, 1.08fr);
+  align-items: center;
+  gap: max(2rem, min(4vw, 3.5rem));
+  display: grid;
+}
+
+.ombudsperson-page__intro-panel {
+  max-width: 40rem;
+}
+
+.ombudsperson-page__intro-eyebrow {
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--color-text-secondary);
+  margin: 0 0 .5rem;
+  font-size: .75rem;
+  font-weight: 700;
+}
+
+.ombudsperson-page__intro-title {
+  font-family: var(--font-hero);
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  color: var(--color-secondary);
+  text-align: left;
+  margin: 0 0 1rem;
+  font-size: max(1.125rem, min(2.2vw, 1.5rem));
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.ombudsperson-page__intro-text {
+  color: var(--color-text-secondary);
+  text-align: justify;
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+.ombudsperson-page__intro-visual {
+  width: min(100%, 26rem);
+  margin: 0;
+  padding: 1rem .5rem 1.5rem;
+  position: relative;
+}
+
+.ombudsperson-page__intro-visual .about__decor {
+  z-index: 0;
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.ombudsperson-page__intro-frame {
+  z-index: 1;
+  padding: .65rem 0 .65rem .65rem;
+  position: relative;
+}
+
+.ombudsperson-page__intro-frame:before {
+  content: "";
+  border: 3px solid var(--color-secondary);
+  opacity: .75;
+  z-index: 0;
+  border-radius: 2rem 2.75rem 1.75rem 1.5rem;
+  position: absolute;
+  top: -.5rem;
+  bottom: .75rem;
+  left: -.5rem;
+  right: .75rem;
+}
+
+.ombudsperson-page__intro-frame:after {
+  content: "";
+  background: linear-gradient(135deg, var(--navy-100, #e8eef8) 0%, var(--maroon-50, #faf0f0) 100%);
+  z-index: -1;
+  border-radius: 1.85rem 2.5rem 1.65rem 1.35rem;
+  position: absolute;
+  top: .45rem;
+  bottom: -.45rem;
+  left: .45rem;
+  right: -.45rem;
+}
+
+.ombudsperson-page__intro-photo-wrap {
+  z-index: 1;
+  aspect-ratio: 620 / 349;
+  background: #fff;
+  border-radius: 1.85rem 2.5rem 1.65rem 1.35rem;
+  width: 100%;
+  transition: transform .45s cubic-bezier(.22, 1, .36, 1);
+  position: relative;
+  overflow: hidden;
+  transform: rotate(-1deg);
+  box-shadow: 0 1.5rem 3rem rgba(30, 58, 117, .2);
+}
+
+.ombudsperson-page__intro-visual:hover .ombudsperson-page__intro-photo-wrap {
+  transform: rotate(0)scale(1.01);
+}
+
+.ombudsperson-page__intro-photo {
+  object-fit: contain;
+  object-position: center;
+  background: #fff;
+}
+
+.ombudsperson-page__intro-float-badge {
+  z-index: 2;
+  background: var(--color-primary);
+  color: #fff;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  border-radius: 999px;
+  padding: .45rem .9rem;
+  font-size: .6875rem;
+  font-weight: 700;
+  position: absolute;
+  bottom: .25rem;
+  left: .5rem;
+  box-shadow: 0 .5rem 1.25rem rgba(30, 58, 117, .25);
+}
+
+.ombudsperson-page__lists {
+  padding: 0 var(--ombud-pad-x) clamp(2.5rem, 5vw, 3.5rem);
+  background: #fff;
+}
+
+.ombudsperson-page__lists-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: max(1.25rem, min(3vw, 2rem));
+  display: grid;
+}
+
+.ombudsperson-page__list-card {
+  border-radius: var(--radius-lg);
+  height: 100%;
+  box-shadow: var(--shadow-soft);
+  background: #fff;
+  border: 1px solid rgba(30, 58, 117, .1);
+  padding: max(1.5rem, min(3vw, 2rem));
+}
+
+.ombudsperson-page__list-title {
+  font-family: var(--font-hero);
+  letter-spacing: .03em;
+  text-transform: uppercase;
+  color: var(--color-secondary);
+  margin: 0 0 1.25rem;
+  font-size: max(1rem, min(2vw, 1.125rem));
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.ombudsperson-page__outcome {
+  padding: clamp(3rem, 6vw, 4.5rem) var(--ombud-pad-x) clamp(4rem, 8vw, 5.5rem);
+  background: var(--bihe-cream, #f4f6fa);
+}
+
+.ombudsperson-page__outcome .section-header {
+  margin-bottom: 1.25rem;
+}
+
+.ombudsperson-page__outcome-text {
+  text-align: justify;
+  max-width: 52rem;
+  color: var(--color-text-secondary);
+  margin: 0 auto 2.5rem;
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+.ombudsperson-page__outcome .bihe-data-table-card {
+  margin-top: 0;
+}
+
+@media (max-width: 768px) {
+  .ombudsperson-page__intro-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ombudsperson-page__intro-visual {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .ombudsperson-page__lists-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/*# sourceMappingURL=src_styles_ombudsperson-page_css_bad6b30c._.single.css.map*/

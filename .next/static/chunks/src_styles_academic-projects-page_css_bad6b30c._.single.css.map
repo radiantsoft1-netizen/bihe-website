@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 1, "column": 0}, "map": {"version":3,"sources":["turbopack:///[project]/src/styles/academic-projects-page.css"],"sourcesContent":["/* Academic Projects — Figma node 1:20614 */\n\n.ap-page {\n  --ap-pad-x: clamp(1.25rem, 5vw, 7.5rem);\n}\n\n.bihe-wrap:has(.ap-page) {\n  background: #f7f9fc;\n}\n\n.bihe-wrap:has(.ap-page) > .bihe-page-bg {\n  display: none;\n}\n\n.ap-page .cu-page__documents {\n  padding-top: clamp(3.5rem, 7vw, 5.5rem);\n  padding-bottom: clamp(4.5rem, 9vw, 7rem);\n  padding-inline: var(--ap-pad-x);\n}\n"],"names":[],"mappings":"AAEA;;;;AAIA;;;;AAIA;;;;AAIA"}}]
+}

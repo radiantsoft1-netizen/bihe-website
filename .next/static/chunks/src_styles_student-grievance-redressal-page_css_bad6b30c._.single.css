@@ -1,0 +1,199 @@
+/* [project]/src/styles/student-grievance-redressal-page.css [app-client] (css) */
+.grc-page {
+  --grc-pad-x: clamp(1.25rem, 5vw, 7.5rem);
+}
+
+.bihe-wrap:has(.grc-page) > .bihe-page-bg {
+  display: none;
+}
+
+.grc-page__container {
+  width: min(100%, var(--container-max));
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.grc-page__text {
+  color: var(--color-text-secondary);
+  text-align: justify;
+  margin: 0 0 .85rem;
+  font-size: 1.0625rem;
+  line-height: 1.75;
+}
+
+.grc-page__text:last-child {
+  margin-bottom: 0;
+}
+
+.grc-page__about {
+  padding: clamp(2rem, 4vw, 3rem) var(--grc-pad-x);
+  background: #fff;
+}
+
+.grc-page__about-copy {
+  width: 100%;
+  max-width: none;
+}
+
+.grc-page__about .section-header {
+  margin-bottom: 1rem;
+}
+
+.grc-page__objectives {
+  padding: clamp(2rem, 4vw, 3rem) var(--grc-pad-x) clamp(1.25rem, 2.5vw, 1.75rem);
+  background: var(--bihe-cream, #f4f6fa);
+}
+
+.grc-page__objectives .section-header {
+  margin-bottom: max(1.25rem, min(2.5vw, 1.75rem));
+}
+
+.grc-page__objective-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: max(.85rem, min(2vw, 1.15rem));
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+}
+
+.grc-page__objective-grid > li {
+  display: flex;
+}
+
+.grc-page__objective-grid > li > .reveal {
+  flex: 1;
+  width: 100%;
+  display: flex;
+}
+
+.grc-page__objective-card {
+  border-radius: var(--radius-lg);
+  background: #fff;
+  border: 1px solid rgba(30, 58, 117, .1);
+  flex-direction: column;
+  flex: 1;
+  gap: .65rem;
+  min-height: 100%;
+  padding: 1.1rem 1.05rem 1.15rem;
+  display: flex;
+  position: relative;
+  box-shadow: 0 .45rem 1.15rem rgba(30, 58, 117, .08);
+}
+
+.grc-page__objective-card:before {
+  content: "";
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  background: linear-gradient(90deg, var(--color-primary) 0%, #2d4f9e 100%);
+  height: 4px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.grc-page__objective-grid > li:nth-child(2n) .grc-page__objective-card:before {
+  background: linear-gradient(90deg, var(--color-secondary) 0%, #a01830 100%);
+}
+
+.grc-page__objective-index {
+  font-family: var(--font-hero);
+  color: rgba(30, 58, 117, .1);
+  font-size: max(1.5rem, min(2.5vw, 1.85rem));
+  font-weight: 800;
+  line-height: 1;
+}
+
+.grc-page__objective-grid > li:nth-child(2n) .grc-page__objective-index {
+  color: rgba(116, 0, 0, .12);
+}
+
+.grc-page__objective-text {
+  color: var(--color-text-secondary);
+  flex: 1;
+  margin: 0;
+  font-size: .9375rem;
+  line-height: 1.65;
+}
+
+.grc-page__process {
+  padding: clamp(1.75rem, 3.5vw, 2.5rem) var(--grc-pad-x) clamp(1.25rem, 2.5vw, 1.75rem);
+  background: #fff;
+}
+
+.grc-page__process-panel, .grc-page__commitment-panel {
+  border-left: 4px solid var(--color-secondary);
+  border-radius: var(--radius-lg);
+  background: var(--bihe-cream, #f4f6fa);
+  padding: max(1.25rem, min(2.5vw, 1.75rem)) max(1.15rem, min(2.5vw, 1.5rem));
+}
+
+.grc-page__panel-title {
+  font-family: var(--font-hero);
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  color: var(--color-secondary);
+  margin: 0 0 .85rem;
+  font-size: max(1rem, min(2vw, 1.125rem));
+  font-weight: 700;
+}
+
+.grc-page__issues {
+  padding: clamp(1.25rem, 2.5vw, 1.75rem) var(--grc-pad-x) clamp(1.25rem, 2.5vw, 1.75rem);
+  background: #fff;
+}
+
+.grc-page__issues-card {
+  border-radius: var(--radius-lg);
+  background: linear-gradient(160deg, #f8faff 0%, #fff 100%);
+  border: 1px solid rgba(30, 58, 117, .1);
+  padding: max(1.25rem, min(2.5vw, 1.75rem));
+  box-shadow: 0 .45rem 1.15rem rgba(30, 58, 117, .08);
+}
+
+.grc-page__issues-list {
+  columns: 2;
+  column-gap: 2rem;
+  margin: 0;
+}
+
+.grc-page__commitment {
+  padding: clamp(1.25rem, 2.5vw, 1.75rem) var(--grc-pad-x) clamp(2rem, 4vw, 3rem);
+  background: #fff;
+}
+
+.grc-page__commitment-panel {
+  gap: .85rem;
+  display: grid;
+}
+
+.grc-page__committee {
+  padding: clamp(2.5rem, 5vw, 3.5rem) var(--grc-pad-x) clamp(4rem, 8vw, 5.5rem);
+  background: var(--bihe-cream, #f4f6fa);
+}
+
+.grc-page__committee .section-header {
+  margin-bottom: 1.75rem;
+}
+
+.grc-page__committee .bihe-data-table-card {
+  margin-top: 0;
+}
+
+@media (max-width: 1024px) {
+  .grc-page__objective-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .grc-page__objective-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .grc-page__issues-list {
+    columns: 1;
+  }
+}
+
+/*# sourceMappingURL=src_styles_student-grievance-redressal-page_css_bad6b30c._.single.css.map*/

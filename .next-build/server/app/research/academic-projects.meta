@@ -1,0 +1,7 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/research/layout,_N_T_/research/[slug]/layout,_N_T_/research/[slug]/page,_N_T_/research/academic-projects,api:/api/v1/site-pages/show,api:/api/v1/navigation,api:/api/v1/site-settings/prospectus"
+  }
+}
