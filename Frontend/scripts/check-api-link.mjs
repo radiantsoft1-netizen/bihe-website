@@ -35,6 +35,10 @@ const endpoints = [
   "/api/v1/announcements",
   "/api/v1/recruiting-partners",
   "/api/v1/faculty",
+  "/api/v1/faculty/sections",
+  "/api/v1/faculty?department=bca",
+  "/api/v1/faculty?department=b-com",
+  "/api/v1/faculty?department=non-teaching-staff",
   "/api/v1/news",
   "/api/v1/gallery",
 ];

@@ -34,6 +34,11 @@ export function getApiBaseUrl(): string | null {
   return url.replace(/\/$/, "");
 }
 
+/** True when the public site is configured to read from the Laravel admin API. */
+export function isFacultyApiConfigured(): boolean {
+  return getApiBaseUrl() !== null;
+}
+
 function buildApiUrl(path: string, query?: Record<string, string | undefined>): string | null {
   const base = getApiBaseUrl();
   if (!base) return null;

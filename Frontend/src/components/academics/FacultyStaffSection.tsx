@@ -1,3 +1,5 @@
+import { unstable_noStore as noStore } from "next/cache";
+
 import { FacultyStaffGrid } from "@/components/academics/FacultyStaffGrid";
 import { FacultyStaffIntro } from "@/components/academics/FacultyStaffIntro";
 import { FACULTY_DEPARTMENT_TITLES } from "@/lib/faculty-pages";
@@ -13,6 +15,8 @@ export async function FacultyStaffSection({
   department,
   sections,
 }: FacultyStaffSectionProps) {
+  noStore();
+
   if (department) {
     const members = await getFacultyByDepartment(department);
     const title = FACULTY_DEPARTMENT_TITLES[department];

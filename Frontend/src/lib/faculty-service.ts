@@ -1,6 +1,6 @@
 import "server-only";
 
-import { fetchApiList } from "@/lib/api/client";
+import { fetchApiList, isFacultyApiConfigured } from "@/lib/api/client";
 import facultyMembersFallback from "@/lib/faculty-members-fallback.json";
 import { toPublicStoragePath, images } from "@/lib/images";
 import { FACULTY_DEPARTMENT_TITLES } from "@/lib/faculty-pages";
@@ -44,10 +44,6 @@ type FacultyMemberJson = {
 };
 
 let cachedFallbackMembers: FacultyMember[] | null = null;
-
-function hasFacultyMembers(sections: FacultySection[]): boolean {
-  return sections.some((section) => section.members.length > 0);
-}
 
 function slugifyName(name: string): string {
   return name
@@ -211,30 +207,34 @@ function buildFallbackSections(): FacultySection[] {
 export async function getFacultyByDepartment(department: FacultyDepartmentId): Promise<FacultyMember[]> {
   const data = await fetchApiList<ApiFacultyMember>("/api/v1/faculty", { department });
 
-  if (!data || data.length === 0) {
+  if (data !== null) {
+    return data.map(mapMember);
+  }
+
+  if (!isFacultyApiConfigured()) {
     return loadFallbackMembersFromFile()
       .filter((member) => memberBelongsToDepartment(member, department))
       .sort((left, right) => (left.sortOrder ?? 0) - (right.sortOrder ?? 0));
   }
 
-  return data.map(mapMember);
+  return [];
 }
 
 export async function getFacultySections(): Promise<FacultySection[]> {
   const fallback = buildFallbackSections();
   const data = await fetchApiList<ApiFacultySection>("/api/v1/faculty/sections");
 
-  if (!data || data.length === 0) {
-    return fallback;
+  if (data !== null) {
+    const sections = data.map((section) => ({
+      id: section.id,
+      title: section.title,
+      members: section.members.map(mapMember),
+    }));
+
+    return sections;
   }
 
-  const sections = data.map((section) => ({
-    id: section.id,
-    title: section.title,
-    members: section.members.map(mapMember),
-  }));
-
-  return hasFacultyMembers(sections) ? sections : fallback;
+  return isFacultyApiConfigured() ? [] : fallback;
 }
 
 export const FACULTY_AND_STAFF_PAGE_LEAD =
