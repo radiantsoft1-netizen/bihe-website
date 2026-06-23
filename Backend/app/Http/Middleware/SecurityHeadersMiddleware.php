@@ -21,7 +21,7 @@ class SecurityHeadersMiddleware
         // Baseline CSP — does not restrict scripts/styles (admin uses inline styles + external JS).
         $response->headers->set(
             'Content-Security-Policy',
-            "default-src 'self'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'; object-src 'none'"
+            "default-src 'self'; img-src 'self' data: blob:; base-uri 'self'; form-action 'self'; frame-ancestors 'self'; object-src 'none'"
         );
 
         return $response;

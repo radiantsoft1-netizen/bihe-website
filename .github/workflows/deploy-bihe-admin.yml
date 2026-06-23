@@ -102,6 +102,7 @@ jobs:
             cd "${{ secrets.SSH_REMOTE_DIR }}"
             PHP="${{ secrets.SSH_PHP_BIN || '/opt/alt/php85/usr/bin/php' }}"
             "$PHP" artisan migrate --force
+            bash scripts/ensure-public-storage.sh
             "$PHP" artisan config:cache
             "$PHP" artisan route:cache
             "$PHP" artisan view:cache

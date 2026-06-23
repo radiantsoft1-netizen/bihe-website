@@ -25,13 +25,7 @@ class StoredFileUrl
 
     public static function publicImage(?string $path): ?string
     {
-        if (! $path) {
-            return null;
-        }
-
-        $publicPath = self::publicStoragePath($path);
-
-        return $publicPath ? url($publicPath) : null;
+        return self::publicStoragePath($path);
     }
 
     /**

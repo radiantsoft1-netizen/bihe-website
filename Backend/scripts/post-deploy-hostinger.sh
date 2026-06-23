@@ -51,9 +51,7 @@ echo "==> Seeding roles, superadmin, and demo content..."
 "$PHP_BIN" artisan db:seed --force
 
 echo "==> Linking public/storage..."
-if ! "$PHP_BIN" artisan storage:link 2>/dev/null; then
-  echo "storage:link failed (symlinks may be disabled). Copy storage/app/public → public/storage manually."
-fi
+bash scripts/ensure-public-storage.sh
 
 echo "==> Caching config, routes, views..."
 "$PHP_BIN" artisan config:cache

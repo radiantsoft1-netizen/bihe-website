@@ -148,7 +148,7 @@ class SecureFileUploadService
         $resolvedDisk = $this->resolveDisk($path, $disk);
 
         if ($resolvedDisk === 'public') {
-            return url(StoredFileUrl::publicStoragePath($path) ?? '/storage');
+            return StoredFileUrl::publicStoragePath($path);
         }
 
         return null;
