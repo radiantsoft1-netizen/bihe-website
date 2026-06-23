@@ -1242,13 +1242,6 @@
   height: 100%;
 }
 
-.bihe-wrap .facilities__cell.reveal,
-.bihe-wrap .facilities__cell.reveal.is-visible {
-  opacity: 1;
-  transform: none;
-  transition: none;
-}
-
 .bihe-wrap .facilities__card {
   position: relative;
   display: flex;

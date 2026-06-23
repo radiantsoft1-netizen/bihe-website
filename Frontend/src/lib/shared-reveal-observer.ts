@@ -65,7 +65,7 @@ function getObserver() {
         revealElement(entry.target);
       }
     },
-    { threshold: 0.05, rootMargin: "0px 0px -2% 0px" },
+    { threshold: 0.08, rootMargin: "0px 0px 4% 0px" },
   );
 
   attachScrollFallback();
@@ -85,9 +85,14 @@ export function observeReveal(el: Element, onVisible: RevealCallback) {
   attachScrollFallback();
 
   requestAnimationFrame(() => {
-    if (observed.has(el) && isInRevealViewport(el)) {
-      revealElement(el);
-    }
+    if (!observed.has(el) || !isInRevealViewport(el)) return;
+
+    // Double rAF so mobile paints the hidden state before animating in.
+    requestAnimationFrame(() => {
+      if (observed.has(el) && isInRevealViewport(el)) {
+        revealElement(el);
+      }
+    });
   });
 
   return () => {

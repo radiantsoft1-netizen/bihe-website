@@ -41,8 +41,8 @@ export function FacultyStaffGrid({ members }: FacultyStaffGridProps) {
         const detailRows = facultyDetailRows(member);
 
         return (
-          <Reveal key={member.id} as="li" delay={index * 95} direction="scale" className="faculty-staff__item">
-            <article className="faculty-staff__card">
+          <Reveal key={member.id} as="li" delay={index * 60} direction="up" className="faculty-staff__item">
+            <article className="faculty-staff__card" tabIndex={0}>
               <div className="faculty-staff__media">
                 <div className="faculty-staff__photo-wrap">
                   <SmartImage
