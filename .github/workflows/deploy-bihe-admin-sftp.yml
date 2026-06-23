@@ -101,7 +101,7 @@ jobs:
             --exclude=storage/framework/views
 
       - name: Post-deploy on Hostinger (SSH migrate + cache)
-        if: ${{ !inputs.dry_run && secrets.SSH_HOST != '' }}
+        if: ${{ !inputs.dry_run }}
         uses: appleboy/ssh-action@v1.2.2
         with:
           host: ${{ secrets.SSH_HOST }}
